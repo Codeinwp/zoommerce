@@ -162,14 +162,18 @@
                     <div class="menu-icons">
                         <ul id="icons-menu">
                             <li class="menu-item"> 
+                            	<?php if(!empty($zoocommerce_myaccount) && !empty($zoocommerce_myaccount_link)): ?>
                                 <a href="<?php echo $zoocommerce_myaccount_link ?>">
                                     <img src="<?php echo $zoocommerce_myaccount ?>">
                                 </a> 
+                                <?php endif; ?>
                             </li>
                             <li class="menu-item"> 
+                            	<?php if(!empty($zoocommerce_cart) && !empty($zoocommerce_cart_link)): ?>
                                 <a href="<?php echo $zoocommerce_cart_link ?>">
                                     <img src="<?php echo $zoocommerce_cart ?>">
                                 </a> 
+                                <?php endif; ?>
                             </li>
                         </ul>
                     </div>

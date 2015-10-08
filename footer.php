@@ -77,15 +77,15 @@
 		endif;
 		
 		if( $footer_sections == 1 ):
-			$footer_class = 'col-md-3 footer-box one-cell';
+			$footer_class = 'col-sm-3 footer-box one-cell';
 		elseif( $footer_sections == 2 ):
-			$footer_class = 'col-md-3 footer-box two-cell';
+			$footer_class = 'col-sm-3 footer-box two-cell';
 		elseif( $footer_sections == 3 ):
-			$footer_class = 'col-md-3 footer-box three-cell';
+			$footer_class = 'col-sm-3 footer-box three-cell';
 		elseif( $footer_sections == 4 ):
-			$footer_class = 'col-md-3 footer-box four-cell';
+			$footer_class = 'col-sm-3 footer-box four-cell';
 		else:
-			$footer_class = 'col-md-3 footer-box four-cell';
+			$footer_class = 'col-sm-3 footer-box four-cell';
 		endif;
 		
 		
@@ -201,7 +201,7 @@
 
 			if( !empty($zerif_socials_facebook) || !empty($zerif_socials_twitter) || !empty($zerif_socials_linkedin) || !empty($zerif_socials_behance) || !empty($zerif_socials_dribbble) || !empty($zerif_socials_reddit) || !empty($zerif_socials_tumblr) || !empty($zerif_socials_pinterest) || !empty($zerif_socials_googleplus) || !empty($zerif_copyright) || !empty($zerif_socials_youtube) ):
 			
-					echo '<div class="'.$footer_class.' copyright">';
+					echo '<div class="'.$footer_class.' ">';
 
 					if( !empty($zerif_socials_facebook) || !empty($zerif_socials_twitter) || !empty($zerif_socials_linkedin) || !empty($zerif_socials_behance) || !empty($zerif_socials_dribbble) || !empty($zerif_socials_reddit) || !empty($zerif_socials_tumblr) || !empty($zerif_socials_pinterest) || !empty($zerif_socials_googleplus) || !empty($zerif_socials_youtube) ):
 
