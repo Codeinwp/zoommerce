@@ -1,6 +1,21 @@
 <?php
 
 /**
+ * Get text domain
+ */
+if(!function_exists('get_textdomain')) {
+	function get_textdomain() {
+		$default_headers = array( 'td'  => 'Text Domain');
+		$text_domain = get_file_data(get_stylesheet_uri(), $default_headers );
+
+		if(array_key_exists('td', $text_domain)) {
+			return $text_domain['td'];
+		}
+	}
+}
+
+
+/**
  * TGM Plugin Activation
  */
 require_once get_template_directory() . '/class-tgm-plugin-activation.php';
@@ -16,8 +31,6 @@ function zoom_tgm() {
 		)
 	);
 
-	$theme_text_domain = 'zoocommerce';
-
 	$config = array(
         'default_path' => '',                      
         'menu'         => 'tgmpa-install-plugins', 
@@ -27,10 +40,10 @@ function zoom_tgm() {
         'is_automatic' => false,                 
         'message'      => '',     
         'strings'      => array(
-            'page_title'                      => __( 'Install Required Plugins', $theme_text_domain ),
-            'menu_title'                      => __( 'Install Plugins', $theme_text_domain ),
-            'installing'                      => __( 'Installing Plugin: %s', $theme_text_domain ), 
-            'oops'                            => __( 'Something went wrong with the plugin API.', $theme_text_domain ),
+            'page_title'                      => __( 'Install Required Plugins', get_textdomain() ),
+            'menu_title'                      => __( 'Install Plugins', get_textdomain() ),
+            'installing'                      => __( 'Installing Plugin: %s', get_textdomain() ), 
+            'oops'                            => __( 'Something went wrong with the plugin API.', get_textdomain() ),
             'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
             'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
             'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ),
@@ -41,15 +54,17 @@ function zoom_tgm() {
             'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), 
             'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
             'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins' ),
-            'return'                          => __( 'Return to Required Plugins Installer', $theme_text_domain ),
-            'plugin_activated'                => __( 'Plugin activated successfully.', $theme_text_domain ),
-            'complete'                        => __( 'All plugins installed and activated successfully. %s', $theme_text_domain ), 
+            'return'                          => __( 'Return to Required Plugins Installer', get_textdomain() ),
+            'plugin_activated'                => __( 'Plugin activated successfully.', get_textdomain() ),
+            'complete'                        => __( 'All plugins installed and activated successfully. %s', get_textdomain() ), 
             'nag_type'                        => 'updated'
         )
     );
 
 	tgmpa( $plugins, $config );
 }
+
+
 
 // Enqueue Zerif-Pro Styles
 add_action( 'wp_enqueue_scripts', 'enqueue_zerifpro_styles' );
