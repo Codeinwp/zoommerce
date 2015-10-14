@@ -77,7 +77,7 @@
 						</button>
 
 						<?php
-							$zoocommerce_logo = get_theme_mod('zerif_logo', get_stylesheet_directory_uri().'/images/logo.png');
+							$zoocommerce_logo = get_theme_mod('zerif_logo', get_stylesheet_directory_uri().'/assets/images/logo.png');
 							if( !empty($zoocommerce_logo) ):
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
 									echo '<img src="'.$zoocommerce_logo.'" alt="'.get_bloginfo('title').'">';
@@ -98,10 +98,10 @@
                     
                     <?php 
 						
-						$zoocommerce_myaccount = get_theme_mod('myaccount_icon', get_stylesheet_directory_uri().'/images/menu-profile.png'); 
+						$zoocommerce_myaccount = get_theme_mod('myaccount_icon', get_stylesheet_directory_uri().'/assets/images/menu-profile.png'); 
 						$zoocommerce_myaccount_link = get_theme_mod('myaccount_link');
 						
-						$zoocommerce_cart = get_theme_mod('cart_icon', get_stylesheet_directory_uri().'/images/menu-cart.png'); 
+						$zoocommerce_cart = get_theme_mod('cart_icon', get_stylesheet_directory_uri().'/assets/images/menu-cart.png'); 
 						$zoocommerce_cart_link = get_theme_mod('cart_link');	
 						
 					?>    
