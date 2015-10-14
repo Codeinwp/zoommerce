@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * Enqueue styles
+ */
+add_action( 'wp_enqueue_scripts', 'zoomm_enqueue_styles' );
+
+function zoomm_enqueue_styles() {
+    wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+}
+
+/**
  * Get text domain
  */
 if(!function_exists('get_textdomain')) {
@@ -14,14 +23,13 @@ if(!function_exists('get_textdomain')) {
 	}
 }
 
-
 /**
  * TGM Plugin Activation
  */
 require_once get_template_directory() . '/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'zoom_tgm' );
-function zoom_tgm() {
+add_action( 'tgmpa_register', 'zoomm_tgm' );
+function zoomm_tgm() {
 
 	$plugins = array(
 		array(
@@ -64,14 +72,6 @@ function zoom_tgm() {
 	tgmpa( $plugins, $config );
 }
 
-
-
-// Enqueue Zerif-Pro Styles
-add_action( 'wp_enqueue_scripts', 'enqueue_zerifpro_styles' );
-
-function enqueue_zerifpro_styles() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
-}
 
 
 
