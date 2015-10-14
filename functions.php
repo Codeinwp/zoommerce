@@ -72,39 +72,48 @@ function zoomm_tgm() {
 	tgmpa( $plugins, $config );
 }
 
+/**
+ * HTML5shiv
+ */
+if(function_exists('zoomm_html5shiv')) {
+	add_action( 'wp_head', 'zoomm_html5shiv' );
 
-
-
-
-add_action('wp_footer','zerif_php_style_child');
-
-function zerif_php_style_child() {
-
-	echo ' <style type="text/css">';
-
-	echo '	.intro-text { color: '. get_theme_mod('zerif_bigtitle_header_color') .'}';
-	echo '	.sub-text { color: '. get_theme_mod('zerif_bigtitle_subheader_color') . '}';
-	echo '	.buttons .custom-button { background: '. get_theme_mod('zerif_bigtitle_button_background_color') .'; 
-			 border: 2px solid '. get_theme_mod('zerif_bigtitle_button_border_color') .' !important }';
-	echo '	.buttons .custom-button:hover { background: '. get_theme_mod('zerif_bigtitle_button_background_color_hover') .' }';		
-	
-	$zerif_bigtitle_background = get_theme_mod('zerif_bigtitle_background');
-	if ( !empty($zerif_bigtitle_background) ){
-		echo '	.intro-text { background: '. get_theme_mod('zerif_bigtitle_background') .'}';
+	function zoomm_html5shiv () {
+	    echo '<!--[if lt IE 9]>
+	    		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    	<![endif]-->';
 	}
-	
-	
-	echo '	#footer { background: '. get_theme_mod('zerif_footer_background') .' }';
-	echo '	.copyright { background: '. get_theme_mod('zerif_footer_socials_background') .' }';
-	echo '	#footer, .company-details { color: '. get_theme_mod('zerif_footer_text_color') .' }';
-	echo '	#footer .social li a { color: '. get_theme_mod('zerif_footer_socials') .' }';
-	echo '	#footer .social li a:hover { color: '. get_theme_mod('zerif_footer_socials_hover') .' }';
-	
-	
-	
-
-	echo '</style>';
-
 }
+
+
+
+/**
+ * Customizer CSS output
+ */
+if(function_exists('zoomm_customizer_style_css')) {
+	add_action('wp_footer','zoomm_customizer_style_css');
+
+	function zoomm_customizer_style_css() {
+		echo ' <style type="text/css">';
+		echo '	.intro-text { color: '. get_theme_mod('zerif_bigtitle_header_color') .'}';
+		echo '	.sub-text { color: '. get_theme_mod('zerif_bigtitle_subheader_color') . '}';
+		echo '	.buttons .custom-button { background: '. get_theme_mod('zerif_bigtitle_button_background_color') .'; 
+				 border: 2px solid '. get_theme_mod('zerif_bigtitle_button_border_color') .' !important }';
+		echo '	.buttons .custom-button:hover { background: '. get_theme_mod('zerif_bigtitle_button_background_color_hover') .' }';		
+		
+		$zerif_bigtitle_background = get_theme_mod('zerif_bigtitle_background');
+		if ( !empty($zerif_bigtitle_background) ){
+			echo '	.intro-text { background: '. get_theme_mod('zerif_bigtitle_background') .'}';
+		}
+
+		echo '	#footer { background: '. get_theme_mod('zerif_footer_background') .' }';
+		echo '	.copyright { background: '. get_theme_mod('zerif_footer_socials_background') .' }';
+		echo '	#footer, .company-details { color: '. get_theme_mod('zerif_footer_text_color') .' }';
+		echo '	#footer .social li a { color: '. get_theme_mod('zerif_footer_socials') .' }';
+		echo '	#footer .social li a:hover { color: '. get_theme_mod('zerif_footer_socials_hover') .' }';
+		echo '</style>';
+	}
+}
+
 
 ?>
