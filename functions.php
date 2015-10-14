@@ -97,7 +97,6 @@ if(!function_exists('zoomm_html5shiv')) {
 }
 
 
-
 /**
  * Customizer CSS output
  */
@@ -193,25 +192,25 @@ if(!function_exists('zoomm_customizer_style_css')) {
 
 					$return .= '{';
 
-					if(array_key_exists('style', $val)) {
+					if(array_key_exists('style', $val) && !empty($val['style'])) {
 						$return .= $val['style'] . ':';
 					} else {
 						error_log("Function: zoomm_customizer_style_css() - Array Key 'style' not defined for " . $val['property']);
 					}
 
-					if(array_key_exists('before_property', $val)) {
+					if(array_key_exists('before_property', $val) && !empty($val['before_property'])) {
 						$return .= $val['before_property'];
 					}
 
-					if(array_key_exists('property', $val)) {
+					if(array_key_exists('property', $val) && !empty($val['property'])) {
 						$return .= esc_html(get_theme_mod($val['property']));
 					}
 
-					if(array_key_exists('after_property', $val)) {
+					if(array_key_exists('after_property', $val) && !empty($val['after_property'])) {
 						$return .= $val['after_property'];
 					}
 
-					if(array_key_exists('important', $val)) {
+					if(array_key_exists('important', $val) && !empty($val['important'])) {
 						$return .= ' !important';
 					}
 
