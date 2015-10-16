@@ -5,7 +5,7 @@
  * Displays header section
  *
  * @package WordPress
- * @subpackage zoommerce
+ * @subpackage zoocommerce
  */
 
 ?><!DOCTYPE html>
@@ -104,8 +104,8 @@
 						$zoocommerce_cart = get_theme_mod('cart_icon', get_stylesheet_directory_uri().'/assets/images/menu-cart.png'); 
 						$zoocommerce_cart_link = get_theme_mod('cart_link');	
 						
-					?>    
-                    
+					//Check if links are active and display the box
+					if(!empty($zoocommerce_cart_link) or !empty($zoocommerce_myaccount_link)): ?>
                     <div class="menu-icons">
                         <ul id="icons-menu">
                             <li class="menu-item"> 
@@ -124,6 +124,7 @@
                             </li>
                         </ul>
                     </div>
+					<?php endif; ?>
 
 					<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
 

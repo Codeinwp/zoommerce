@@ -1,5 +1,8 @@
 jQuery(document).ready(function($) {
 
+	/*
+	* Center vertically the big banner content 
+	*/
 	function zoommerce_verticall_align(target) {
 		var bb_parent = $(target).parent().height(),
 			bb_top = (bb_parent - $(target).height() - $('header#header').height()) / 2;
@@ -8,10 +11,10 @@ jQuery(document).ready(function($) {
 	}
 
 	$(window).resize(function() {
-		/*
-		* Center vertically the big banner content 
-		*/
+		
+		//Center vertically the big banner content 
 		zoommerce_verticall_align('.header-content-wrap');
+		
 	}).trigger('resize');
 	
 	
