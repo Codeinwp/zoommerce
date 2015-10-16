@@ -80,17 +80,17 @@
 							$zoocommerce_logo = get_theme_mod('zerif_logo', get_stylesheet_directory_uri().'/assets/images/logo.png');
 							if( !empty($zoocommerce_logo) ):
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
-									echo '<img src="'.$zoocommerce_logo.'" alt="'.get_bloginfo('title').'">';
+									echo '<img src="'.esc_url($zoocommerce_logo).'" alt="'.esc_attr(get_bloginfo('title')).'">';
 								echo '</a>';
 							else:
 								if( isset( $wp_customize ) ):
 									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
-										echo '<img src="" alt="'.get_bloginfo('title').'" class="zerif_hidden_if_not_customizer">';
+										echo '<img src="" alt="'.esc_attr(get_bloginfo('title')).'" class="zerif_hidden_if_not_customizer">';
 									echo '</a>';
 								endif;
 								echo '<div class="header_title zerif_header_title">';	
-									echo '<h1 class="site-title" itemprop="headline"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
-									echo '<h2 class="site-description" itemprop="description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
+									echo '<h1 class="site-title" itemprop="headline"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.esc_html(get_bloginfo( 'name' )).'</a></h1>';
+									echo '<h2 class="site-description" itemprop="description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.esc_html(get_bloginfo( 'description' )).'</a></h2>';
 								echo '</div>';
 							endif;
 						?>
