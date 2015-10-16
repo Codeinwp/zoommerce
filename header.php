@@ -124,14 +124,18 @@
                             </li>
                         </ul>
                     </div>
-					<?php endif; ?>
+					<?php endif; 
+
+					//Check if menu exists
+					if(has_nav_menu('primary')):
+					?>
 
 					<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
 
 						<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right responsive-nav main-nav-list' ,'fallback_cb'     => 'zerif_wp_page_menu')); ?>  
 
 					</nav>
-
+					<?php endif; ?>
 				</div>
 
 			</div>
