@@ -70,7 +70,7 @@
 				<div class="container">
 					<div class="navbar-header responsive-logo">
 						<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
+							<span class="sr-only"><?php _e('Toggle navigation', zoocommerce_get_textdomain()); ?></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
