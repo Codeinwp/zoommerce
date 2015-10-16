@@ -3,25 +3,25 @@
 /**
  * Remove hooks from parent theme
  */
-add_action('init', 'zoomm_remove_hooks');
-function zoomm_remove_hooks() {
+add_action('init', 'zoocommerce_remove_hooks');
+function zoocommerce_remove_hooks() {
 	remove_action('wp_footer', 'zerif_php_style', 1);
 }
 
 /**
  * Enqueue styles
  */
-add_action( 'wp_enqueue_scripts', 'zoomm_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'zoocommerce_enqueue_styles' );
 
-function zoomm_enqueue_styles() {
+function zoocommerce_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 }
 
 /**
  * Get text domain
  */
-if(!function_exists('get_textdomain')) {
-	function get_textdomain() {
+if(!function_exists('zoocommerce_get_textdomain')) {
+	function zoocommerce_get_textdomain() {
 		$default_headers = array( 'td'  => 'Text Domain');
 		$text_domain = get_file_data(get_stylesheet_uri(), $default_headers );
 
@@ -32,13 +32,35 @@ if(!function_exists('get_textdomain')) {
 }
 
 /**
+ * Theme Setup
+ */
+add_action( 'after_setup_theme', 'zoocommerce_setup' );
+function zoocommerce_setup() {
+
+	// Add Theme Support
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'post-thumbnails' );
+
+	// Load Theme Textdomain
+	load_theme_textdomain( zoocommerce_get_textdomain(), get_template_directory() . '/languages' );
+
+	$locale = get_locale();
+	$locale_file = get_template_directory() . '/languages/$locale.php';
+	if ( is_readable( $locale_file ) ):
+		require_once( $locale_file );
+	endif;
+	
+}
+
+/**
  * TGM Plugin Activation
  */
-if(!function_exists('zoomm_tgm()')) {
+if(!function_exists('zoocommerce_tgm_activation')) {
 	require_once get_template_directory() . '/class-tgm-plugin-activation.php';
 
-	add_action( 'tgmpa_register', 'zoomm_tgm' );
-	function zoomm_tgm() {
+	add_action( 'tgmpa_register', 'zoocommerce_tgm_activation' );
+	function zoocommerce_tgm_activation() {
 
 		$plugins = array(
 			array(
@@ -57,10 +79,10 @@ if(!function_exists('zoomm_tgm()')) {
 	        'is_automatic' => false,                 
 	        'message'      => '',     
 	        'strings'      => array(
-	            'page_title'                      => __( 'Install Required Plugins', get_textdomain() ),
-	            'menu_title'                      => __( 'Install Plugins', get_textdomain() ),
-	            'installing'                      => __( 'Installing Plugin: %s', get_textdomain() ), 
-	            'oops'                            => __( 'Something went wrong with the plugin API.', get_textdomain() ),
+	            'page_title'                      => __( 'Install Required Plugins', zoocommerce_get_textdomain() ),
+	            'menu_title'                      => __( 'Install Plugins', zoocommerce_get_textdomain() ),
+	            'installing'                      => __( 'Installing Plugin: %s', zoocommerce_get_textdomain() ), 
+	            'oops'                            => __( 'Something went wrong with the plugin API.', zoocommerce_get_textdomain() ),
 	            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
 	            'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
 	            'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ),
@@ -71,9 +93,9 @@ if(!function_exists('zoomm_tgm()')) {
 	            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), 
 	            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
 	            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins' ),
-	            'return'                          => __( 'Return to Required Plugins Installer', get_textdomain() ),
-	            'plugin_activated'                => __( 'Plugin activated successfully.', get_textdomain() ),
-	            'complete'                        => __( 'All plugins installed and activated successfully. %s', get_textdomain() ), 
+	            'return'                          => __( 'Return to Required Plugins Installer', zoocommerce_get_textdomain() ),
+	            'plugin_activated'                => __( 'Plugin activated successfully.', zoocommerce_get_textdomain() ),
+	            'complete'                        => __( 'All plugins installed and activated successfully. %s', zoocommerce_get_textdomain() ), 
 	            'nag_type'                        => 'updated'
 	        )
 	    );
@@ -86,10 +108,10 @@ if(!function_exists('zoomm_tgm()')) {
 /**
  * HTML5shiv
  */
-if(!function_exists('zoomm_html5shiv')) {
-	add_action( 'wp_head', 'zoomm_html5shiv' );
+if(!function_exists('zoocommerce_html5shiv')) {
+	add_action( 'wp_head', 'zoocommerce_html5shiv' );
 
-	function zoomm_html5shiv () {
+	function zoocommerce_html5shiv () {
 	    echo '<!--[if lt IE 9]>
 	    		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	    	<![endif]-->';
@@ -100,10 +122,10 @@ if(!function_exists('zoomm_html5shiv')) {
 /**
  * Customizer CSS output
  */
-if(!function_exists('zoomm_customizer_style_css')) {
+if(!function_exists('zoocommerce_customizer_style_css')) {
 	
-	add_action('wp_footer','zoomm_customizer_style_css');
-	function zoomm_customizer_style_css() {
+	add_action('wp_footer','zoocommerce_customizer_style_css');
+	function zoocommerce_customizer_style_css() {
 		/*
 			array(
 				'selector' => '.buttons .custom-button',
@@ -187,7 +209,7 @@ if(!function_exists('zoomm_customizer_style_css')) {
 					if(array_key_exists('selector', $val) && !empty($val['selector'])) {
 						$return .= $val['selector'];
 					} else {
-						error_log("Function: zoomm_customizer_style_css() - Array Key 'selector' not defined for " . $val['property']);
+						error_log("Function: zoocommerce_customizer_style_css() - Array Key 'selector' not defined for " . $val['property']);
 					}
 
 					$return .= '{';
@@ -195,7 +217,7 @@ if(!function_exists('zoomm_customizer_style_css')) {
 					if(array_key_exists('style', $val) && !empty($val['style'])) {
 						$return .= $val['style'] . ':';
 					} else {
-						error_log("Function: zoomm_customizer_style_css() - Array Key 'style' not defined for " . $val['property']);
+						error_log("Function: zoocommerce_customizer_style_css() - Array Key 'style' not defined for " . $val['property']);
 					}
 
 					if(array_key_exists('before_property', $val) && !empty($val['before_property'])) {
