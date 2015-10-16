@@ -135,6 +135,9 @@ echo '
 	//Big banner section
 	get_template_part( 'sections/big_banner' );
 
+
+	//Shop categories sections
+	get_template_part( 'sections/home_shop_categories' );
 ?>
 
 <div id="content" class="site-content">
