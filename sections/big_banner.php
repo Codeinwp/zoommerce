@@ -23,7 +23,7 @@
 		$zerif_bgsize = 'auto 100%';
 	endif;
 
-	$zerif_slide_style = 'background-repeat:no-repeat;background-position:'.$zerif_hpos.' '.$zerif_vpos.';background-size:'.$zerif_bgsize;
+	$zerif_slide_style = 'background-repeat:no-repeat;background-position:'.$zerif_hpos.' '.$zerif_vpos.';background-size:'.$zerif_bgsize.';';
 
 	echo '<div class="slide-item" style="background-image:url('.$zerif_background_image.');'.$zerif_slide_style.'"></div></div>';
 
