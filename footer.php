@@ -1,17 +1,11 @@
 <?php
 
 /**
-
  * The template for displaying the footer.
-
  *
-
  * Contains the closing of the #content div and all content after
-
  *
-
  * @package zerif
-
  */
 
 ?>
@@ -29,13 +23,13 @@
 		$footer_sections = 0;
 	
 		$zerif_address = get_theme_mod('zerif_address',__('San Francisco - Address - 128 California Street 3200.','zerif-lite'));
-		$zerif_address_icon = get_theme_mod('zerif_address_icon',get_stylesheet_directory_uri().'/images/icon-location.png');
+		$zerif_address_icon = get_theme_mod('zerif_address_icon',get_stylesheet_directory_uri().'/assets/images/icon-location.png');
 		
 		$zerif_email = get_theme_mod('zerif_email','<a href="mailto:friends@themeisle.com">friends@themeisle.com</a>');
-		$zerif_email_icon = get_theme_mod('zerif_email_icon',get_stylesheet_directory_uri().'/images/icon-address.png');
+		$zerif_email_icon = get_theme_mod('zerif_email_icon',get_stylesheet_directory_uri().'/assets/images/icon-address.png');
 		
 		$zerif_phone = get_theme_mod('zerif_phone','<a href="tel:0 332 548 954">0 332 548 954</a>');
-		$zerif_phone_icon = get_theme_mod('zerif_phone_icon',get_stylesheet_directory_uri().'/images/icon-contact.png');
+		$zerif_phone_icon = get_theme_mod('zerif_phone_icon',get_stylesheet_directory_uri().'/assets/images/icon-contact.png');
 		
 		$zerif_socials_facebook = get_theme_mod('zerif_socials_facebook','#');
 
