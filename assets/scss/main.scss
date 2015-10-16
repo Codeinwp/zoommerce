@@ -227,6 +227,10 @@ h1, h2, h3, h4, h5, h6 {
 		display: block;
 		background: #000;
 
+		&:hover a.link {
+			opacity: 0.8;
+		}
+
 		a.link {
 			display: block;
 			width: 100%;
@@ -234,9 +238,7 @@ h1, h2, h3, h4, h5, h6 {
 			@extend .bgcover;
 			position: absolute;
 
-			&:hover {
-				opacity: 0.6;
-			}
+			
 		}
 
 		h3 {
@@ -267,9 +269,13 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	.box {
-		width: 315px;
+		width: 316px;
 		float: left;
 		height: 260px;
+
+		h3 {
+			margin-top: 33px;
+		}
 	}
 }
 
