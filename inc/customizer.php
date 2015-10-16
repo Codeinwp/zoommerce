@@ -1,25 +1,17 @@
 <?php
 
 /**
-
  * zoocommerce Theme Customizer
-
  *
-
  * @package zerif
-
  */
 
 
 
 /**
-
  * Add postMessage support for site title and description for the Theme Customizer.
-
  *
-
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-
  */
 
 
@@ -231,7 +223,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( 'zerif_disable_smooth_scroll', array('sanitize_callback' => 'zerif_sanitize_text'));
 
 		/* zerif_logo */
-		$wp_customize->add_setting( 'zerif_logo', array('default' => get_stylesheet_directory_uri().'/images/logo.png'));
+		$wp_customize->add_setting( 'zerif_logo', array('default' => get_stylesheet_directory_uri().'/assets/images/logo.png'));
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
 				'label'    => __( 'Logo', 'zoocommerce' ),
@@ -846,7 +838,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			));
 			
 			/* My Account Icon */
-			$wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/images/menu-profile.png'));			
+			$wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-profile.png'));			
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myaccount_icon', array(
 	
@@ -871,7 +863,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			
 			
 			/* My Cart Icon */
-			$wp_customize->add_setting( 'cart_icon', array('default' => get_stylesheet_directory_uri().'/images/menu-cart.png'));			
+			$wp_customize->add_setting( 'cart_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-cart.png'));			
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cart_icon', array(
 	
@@ -902,7 +894,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			));
 			
 			/* My Account Icon */
-			$wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/images/menu-profile.png'));			
+			$wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-profile.png'));			
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myaccount_icon', array(
 	
@@ -927,7 +919,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			
 			
 			/* My Cart Icon */
-			$wp_customize->add_setting( 'cart_icon', array('default' => get_stylesheet_directory_uri().'/images/menu-cart.png'));			
+			$wp_customize->add_setting( 'cart_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-cart.png'));			
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cart_icon', array(
 	
@@ -1783,7 +1775,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		);
 
 		/* IMAGE 1*/
-		$wp_customize->add_setting( 'zerif_parallax_img1', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/background1.jpg'));
+		$wp_customize->add_setting( 'zerif_parallax_img1', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/assets/images/background1.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_parallax_img1', array(
 				'label'    	=> __( 'Parallax image 1', 'zerif' ),
 				'section'  	=> 'zerif_bigtitle_section',
@@ -1792,7 +1784,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		)));
 
 		/* IMAGE 2 */
-		$wp_customize->add_setting( 'zerif_parallax_img2', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/background2.png'));
+		$wp_customize->add_setting( 'zerif_parallax_img2', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/assets/images/background2.png'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_parallax_img2', array(
 				'label'    	=> __( 'Parallax image 2', 'zerif' ),
 				'section'  	=> 'zerif_bigtitle_section',
@@ -1963,7 +1955,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		));
 		
 		/* email - ICON */
-		$wp_customize->add_setting( 'zerif_email_icon', array('default' => get_stylesheet_directory_uri().'/images/icon-address.png'));			
+		$wp_customize->add_setting( 'zerif_email_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/icon-address.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_email_icon', array(
 
@@ -1996,7 +1988,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		
 
 		/* phone number - ICON */
-		$wp_customize->add_setting( 'zerif_phone_icon', array('default' => get_stylesheet_directory_uri().'/images/icon-contact.png'));			
+		$wp_customize->add_setting( 'zerif_phone_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/icon-contact.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_phone_icon', array(
 
@@ -2027,7 +2019,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		
 
 		/* address - ICON */
-		$wp_customize->add_setting( 'zerif_address_icon', array('default' => get_stylesheet_directory_uri().'/images/icon-location.png'));			
+		$wp_customize->add_setting( 'zerif_address_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/icon-location.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_address_icon', array(
 
@@ -2363,7 +2355,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		));
 		
 		/* email - ICON */
-		$wp_customize->add_setting( 'zerif_email_icon', array('default' => get_template_directory_uri().'/images/envelope4-green.png'));			
+		$wp_customize->add_setting( 'zerif_email_icon', array('default' => get_template_directory_uri().'/assets/images/envelope4-green.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_email_icon', array(
 
@@ -2391,7 +2383,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
         )) );
 
 		/* phone number - ICON */
-		$wp_customize->add_setting( 'zerif_phone_icon', array('default' => get_template_directory_uri().'/images/telephone65-blue.png'));			
+		$wp_customize->add_setting( 'zerif_phone_icon', array('default' => get_template_directory_uri().'/assets/images/telephone65-blue.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_phone_icon', array(
 
@@ -2418,7 +2410,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
         )) );
 
 		/* address - ICON */
-		$wp_customize->add_setting( 'zerif_address_icon', array('default' => get_template_directory_uri().'/images/map25-redish.png'));			
+		$wp_customize->add_setting( 'zerif_address_icon', array('default' => get_template_directory_uri().'/assets/images/map25-redish.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_address_icon', array(
 

@@ -224,7 +224,7 @@ if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_cus
 ?>
 
 <div class="down-arrow text-center">
-    <a href="#"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/arrow-down.png"></a>
+    <a href="#"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/arrow-down.png"></a>
 </div>
 
 </div><!--.home-header-wrap -->
