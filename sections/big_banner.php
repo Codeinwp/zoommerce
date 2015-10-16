@@ -1,4 +1,4 @@
-
+<div id="big-banner">
 <div class="home-header-wrap">
 
 <?php
@@ -122,3 +122,4 @@ if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_cus
 </div>
 
 </div><!--.home-header-wrap -->
+</div><!--/#big-banner-->
