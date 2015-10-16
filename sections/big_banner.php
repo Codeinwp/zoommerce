@@ -23,9 +23,9 @@
 		$zerif_bgsize = 'auto 100%';
 	endif;
 
-	$zerif_slide_style = 'background-repeat:no-repeat;background-position:'.$zerif_hpos.' '.$zerif_vpos.';background-size:'.$zerif_bgsize.';';
+	$zerif_slide_style = 'background-repeat:no-repeat;background-position:'.esc_attr($zerif_hpos).' '.esc_attr($zerif_vpos).';background-size:'.esc_attr($zerif_bgsize).';';
 
-	echo '<div class="slide-item" style="background-image:url('.$zerif_background_image.');'.$zerif_slide_style.'"></div></div>';
+	echo '<div class="slide-item" style="background-image:url('.esc_url($zerif_background_image).');'.$zerif_slide_style.'"></div></div>';
 
 $zerif_bigtitle_show = get_theme_mod('zerif_bigtitle_show');
 	
@@ -49,7 +49,7 @@ if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_cus
 		
 		if( !empty($zerif_subtitle) ):
 
-			echo '<h4 class="sub-text">'.$zerif_subtitle.'</h1>';
+			echo '<h4 class="sub-text">'.esc_html($zerif_subtitle).'</h1>';
 			
 		elseif ( isset( $wp_customize ) ):
 		
@@ -63,7 +63,7 @@ if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_cus
 		
 		if( !empty($zerif_bigtitle_title) ):
 
-			echo '<h1 class="intro-text">'.$zerif_bigtitle_title.'</h1>';
+			echo '<h1 class="intro-text">'.esc_html($zerif_bigtitle_title).'</h1>';
 			
 		elseif ( isset( $wp_customize ) ):
 		
@@ -88,7 +88,7 @@ if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_cus
 			
 				if (!empty($zerif_bigtitle_button_label) && !empty($zerif_bigtitle_button_url)):
 
-					echo '<a href="'.$zerif_bigtitle_button_url.'" class="btn btn-primary custom-button">'.$zerif_bigtitle_button_label.'</a>';
+					echo '<a href="'.esc_url($zerif_bigtitle_button_url).'" class="btn btn-primary custom-button">'.esc_html($zerif_bigtitle_button_label).'</a>';
 					
 				elseif ( isset( $wp_customize ) ):
 
