@@ -138,6 +138,9 @@ echo '
 
 	//Shop categories sections
 	get_template_part( 'sections/home_shop_categories' );
+
+	//Home Products Section
+	get_template_part( 'sections/home_products' );
 ?>
 
 <div id="content" class="site-content">
