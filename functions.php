@@ -26,20 +26,6 @@ function zoocommerce_enqueue_scripts() {
 }
 
 /**
- * Get text domain
- */
-if(!function_exists('zoocommerce_get_textdomain')) {
-	function zoocommerce_get_textdomain() {
-		$default_headers = array( 'td'  => 'Text Domain');
-		$text_domain = get_file_data(get_stylesheet_uri(), $default_headers );
-
-		if(array_key_exists('td', $text_domain)) {
-			return $text_domain['td'];
-		}
-	}
-}
-
-/**
  * Theme Setup
  */
 add_action( 'after_setup_theme', 'zoocommerce_setup' );
@@ -47,11 +33,9 @@ function zoocommerce_setup() {
 
 	// Add Theme Support
 	add_theme_support( 'title-tag' );
-	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-thumbnails' );
 
 	// Load Theme Textdomain
-	load_theme_textdomain( zoocommerce_get_textdomain(), get_template_directory() . '/languages' );
+	load_theme_textdomain( 'zoocommerce', get_template_directory() . '/languages' );
 
 	$locale = get_locale();
 	$locale_file = get_template_directory() . '/languages/$locale.php';
@@ -87,10 +71,10 @@ if(!function_exists('zoocommerce_tgm_activation')) {
 	        'is_automatic' => false,                 
 	        'message'      => '',     
 	        'strings'      => array(
-	            'page_title'                      => __( 'Install Required Plugins', zoocommerce_get_textdomain() ),
-	            'menu_title'                      => __( 'Install Plugins', zoocommerce_get_textdomain() ),
-	            'installing'                      => __( 'Installing Plugin: %s', zoocommerce_get_textdomain() ), 
-	            'oops'                            => __( 'Something went wrong with the plugin API.', zoocommerce_get_textdomain() ),
+	            'page_title'                      => __( 'Install Required Plugins', 'zoocommerce' ),
+	            'menu_title'                      => __( 'Install Plugins', 'zoocommerce' ),
+	            'installing'                      => __( 'Installing Plugin: %s', 'zoocommerce' ), 
+	            'oops'                            => __( 'Something went wrong with the plugin API.', 'zoocommerce' ),
 	            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
 	            'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
 	            'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ),
@@ -101,9 +85,9 @@ if(!function_exists('zoocommerce_tgm_activation')) {
 	            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), 
 	            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
 	            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins' ),
-	            'return'                          => __( 'Return to Required Plugins Installer', zoocommerce_get_textdomain() ),
-	            'plugin_activated'                => __( 'Plugin activated successfully.', zoocommerce_get_textdomain() ),
-	            'complete'                        => __( 'All plugins installed and activated successfully. %s', zoocommerce_get_textdomain() ), 
+	            'return'                          => __( 'Return to Required Plugins Installer', 'zoocommerce' ),
+	            'plugin_activated'                => __( 'Plugin activated successfully.', 'zoocommerce' ),
+	            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'zoocommerce' ), 
 	            'nag_type'                        => 'updated'
 	        )
 	    );

@@ -70,7 +70,7 @@
 				<div class="container">
 					<div class="navbar-header responsive-logo">
 						<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-							<span class="sr-only"><?php _e('Toggle navigation', zoocommerce_get_textdomain()); ?></span>
+							<span class="sr-only"><?php _e('Toggle navigation', 'zoocommerce'); ?></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -124,18 +124,13 @@
                             </li>
                         </ul>
                     </div>
-					<?php endif; 
-
-					//Check if menu exists
-					if(has_nav_menu('primary')):
-					?>
+					<?php endif; ?>
 
 					<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
 
 						<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right responsive-nav main-nav-list' ,'fallback_cb'     => 'zerif_wp_page_menu')); ?>  
 
 					</nav>
-					<?php endif; ?>
 				</div>
 
 			</div>

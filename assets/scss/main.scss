@@ -222,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
 	.tower,
 	.box {
 		border: 5px solid #fff;
-		background-position: center center;
+		
 		position: relative;
 		display: block;
 		background: #000;
@@ -236,9 +236,8 @@ h1, h2, h3, h4, h5, h6 {
 			width: 100%;
 			height: 100%;
 			@extend .bgcover;
+			background-position: center center;
 			position: absolute;
-
-			
 		}
 
 		h3 {
@@ -259,22 +258,45 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	.tower {
-		width: 320px;
+		width: 33.33%;
 		float: left;
 		height: 520px;
 
 		h3 {
 			bottom: 50px;
 		}
+
+		&.thirds {
+			width: 476px;
+		}
+
+		&.alignright {
+			float: right;
+			margin: 0;
+		}
 	}
 
 	.box {
-		width: 316px;
+		width: 33.33%;
 		float: left;
 		height: 260px;
 
 		h3 {
 			margin-top: 33px;
+		}
+
+		&.full {
+			width: 100%;
+			height: 320px;
+		}
+
+		&.half {
+			width: 50%;
+			height: 320px;
+		}
+
+		&.thirds {
+			width: 474px;
 		}
 	}
 }
