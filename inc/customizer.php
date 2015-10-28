@@ -190,26 +190,20 @@ require_once ( 'class/parallax_one_general_repeater.php');
  * General Customizer fields 
  */
 
-$wp_customize->add_panel( 'home_shop_categories_panel', array(
-	'priority' => 150,
-	'title' => __( 'Home Shop Categories', 'zerif' )
-) );
 
-$wp_customize->add_section( 'shop_cats' , array(
-	'title'		=> __( 'Shop Categories', 'cubana' ),
-	'panel'		=> 'home_shop_categories_panel',
-	'priority'	=> 1
+$wp_customize->add_section( 'home_categories' , array(
+	'title'		=> __( 'Shop Categories', 'zoocommerce' ),
+	'priority'	=> 31
 ) );
 
 $wp_customize->add_setting( 'parallax_one_logos_content', array(
-	'sanitize_callback' => 'parallax_one_sanitize_text',
+	'sanitize_callback' => 'zerif_sanitize_text',
 	'default' => json_encode(array())
-
 ));
 
 $wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_logos_content', array(
 	'label'   => esc_html__('Add new category','parallax-one'),
-	'section' => 'shop_cats',
+	'section' => 'home_categories',
 	'priority' => 1,
     'parallax_image_control' => false,
     'parallax_icon_control' => false,
@@ -217,6 +211,35 @@ $wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'p
     'parallax_shop_categories' => true,
     'parallax_link_control' => false
 ) ) );
+
+$wp_customize->add_section( 'home_latest_products' , array(
+	'title'		=> __( 'Home latest products', 'zoocommerce' ),
+	'priority'	=> 31
+) );
+$wp_customize->add_setting( 'latest_products_wide_image', array('default' => 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e666bd30685839.562e97f59fde8.jpg'));
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'latest_products_wide_image', array(
+		'label'    => __( 'Latest Products Large Image', 'zoocommerce' ),
+		'section'  => 'home_latest_products',
+		'settings' => 'latest_products_wide_image',
+		'priority'    => 1,
+)));
+
+$wp_customize->add_setting( 'latest_products_count', array('sanitize_callback' => 'zerif_sanitize_number','default' => 3));
+$wp_customize->add_control( 'latest_products_count', array(
+		'label'    => __( 'Right products count', 'zoocommerce' ),
+		'section'  => 'home_latest_products',
+		'settings' => 'latest_products_count',
+		'priority'    => 2,
+));
+
+$wp_customize->add_setting( 'latest_products_count_wide', array('sanitize_callback' => 'zerif_sanitize_number','default' => 6));
+$wp_customize->add_control( 'latest_products_count_wide', array(
+		'label'    => __( 'Wide products count ( no right image )', 'zoocommerce' ),
+		'section'  => 'home_latest_products',
+		'settings' => 'latest_products_count_wide',
+		'priority'    => 2,
+));
+
 
 	if ( class_exists( 'WP_Customize_Panel' ) ):		
 		
