@@ -23,6 +23,25 @@ jQuery(document).ready(function($) {
 		$(target).css('height', $(window).height() - $('header#home').height() - 32);
 	}
 
+	function zoocommerce_height_match(target) {
+		$(target).css('height', 'inherit');
+
+		var allHeights = [],
+		    maxHeight = '';
+		    
+		    $(target).each(function() {
+		        var heights = $(this).height();
+
+		        allHeights.push(heights);
+		        maxHeight = Math.max.apply(null, allHeights);
+		    });
+		    
+		    $(target).css("height", maxHeight);
+	}
+
+	/*
+	* Run functions on resize and load to avoid bugs 
+	*/
 	$(window).resize(function() {
 		
 		//Add height on big banner
@@ -30,8 +49,17 @@ jQuery(document).ready(function($) {
 
 		//Center vertically the big banner content 
 		zoocommerce_verticall_align('.header-content-wrap', '#big-banner');
-		
+
+		//Home products height match
+		zoocommerce_height_match('#home_products .product');
+
+		/*
+		* Home - Add height on products right image
+		*/
+		$('#home_products .right').css('height', $('#home_products .left').outerHeight());
 	}).trigger('resize');
+
+
 	
 	
 });

@@ -184,7 +184,40 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	/************** GENERAL OPTIONS  ***************/
 
 	/***********************************************/
-	
+require_once ( 'class/parallax_one_general_repeater.php');
+
+/**
+ * General Customizer fields 
+ */
+
+$wp_customize->add_panel( 'home_shop_categories_panel', array(
+	'priority' => 150,
+	'title' => __( 'Home Shop Categories', 'zerif' )
+) );
+
+$wp_customize->add_section( 'shop_cats' , array(
+	'title'		=> __( 'Shop Categories', 'cubana' ),
+	'panel'		=> 'home_shop_categories_panel',
+	'priority'	=> 1
+) );
+
+$wp_customize->add_setting( 'parallax_one_logos_content', array(
+	'sanitize_callback' => 'parallax_one_sanitize_text',
+	'default' => json_encode(array())
+
+));
+
+$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_logos_content', array(
+	'label'   => esc_html__('Add new category','parallax-one'),
+	'section' => 'shop_cats',
+	'priority' => 1,
+    'parallax_image_control' => false,
+    'parallax_icon_control' => false,
+    'parallax_text_control' => false,
+    'parallax_shop_categories' => true,
+    'parallax_link_control' => false
+) ) );
+
 	if ( class_exists( 'WP_Customize_Panel' ) ):		
 		
 		
@@ -2310,13 +2343,10 @@ function zerif_sanitize_number( $input ) {
 
 
 function zerif_registers() {
-
     wp_enqueue_script( 'zerif_jquery_ui', '//code.jquery.com/ui/1.10.4/jquery-ui.js', array("jquery"), '20120206', true  );
-
 	wp_enqueue_style( 'zerif_jquery_ui_css', '//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css');	
-
+	wp_enqueue_script( 'parallax_one_customizer_script', get_stylesheet_directory_uri() . '/assets/js/parallax_one_customizer.js', array("jquery","jquery-ui-draggable"),'1.0.0', true  );
 	wp_enqueue_script( 'zerif_customizer_script', get_template_directory_uri() . '/js/zerif_customizer.js', array("jquery","zerif_jquery_ui"), '20120206', true  );
-
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'zerif_registers' );
