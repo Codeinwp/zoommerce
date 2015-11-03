@@ -184,7 +184,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	/************** GENERAL OPTIONS  ***************/
 
 	/***********************************************/
-require_once ( 'class/parallax_one_general_repeater.php');
+require_once ( 'class/parallax_one_general_control.php');
 
 /**
  * General Customizer fields 
@@ -196,26 +196,41 @@ $wp_customize->add_section( 'home_categories' , array(
 	'priority'	=> 31
 ) );
 
-$wp_customize->add_setting( 'parallax_one_logos_content', array(
-	'sanitize_callback' => 'zerif_sanitize_text',
-	'default' => json_encode(array())
+$wp_customize->add_setting( 'customizer_shop_cats', array(
+	'sanitize_callback' => 'parallax_one_sanitize_repeater',
 ));
-
-$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_logos_content', array(
-	'label'   => esc_html__('Add new category','parallax-one'),
+$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'customizer_shop_cats', array(
+	'label'   => esc_html__('Add new shop category','parallax-one'),
 	'section' => 'home_categories',
 	'priority' => 1,
     'parallax_image_control' => false,
     'parallax_icon_control' => false,
     'parallax_text_control' => false,
-    'parallax_shop_categories' => true,
-    'parallax_link_control' => false
+    'parallax_link_control' => false,
+    'parallax_dropdown_categories' => true
 ) ) );
+
+$wp_customize->add_setting( 'zoocommerce_display_latest_cats', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 1));
+$wp_customize->add_control(
+		'zoocommerce_display_latest_cats',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Disable latest shop categories?','zoocommerce'),
+			'description' => __('If you check this box, the latest five shop categories will display on index, to use the custom selector please uncheck this box.','zoocommerce'),
+			'section' 	=> 'home_categories',
+			'priority'	=> 2,
+		)
+);
+
+
+
+
 
 $wp_customize->add_section( 'home_latest_products' , array(
 	'title'		=> __( 'Home latest products', 'zoocommerce' ),
 	'priority'	=> 31
 ) );
+
 $wp_customize->add_setting( 'latest_products_wide_image', array('default' => 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e666bd30685839.562e97f59fde8.jpg'));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'latest_products_wide_image', array(
 		'label'    => __( 'Latest Products Large Image', 'zoocommerce' ),
@@ -2368,8 +2383,8 @@ function zerif_sanitize_number( $input ) {
 function zerif_registers() {
     wp_enqueue_script( 'zerif_jquery_ui', '//code.jquery.com/ui/1.10.4/jquery-ui.js', array("jquery"), '20120206', true  );
 	wp_enqueue_style( 'zerif_jquery_ui_css', '//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css');	
-	wp_enqueue_script( 'parallax_one_customizer_script', get_stylesheet_directory_uri() . '/assets/js/parallax_one_customizer.js', array("jquery","jquery-ui-draggable"),'1.0.0', true  );
 	wp_enqueue_script( 'zerif_customizer_script', get_template_directory_uri() . '/js/zerif_customizer.js', array("jquery","zerif_jquery_ui"), '20120206', true  );
+	wp_enqueue_style( 'zoocommerce_customizer_style', get_stylesheet_directory_uri() . '/assets/css/admin-style.css');
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'zerif_registers' );

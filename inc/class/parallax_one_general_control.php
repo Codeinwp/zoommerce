@@ -54,14 +54,13 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
             } else {
                 $parallax_link_control = false;
             }
-            if(!empty($options['parallax_shop_categories'])){
-                $parallax_shop_categories = $options['parallax_shop_categories'];
+
+            if(!empty($options['parallax_dropdown_categories'])){
+                $parallax_dropdown_categories = $options['parallax_dropdown_categories'];
                 $wooc_terms = get_terms(array('product_cat'), array('fields' => 'id=>name'));
             } else {
-                $parallax_shop_categories = false;
+                $parallax_dropdown_categories = false;
             }
-
-
  ?>
 
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
@@ -71,7 +70,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                         
                 ?>
                         <div class="parallax_one_general_control_repeater_container">
-                            <div class="parallax-customize-control-title"><?php esc_html_e('Home Shop Category','parallax-one')?></div>
+                            <div class="parallax-customize-control-title"><?php esc_html_e('Zoocommerce','parallax-one')?></div>
                             <div class="parallax-box-content-hidden">
                                 <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
@@ -100,7 +99,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         </div>
                                 <?php
                                     } else {
-                                        if($parallax_image_control ==true){	?>
+                                        if($parallax_image_control ==true){ ?>
                                             <span class="customize-control-title"><?php esc_html_e('Image','parallax-one')?></span>
                                             <p class="parallax_one_image_control">
                                                 <input type="text" class="widefat custom_media_url">
@@ -136,6 +135,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                 <?php
                                     }
  
+
                                     if($parallax_text_control==true){?>
                                         <span class="customize-control-title"><?php esc_html_e('Text','parallax-one')?></span>
                                         <textarea class="parallax_one_text_control" placeholder="<?php esc_html_e('Text','parallax-one'); ?>"></textarea>
@@ -146,17 +146,25 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         <input type="text" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
                                 <?php } 
 
-                                    if($parallax_shop_categories ==true){
+
+
+
+                                if($parallax_dropdown_categories ==true){
                                 ?>
-                                    <span class="customize-control-title"><?php esc_html_e('WooCommerce Categories','parallax-one')?></span>
-                                    <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
-                                        <?php
-                                            foreach($wooc_terms as $id => $cat) {
-                                                echo '<option value="'.esc_attr($id).'">'.esc_attr($cat).'</option>';
-                                            }
-                                        ?>
-                                    </select>
+                                            <span class="customize-control-title"><?php esc_html_e('Shop Category','parallax-one')?></span>
+                                            <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
+                                                <?php
+                                                    foreach($wooc_terms as $key => $term) {
+                                                        echo '<option value="'.esc_attr($key).'">'.esc_attr($term).'</option>';
+                                                    }
+                                                ?>
+                                            </select>
                                 <?php   } ?>
+
+
+
+
+                                <input type="hidden" class="parallax_one_box_id">
                             <button type="button" class="parallax_one_general_control_remove_field button" style="display:none;"><?php esc_html_e('Delete field','parallax-one'); ?></button>
                             </div>
                         </div>
@@ -167,7 +175,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                              
                 ?>
                                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
-                                    <div class="parallax-customize-control-title"><?php esc_html_e('Parallax One','parallax-one')?></div>
+                                    <div class="parallax-customize-control-title"><?php esc_html_e('Zoocommerce','parallax-one')?></div>
                                     <div class="parallax-box-content-hidden">
                                          <?php
                                             if($parallax_image_control == true && $parallax_icon_control == true){ ?>
@@ -198,15 +206,16 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         <?php
                                             } else {
                                         ?>
-                                        <?php	if($parallax_image_control==true){ ?>
+                                        <?php   if($parallax_image_control==true){ ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Image','parallax-one')?></span>
                                                     <p class="parallax_one_image_control">
                                                         <input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
                                                         <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
                                                     </p>
-                                        <?php	}
+                                        <?php   }
 
                                                 if($parallax_icon_control==true){ ?>
+                                                    <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one')?></span>
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                         <?php
                                                             foreach($icons_array as $contact_icon) {
@@ -234,21 +243,41 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                                 if($parallax_text_control==true){ ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Text','parallax-one')?></span>
                                                     <textarea placeholder="<?php esc_html_e('Text','parallax-one'); ?>" class="parallax_one_text_control"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
-                                        <?php	}
+                                        <?php   }
                                                 if($parallax_link_control){ ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
                                                     <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
-                                        <?php	}
-                                                if($parallax_shop_categories==true){ ?>
+                                        <?php   }
+
+
+
+
+
+
+
+
+
+
+                                        if($parallax_dropdown_categories==true){ ?>
+                                                    <span class="customize-control-title"><?php esc_html_e('Shop Category','parallax-one')?></span>
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                         <?php
-                                                            foreach($wocc_terms as $id => $cat) {
-                                                                echo '<option value="'.esc_attr($id).'" '.selected($id).'">'.esc_attr($cat).'</option>';
+                                                            foreach($wooc_terms as $key => $term) {
+                                                                echo '<option value="'.esc_attr($key).'" '.selected($icon->icon_value,$key).'">'.esc_attr($term).'</option>';
                                                             }
                                                         ?>
                                                     </select>
-                                        <?php
-                                                }?>
+                                        <?php } ?>
+
+
+
+
+
+
+
+
+
+                                        <input type="hidden" class="parallax_one_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
                                     <button type="button" class="parallax_one_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','parallax-one'); ?></button>
                                     </div>
 
@@ -261,7 +290,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                             foreach($json as $icon){
                     ?>
                                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
-                                    <div class="parallax-customize-control-title"><?php esc_html_e('Parallax One','parallax-one')?></div>
+                                    <div class="parallax-customize-control-title"><?php esc_html_e('Zoocommerce','parallax-one')?></div>
                                     <div class="parallax-box-content-hidden">
                                     <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
@@ -337,17 +366,24 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                             <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
                                         <?php } 
 
-                                        if($parallax_shop_categories==true){ ?>
-                                                <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
-                                                <?php
-                                                    foreach($wooc_terms as $id => $cat) {
-                                                        echo '<option value="'.esc_attr($id).'" '.selected($id).'">'.esc_attr($cat).'</option>';
-                                                    }
-                                                ?>
-                                                </select>
-                                        <?php
-                                            } ?>
 
+
+
+                                        if($parallax_dropdown_categories==true){ ?>
+                                                    <span class="customize-control-title"><?php esc_html_e('Shop Category','parallax-one')?></span>
+                                                    <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
+                                                        <?php
+                                                            foreach($wooc_terms as $key => $term) {
+                                                                echo '<option value="'.esc_attr($key).'" '.selected($icon->icon_value,$key).'">'.esc_attr($term).'</option>';
+                                                            }
+                                                        ?>
+                                                    </select>
+                                        <?php } ?>
+
+
+
+
+                                        <input type="hidden" class="parallax_one_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
                                         <button type="button" class="parallax_one_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','parallax-one'); ?></button>
                                     </div>
 
@@ -362,7 +398,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                      
                 ?>
                     <input type="hidden" id="parallax_one_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="parallax_one_repeater_colector" value="<?php  echo esc_textarea( json_encode($this_default )); ?>" />
-            <?php } else {	?>
+            <?php } else {  ?>
                     <input type="hidden" id="parallax_one_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="parallax_one_repeater_colector" value="<?php echo esc_textarea( $this->value() ); ?>" />
             <?php } ?>
             </div>

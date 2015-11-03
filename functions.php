@@ -23,7 +23,59 @@ function zoocommerce_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'zoocommerce_enqueue_scripts' );
 function zoocommerce_enqueue_scripts() {
   	wp_enqueue_script( 'zoocommerce_scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array(), '1.0', true );
+  	wp_enqueue_script( 'zoocommerce_scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array(), '1.0', true );
 }
+
+function parallax_one_customizer_script() {
+	wp_enqueue_script( 'parallax_one_customizer_script', parallax_get_file('/assets/js/parallax_one_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
+}
+add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_script' );
+
+function parallax_get_file($file){
+	$file_parts = pathinfo($file);
+	$accepted_ext = array('jpg','img','png','css','js');
+	if( in_array($file_parts['extension'], $accepted_ext) ){
+		$file_path = get_stylesheet_directory() . $file;
+		if ( file_exists( $file_path ) ){
+			return esc_url(get_stylesheet_directory_uri() . $file); 
+		} else {
+			return esc_url(get_template_directory_uri() . $file);
+		}
+	}
+}
+
+function parallax_one_sanitize_repeater($input){
+	$input_decoded = json_decode($input,true);
+	$allowed_html = array(
+		'br' => array(),
+		'em' => array(),
+		'strong' => array(),
+		'a' => array(
+			'href' => array(),
+			'class' => array(),
+			'id' => array(),
+			'target' => array()
+		),
+		'button' => array(
+			'class' => array(),
+			'id' => array()
+		)
+	);
+	foreach ($input_decoded as $boxk => $box ){
+		foreach ($box as $key => $value){
+			if ($key == 'text'){
+				$input_decoded[$boxk][$key] = wp_kses($value, $allowed_html);
+				
+			} else {
+				$input_decoded[$boxk][$key] = wp_kses_post( force_balance_tags( $value ) );
+			}
+			
+		}
+	}
+	
+	return json_encode($input_decoded);
+}
+
 
 /**
  * Theme Setup
