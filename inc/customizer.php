@@ -222,10 +222,35 @@ $wp_customize->add_control(
 		)
 );
 
+/**
+ * Home: Subscribe section
+ */
+$wp_customize->add_section( 'home_subscribe_section' , array(
+	'title'		=> __( 'Home Subscribe Section', 'zoocommerce' ),
+	'priority'	=> 31
+) );
 
 
+$wp_customize->add_setting( 'latest_subscribe_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Newsletter Subscribtion', 'zoocommerce')));
+$wp_customize->add_control( 'latest_subscribe_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_subscribe_section',
+		'settings' => 'latest_subscribe_headline',
+		'priority'    => 2,
+));
+
+$wp_customize->add_setting( 'latest_subscribe_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce')));
+$wp_customize->add_control( 'latest_subscribe_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_subscribe_section',
+		'settings' => 'latest_subscribe_subheading',
+		'priority'    => 3,
+));
 
 
+/**
+ * Home: Latest Products section
+ */
 $wp_customize->add_section( 'home_latest_products' , array(
 	'title'		=> __( 'Home latest products', 'zoocommerce' ),
 	'priority'	=> 31
