@@ -135,12 +135,17 @@ echo '
 	//Big banner section
 	get_template_part( 'sections/big_banner' );
 
+	if(zoocommerce_is_woocommerce_activated()) {
+		
+		//Shop categories sections
+		get_template_part( 'sections/home_shop_categories' );
 
-	//Shop categories sections
-	get_template_part( 'sections/home_shop_categories' );
+		//Home Products Section
+		get_template_part( 'sections/home_products' );
 
-	//Home Products Section
-	get_template_part( 'sections/home_products' );
+	} else {
+		echo '<p style="margin: 20px;">'. __('Please install WooCommerce plugin in order to display the shop categories section and latest producs section', 'zoocommerce'). '</p>';
+	}
 ?>
 
 <div id="content" class="site-content">
