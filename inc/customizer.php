@@ -239,20 +239,29 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'late
 		'priority'    => 1,
 )));
 
+$wp_customize->add_setting( 'latest_products_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('New Arrivals', 'zoocommerce')));
+$wp_customize->add_control( 'latest_products_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_latest_products',
+		'settings' => 'latest_products_headline',
+		'priority'    => 2,
+));
+
+$wp_customize->add_setting( 'latest_products_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Check out our latest products', 'zoocommerce')));
+$wp_customize->add_control( 'latest_products_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_latest_products',
+		'settings' => 'latest_products_subheading',
+		'priority'    => 3,
+));
+
+
 $wp_customize->add_setting( 'latest_products_count', array('sanitize_callback' => 'zerif_sanitize_number','default' => 3));
 $wp_customize->add_control( 'latest_products_count', array(
 		'label'    => __( 'Right products count', 'zoocommerce' ),
 		'section'  => 'home_latest_products',
 		'settings' => 'latest_products_count',
-		'priority'    => 2,
-));
-
-$wp_customize->add_setting( 'latest_products_count_wide', array('sanitize_callback' => 'zerif_sanitize_number','default' => 6));
-$wp_customize->add_control( 'latest_products_count_wide', array(
-		'label'    => __( 'Wide products count ( no right image )', 'zoocommerce' ),
-		'section'  => 'home_latest_products',
-		'settings' => 'latest_products_count_wide',
-		'priority'    => 2,
+		'priority'    => 4,
 ));
 
 

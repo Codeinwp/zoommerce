@@ -146,6 +146,9 @@ echo '
 	} else {
 		echo '<p style="margin: 20px;">'. __('Please install WooCommerce plugin in order to display the shop categories section and latest producs section', 'zoocommerce'). '</p>';
 	}
+
+	//Home newsletter section
+	get_template_part( 'sections/home_newsletter' );
 ?>
 
 <div id="content" class="site-content">

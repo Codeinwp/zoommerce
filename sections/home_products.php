@@ -5,28 +5,29 @@ $right_image = get_theme_mod('latest_products_wide_image', 'https://mir-s3-cdn-c
 
 //Products count
 $prod_count = get_theme_mod('latest_products_count', 3);
-$prod_count_wide = get_theme_mod('latest_products_count_wide', 6);
-$prod_count_final = '';
-
-if(!$right_image) {
-	$prod_count_final = $prod_count_wide;
-} else{
-	$prod_count_final = $prod_count;
-}
 
 //Products loop
 $products_args = array(
 	'post_type' => 'product',
-	'posts_per_page' => $prod_count_final
+	'posts_per_page' => $prod_count
 );
 $products_loop = new WP_Query( $products_args );
 
 ?>
 <section id="home_products">
 	<div class="left" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
-		<div class="headline">
-			<h3><?php _e('New Arrivals', 'zoocommerce'); ?></h3>
-			<h4><?php _e('Check out our latest products', 'zoocommerce'); ?></h4>
+		<div class="home_headline">
+			<?php
+
+				if(get_theme_mod('latest_products_headline', 'New Arrivals')) {
+					echo '<h3>'.esc_html(get_theme_mod('latest_products_headline', 'New Arrivals')).'</h3>';
+				}
+
+				if(get_theme_mod('latest_products_subheading', 'Check out our latest products')) {
+					echo '<h4>'.esc_html(get_theme_mod('latest_products_subheading', 'Check out our latest products')).'</h4>';
+				}
+
+			?>
 		</div><!-- / .headline -->
 		<ul>
 		<?php

@@ -304,6 +304,26 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
 
+.home_headline {
+	width: 100%;
+	margin: 45px 0 0 20px;
+	text-align: center;
+	text-transform: uppercase;
+
+	h3 {
+		font-family: 'allerbold';
+		font-size: 30px;
+		margin-bottom: 5px;
+	}
+
+	h4 {
+		font-family: 'aller_lightregular';
+		font-size: 18px;
+		color: #e52424;
+		margin-top: 0;
+	}
+}
+
 
 #home_products {
 	width: 100%;
@@ -325,26 +345,6 @@ h1, h2, h3, h4, h5, h6 {
 		@extend .bgcover;
 		height: 100%;
 		background-position: center center;
-	}
-
-	.headline {
-		width: 100%;
-		margin: 45px 0 0 20px;
-		text-align: center;
-		text-transform: uppercase;
-
-		h3 {
-			font-family: 'allerbold';
-			font-size: 30px;
-			margin-bottom: 5px;
-		}
-
-		h4 {
-			font-family: 'aller_lightregular';
-			font-size: 18px;
-			color: #e52424;
-			margin-top: 0;
-		}
 	}
 	
 	ul {
