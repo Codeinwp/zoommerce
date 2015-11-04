@@ -105,26 +105,29 @@
 						$zoocommerce_cart_link = get_theme_mod('cart_link');	
 						
 					//Check if links are active and display the box
-					if(!empty($zoocommerce_cart_link) or !empty($zoocommerce_myaccount_link)): ?>
-                    <div class="menu-icons">
-                        <ul id="icons-menu">
-                            <li class="menu-item"> 
-                            	<?php if(!empty($zoocommerce_myaccount) && !empty($zoocommerce_myaccount_link)): ?>
-                                <a href="<?php echo esc_url($zoocommerce_myaccount_link); ?>">
-                                    <img src="<?php echo esc_url($zoocommerce_myaccount); ?>">
-                                </a> 
-                                <?php endif; ?>
-                            </li>
-                            <li class="menu-item"> 
-                            	<?php if(!empty($zoocommerce_cart) && !empty($zoocommerce_cart_link)): ?>
-                                <a href="<?php echo esc_url($zoocommerce_cart_link); ?>">
-                                    <img src="<?php echo esc_url($zoocommerce_cart); ?>">
-                                </a> 
-                                <?php endif; ?>
-                            </li>
-                        </ul>
-                    </div>
-					<?php endif; ?>
+					if(zoocommerce_is_woocommerce_activated()):
+
+						if(!empty($zoocommerce_cart_link) or !empty($zoocommerce_myaccount_link)): ?>
+	                    <div class="menu-icons">
+	                        <ul id="icons-menu">
+	                            <li class="menu-item"> 
+	                            	<?php if(!empty($zoocommerce_myaccount) && !empty($zoocommerce_myaccount_link)): ?>
+	                                <a href="<?php echo esc_url($zoocommerce_myaccount_link); ?>">
+	                                    <img src="<?php echo esc_url($zoocommerce_myaccount); ?>">
+	                                </a> 
+	                                <?php endif; ?>
+	                            </li>
+	                            <li class="menu-item"> 
+	                            	<?php if(!empty($zoocommerce_cart) && !empty($zoocommerce_cart_link)): ?>
+	                                <a href="<?php echo esc_url($zoocommerce_cart_link); ?>">
+	                                    <img src="<?php echo esc_url($zoocommerce_cart); ?>">
+	                                </a> 
+	                                <?php endif; ?>
+	                            </li>
+	                        </ul>
+	                    </div>
+						<?php endif; 
+					endif; ?>
 
 					<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
 
