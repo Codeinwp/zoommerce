@@ -197,7 +197,7 @@ $wp_customize->add_section( 'home_categories' , array(
 ) );
 
 $wp_customize->add_setting( 'customizer_shop_cats', array(
-	'sanitize_callback' => 'parallax_one_sanitize_repeater',
+	'sanitize_callback' => 'zoocommerce_sanitize_repeater',
 ));
 $wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'customizer_shop_cats', array(
 	'label'   => esc_html__('Add new shop category','parallax-one'),

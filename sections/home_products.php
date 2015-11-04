@@ -28,7 +28,7 @@ $products_loop = new WP_Query( $products_args );
 			<h3><?php _e('New Arrivals', 'zoocommerce'); ?></h3>
 			<h4><?php _e('Check out our latest products', 'zoocommerce'); ?></h4>
 		</div><!-- / .headline -->
-
+		<ul>
 		<?php
 		
 		if ( $products_loop->have_posts() ) {
@@ -41,7 +41,7 @@ $products_loop = new WP_Query( $products_args );
 		wp_reset_postdata();
 
 		?>
-	
+		</ul>
 		<div class="clearfix"></div><!-- / .clearfix -->
 		<a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="viewallproducts"><?php _e('view all products', 'zoocommerce'); ?></a>
 	</div><!-- / .left -->
