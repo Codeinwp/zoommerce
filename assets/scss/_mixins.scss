@@ -1,0 +1,61 @@
+@mixin transition($what: all, $time: 0.3s) {
+	-webkit-transition: $what $time;
+	transition: $what $time;
+}
+
+@mixin transitiond($val: 1s) {
+	-webkit-transition-delay: $val;
+	transition-delay: $val;
+}
+
+@mixin bgcover() {
+	-webkit-background-size: cover !important;
+  	-moz-background-size: cover !important;
+  	-ms-background-size: cover !important;
+  	-o-background-size: cover !important;
+  	background-size: cover !important;
+}
+
+@mixin boxsizing($what: border-box) {
+    box-sizing: border-box !important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing:  border-box !important;
+}
+
+@mixin placeholder($color) {
+	&::-webkit-input-placeholder {
+	   color: $color;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+	   color: $color;  
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: $color;  
+	}
+
+	&:-ms-input-placeholder {  
+	   color: $color;  
+	}
+}
+
+@mixin cubanoregular() {
+    font-family: 'cubanoregular', sans-serif;
+}
+
+.cubanoregular{
+	@include cubanoregular();
+}
+
+.borderbox {
+	@include boxsizing();
+}
+
+.transition {
+	@include transition();
+}
+
+.bgcover {
+	@include bgcover();
+}

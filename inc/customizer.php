@@ -1,25 +1,17 @@
 <?php
 
 /**
-
  * zoocommerce Theme Customizer
-
  *
-
  * @package zerif
-
  */
 
 
 
 /**
-
  * Add postMessage support for site title and description for the Theme Customizer.
-
  *
-
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-
  */
 
 
@@ -192,7 +184,136 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	/************** GENERAL OPTIONS  ***************/
 
 	/***********************************************/
-	
+require_once ( 'class/parallax_one_general_control.php');
+
+/**
+ * General Customizer fields 
+ */
+
+$wp_customize->add_section( 'home_categories' , array(
+	'title'		=> __( 'Shop Categories', 'zoocommerce' ),
+	'priority'	=> 31
+) );
+
+$wp_customize->add_setting( 'customizer_shop_cats', array(
+	'sanitize_callback' => 'zoocommerce_sanitize_repeater',
+));
+$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'customizer_shop_cats', array(
+	'label'   => esc_html__('Add new shop category','parallax-one'),
+	'section' => 'home_categories',
+	'priority' => 1,
+    'parallax_image_control' => false,
+    'parallax_icon_control' => false,
+    'parallax_text_control' => false,
+    'parallax_link_control' => false,
+    'parallax_dropdown_categories' => true
+) ) );
+
+$wp_customize->add_setting( 'zoocommerce_display_latest_cats', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 1));
+$wp_customize->add_control(
+		'zoocommerce_display_latest_cats',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Disable latest shop categories?','zoocommerce'),
+			'description' => __('If you check this box, the latest five shop categories will display on index, to use the custom selector please uncheck this box.','zoocommerce'),
+			'section' 	=> 'home_categories',
+			'priority'	=> 2,
+		)
+);
+
+/**
+ * Home: Testimonials section
+ */
+$wp_customize->add_section( 'home_testimonials_section' , array(
+	'title'		=> __( 'Home Testimonials Section', 'zoocommerce' ),
+	'priority'	=> 31
+) );
+
+
+$wp_customize->add_setting( 'latest_testimonials_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Testimonials', 'zoocommerce')));
+$wp_customize->add_control( 'latest_testimonials_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_testimonials_section',
+		'settings' => 'latest_testimonials_headline',
+		'priority'    => 1,
+));
+
+$wp_customize->add_setting( 'latest_testimonials_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce')));
+$wp_customize->add_control( 'latest_testimonials_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_testimonials_section',
+		'settings' => 'latest_testimonials_subheading',
+		'priority'    => 2,
+));
+
+/**
+ * Home: Subscribe section
+ */
+$wp_customize->add_section( 'home_subscribe_section' , array(
+	'title'		=> __( 'Home Subscribe Section', 'zoocommerce' ),
+	'priority'	=> 31
+) );
+
+
+$wp_customize->add_setting( 'latest_subscribe_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Newsletter Subscribtion', 'zoocommerce')));
+$wp_customize->add_control( 'latest_subscribe_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_subscribe_section',
+		'settings' => 'latest_subscribe_headline',
+		'priority'    => 1,
+));
+
+$wp_customize->add_setting( 'latest_subscribe_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce')));
+$wp_customize->add_control( 'latest_subscribe_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_subscribe_section',
+		'settings' => 'latest_subscribe_subheading',
+		'priority'    => 2,
+));
+
+
+/**
+ * Home: Latest Products section
+ */
+$wp_customize->add_section( 'home_latest_products' , array(
+	'title'		=> __( 'Home latest products', 'zoocommerce' ),
+	'priority'	=> 31
+) );
+
+$wp_customize->add_setting( 'latest_products_wide_image', array('default' => 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e666bd30685839.562e97f59fde8.jpg'));
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'latest_products_wide_image', array(
+		'label'    => __( 'Latest Products Large Image', 'zoocommerce' ),
+		'section'  => 'home_latest_products',
+		'settings' => 'latest_products_wide_image',
+		'priority'    => 1,
+)));
+
+$wp_customize->add_setting( 'latest_products_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('New Arrivals', 'zoocommerce')));
+$wp_customize->add_control( 'latest_products_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_latest_products',
+		'settings' => 'latest_products_headline',
+		'priority'    => 2,
+));
+
+$wp_customize->add_setting( 'latest_products_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Check out our latest products', 'zoocommerce')));
+$wp_customize->add_control( 'latest_products_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_latest_products',
+		'settings' => 'latest_products_subheading',
+		'priority'    => 3,
+));
+
+
+$wp_customize->add_setting( 'latest_products_count', array('sanitize_callback' => 'zerif_sanitize_number','default' => 3));
+$wp_customize->add_control( 'latest_products_count', array(
+		'label'    => __( 'Right products count', 'zoocommerce' ),
+		'section'  => 'home_latest_products',
+		'settings' => 'latest_products_count',
+		'priority'    => 4,
+));
+
+
 	if ( class_exists( 'WP_Customize_Panel' ) ):		
 		
 		
@@ -231,7 +352,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( 'zerif_disable_smooth_scroll', array('sanitize_callback' => 'zerif_sanitize_text'));
 
 		/* zerif_logo */
-		$wp_customize->add_setting( 'zerif_logo', array('default' => get_stylesheet_directory_uri().'/images/logo.png'));
+		$wp_customize->add_setting( 'zerif_logo', array('default' => get_stylesheet_directory_uri().'/assets/images/logo.png'));
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
 				'label'    => __( 'Logo', 'zoocommerce' ),
@@ -846,7 +967,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			));
 			
 			/* My Account Icon */
-			$wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/images/menu-profile.png'));			
+			$wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-profile.png'));			
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myaccount_icon', array(
 	
@@ -871,7 +992,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			
 			
 			/* My Cart Icon */
-			$wp_customize->add_setting( 'cart_icon', array('default' => get_stylesheet_directory_uri().'/images/menu-cart.png'));			
+			$wp_customize->add_setting( 'cart_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-cart.png'));			
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cart_icon', array(
 	
@@ -902,7 +1023,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			));
 			
 			/* My Account Icon */
-			$wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/images/menu-profile.png'));			
+			$wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-profile.png'));			
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myaccount_icon', array(
 	
@@ -927,7 +1048,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			
 			
 			/* My Cart Icon */
-			$wp_customize->add_setting( 'cart_icon', array('default' => get_stylesheet_directory_uri().'/images/menu-cart.png'));			
+			$wp_customize->add_setting( 'cart_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-cart.png'));			
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cart_icon', array(
 	
@@ -967,31 +1088,6 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			'theme_supports' => '',
 			'title' => __( 'Big Banner section', 'zerif' )
 		) );
-		
-		/* BIG TITLE SETTINGS --------------------------------------------------
-		
-		$wp_customize->add_section( 'zerif_bigtitle_settings_section' , array(
-				'title'       => __( 'Settings', 'zerif' ),
-				'priority'    => 1,
-				'panel' => 'panel_3'
-		));
-		
-		//zerif_bigtitle_show  
-		$wp_customize->add_setting( 'zerif_bigtitle_show');
-
-		$wp_customize->add_control(
-			'zerif_bigtitle_show',
-			array(
-				'type' => 'checkbox',
-				'label' => __('Hide big banner section?','zerif'),
-				'description' => __('If you check this box, the Big banner section will disappear from homepage.','zerif'),
-				'section' => 'zerif_bigtitle_settings_section',
-				'priority'    => 1,
-			)
-		);
-		
-		$wp_customize->get_setting( 'zerif_bigtitle_show' )->transport = 'postMessage'; */
-		
 		
 		/* BIG TITLE CONTENT ------------------------------------------------------*/
 		
@@ -1065,7 +1161,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		));
 		
 		/* zerif_bigtitle_background */
-		$wp_customize->add_setting( 'zerif_bigtitle_background', array( 'default' => 'rgba(0, 0, 0, 0.5)' ));
+		$wp_customize->add_setting( 'zerif_bigtitle_background', array( 'default' => '#000' ));
 		 
 		$wp_customize->add_control(
 			new Zerif_Customize_Alpha_Color_Control(
@@ -1117,7 +1213,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		$wp_customize->get_setting( 'zerif_bigtitle_subheader_color' )->transport = 'postMessage';
 		
 		/* zerif_bigtitle_button_background_color */
-		$wp_customize->add_setting( 'zerif_bigtitle_button_background_color', array( 'default' => 'rgba(0, 0, 0, 0.5)' ) );
+		$wp_customize->add_setting( 'zerif_bigtitle_button_background_color', array( 'default' => 'transparent' ) );
 		
 		$wp_customize->add_control(
 			new Zerif_Customize_Alpha_Color_Control(
@@ -1136,7 +1232,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		$wp_customize->get_setting( 'zerif_bigtitle_button_background_color' )->transport = 'postMessage';
 		
 		/* zerif_bigtitle_button_background_color_hover */
-		$wp_customize->add_setting( 'zerif_bigtitle_button_background_color_hover', array( 'default' => 'rgba(0, 0, 0, 0.8)' ) );
+		$wp_customize->add_setting( 'zerif_bigtitle_button_background_color_hover', array( 'default' => 'transparent' ) );
 		
 		$wp_customize->add_control(
 			new Zerif_Customize_Alpha_Color_Control(
@@ -1193,30 +1289,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		
 		
 
-		/* BIG TITLE BACKGROUND IMAGE --------------------------------------------------------------------------*/
-		$wp_customize->add_section( 'zerif_bigtitle_background_section' , array(
-				'title'		=> __( 'Background Settings', 'zerif' ),
-				'priority'	=> 3,
-				'panel' 	=> 'panel_3'
-		));
 		
-		$wp_customize->add_setting( 'zerif_background_settings' );
-		$wp_customize->add_control(
-			'zerif_background_settings',
-			array(
-				'type' => 'radio',
-				'label' => __('Type of background','zerif'),
-				'description' => __('Select the type of background you want. <b>Make sure you also set up the images/video in their corresponding places.</b>','zerif'),
-				'section' => 'zerif_bigtitle_background_section',
-				'choices' => array(
-					'zerif-background-image' => __( 'Background image','zerif' ),
-					'zerif-background-slider' => __( 'Background slider','zerif' ),
-					'zerif-background-video' => __( 'Background video', 'zerif' )
-				),
-				'priority'    => 1,
-			)
-		);
-
 		/* Background image ----------------------------------------------------- */
 		//$wp_customize->get_section('background_image')->panel = 'panel_3';
 		//$wp_customize->get_section('background_image')->priority = 5;
@@ -1296,298 +1369,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			)
 		);
 
-		/* Background slider -------------------------------------------------------*/
-		$wp_customize->add_section(
-			'zerif_background_slider_section',
-			array(
-				'title'       	=> __( 'Background slider', 'zerif' ),
-				'priority'    	=> 5,
-				'panel'			=> 'panel_3',
-			)
-		);
-
-		/* slider image 1 */
-
-		$wp_customize->add_setting(
-			'zerif_bgslider_1'
-		);
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize,
-				'zerif_bgslider_1',
-				array(
-					'label'    => __( 'Image 1', 'zerif' ),
-					'section'  => 'zerif_background_slider_section',
-					'priority'    => 1,
-				)
-			)
-		);
-
-		$wp_customize->add_setting(
-			'zerif_vposition_bgslider_1',
-			array(
-				'default' => 'top',
-			)
-		);
-		$wp_customize->add_control(
-			'zerif_vposition_bgslider_1',
-			array(
-				'type' 		=> 'select',
-				'label' 	=> 'Image Vertical align',
-				'section' 	=> 'zerif_background_slider_section',
-				'choices' 	=> array(
-					'top' 		=> __('Top','zerif'),
-					'center'	=> __('Center','zerif'),
-					'bottom' 	=> __('Bottom','zerif'),
-				),
-				'priority' 	=> 2,
-			)
-		);
-
-		$wp_customize->add_setting(
-			'zerif_hposition_bgslider_1',
-			array(
-				'default' => 'left',
-			)
-		);
-		$wp_customize->add_control(
-			'zerif_hposition_bgslider_1',
-			array(
-				'type' 		=> 'select',
-				'label' 	=> 'Image Horizontal align',
-				'section' 	=> 'zerif_background_slider_section',
-				'choices' 	=> array(
-					'left' 		=> __('Left','zerif'),
-					'center'	=> __('Center','zerif'),
-					'right' 	=> __('Right','zerif'),
-				),
-				'priority' 	=> 3,
-			)
-		);
-
-		$wp_customize->add_setting(
-			'zerif_bgsize_bgslider_1',
-			array(
-				'default' => 'cover',
-			)
-		);
-		$wp_customize->add_control(
-			'zerif_bgsize_bgslider_1',
-			array(
-				'type' 		=> 'select',
-				'label' 	=> 'Background size',
-				'section' 	=> 'zerif_background_slider_section',
-				'choices' 	=> array(
-					'cover' 	=> __('Cover','zerif'),
-					'width' 	=> __('width 100%','zerif'),
-					'height'	=> __('Height 100%','zerif'),
-				),
-				'priority' 	=> 4,
-			)
-		);
-
-		/* slider image 2 */
-
-		$wp_customize->add_setting(
-			'zerif_bgslider_2'
-		);
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize,
-				'zerif_bgslider_2',
-				array(
-					'label'    	=> __( 'Image 2', 'zerif' ),
-					'section'  	=> 'zerif_background_slider_section',
-					'priority'	=> 5,
-				)
-			)
-		);
-
-		$wp_customize->add_setting(
-			'zerif_vposition_bgslider_2',
-			array(
-				'default' => 'top',
-			)
-		);
-		$wp_customize->add_control(
-			'zerif_vposition_bgslider_2',
-			array(
-				'type' 		=> 'select',
-				'label' 	=> 'Image Vertical align',
-				'section' 	=> 'zerif_background_slider_section',
-				'choices' 	=> array(
-					'top' 		=> __('Top','zerif'),
-					'center'	=> __('Center','zerif'),
-					'bottom' 	=> __('Bottom','zerif'),
-				),
-				'priority' 	=> 6,
-			)
-		);
-
-		$wp_customize->add_setting(
-			'zerif_hposition_bgslider_2',
-			array(
-				'default' => 'left',
-			)
-		);
-		$wp_customize->add_control(
-			'zerif_hposition_bgslider_2',
-			array(
-				'type' 		=> 'select',
-				'label' 	=> 'Image Horizontal align',
-				'section' 	=> 'zerif_background_slider_section',
-				'choices' 	=> array(
-					'left' 		=> __('Left','zerif'),
-					'center'	=> __('Center','zerif'),
-					'right' 	=> __('Right','zerif'),
-				),
-				'priority' 	=> 7,
-			)
-		);
-
-		$wp_customize->add_setting(
-			'zerif_bgsize_bgslider_2',
-			array(
-				'default' => 'cover',
-			)
-		);
-		$wp_customize->add_control(
-			'zerif_bgsize_bgslider_2',
-			array(
-				'type' 		=> 'select',
-				'label' 	=> 'Background size',
-				'section' 	=> 'zerif_background_slider_section',
-				'choices' 	=> array(
-					'cover' 	=> __('Cover','zerif'),
-					'width' 	=> __('width 100%','zerif'),
-					'height'	=> __('Height 100%','zerif'),
-				),
-				'priority' 	=> 8,
-			)
-		);
-
-		/* slider image 3 */
-
-		$wp_customize->add_setting(
-			'zerif_bgslider_3'
-		);
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize,
-				'zerif_bgslider_3',
-				array(
-					'label'    	=> __( 'Image 3', 'zerif' ),
-					'section'  	=> 'zerif_background_slider_section',
-					'priority'	=> 9,
-				)
-			)
-		);
-
-		$wp_customize->add_setting(
-			'zerif_vposition_bgslider_3',
-			array(
-				'default' => 'top',
-			)
-		);
-		$wp_customize->add_control(
-			'zerif_vposition_bgslider_3',
-			array(
-				'type' 		=> 'select',
-				'label' 	=> 'Image Vertical align',
-				'section' 	=> 'zerif_background_slider_section',
-				'choices' 	=> array(
-					'top' 		=> __('Top','zerif'),
-					'center'	=> __('Center','zerif'),
-					'bottom' 	=> __('Bottom','zerif'),
-				),
-				'priority' 	=> 10,
-			)
-		);
-
-		$wp_customize->add_setting(
-			'zerif_hposition_bgslider_3',
-			array(
-				'default' => 'left',
-			)
-		);
-		$wp_customize->add_control(
-			'zerif_hposition_bgslider_3',
-			array(
-				'type' 		=> 'select',
-				'label' 	=> 'Image Horizontal align',
-				'section' 	=> 'zerif_background_slider_section',
-				'choices' 	=> array(
-					'left' 		=> __('Left','zerif'),
-					'center'	=> __('Center','zerif'),
-					'right' 	=> __('Right','zerif'),
-				),
-				'priority' 	=> 11,
-			)
-		);
-
-		$wp_customize->add_setting(
-			'zerif_bgsize_bgslider_3',
-			array(
-				'default' => 'cover',
-			)
-		);
-		$wp_customize->add_control(
-			'zerif_bgsize_bgslider_3',
-			array(
-				'type' 		=> 'select',
-				'label' 	=> 'Background size',
-				'section' 	=> 'zerif_background_slider_section',
-				'choices' 	=> array(
-					'cover' 	=> __('Cover','zerif'),
-					'width' 	=> __('width 100%','zerif'),
-					'height'	=> __('Height 100%','zerif'),
-				),
-				'priority' 	=> 12,
-			)
-		);
-
-		/* Video Background --------------------------------------------*/
-		$wp_customize->add_section(
-			'zerif_background_video_section',
-			array(
-				'title'       	=> __( 'Background Video', 'zerif' ),
-				'priority'    	=> 6,
-				'panel'			=> 'panel_3',
-			)
-		);
-
-		/* Video */
-		$wp_customize->add_setting(
-			'zerif_background_video'
-		);
-		$wp_customize->add_control(
-			new WP_Customize_Upload_Control(
-			$wp_customize,
-			'zerif_background_video',
-			array(
-				'label'      => __( 'Video file', 'zerif' ),
-				'description'=> __( 'mp4 format file', 'zerif' ),
-				'section'    => 'zerif_background_video_section',
-				'priority'   => 1
-			) )
-		);
-
-		/* Thumbnail */
-		$wp_customize->add_setting(
-			'zerif_background_video_thumbnail'
-		);
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize,
-				'zerif_background_video_thumbnail',
-				array(
-					'label'    	=> __( 'Video thumbnail', 'zerif' ),
-					'description' => __( 'This image will appear while the video is downloading. If this is not included, the first frame of the video will be used instead.', 'zerif' ),
-					'section'  	=> 'zerif_background_video_section',
-					'priority'	=> 2,
-				)
-			)
-		);
+		
 
 	else: /* Old versions of WordPress */
 		
@@ -1596,19 +1378,6 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			'priority'    => 32
 		));
 			
-		/* zerif_bigtitle_show    
-		$wp_customize->add_setting( 'zerif_bigtitle_show');
-		
-		$wp_customize->add_control(
-			'zerif_bigtitle_show',
-			array(
-				'type' => 'checkbox',
-				'label' => __('Hide big banner section?','zerif'),
-				'description' => __('If you check this box, the Big banner section will disappear from homepage.','zerif'),
-				'section' => 'zerif_bigtitle_section',
-				'priority'    => 1,
-			)
-		);*/
 			
 		/* zerif_bigtitle_title */
 		$wp_customize->add_setting( 'zerif_bigtitle_title', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('To add a title here please go to Customizer, "Big banner section"','zerif')));
@@ -1656,10 +1425,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 				'priority'    => 5,
 		));
 		
-		
-		
 
-		
 		/* zerif_bigtitle_background */
 		$wp_customize->add_setting( 'zerif_bigtitle_background', array( 'default' => 'rgba(0, 0, 0, 0.5)' ));
 		 
@@ -1675,7 +1441,6 @@ function wp_themeisle_customize_register( $wp_customize ) {
 				)
 			)
 		);
-		
 		
 		
 		/* zerif_bigtitle_header_color */
@@ -1694,7 +1459,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			)
 		);
 
-		
+
 		/* zerif_bigtitle_subheader_color */
 		$wp_customize->add_setting( 'zerif_bigtitle_subheader_color', array( 'default' => '#fff' ) );
 		
@@ -1711,7 +1476,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 			)
 		);
 		
-		
+
 		/* zerif_bigtitle_button_background_color */
 		$wp_customize->add_setting( 'zerif_bigtitle_button_background_color', array( 'default' => 'rgba(0, 0, 0, 0.5)' ) );
 		
@@ -1768,7 +1533,6 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		
 		
 		
-		
 
 		/* show/hide  parallax */
 		$wp_customize->add_setting( 'zerif_parallax_show', array('sanitize_callback' => 'zerif_sanitize_text'));
@@ -1783,7 +1547,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		);
 
 		/* IMAGE 1*/
-		$wp_customize->add_setting( 'zerif_parallax_img1', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/background1.jpg'));
+		$wp_customize->add_setting( 'zerif_parallax_img1', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/assets/images/background1.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_parallax_img1', array(
 				'label'    	=> __( 'Parallax image 1', 'zerif' ),
 				'section'  	=> 'zerif_bigtitle_section',
@@ -1792,7 +1556,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		)));
 
 		/* IMAGE 2 */
-		$wp_customize->add_setting( 'zerif_parallax_img2', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/background2.png'));
+		$wp_customize->add_setting( 'zerif_parallax_img2', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/assets/images/background2.png'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_parallax_img2', array(
 				'label'    	=> __( 'Parallax image 2', 'zerif' ),
 				'section'  	=> 'zerif_bigtitle_section',
@@ -1963,7 +1727,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		));
 		
 		/* email - ICON */
-		$wp_customize->add_setting( 'zerif_email_icon', array('default' => get_stylesheet_directory_uri().'/images/icon-address.png'));			
+		$wp_customize->add_setting( 'zerif_email_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/icon-address.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_email_icon', array(
 
@@ -1996,7 +1760,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		
 
 		/* phone number - ICON */
-		$wp_customize->add_setting( 'zerif_phone_icon', array('default' => get_stylesheet_directory_uri().'/images/icon-contact.png'));			
+		$wp_customize->add_setting( 'zerif_phone_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/icon-contact.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_phone_icon', array(
 
@@ -2027,7 +1791,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		
 
 		/* address - ICON */
-		$wp_customize->add_setting( 'zerif_address_icon', array('default' => get_stylesheet_directory_uri().'/images/icon-location.png'));			
+		$wp_customize->add_setting( 'zerif_address_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/icon-location.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_address_icon', array(
 
@@ -2363,7 +2127,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 		));
 		
 		/* email - ICON */
-		$wp_customize->add_setting( 'zerif_email_icon', array('default' => get_template_directory_uri().'/images/envelope4-green.png'));			
+		$wp_customize->add_setting( 'zerif_email_icon', array('default' => get_template_directory_uri().'/assets/images/envelope4-green.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_email_icon', array(
 
@@ -2391,7 +2155,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
         )) );
 
 		/* phone number - ICON */
-		$wp_customize->add_setting( 'zerif_phone_icon', array('default' => get_template_directory_uri().'/images/telephone65-blue.png'));			
+		$wp_customize->add_setting( 'zerif_phone_icon', array('default' => get_template_directory_uri().'/assets/images/telephone65-blue.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_phone_icon', array(
 
@@ -2418,7 +2182,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
         )) );
 
 		/* address - ICON */
-		$wp_customize->add_setting( 'zerif_address_icon', array('default' => get_template_directory_uri().'/images/map25-redish.png'));			
+		$wp_customize->add_setting( 'zerif_address_icon', array('default' => get_template_directory_uri().'/assets/images/map25-redish.png'));			
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_address_icon', array(
 
@@ -2675,13 +2439,10 @@ function zerif_sanitize_number( $input ) {
 
 
 function zerif_registers() {
-
     wp_enqueue_script( 'zerif_jquery_ui', '//code.jquery.com/ui/1.10.4/jquery-ui.js', array("jquery"), '20120206', true  );
-
 	wp_enqueue_style( 'zerif_jquery_ui_css', '//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css');	
-
 	wp_enqueue_script( 'zerif_customizer_script', get_template_directory_uri() . '/js/zerif_customizer.js', array("jquery","zerif_jquery_ui"), '20120206', true  );
-
+	wp_enqueue_style( 'zoocommerce_customizer_style', get_stylesheet_directory_uri() . '/assets/css/admin-style.css');
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'zerif_registers' );
