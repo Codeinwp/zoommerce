@@ -190,7 +190,6 @@ require_once ( 'class/parallax_one_general_control.php');
  * General Customizer fields 
  */
 
-
 $wp_customize->add_section( 'home_categories' , array(
 	'title'		=> __( 'Shop Categories', 'zoocommerce' ),
 	'priority'	=> 31
@@ -223,6 +222,31 @@ $wp_customize->add_control(
 );
 
 /**
+ * Home: Testimonials section
+ */
+$wp_customize->add_section( 'home_testimonials_section' , array(
+	'title'		=> __( 'Home Testimonials Section', 'zoocommerce' ),
+	'priority'	=> 31
+) );
+
+
+$wp_customize->add_setting( 'latest_testimonials_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Testimonials', 'zoocommerce')));
+$wp_customize->add_control( 'latest_testimonials_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_testimonials_section',
+		'settings' => 'latest_testimonials_headline',
+		'priority'    => 1,
+));
+
+$wp_customize->add_setting( 'latest_testimonials_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce')));
+$wp_customize->add_control( 'latest_testimonials_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_testimonials_section',
+		'settings' => 'latest_testimonials_subheading',
+		'priority'    => 2,
+));
+
+/**
  * Home: Subscribe section
  */
 $wp_customize->add_section( 'home_subscribe_section' , array(
@@ -236,7 +260,7 @@ $wp_customize->add_control( 'latest_subscribe_headline', array(
 		'label'    => __( 'Headline', 'zoocommerce' ),
 		'section'  => 'home_subscribe_section',
 		'settings' => 'latest_subscribe_headline',
-		'priority'    => 2,
+		'priority'    => 1,
 ));
 
 $wp_customize->add_setting( 'latest_subscribe_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce')));
@@ -244,7 +268,7 @@ $wp_customize->add_control( 'latest_subscribe_subheading', array(
 		'label'    => __( 'Subtitle', 'zoocommerce' ),
 		'section'  => 'home_subscribe_section',
 		'settings' => 'latest_subscribe_subheading',
-		'priority'    => 3,
+		'priority'    => 2,
 ));
 
 
