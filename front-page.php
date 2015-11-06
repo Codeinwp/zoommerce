@@ -149,6 +149,9 @@ echo '
 
 	//Home newsletter section
 	get_template_part( 'sections/home_newsletter' );
+
+	//Home testimonials section
+	get_template_part( 'sections/home_testimonials' );
 ?>
 
 <div id="content" class="site-content">

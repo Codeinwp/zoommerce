@@ -563,6 +563,74 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+#testimonials {
+	background: #333;
+	overflow: hidden;
+
+	.quote {
+		display: none;
+	}
+
+	.home_headline {
+		margin-left: 0;
+
+		h3 {
+			color: #f33b3b;
+			font-family: 'allerregular', sans-serif;
+		}
+
+		h4 {
+			color: #fff;
+		}
+	}
+
+	.feedback-box {
+		color: #909090;
+		overflow: hidden;
+		width: 100%;
+		margin-top: 35px;
+	}
+
+	.message {
+		line-height: 30px;
+		font-size: 16px;
+		width: 90%;
+		font-family: 'aller_lightregular';
+		margin-left: 5%;
+	}
+	
+	.client {
+		height: auto;
+	}
+
+	.client-info {
+		width: 100%;
+		text-align: center;
+		padding-top: 0;
+		margin-left: 0;
+
+		.client-name {
+			color: #f33b3b;
+			font-size: 18px;
+		}
+
+		.client-company {
+			font-style: italic;
+			margin-bottom: 15px;
+		}
+	}
+
+	.client-image {
+		float: none;
+		margin: 0 auto;
+		overflow: hidden;
+
+		img {
+			display: block;
+		}
+	}
+}
+
 /*---------------------------------------
  **   Responsive  -----  MEDIA QUERIES
 -----------------------------------------*/
