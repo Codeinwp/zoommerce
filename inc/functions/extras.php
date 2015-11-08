@@ -167,8 +167,8 @@ if(!function_exists('zoocommerce_customizer_style_css')) {
 /**
  * Query WooCommerce activation
  */
-if ( ! function_exists( 'is_woocommerce_activated' ) ) {
-	function is_woocommerce_activated() {
+if ( ! function_exists( 'zoocommerce_is_woocommerce_activated' ) ) {
+	function zoocommerce_is_woocommerce_activated() {
 		return class_exists( 'woocommerce' ) ? true : false;
 	}
 }

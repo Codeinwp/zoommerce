@@ -190,7 +190,6 @@ require_once ( 'class/parallax_one_general_control.php');
  * General Customizer fields 
  */
 
-
 $wp_customize->add_section( 'home_categories' , array(
 	'title'		=> __( 'Shop Categories', 'zoocommerce' ),
 	'priority'	=> 31
@@ -222,10 +221,60 @@ $wp_customize->add_control(
 		)
 );
 
+/**
+ * Home: Testimonials section
+ */
+$wp_customize->add_section( 'home_testimonials_section' , array(
+	'title'		=> __( 'Home Testimonials Section', 'zoocommerce' ),
+	'priority'	=> 31
+) );
 
 
+$wp_customize->add_setting( 'latest_testimonials_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Testimonials', 'zoocommerce')));
+$wp_customize->add_control( 'latest_testimonials_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_testimonials_section',
+		'settings' => 'latest_testimonials_headline',
+		'priority'    => 1,
+));
+
+$wp_customize->add_setting( 'latest_testimonials_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce')));
+$wp_customize->add_control( 'latest_testimonials_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_testimonials_section',
+		'settings' => 'latest_testimonials_subheading',
+		'priority'    => 2,
+));
+
+/**
+ * Home: Subscribe section
+ */
+$wp_customize->add_section( 'home_subscribe_section' , array(
+	'title'		=> __( 'Home Subscribe Section', 'zoocommerce' ),
+	'priority'	=> 31
+) );
 
 
+$wp_customize->add_setting( 'latest_subscribe_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Newsletter Subscribtion', 'zoocommerce')));
+$wp_customize->add_control( 'latest_subscribe_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_subscribe_section',
+		'settings' => 'latest_subscribe_headline',
+		'priority'    => 1,
+));
+
+$wp_customize->add_setting( 'latest_subscribe_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce')));
+$wp_customize->add_control( 'latest_subscribe_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_subscribe_section',
+		'settings' => 'latest_subscribe_subheading',
+		'priority'    => 2,
+));
+
+
+/**
+ * Home: Latest Products section
+ */
 $wp_customize->add_section( 'home_latest_products' , array(
 	'title'		=> __( 'Home latest products', 'zoocommerce' ),
 	'priority'	=> 31
@@ -239,20 +288,29 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'late
 		'priority'    => 1,
 )));
 
+$wp_customize->add_setting( 'latest_products_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('New Arrivals', 'zoocommerce')));
+$wp_customize->add_control( 'latest_products_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_latest_products',
+		'settings' => 'latest_products_headline',
+		'priority'    => 2,
+));
+
+$wp_customize->add_setting( 'latest_products_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Check out our latest products', 'zoocommerce')));
+$wp_customize->add_control( 'latest_products_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_latest_products',
+		'settings' => 'latest_products_subheading',
+		'priority'    => 3,
+));
+
+
 $wp_customize->add_setting( 'latest_products_count', array('sanitize_callback' => 'zerif_sanitize_number','default' => 3));
 $wp_customize->add_control( 'latest_products_count', array(
 		'label'    => __( 'Right products count', 'zoocommerce' ),
 		'section'  => 'home_latest_products',
 		'settings' => 'latest_products_count',
-		'priority'    => 2,
-));
-
-$wp_customize->add_setting( 'latest_products_count_wide', array('sanitize_callback' => 'zerif_sanitize_number','default' => 6));
-$wp_customize->add_control( 'latest_products_count_wide', array(
-		'label'    => __( 'Wide products count ( no right image )', 'zoocommerce' ),
-		'section'  => 'home_latest_products',
-		'settings' => 'latest_products_count_wide',
-		'priority'    => 2,
+		'priority'    => 4,
 ));
 
 
