@@ -1,0 +1,795 @@
+@import 'fonts';
+@import 'mixins';
+
+body {
+	font-family: 'allerregular', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'allerregular', sans-serif !important;
+}
+.section-title {
+	font-family: 'allerbold', sans-serif !important;
+	text-transform:uppercase;
+	font-size:30px;
+	line-height: 22px;
+}
+.section-subtitle {
+	font-family: 'aller_lightregular', sans-serif !important;
+	text-transform:uppercase;
+	font-size:18px;
+	color:#e52424;
+}
+
+.container {
+	width: 960px;
+}
+
+/* -------- Structure --------- */
+.blog {
+    min-height: 175px;
+    overflow: hidden;
+    position: static !important;
+}
+.zerif_full_site {
+    z-index: 1;
+    position: static !important;
+}
+.three-cell {
+    width: 33% !important;
+    float: left;
+}
+.two-cell {
+	width: 50% !important;
+	float: left;
+}
+.one-cell {
+	width: 100% !important;
+	float: left;
+}
+
+/* ------- Navbar ------- */
+.navbar-inverse {
+	background: #000;
+}
+.navbar-brand {
+	padding: 0;
+	margin-top: 13px;
+}
+.navbar-collapse {
+	margin-right:20px !important;
+}
+.navbar-collapse .navbar-nav > li > a {
+	font-family:'aller_lightregular', Tahoma, Geneva, sans-serif;
+	color: #FFF !important;
+	font-size: 16px;
+	@extend .transition;
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
+.menu-icons {
+	float:right;
+	margin-top:18px;
+	border-left:solid 1px #808080;
+	padding-left:12px !important;
+}
+#icons-menu {
+	margin:0;
+	list-style:none !important;
+	padding: 5px !important;
+	float: left;
+}
+
+#icons-menu li {
+	display:inline;
+	
+	margin-right:20px;
+	float:left;
+	
+}
+.menu-align-center .responsive-logo {
+	width:auto;
+}
+
+/* ------- Section 1 - Big Banner ------- */
+#big-banner {
+	width:100%; 
+	@extend .bgcover;
+	position: relative;
+
+	.sub-text {
+		color: #fff;
+		font-size: 36px;
+	    margin-bottom: 0px;
+		text-transform:uppercase;
+	}
+}
+.home-header-wrap {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.header-content-wrap{
+	padding:0;
+	box-shadow: none;
+	background:transparent !important;
+}
+
+.fadein-slider{
+	position:absolute !important;
+}
+
+.zerif_video_background{
+	position:absolute !important;
+}
+
+.intro-text {
+	font-family: "aller_displayregular",sans-serif !important;
+	font-size: 75px;
+	padding: 20px 0 15px 0px;
+	margin-top: 10px;
+	color: #fff;
+	background: rgba(black, 0.45);
+	line-height: 90px;
+}
+
+.buttons .custom-button{
+	font-family: "aller_lightregular",Tahoma,Geneva,sans-serif;
+	color: #FFF;
+	font-size: 18px;
+	padding: 5px 15px;
+	text-transform:uppercase;
+	border:2px solid #fff;
+	background: transparent;
+}
+
+.buttons{
+	margin-top:15px;
+}
+
+#big-banner .down-arrow {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* ------- Footer ------- */
+#footer {
+    padding-top: 30px;
+	padding-bottom:15px;
+}
+
+#footer .footer-widgets {
+	border-bottom:#4d4d4d solid 1px;
+	border-top:#4d4d4d solid 1px;
+	margin:50px 0px 20px 0 !important;
+	font-size:14px;
+}
+
+#footer .footer-widgets a {
+	font-size:14px;
+}
+
+#footer .footer-widgets .footer-box-wrap  {    
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.company-details {
+	text-align:left;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-size:14px;
+}
+
+.company-details .icon-left {
+	float: left;
+	margin-right: 12px;
+}
+
+#zerif-copyright {
+	color:#737373;
+	font-size: 14px;
+}
+
+.copyright {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background: transparent;
+	float: right;
+	text-align: right;
+}
+
+.social {
+	margin:0 !important;
+}
+
+/* ------- Section 2 - Home - Shop Categories ------- */
+#shop_cats {
+	background: url(../images/shop_cats_pattern.jpg);
+	padding: 90px 0;
+
+	.container {
+		background: #fff;
+		padding: 5px;
+	}
+
+	.tower,
+	.box {
+		border: 5px solid #fff;
+		position: relative;
+		display: block;
+		background: #000;
+
+		&:hover a.link {
+			opacity: 0.8;
+		}
+
+		a.link {
+			display: block;
+			width: 100%;
+			height: 100%;
+			@extend .bgcover;
+			background-position: center center;
+			position: absolute;
+		}
+
+		h3 {
+			position: absolute;
+			z-index: 99;
+			display: inline-block;
+			font-family: 'aller_lightregular', sans-serif;
+			font-size: 18px;
+			text-transform: uppercase;
+			color: #000;
+			background: #fff;
+			padding: 0 25px;
+			height: 46px;
+			line-height: 46px;
+			left: 0;
+			letter-spacing: -0.07em;
+		}
+	}
+
+	.tower {
+		width: 33.33%;
+		float: left;
+		height: 520px;
+
+		h3 {
+			bottom: 33px;
+		}
+
+		&.thirds {
+			width: 476px;
+		}
+
+		&.alignright {
+			float: right;
+			margin: 0;
+		}
+	}
+
+	.box {
+		width: 33.33%;
+		float: left;
+		height: 260px;
+
+		h3 {
+			margin-top: 33px;
+		}
+
+		&.full {
+			width: 100%;
+			height: 320px;
+		}
+
+		&.half {
+			width: 50%;
+			height: 320px;
+		}
+
+		&.thirds {
+			width: 474px;
+		}
+	}
+}
+
+.clearfix {
+	clear: both;
+}
+
+.home_headline {
+	width: 100%;
+	margin: 45px 0 0 20px;
+	text-align: center;
+
+	h3 {
+		font-family: 'allerbold';
+		font-size: 30px;
+		margin-bottom: 5px;
+		text-transform: uppercase;
+	}
+
+	h4 {
+		font-family: 'aller_lightregular';
+		font-size: 16px;
+		color: #434343;
+		margin-top: 0;
+	}
+}
+
+
+#home_products {
+	width: 100%;
+	background: #fff;
+	overflow: hidden;
+
+	.left,
+	.right {
+		width: 50%;
+		float: left;
+		@extend .borderbox;
+	}
+
+	.left {
+		padding: 0 4% 45px 4%;
+	}
+
+	.right {
+		@extend .bgcover;
+		height: 100%;
+		background-position: center center;
+	}
+	
+	ul {
+		margin-left: 0;
+		overflow: hidden;
+	}
+
+	.home_headline {
+		h4 {
+			font-family: 'aller_lightregular';
+			font-size: 18px;
+			color: #e52424;
+			margin-top: 0;
+			text-transform: uppercase;
+		}
+	}
+
+	.product {
+		width: 31.55%;
+		float: left;
+		height: auto;
+		margin-right: 2.5%;
+		position: relative;
+		padding-bottom: 40px;
+		overflow: hidden;
+		box-sizing: content-box;
+		margin-top: 25px;
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+
+		a {
+			position: relative;
+			display: block;
+
+			&:hover {
+				text-decoration: none;
+
+				h3 {
+					color: #e52424;
+				}
+			}
+		}
+		
+		.onsale {
+			position: absolute;
+			z-index: 999;
+			padding: 2px 0 2px 8px;
+			font-size: 13px;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: #fff;
+			background: #e52424;
+			display: block;
+			top: 20px;
+			left: 0;
+
+			&:before {
+				content: "";
+				position: absolute;
+				display: block;
+				width:0;
+				height:0;
+				border: 11px solid #e52424;
+				border-top-color: transparent;
+				border-right-color: transparent;
+				right: -22px;
+				top: 0;
+			}
+		}
+
+		.attachment-shop_catalog {
+			max-width: 100%;
+			max-height: 100%;
+			display: block;
+			position: relative;
+			background: #efefef;
+		}
+
+		h3 {
+			font-size: 16px;
+			text-transform: uppercase;
+			font-size: 16px;
+			margin: 15px 0 10px 0;
+			font-size: 16px;
+			line-height: 18px;
+			color: #363636;
+			@extend .transition;
+
+		} 
+
+		.price {
+			width: 100%;
+			text-align: center;
+			font-size: 16px;
+			color: #e52424;
+			height: 18px;
+			line-height: 18px;
+			font-weight: normal;
+			clear: both;
+			
+			del {
+				color: #ccc;
+
+				.amount {
+					font-size: 12px;
+					color: #ccc;
+				}
+			}	
+
+			ins {
+				background: transparent;
+			}
+		}
+
+		.add_to_cart_button,
+		.added_to_cart {
+			font-family: 'aller_lightregular';
+			font-size: 14px;
+			height: 30px;
+			line-height: 32px;
+			background: #333;
+			width: 108px;
+			margin: auto;
+			left: 0; right: 0;
+			color: #fff;
+			text-transform: uppercase;
+			bottom: 0;
+			position: absolute;
+			padding: 0;
+			border-radius: 0;
+			@extend .transition;
+
+			&:hover {
+				cursor: pointer;
+				background: #e52424;
+			}
+		}
+
+		.added_to_cart {
+			z-index: 99;
+		}
+	}
+
+	.viewallproducts {
+		background: #e52424;
+		font-size: 14px;
+		height: 30px;
+		line-height: 30px;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 0 14px;
+		width: 170px;
+		margin: 0 auto;
+		color: #fff;
+		margin-top: 35px;
+		font-family: 'allerbold';
+		display: block;
+		@extend .transition;
+
+		&:hover {
+			cursor: pointer;
+			background: #333;
+			text-decoration: none;
+		}
+	}
+}
+
+#newsletter_section {
+
+	form {
+		width: 45.3%;
+		margin: auto;
+		margin-top: 30px;
+		margin-bottom: 60px;
+		overflow: hidden;
+	}
+
+	input {
+		height: 40px;
+		font-family: 'allerregular', sans-serif;
+		line-height: 40px;
+		border-radius: 5px;
+		font-size: 16px;
+		@extend .transition;
+	}
+
+	input[type="text"],
+	input[type="email"] {
+		float: left;
+		width: 60%;
+		border: 1px solid #c8c8c8;
+		color: #585858;
+		padding: 0 7%;
+		display: block;
+
+		&:focus {
+			border-color: #585858;
+		}
+	}	
+
+	input[type="submit"] {
+		float: right;
+		width: 35%;
+		text-align: center;
+		color: #fff;
+		text-transform: uppercase;
+		background: #e52424;
+		padding: 1px 0 0 0;
+		margin: 0;
+
+		&:hover {
+			background: #585858;
+		}
+	}
+}
+
+#testimonials {
+	background: #333;
+	overflow: hidden;
+
+	.quote {
+		display: none;
+	}
+
+	.home_headline {
+		margin-left: 0;
+
+		h3 {
+			color: #f33b3b;
+			font-family: 'allerregular', sans-serif;
+		}
+
+		h4 {
+			color: #fff;
+		}
+	}
+
+	.feedback-box {
+		color: #909090;
+		overflow: hidden;
+		width: 100%;
+		margin-top: 35px;
+	}
+
+	.message {
+		line-height: 30px;
+		font-size: 16px;
+		width: 90%;
+		font-family: 'aller_lightregular';
+		margin-left: 5%;
+	}
+	
+	.client {
+		height: auto;
+	}
+
+	.client-info {
+		width: 100%;
+		text-align: center;
+		padding-top: 0;
+		margin-left: 0;
+
+		.client-name {
+			color: #f33b3b;
+			font-size: 18px;
+		}
+
+		.client-company {
+			font-style: italic;
+			margin-bottom: 15px;
+		}
+	}
+
+	.client-image {
+		float: none;
+		margin: 0 auto;
+		overflow: hidden;
+
+		img {
+			display: block;
+		}
+	}
+}
+
+/*---------------------------------------
+ **   Responsive  -----  MEDIA QUERIES
+-----------------------------------------*/
+@media (max-width: 1200px) {
+
+/* ------- Section 1 - Main Billboard Banner ------- */
+
+
+
+
+/* ------- Section 2 - Product Categories ------- */
+
+
+
+/* ------- Section 3 - New Arrivals ------- */
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+/* ------- Section 1 - Main Billboard Banner ------- */
+
+
+
+
+/* ------- Section 2 - Product Categories ------- */
+
+
+/* ------- Section 3 - New Arrivals ------- */
+
+}
+@media (max-width: 992px) {
+/* ------- Structure ------- */
+.col-sm-3 {
+    width: 24%;
+}
+/* ------- Section 1 - Main Billboard Banner ------- */
+.intro-text
+{
+	font-size: 60px !important;
+}
+#big-banner h4
+{
+	font-size: 30px !important;
+}
+.buttons .custom-button
+{
+	font-size: 14px !important;
+}
+
+
+/* ------- Section 2 - Product Categories ------- */
+
+
+/* ------- Section 3 - New Arrivals ------- */
+
+
+/* ------- Section 5 - Testimonials ------- */
+
+
+/* ------- Footer ------- */
+.company-details .icon-left
+{
+	float: none;
+	text-align: center;
+	margin-bottom: 12px;
+	margin-right:0;
+	height: 29px;
+}
+.company-details
+{
+	text-align:center;
+	font-size:12px;
+	line-height: 18px;
+}
+#footer .footer-widgets a
+{
+	font-size:13px;
+}
+
+}
+@media (max-width: 767px) {
+/* ------- Structure ------- */
+.col-sm-3 {
+    width: 23%;
+}
+/* ------- Menu ------- */
+.menu-align-center .responsive-logo > a
+{
+	margin-left:10px;
+}
+.menu-icons
+{
+	margin-top:0;
+	border-left:none;
+}
+#icons-menu li:last-child
+{
+	margin-right:0;
+}
+.navbar-collapse
+{
+	max-height:100%;
+}
+/* ------- Section 1 - Main Billboard Banner ------- */
+.intro-text
+{
+	font-size: 50px !important;
+}
+
+
+	
+/* ------- Section 2 - Product Categories ------- */
+
+
+/* ------- Section 3 - New Arrivals ------- */
+
+
+
+}
+@media (max-width: 600px) {
+/* ------- Structure ------- */
+.col-sm-3
+{
+    width: 100% !important;
+	margin-bottom:20px !important;
+}
+/* ------- Section 1 - Main Billboard Banner ------- */
+.intro-text
+{
+	font-size: 45px !important;
+	line-height: 38px !important;
+}
+/* ------- Footer ------- */
+.company-details .icon-left
+{
+	float: none;
+	text-align: center;
+	margin-bottom: 5px;
+	margin-right:0;
+	height: 29px;
+}
+
+	
+}
+@media (max-width: 480px) {
+.intro-text {
+    font-size: 30px !important;
+    line-height: 30px !important;
+	padding: 10px !important;
+}
+#big-banner h4 {
+    font-size: 26px !important;
+}
+
+
+}
+@media (max-width: 320px) {
+/* ------- Section 1 - Main Billboard Banner ------- */
+
+
+
+}
