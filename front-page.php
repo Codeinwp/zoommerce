@@ -152,6 +152,9 @@ echo '
 
 	//Home testimonials section
 	get_template_part( 'sections/home_testimonials' );
+
+	//Home google map
+	get_template_part( 'sections/home_map' );
 ?>
 
 <div id="content" class="site-content">

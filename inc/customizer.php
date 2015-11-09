@@ -313,6 +313,35 @@ $wp_customize->add_control( 'latest_products_count', array(
 		'priority'    => 4,
 ));
 
+/**
+ * Home: Google Map Section
+ */
+$wp_customize->add_section( 'home_map' , array(
+	'title'		=> __( 'Home Google Map Section', 'zoocommerce' ),
+	'priority'	=> 31
+) );
+
+
+$wp_customize->add_setting( 'zerif_googlemap_address', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('New York, Leroy Street','zerif')));
+$wp_customize->add_control( 'zerif_googlemap_address', array(
+			'label'    => __( 'Google map address', 'zerif' ),
+			'section'  => 'home_map',
+			'priority'    => 1,
+));
+	
+$wp_customize->add_setting( 'zerif_googlemap_static');
+$wp_customize->add_control(
+		'zerif_googlemap_static',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Show STATIC google map ?','zerif'),
+			'description' => __('If you check this box, the Google map section will display as a static google map.','zerif'),
+			'section' => 'home_map',
+			'priority'    => 2,
+		)
+);
+
+
 
 	if ( class_exists( 'WP_Customize_Panel' ) ):		
 		
