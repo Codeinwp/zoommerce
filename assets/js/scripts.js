@@ -60,6 +60,16 @@ jQuery(document).ready(function($) {
 	}).trigger('resize');
 
 
-	
+	/*
+	* Call owl carousel for testimonials
+	*/
+	$(".testimonials_wrap").owlCarousel({
+	    navigation:false,
+	    paginationSpeed : 1000,
+	    goToFirstSpeed : 2000,
+	    singleItem : true,
+	    autoHeight : true,
+	    transitionStyle:"fade"
+	});
 	
 });
