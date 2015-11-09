@@ -567,6 +567,7 @@ h1, h2, h3, h4, h5, h6 {
 #testimonials {
 	background: #333;
 	overflow: hidden;
+	padding-bottom: 45px;
 
 	.quote {
 		display: none;
@@ -635,7 +636,7 @@ h1, h2, h3, h4, h5, h6 {
 		width: 100%;
 		text-align: center;
 		height: 12px;
-		margin: 45px 0 42px 0;
+		margin-top: 45px;
 	}
 
 	.owl-page {
@@ -645,9 +646,14 @@ h1, h2, h3, h4, h5, h6 {
 		border-radius: 50%;
 		display: inline-block;
 		margin: 0 3px;
+		@extend .transition;
 
 		&.active {
 			background: #4E4E4E
+		}
+
+		&:hover {
+			opacity: 0.6;
 		}
 	}
 }
