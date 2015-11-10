@@ -670,18 +670,29 @@ h1, h2, h3, h4, h5, h6 {
 		}
 	}
 
+	input,
+	button,
+	textarea {
+		font-family: 'allerregular', sans-serif;
+	}
+
 	button,
 	.btn-primary {
 		background: #f33b3b;
 		border-color: #f33b3b;
 		@extend .transition;
-		
+		height: 42px;
+
 		&:hover {
 			background: #fff;
 			color: #f33b3b;
 		}
 	}
-
+	
+	.home_headline {
+		margin-bottom: 45px;
+		color: #272727;
+	}
 }
 
 /*---------------------------------------
