@@ -300,7 +300,12 @@ echo '
 
 		</div> <!-- / END CONTAINER -->
 	</section> <!-- / END CONTACT US SECTION-->
+	<?php
 
+	//Home recent posts
+	get_template_part( 'sections/home_blog' );
+
+	?>
 <div id="content" class="site-content">
 
 <?php get_footer(); ?>
