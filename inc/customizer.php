@@ -341,6 +341,150 @@ $wp_customize->add_control(
 		)
 );
 
+/**
+ * Home: Contact us Form
+ */
+$wp_customize->add_section( 'home_contactform_section' , array(
+	'title'		=> __( 'Home Contactform Section', 'zoocommerce' ),
+	'priority'	=> 31
+) );
+
+
+$wp_customize->add_setting( 'latest_contact_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Get in touch', 'zoocommerce')));
+$wp_customize->add_control( 'latest_contact_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_contactform_section',
+		'settings' => 'latest_contact_headline',
+		'priority'    => 1,
+));
+
+$wp_customize->add_setting( 'latest_contact_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoocommerce')));
+$wp_customize->add_control( 'latest_contact_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_contactform_section',
+		'settings' => 'latest_contact_subheading',
+		'priority'    => 2,
+));
+
+/* zerif_contactus_email */
+$wp_customize->add_setting( 'zerif_contactus_email', array('sanitize_callback' => 'zerif_sanitize_text'));
+$wp_customize->add_control( 'zerif_contactus_email', array(
+		'label'    => __( 'Email address', 'zerif' ),
+		'description' => __('The contact us form is submitted to this email address.','zerif'),
+		'section'  => 'home_contactform_section',
+		'priority'    => 4,
+));
+
+/* zerif_contactus_button_label */
+$wp_customize->add_setting( 'zerif_contactus_button_label', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Send Message','zerif')));
+$wp_customize->add_control( 'zerif_contactus_button_label', array(
+		'label'    => __( 'Send message button label', 'zerif' ),
+		'section'  => 'home_contactform_section',
+		'priority'    => 5,
+));
+
+/* zerif_contactus_name_placeholder */
+$wp_customize->add_setting( 'zerif_contactus_name_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Your Name','zerif')));
+$wp_customize->add_control( 'zerif_contactus_name_placeholder', array(
+		'label'    => __( 'Placeholder for "Your Name" input ', 'zerif' ),
+		'section'  => 'home_contactform_section',
+		'priority'    => 6,
+));
+
+/* zerif_contactus_email_placeholder */
+$wp_customize->add_setting( 'zerif_contactus_email_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Your Email','zerif')));
+$wp_customize->add_control( 'zerif_contactus_email_placeholder', array(
+		'label'    => __( 'Placeholder for "Your Email" input', 'zerif' ),
+		'section'  => 'home_contactform_section',
+		'priority'    => 7,
+));
+
+/* zerif_contactus_subject_placeholder */
+$wp_customize->add_setting( 'zerif_contactus_subject_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Subject','zerif')));
+$wp_customize->add_control( 'zerif_contactus_subject_placeholder', array(
+		'label'    => __( 'Placeholder for "Subject" input', 'zerif' ),
+		'section'  => 'home_contactform_section',
+		'priority'    => 8,
+));
+
+/* zerif_contactus_message_placeholder */
+$wp_customize->add_setting( 'zerif_contactus_message_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Your Message','zerif')));
+$wp_customize->add_control( 'zerif_contactus_message_placeholder', array(
+		'label'    => __( 'Placeholder for "Message" input', 'zerif' ),
+		'section'  => 'home_contactform_section',
+		'priority'    => 9,
+));
+
+/* zerif_contacus_background */
+$wp_customize->add_setting( 'zerif_contacus_background', array( 'default' => 'rgba(255, 255, 255, 1)' ) );					 
+$wp_customize->add_control(
+					new Zerif_Customize_Alpha_Color_Control(
+						$wp_customize,
+						'zerif_contacus_background',
+						array(
+							'label'    => __( 'Background color', 'zerif' ),
+							'palette' => true,
+							'section'  => 'home_contactform_section',
+							'priority'   => 10
+						)
+					)
+);
+		
+/* zerif_contacus_header */
+$wp_customize->add_setting( 'zerif_contacus_header', array( 'default' => '#fff' ) );
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'zerif_contacus_header',
+		array(
+			'label'      => __( 'Title and subtitle color', 'zerif' ),
+			'section'    => 'home_contactform_section',
+			'priority'   => 11
+		)
+	)
+);
+
+/* zerif_contacus_button_background */
+$wp_customize->add_setting( 'zerif_contacus_button_background', array( 'default' => '#e96656' ) );
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'zerif_contacus_button_background',
+		array(
+			'label'      => __( 'Submit button background color', 'zerif' ),
+			'section'    => 'home_contactform_section',
+			'priority'   => 12
+		)
+	)
+);
+
+/* zerif_contacus_button_background_hover */
+$wp_customize->add_setting( 'zerif_contacus_button_background_hover', array( 'default' => '#cb4332' ) );
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'zerif_contacus_button_background_hover',
+		array(
+			'label'      => __( 'Submit button background color - hover', 'zerif' ),
+			'section'    => 'home_contactform_section',
+			'priority'   => 13
+		)
+	)
+);
+
+/* zerif_contacus_button_color */
+$wp_customize->add_setting( 'zerif_contacus_button_color', array( 'default' => '#fff' ) );
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'zerif_contacus_button_color',
+		array(
+			'label'      => __( 'Section button color', 'zerif' ),
+			'section'    => 'home_contactform_section',
+			'priority'   => 14
+		)
+	)
+);
 
 
 	if ( class_exists( 'WP_Customize_Panel' ) ):		

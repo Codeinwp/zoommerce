@@ -658,6 +658,32 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+#contact {
+	background: transparent;
+
+	&.contact-us {
+		padding: 45px 0;
+
+		input {
+			box-shadow: none;
+			border: 1px solid #ccc !important;
+		}
+	}
+
+	button,
+	.btn-primary {
+		background: #f33b3b;
+		border-color: #f33b3b;
+		@extend .transition;
+		
+		&:hover {
+			background: #fff;
+			color: #f33b3b;
+		}
+	}
+
+}
+
 /*---------------------------------------
  **   Responsive  -----  MEDIA QUERIES
 -----------------------------------------*/
