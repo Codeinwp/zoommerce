@@ -10,7 +10,7 @@
 /*************************************************/
 
 	/* Background Image */
-	$zerif_background_image = get_theme_mod('zerif_background_image');
+	$zerif_background_image = get_theme_mod('zerif_background_image', get_stylesheet_directory_uri() . '/assets/images/demo/home_background.png');
 
 	echo '<div class="fadein-slider">';
 			

@@ -1,5 +1,6 @@
 @import 'fonts';
 @import 'mixins';
+@import 'owlCarousel';
 
 body {
 	font-family: 'allerregular', sans-serif !important;
@@ -306,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .home_headline {
 	width: 100%;
-	margin: 45px 0 0 20px;
+	margin-top: 45px;
 	text-align: center;
 
 	h3 {
@@ -566,6 +567,7 @@ h1, h2, h3, h4, h5, h6 {
 #testimonials {
 	background: #333;
 	overflow: hidden;
+	padding-bottom: 45px;
 
 	.quote {
 		display: none;
@@ -627,6 +629,147 @@ h1, h2, h3, h4, h5, h6 {
 
 		img {
 			display: block;
+		}
+	}
+	
+	.owl-pagination {
+		width: 100%;
+		text-align: center;
+		height: 12px;
+		margin-top: 45px;
+	}
+
+	.owl-page {
+		width: 12px;
+		height: 12px;
+		background: #3D3D3D;
+		border-radius: 50%;
+		display: inline-block;
+		margin: 0 3px;
+		@extend .transition;
+
+		&.active {
+			background: #4E4E4E
+		}
+
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+}
+
+#contact {
+	background: transparent;
+
+	&.contact-us {
+		padding: 45px 0;
+
+		input {
+			box-shadow: none;
+			border: 1px solid #ccc !important;
+		}
+	}
+
+	input,
+	button,
+	textarea {
+		font-family: 'allerregular', sans-serif;
+	}
+
+	button,
+	.btn-primary {
+		background: #f33b3b;
+		border-color: #f33b3b;
+		@extend .transition;
+		height: 42px;
+
+		&:hover {
+			background: #fff;
+			color: #f33b3b;
+		}
+	}
+	
+	.home_headline {
+		margin-bottom: 45px;
+		color: #272727;
+	}
+}
+
+#home_blog {
+	background: url(../images/shop_cats_pattern.jpg);
+	padding: 45px 0 95px 0;
+	
+	.home_headline {
+		margin-bottom: 30px;
+	}
+
+	.post {
+		width: 49%;
+		background: #fff;
+		padding: 8px;
+		float: left;
+		@extend .borderbox;
+		text-align: left;
+		color: #777;
+
+		figure {
+			height: 250px;
+			width: 100%;
+			display: block;
+			margin-bottom: 20px;
+			@extend .bgcover;
+
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		a.title {
+			font-size: 16px;
+			text-transform: uppercase;
+			color: #f33b3b;
+			margin-bottom: 20px;
+			font-family: 'allerbold';
+			display: block;
+
+			&:hover {
+				color: #333;
+			}
+		}
+
+		time {
+			width: 100%;
+			display: block;
+			height: 38px;
+			line-height: 38px;
+			border: 1px solid #ddd;
+			border-left: none;
+			border-right: none;
+			font-style: italic;
+			margin-bottom: 20px;
+			font-size: 14px;
+		}
+
+		.excerpt {
+			line-height: 24px;
+			margin-bottom: 10px;
+
+			p {
+				font-size: 14px;
+				margin-bottom: 0;
+			}
+		}
+
+		a.readmore {
+			color: #f33b3b;
+			font-size: 14px;
+			font-style: italic;
+		}
+
+		&:nth-child(2n+1) {
+			margin-right: 2%;
 		}
 	}
 }

@@ -24,7 +24,7 @@ function zoocommerce_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'zoocommerce_enqueue_scripts' );
 function zoocommerce_enqueue_scripts() {
   	wp_enqueue_script( 'zoocommerce_scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array(), '1.0', true );
-  	wp_enqueue_script( 'zoocommerce_scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array(), '1.0', true );
+  	wp_enqueue_script( 'owlCarousel', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '1.0', true );
 }
 
 function parallax_one_customizer_script() {
