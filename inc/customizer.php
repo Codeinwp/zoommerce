@@ -184,7 +184,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	/************** GENERAL OPTIONS  ***************/
 
 	/***********************************************/
-require_once ( 'class/parallax_one_general_control.php');
+require_once ( 'class/zoocommerce_general_control.php');
 
 /**
  * General Customizer fields 
@@ -198,7 +198,7 @@ $wp_customize->add_section( 'home_categories' , array(
 $wp_customize->add_setting( 'customizer_shop_cats', array(
 	'sanitize_callback' => 'zoocommerce_sanitize_repeater',
 ));
-$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'customizer_shop_cats', array(
+$wp_customize->add_control( new Zoocommerce_General_Repeater( $wp_customize, 'customizer_shop_cats', array(
 	'label'   => esc_html__('Add new shop category','zoocommerce'),
 	'section' => 'home_categories',
 	'priority' => 1,

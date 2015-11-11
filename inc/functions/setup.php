@@ -27,12 +27,12 @@ function zoocommerce_enqueue_scripts() {
   	wp_enqueue_script( 'owlCarousel', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '1.0', true );
 }
 
-function parallax_one_customizer_script() {
-	wp_enqueue_script( 'parallax_one_customizer_script', parallax_get_file('/assets/js/parallax_one_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
+function zoocommerce_one_customizer_script() {
+	wp_enqueue_script( 'zoocommerce_one_customizer_script', zoocommerce_get_file('/assets/js/zoocommerce_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
 }
-add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_script' );
+add_action( 'customize_controls_enqueue_scripts', 'zoocommerce_one_customizer_script' );
 
-function parallax_get_file($file){
+function zoocommerce_get_file($file){
 	$file_parts = pathinfo($file);
 	$accepted_ext = array('jpg','img','png','css','js');
 	if( in_array($file_parts['extension'], $accepted_ext) ){
