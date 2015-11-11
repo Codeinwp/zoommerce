@@ -42,7 +42,7 @@ echo '
 		          $hasError = true;    
 		        }
 
-		        $response = wp_remote_get( "https://www.google.com/recaptcha/api/siteverify?secret=".$zerif_contactus_secretkey."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR'] );
+		        $response = wp_remote_get( "https://www.google.com/recaptcha/api/siteverify?secret=".esc_html($zerif_contactus_secretkey)."&response=".esc_html($captcha)."&remoteip=".$_SERVER['REMOTE_ADDR'] );
 		        if($response['body'].success==false) {
 		        	$hasError = true;
 		        }
@@ -199,25 +199,25 @@ echo '
 
 						if(isset($nameError) && $nameError != '') :																		 
 
-							echo '<p class="error white-text">'.$nameError.'</p>';																 
+							echo '<p class="error white-text">'.esc_html($nameError).'</p>';																 
 
 						endif;	
 
 						if(isset($emailError) && $emailError != '') :																		 
 
-							echo '<p class="error white-text">'.$emailError.'</p>';																 
+							echo '<p class="error white-text">'.esc_html($emailError).'</p>';																 
 
 						endif;	
 
 						if(isset($subjectError) && $subjectError != '') :																		 
 
-							echo '<p class="error white-text">'.$subjectError.'</p>';																 
+							echo '<p class="error white-text">'.esc_html($subjectError).'</p>';																 
 
 						endif;	
 
 						if(isset($messageError) && $messageError != '') :																		 
 
-							echo '<p class="error white-text">'.$messageError.'</p>';																 
+							echo '<p class="error white-text">'.esc_html($messageError).'</p>';																 
 
 						endif;	
 
@@ -233,7 +233,7 @@ echo '
 
 							<?php $zerif_contactus_name_placeholder = get_theme_mod('zerif_contactus_name_placeholder',__('Your Name', 'zoocommerce')); ?>
 							
-							<input type="text" name="myname" placeholder="<?php if(!empty($zerif_contactus_name_placeholder)) echo $zerif_contactus_name_placeholder; ?>" class="form-control input-box" value="<?php if(isset($_POST['myname'])) echo esc_attr($_POST['myname']);?>">
+							<input type="text" name="myname" placeholder="<?php if(!empty($zerif_contactus_name_placeholder)) echo esc_attr($zerif_contactus_name_placeholder); ?>" class="form-control input-box" value="<?php if(isset($_POST['myname'])) echo esc_attr($_POST['myname']);?>">
 
 						</div>
 
@@ -241,7 +241,7 @@ echo '
 						
 							<?php $zerif_contactus_email_placeholder = get_theme_mod('zerif_contactus_email_placeholder',__('Your Email', 'zoocommerce')); ?>
 							
-							<input type="email" name="myemail" placeholder="<?php if(!empty($zerif_contactus_email_placeholder)) echo $zerif_contactus_email_placeholder; ?>" class="form-control input-box" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
+							<input type="email" name="myemail" placeholder="<?php if(!empty($zerif_contactus_email_placeholder)) echo esc_attr($zerif_contactus_email_placeholder); ?>" class="form-control input-box" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
 
 						</div>
 
@@ -249,7 +249,7 @@ echo '
 						
 							<?php $zerif_contactus_subject_placeholder = get_theme_mod('zerif_contactus_subject_placeholder',__('Subject', 'zoocommerce')); ?>
 							
-							<input type="text" name="mysubject" placeholder="<?php if(!empty($zerif_contactus_subject_placeholder)) echo $zerif_contactus_subject_placeholder; ?>" class="form-control input-box" value="<?php if(isset($_POST['mysubject'])) echo esc_attr($_POST['mysubject']);?>">
+							<input type="text" name="mysubject" placeholder="<?php if(!empty($zerif_contactus_subject_placeholder)) echo esc_attr($zerif_contactus_subject_placeholder); ?>" class="form-control input-box" value="<?php if(isset($_POST['mysubject'])) echo esc_attr($_POST['mysubject']);?>">
 
 						</div>
 						
@@ -257,7 +257,7 @@ echo '
 
 							<?php $zerif_contactus_message_placeholder = get_theme_mod('zerif_contactus_message_placeholder',__('Your Message', 'zoocommerce')); ?>
 							
-							<textarea name="mymessage" class="form-control textarea-box" placeholder="<?php if(!empty($zerif_contactus_message_placeholder)) echo $zerif_contactus_message_placeholder; ?>"><?php if(isset($_POST['mymessage'])) { echo stripslashes($_POST['mymessage']); } ?></textarea>
+							<textarea name="mymessage" class="form-control textarea-box" placeholder="<?php if(!empty($zerif_contactus_message_placeholder)) echo esc_attr($zerif_contactus_message_placeholder); ?>"><?php if(isset($_POST['mymessage'])) { echo stripslashes($_POST['mymessage']); } ?></textarea>
 
 						</div>
 						
@@ -266,7 +266,7 @@ echo '
 							
 							if( !empty($zerif_contactus_button_label) ):
 								
-								echo '<button class="btn btn-primary custom-button" type="submit" data-scrollreveal="enter left after 0s over 1s">'.$zerif_contactus_button_label.'</button>';
+								echo '<button class="btn btn-primary custom-button" type="submit" data-scrollreveal="enter left after 0s over 1s">'.esc_html($zerif_contactus_button_label).'</button>';
 								
 							elseif ( isset( $wp_customize ) ):
 							
@@ -283,7 +283,7 @@ echo '
 
 							if( isset($zerif_contactus_recaptcha_show) && $zerif_contactus_recaptcha_show != 1 && !empty($zerif_contactus_sitekey) && !empty($zerif_contactus_secretkey) ) :
 
-								echo '<div class="g-recaptcha zerif-g-recaptcha" data-sitekey="' . $zerif_contactus_sitekey . '"></div>';
+								echo '<div class="g-recaptcha zerif-g-recaptcha" data-sitekey="' . esc_attr($zerif_contactus_sitekey) . '"></div>';
 
 							endif;
 
