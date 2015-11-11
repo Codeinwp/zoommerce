@@ -52,7 +52,7 @@ echo '
 			/* name */
 
 			if(trim($_POST['myname']) === ''):               
-				$nameError = __('* Please enter your name.','zerif');               
+				$nameError = __('* Please enter your name.', 'zoocommerce');               
 				$hasError = true;        
 			else:               
 				$name = trim($_POST['myname']);        
@@ -60,10 +60,10 @@ echo '
 
 			/* email */	
 			if(trim($_POST['myemail']) === ''):               
-				$emailError = __('* Please enter your email address.','zerif');               
+				$emailError = __('* Please enter your email address.', 'zoocommerce');               
 				$hasError = true;        
 			elseif (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['myemail']))) :               
-				$emailError = __('* You entered an invalid email address.','zerif');               
+				$emailError = __('* You entered an invalid email address.', 'zoocommerce');               
 				$hasError = true;        
 			else:               
 				$email = trim($_POST['myemail']);        
@@ -71,7 +71,7 @@ echo '
 
 			/* subject */
 			if(trim($_POST['mysubject']) === ''):               
-				$subjectError = __('* Please enter a subject.','zerif');               
+				$subjectError = __('* Please enter a subject.', 'zoocommerce');               
 				$hasError = true;        
 			else:               
 				$subject = trim($_POST['mysubject']);        
@@ -79,7 +79,7 @@ echo '
 
 			/* message */
 			if(trim($_POST['mymessage']) === ''):               
-				$messageError = __('* Please enter a message.','zerif');               
+				$messageError = __('* Please enter a message.', 'zoocommerce');               
 				$hasError = true;        
 			else:                                     
 				$message = stripslashes(trim($_POST['mymessage']));               
@@ -161,12 +161,12 @@ echo '
 			<!-- SECTION HEADER -->
 			<?php
 				echo '<div class="home_headline">';
-				if(get_theme_mod('latest_contact_headline', 'Get in touch')) {
-					echo '<h3>'.esc_html(get_theme_mod('latest_contact_headline', 'Newsletter Subscribtion')).'</h3>';
+				if(get_theme_mod('latest_contact_headline', __('Get in touch', 'zoocommerce'))) {
+					echo '<h3>'.esc_html(get_theme_mod('latest_contact_headline', __('Newsletter Subscribtion', 'zoocommerce') )).'</h3>';
 				}
 
-				if(get_theme_mod('latest_contact_subheading', 'Big and mobile optimized contact form integrated. All fields are customizable.')) {
-					echo '<h4>'.esc_html(get_theme_mod('latest_contact_subheading', 'Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.')).'</h4>';
+				if(get_theme_mod('latest_contact_subheading', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoocommerce'))) {
+					echo '<h4>'.esc_html(get_theme_mod('latest_contact_subheading', __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce'))).'</h4>';
 				}
 				echo '</div><!-- / .home_headline -->';
 			?>
@@ -187,11 +187,11 @@ echo '
 
 						if(isset($emailSent) && $emailSent == true) :
 
-							echo '<p class="error white-text error_thanks">'.__('Thanks, your email was sent successfully!','zerif').'</p>';                            
+							echo '<p class="error white-text error_thanks">'.__('Thanks, your email was sent successfully!', 'zoocommerce').'</p>';                            
 
 						elseif(isset($_POST['submitted'])):                                    
 
-							echo '<p class="error white-text error_sorry">'.__('Sorry, an error occured. The email could not be sent.','zerif').'</p>';
+							echo '<p class="error white-text error_sorry">'.__('Sorry, an error occured. The email could not be sent.', 'zoocommerce').'</p>';
 
 						endif;
 
@@ -231,7 +231,7 @@ echo '
 
 						<div class="col-lg-4 col-sm-4 zerif-rtl-contact-name" data-scrollreveal="enter left after 0s over 1s">
 
-							<?php $zerif_contactus_name_placeholder = get_theme_mod('zerif_contactus_name_placeholder','Your Name'); ?>
+							<?php $zerif_contactus_name_placeholder = get_theme_mod('zerif_contactus_name_placeholder',__('Your Name', 'zoocommerce')); ?>
 							
 							<input type="text" name="myname" placeholder="<?php if(!empty($zerif_contactus_name_placeholder)) echo $zerif_contactus_name_placeholder; ?>" class="form-control input-box" value="<?php if(isset($_POST['myname'])) echo esc_attr($_POST['myname']);?>">
 
@@ -239,7 +239,7 @@ echo '
 
 						<div class="col-lg-4 col-sm-4 zerif-rtl-contact-email" data-scrollreveal="enter left after 0s over 1s">
 						
-							<?php $zerif_contactus_email_placeholder = get_theme_mod('zerif_contactus_email_placeholder','Your Email'); ?>
+							<?php $zerif_contactus_email_placeholder = get_theme_mod('zerif_contactus_email_placeholder',__('Your Email', 'zoocommerce')); ?>
 							
 							<input type="email" name="myemail" placeholder="<?php if(!empty($zerif_contactus_email_placeholder)) echo $zerif_contactus_email_placeholder; ?>" class="form-control input-box" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
 
@@ -247,7 +247,7 @@ echo '
 
 						<div class="col-lg-4 col-sm-4 zerif-rtl-contact-subject" data-scrollreveal="enter left after 0s over 1s">
 						
-							<?php $zerif_contactus_subject_placeholder = get_theme_mod('zerif_contactus_subject_placeholder','Subject'); ?>
+							<?php $zerif_contactus_subject_placeholder = get_theme_mod('zerif_contactus_subject_placeholder',__('Subject', 'zoocommerce')); ?>
 							
 							<input type="text" name="mysubject" placeholder="<?php if(!empty($zerif_contactus_subject_placeholder)) echo $zerif_contactus_subject_placeholder; ?>" class="form-control input-box" value="<?php if(isset($_POST['mysubject'])) echo esc_attr($_POST['mysubject']);?>">
 
@@ -255,14 +255,14 @@ echo '
 						
 						<div class="col-lg-12 col-sm-12" data-scrollreveal="enter right after 0s over 1s">
 
-							<?php $zerif_contactus_message_placeholder = get_theme_mod('zerif_contactus_message_placeholder','Your Message'); ?>
+							<?php $zerif_contactus_message_placeholder = get_theme_mod('zerif_contactus_message_placeholder',__('Your Message', 'zoocommerce')); ?>
 							
 							<textarea name="mymessage" class="form-control textarea-box" placeholder="<?php if(!empty($zerif_contactus_message_placeholder)) echo $zerif_contactus_message_placeholder; ?>"><?php if(isset($_POST['mymessage'])) { echo stripslashes($_POST['mymessage']); } ?></textarea>
 
 						</div>
 						
 						<?php
-							$zerif_contactus_button_label = get_theme_mod('zerif_contactus_button_label','Send Message');
+							$zerif_contactus_button_label = get_theme_mod('zerif_contactus_button_label',__('Send Message', 'zoocommerce'));
 							
 							if( !empty($zerif_contactus_button_label) ):
 								
