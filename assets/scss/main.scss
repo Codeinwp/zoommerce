@@ -699,18 +699,63 @@ h1, h2, h3, h4, h5, h6 {
 	background: url(../images/shop_cats_pattern.jpg);
 	padding: 45px 0 95px 0;
 	
+	.items_with_navigation {
+		position: relative;
+	}
+
+	.prev_posts,
+	.next_posts {
+		width: 16px;
+		height: 26px;
+		position: absolute;
+		margin: auto;
+		z-index: 99;
+		top: 0; bottom: 0;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		@extend .transition;
+
+		&:hover {
+			opacity: 0.8;
+			cursor: pointer;
+		}
+	}
+
+	.prev_posts {
+		background: url(../images/blog_prev.png);
+		left: -27px;
+
+		&:hover {
+			left: -30px;
+		}
+	}
+
+	.next_posts {
+		background: url(../images/blog_next.png);
+		right: -27px;
+
+		&:hover {
+			right: -30px;
+		}
+	}
+
 	.home_headline {
 		margin-bottom: 30px;
 	}
 
 	.post {
-		width: 49%;
+		width: 96.6%;
+		margin: 0 1.8%;
 		background: #fff;
 		padding: 8px;
 		float: left;
 		@extend .borderbox;
 		text-align: left;
-		color: #777;
+		color: #595959;
 
 		figure {
 			height: 250px;
@@ -727,12 +772,12 @@ h1, h2, h3, h4, h5, h6 {
 		}
 
 		a.title {
-			font-size: 16px;
+			font-size: 18px;
 			text-transform: uppercase;
 			color: #f33b3b;
 			margin-bottom: 20px;
-			font-family: 'allerbold';
 			display: block;
+			padding: 0 2.5%;
 
 			&:hover {
 				color: #333;
@@ -740,7 +785,7 @@ h1, h2, h3, h4, h5, h6 {
 		}
 
 		time {
-			width: 100%;
+			width: 95%;
 			display: block;
 			height: 38px;
 			line-height: 38px;
@@ -748,13 +793,14 @@ h1, h2, h3, h4, h5, h6 {
 			border-left: none;
 			border-right: none;
 			font-style: italic;
-			margin-bottom: 20px;
+			margin: 0 2.5% 20px 2.5%;
 			font-size: 14px;
 		}
 
 		.excerpt {
 			line-height: 24px;
 			margin-bottom: 10px;
+			padding: 0 2.8%;
 
 			p {
 				font-size: 14px;
@@ -765,11 +811,11 @@ h1, h2, h3, h4, h5, h6 {
 		a.readmore {
 			color: #f33b3b;
 			font-size: 14px;
+			text-transform: capitalize;
 			font-style: italic;
-		}
-
-		&:nth-child(2n+1) {
-			margin-right: 2%;
+			margin-left: 2.8%;
+			display: block;
+			margin-bottom: 18px;
 		}
 	}
 }
