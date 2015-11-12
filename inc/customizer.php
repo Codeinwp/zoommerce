@@ -486,6 +486,39 @@ $wp_customize->add_control(
 	)
 );
 
+/**
+ * Home: Blog section
+ */
+$wp_customize->add_section( 'home_blog_section' , array(
+	'title'		=> __( 'Home Blog Section', 'zoocommerce' ),
+	'priority'	=> 31
+) );
+
+
+$wp_customize->add_setting( 'home_latest_posts_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Latest blog posts', 'zoocommerce')));
+$wp_customize->add_control( 'home_latest_posts_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_blog_section',
+		'settings' => 'home_latest_posts_headline',
+		'priority'    => 1,
+));
+
+$wp_customize->add_setting( 'home_latest_posts_subheading', array('sanitize_callback' => 'zerif_sanitize_number'));
+$wp_customize->add_control( 'home_latest_posts_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_blog_section',
+		'settings' => 'home_latest_posts_subheading',
+		'priority'    => 2,
+));
+
+$wp_customize->add_setting( 'home_latest_posts_count', array('sanitize_callback' => 'zerif_sanitize_number', 'default' => 4));
+$wp_customize->add_control( 'home_latest_posts_count', array(
+		'label'    => __( 'Coubt', 'zoocommerce' ),
+		'section'  => 'home_blog_section',
+		'settings' => 'home_latest_posts_count',
+		'priority'    => 3,
+));
+
 
 	if ( class_exists( 'WP_Customize_Panel' ) ):		
 		

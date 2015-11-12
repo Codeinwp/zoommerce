@@ -746,7 +746,15 @@ h1, h2, h3, h4, h5, h6 {
 	.home_headline {
 		margin-bottom: 30px;
 	}
-
+	
+	.wide {
+		.post,
+		.owl-item {
+			width: 100% !important;
+			margin: 0 !important;
+		}
+		
+	}
 	.post {
 		width: 96.6%;
 		margin: 0 1.8%;
@@ -756,12 +764,13 @@ h1, h2, h3, h4, h5, h6 {
 		@extend .borderbox;
 		text-align: left;
 		color: #595959;
+		overflow: hidden;
+		padding-bottom: 45px;
 
 		figure {
 			height: 250px;
 			width: 100%;
 			display: block;
-			margin-bottom: 20px;
 			@extend .bgcover;
 
 			a {
@@ -775,7 +784,7 @@ h1, h2, h3, h4, h5, h6 {
 			font-size: 18px;
 			text-transform: uppercase;
 			color: #f33b3b;
-			margin-bottom: 20px;
+			margin: 20px 0;
 			display: block;
 			padding: 0 2.5%;
 
@@ -816,6 +825,7 @@ h1, h2, h3, h4, h5, h6 {
 			margin-left: 2.8%;
 			display: block;
 			margin-bottom: 18px;
+			overflow: hidden;
 		}
 	}
 }

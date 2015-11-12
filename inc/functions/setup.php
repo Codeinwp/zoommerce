@@ -63,6 +63,8 @@ function zoocommerce_setup() {
 		require_once( $locale_file );
 	endif;
 	
+	//Custom image sizes
+	add_image_size( 'home_blog', 450, 250 );
 }
 
 /**

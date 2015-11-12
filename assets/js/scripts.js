@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 		    maxHeight = '';
 		    
 		    $(target).each(function() {
-		        var heights = $(this).height();
+		        var heights = $(this).outerHeight();
 
 		        allHeights.push(heights);
 		        maxHeight = Math.max.apply(null, allHeights);
@@ -52,6 +52,9 @@ jQuery(document).ready(function($) {
 
 		//Home products height match
 		zoocommerce_height_match('#home_products .product');
+
+		//Home blog posts height match
+		zoocommerce_height_match('#home_blog .post');
 
 		/*
 		* Home - Add height on products right image
