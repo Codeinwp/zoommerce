@@ -1,6 +1,6 @@
 <?php
 
-$zerif_googlemap_address = get_theme_mod('zerif_googlemap_address',__('New York, Leroy Street','zerif'));
+$zerif_googlemap_address = get_theme_mod('zerif_googlemap_address',__('New York, Leroy Street','zoocommerce'));
 
 $zerif_googlemap_static = get_theme_mod('zerif_googlemap_static');
 

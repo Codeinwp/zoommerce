@@ -1,7 +1,7 @@
 <?php
 
 //Data
-$right_image = get_theme_mod('latest_products_wide_image', 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e666bd30685839.562e97f59fde8.jpg');
+$right_image = get_theme_mod('latest_products_wide_image', get_stylesheet_directory_uri() . '/assets/images/demo/products_background.jpg');
 
 //Products count
 $prod_count = get_theme_mod('latest_products_count', 3);
@@ -19,12 +19,12 @@ $products_loop = new WP_Query( $products_args );
 		<div class="home_headline">
 			<?php
 
-				if(get_theme_mod('latest_products_headline', 'New Arrivals')) {
-					echo '<h3>'.esc_html(get_theme_mod('latest_products_headline', 'New Arrivals')).'</h3>';
+				if(get_theme_mod('latest_products_headline', __('New Arrivals', 'zoocommerce'))) {
+					echo '<h3>'.esc_html(get_theme_mod('latest_products_headline', __('New Arrivals', 'zoocommerce'))).'</h3>';
 				}
 
-				if(get_theme_mod('latest_products_subheading', 'Check out our latest products')) {
-					echo '<h4>'.esc_html(get_theme_mod('latest_products_subheading', 'Check out our latest products')).'</h4>';
+				if(get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoocommerce'))) {
+					echo '<h4>'.esc_html(get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoocommerce'))).'</h4>';
 				}
 
 			?>

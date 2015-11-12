@@ -71,5 +71,23 @@ jQuery(document).ready(function($) {
 	    autoHeight : true,
 	    transitionStyle:"fade"
 	});
+
+	var homeBlogOwl = $("#home_blog .items_wrapper");
+	homeBlogOwl.owlCarousel({
+		items : 2, //10 items above 1000px browser width
+		itemsDesktop : [1000,2], //5 items between 1000px and 901px
+		itemsDesktopSmall : [900,2], // betweem 900px and 601px
+		itemsTablet: [600,1], //2 items between 600 and 0
+		itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+	});
+
+	$("#home_blog .next_posts").click(function(){
+		homeBlogOwl.trigger('owl.next');
+	});
+
+	$("#home_blog .prev_posts").click(function(){
+		homeBlogOwl.trigger('owl.prev');
+	});
+
 	
 });
