@@ -72,6 +72,9 @@ jQuery(document).ready(function($) {
 	    transitionStyle:"fade"
 	});
 
+	/*
+	* Call owl carousel for blog posts
+	*/
 	var homeBlogOwl = $("#home_blog .items_wrapper");
 	homeBlogOwl.owlCarousel({
 		items : 2, //10 items above 1000px browser width
