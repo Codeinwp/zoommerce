@@ -163,6 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 #footer {
     padding-top: 30px;
 	padding-bottom:15px;
+	background: #242424;
 }
 
 #footer .footer-widgets {
@@ -185,13 +186,27 @@ h1, h2, h3, h4, h5, h6 {
 	text-align:left;
 	padding-top: 0px;
 	padding-bottom: 0px;
-	font-size:14px;
+	font-size: 13px;
+	color: #737373;
+	display: flex;
+    height: 40px;
+	
+	.icon-left {
+		float: left;
+		margin-right: 12px;
+		align-self: center;
+	}
+
+	a {
+		color: #737373;
+		align-self: center;
+	}
+
+	img {
+		max-width: none;
+	}
 }
 
-.company-details .icon-left {
-	float: left;
-	margin-right: 12px;
-}
 
 #zerif-copyright {
 	color:#737373;
@@ -203,11 +218,18 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 0px;
     background: transparent;
 	float: right;
+	color: #737373;
 	text-align: right;
 }
 
 .social {
 	margin:0 !important;
+
+	li {
+		a {
+			color: #737373;
+		}
+	}
 }
 
 /* ------- Section 2 - Home - Shop Categories ------- */
