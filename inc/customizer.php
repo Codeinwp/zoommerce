@@ -513,7 +513,7 @@ $wp_customize->add_control( 'home_latest_posts_subheading', array(
 
 $wp_customize->add_setting( 'home_latest_posts_count', array('sanitize_callback' => 'zerif_sanitize_number', 'default' => 4));
 $wp_customize->add_control( 'home_latest_posts_count', array(
-		'label'    => __( 'Coubt', 'zoocommerce' ),
+		'label'    => __( 'Count', 'zoocommerce' ),
 		'section'  => 'home_blog_section',
 		'settings' => 'home_latest_posts_count',
 		'priority'    => 3,

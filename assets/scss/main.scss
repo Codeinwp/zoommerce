@@ -671,9 +671,19 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	input,
+	textarea {
+		color: #585858;
+
+		&:focus {
+			border-color: #ccc;
+		}
+	}
+
+	input,
 	button,
 	textarea {
 		font-family: 'allerregular', sans-serif;
+		font-size: 16px;
 	}
 
 	button,
@@ -682,6 +692,8 @@ h1, h2, h3, h4, h5, h6 {
 		border-color: #f33b3b;
 		@extend .transition;
 		height: 42px;
+		padding: 6px 16px;
+		padding-top: 7px;
 
 		&:hover {
 			background: #fff;
