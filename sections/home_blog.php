@@ -4,7 +4,7 @@
 
 		echo '<div class="home_headline">';
 		if(get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'zoocommerce'))) {
-			echo '<h3>'.esc_html(get_theme_mod('home_latest_posts_headline', __('Testimonials', 'zoocommerce'))).'</h3>';
+			echo '<h3>'.esc_html(get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'zoocommerce'))).'</h3>';
 		}
 
 		if(get_theme_mod('home_latest_posts_subheading')) {

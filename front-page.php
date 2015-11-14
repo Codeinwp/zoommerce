@@ -144,7 +144,7 @@ echo '
 		get_template_part( 'sections/home_products' );
 
 	} else {
-		echo '<p style="margin: 20px;">'. __('Please install WooCommerce plugin in order to display the shop categories section and latest producs section', 'zoocommerce'). '</p>';
+		echo '<p style="margin: 20px; height: 391px; background: url('.get_stylesheet_directory_uri() . '/assets/images/demo/latest_product_demo.jpg'.') no-repeat center center; line-height: 391px;">'. __('Please install WooCommerce plugin in order to display the shop categories section and latest producs section', 'zoocommerce'). '</p>';
 	}
 
 	//Home newsletter section
