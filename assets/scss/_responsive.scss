@@ -1,3 +1,99 @@
-@media only screen and (min-width: 769px) and (max-width: 960px) {
-
+@media (min-width: 960px) {
+	.container {
+		width: 960px;
+	}
 }
+
+@media (min-width: 768px) and (max-width: 960px) {
+	//Header style
+	.responsive-logo {
+		float: none;
+		width: 100%;
+
+		a.navbar-brand {
+			margin: 13px auto;
+			margin-left: auto !important;
+		}
+	}
+
+	#main-nav {
+		padding-bottom: 15px;
+	}
+
+	.menu-icons {
+		width: 14%;
+		margin-top: 0;
+	}
+
+	.menu-align-center #site-navigation {
+		width: 85%;
+		float: left;
+		padding: 0;
+
+		&.navbar-collapse {
+			margin-right: 0 !important;
+		}
+
+		ul {
+			text-align: left;
+		}
+	}
+
+	//Latest products
+	#home_products {
+		.right {
+			width: 30%;
+		}
+
+		.left {
+			width: 70%;
+		}
+	}
+
+	.contact-us {
+		.row {
+			margin-left: 0;
+		}
+	}
+
+	#home_blog {
+		.post {
+			width: 94%;
+			margin: 0 3%;
+		}
+
+		.prev_posts {
+			left: -10px;
+
+			&:hover {
+				left: -14px;
+			}
+		}
+
+		.next_posts {
+			right: -10px;
+
+			&:hover {
+				right: -14px;
+			}
+		}
+	}
+
+	//Footer
+	.company-details {
+		display: block;
+		text-align: center;
+		height: auto;
+
+		.icon-left {
+			float: none;
+			margin: 0 auto;
+			margin-bottom: 7px;
+		}
+	}
+
+	.footer-box .social {
+		padding-top: 25px;
+	}
+}
+
