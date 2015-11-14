@@ -51,7 +51,7 @@
 		
 		$zerif_socials_youtube = get_theme_mod('zerif_socials_youtube');
 			
-		$zerif_copyright = get_theme_mod('zerif_copyright');
+		$zerif_copyright = get_theme_mod('zerif_copyright', __('© Themeisle. All Rights Reserved', 'zoocommerce'));
 		
 		
 		if(!empty($zerif_address) || !empty($zerif_address_icon)):

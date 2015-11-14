@@ -1822,7 +1822,7 @@ $wp_customize->add_control( 'home_latest_posts_count', array(
 		
 
 		/* zerif_copyright */
-		$wp_customize->add_setting( 'zerif_copyright', array('sanitize_callback' => 'zerif_sanitize_text'));
+		$wp_customize->add_setting( 'zerif_copyright', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => __('© Themeisle. All Rights Reserved', 'zoocommerce')));
 
 		$wp_customize->add_control( 'zerif_copyright', array(
 				'label'    => __( 'Footer Copyright', 'zoocommerce' ),
