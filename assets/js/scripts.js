@@ -107,4 +107,12 @@ jQuery(document).ready(function($) {
 		homeBlogOwl.trigger('owl.prev');
 	});
 
+	/*
+	* Big banner arrow scroll
+	*/
+	$('#big-banner .down-arrow').click(function(e) {
+		e.preventDefault();
+
+		$('html, body').animate({scrollTop: $(this).offset().top});
+	});
 });
