@@ -31,28 +31,28 @@
 		$zerif_phone = get_theme_mod('zerif_phone','<a href="tel:0 332 548 954">0 332 548 954</a>');
 		$zerif_phone_icon = get_theme_mod('zerif_phone_icon',get_stylesheet_directory_uri().'/assets/images/icon-contact.png');
 		
-		$zerif_socials_facebook = get_theme_mod('zerif_socials_facebook','#');
+		$zerif_socials_facebook = esc_url(get_theme_mod('zerif_socials_facebook','#'));
 
-		$zerif_socials_twitter = get_theme_mod('zerif_socials_twitter','#');
+		$zerif_socials_twitter = esc_url(get_theme_mod('zerif_socials_twitter','#'));
 
-		$zerif_socials_linkedin = get_theme_mod('zerif_socials_linkedin','#');
+		$zerif_socials_linkedin = esc_url(get_theme_mod('zerif_socials_linkedin','#'));
 
-		$zerif_socials_behance = get_theme_mod('zerif_socials_behance','#');
+		$zerif_socials_behance = esc_url(get_theme_mod('zerif_socials_behance','#'));
 
-		$zerif_socials_dribbble = get_theme_mod('zerif_socials_dribbble','#');
+		$zerif_socials_dribbble = esc_url(get_theme_mod('zerif_socials_dribbble','#'));
 		
-		$zerif_socials_reddit = get_theme_mod('zerif_socials_reddit');
+		$zerif_socials_reddit = esc_url(get_theme_mod('zerif_socials_reddit'));
 		
-		$zerif_socials_tumblr = get_theme_mod('zerif_socials_tumblr');
+		$zerif_socials_tumblr = esc_url(get_theme_mod('zerif_socials_tumblr'));
 		
-		$zerif_socials_pinterest = get_theme_mod('zerif_socials_pinterest');
+		$zerif_socials_pinterest = esc_url(get_theme_mod('zerif_socials_pinterest'));
 		
-		$zerif_socials_googleplus = get_theme_mod('zerif_socials_googleplus');
+		$zerif_socials_googleplus = esc_url(get_theme_mod('zerif_socials_googleplus'));
 		
-		$zerif_socials_youtube = get_theme_mod('zerif_socials_youtube');
+		$zerif_socials_youtube = esc_url(get_theme_mod('zerif_socials_youtube'));
 			
-		$zerif_copyright = get_theme_mod('zerif_copyright', __('© Themeisle. All Rights Reserved', 'zoocommerce'));
-		
+		$zerif_copyright = esc_html(get_theme_mod('zerif_copyright', __('© Themeisle. All Rights Reserved', 'zoocommerce')));
+
 		
 		if(!empty($zerif_address) || !empty($zerif_address_icon)):
 			$footer_sections++;
@@ -87,7 +87,7 @@
 			
 		if(is_active_sidebar( 'sidebar-aboutus' )):
 			
-				$zerif_aboutus_clients_title_text = get_theme_mod('zerif_aboutus_clients_title_text',__('SHOWCASE YOUR CLIENTS HERE','zerif'));
+				$zerif_aboutus_clients_title_text = get_theme_mod('zerif_aboutus_clients_title_text',__('SHOWCASE YOUR CLIENTS HERE','zoocommerce'));
 				
 				echo '<div class="clients-wrap">';
 				
@@ -101,7 +101,7 @@
 								
 							else:
 							
-								echo '<h5><span class="section-footer-title">'.__('SHOWCASE YOUR CLIENTS HERE','zerif').'</span></h5>';
+								echo '<h5><span class="section-footer-title">'.__('SHOWCASE YOUR CLIENTS HERE','zoocommerce').'</span></h5>';
 		
 							endif;
 							
@@ -316,18 +316,10 @@
 
 </footer> <!-- / END FOOOTER  -->
 
-<?php zerif_after_footer_trigger(); ?>
-
-<?php if ( wp_is_mobile() ) : ?>
-
-	<!-- reduce heigt of the google maps on mobile -->
-	<style type="text/css">
-		.zerif_google_map {
-			height: 300px !important;
-		}
-	</style>
-
-<?php endif; 
+<?php 
+	
+	//Hook
+	zerif_after_footer_trigger(); 
 
 	$zerif_slides_array = array();
 
