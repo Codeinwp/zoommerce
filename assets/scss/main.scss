@@ -95,6 +95,17 @@ h1, h2, h3, h4, h5, h6 {
 	padding:0;
 	box-shadow: none;
 	background:transparent !important;
+
+	&.smallHeightViewport {
+		.intro-text {
+			font-size: 48px;
+			line-height: 66px;
+		}
+
+		.sub-text {
+			font-size: 28px !important;
+		}
+	}
 }
 
 .fadein-slider{
@@ -848,107 +859,4 @@ h1, h2, h3, h4, h5, h6 {
 /*---------------------------------------
  **   Responsive  -----  MEDIA QUERIES
 -----------------------------------------*/
-@media (max-width: 1200px) {
-
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-
-}
-
-@media (max-width: 992px) {
-
-	/* ------- Footer ------- */
-	.company-details .icon-left {
-		float: none;
-		text-align: center;
-		margin-bottom: 12px;
-		margin-right:0;
-		height: 29px;
-	}
-
-	.company-details {
-		text-align:center;
-		font-size:12px;
-		line-height: 18px;
-	}
-
-	#footer .footer-widgets a {
-		font-size:13px;
-	}
-
-}
-
-@media (max-width: 767px) {
-
-	/* ------- Structure ------- */
-	.col-sm-3 {
-	    width: 23%;
-	}
-
-	/* ------- Menu ------- */
-	.menu-align-center .responsive-logo > a {
-		margin-left:10px;
-	}
-
-	.menu-icons {
-		margin-top:0;
-		border-left:none;
-	}
-
-	#icons-menu li:last-child {
-		margin-right:0;
-	}
-
-	.navbar-collapse {
-		max-height:100%;
-	}
-	/* ------- Section 1 - Main Billboard Banner ------- */
-	.intro-text
-	{
-		font-size: 50px !important;
-	}
-
-}
-
-@media (max-width: 600px) {
-
-	/* ------- Structure ------- */
-	.col-sm-3
-	{
-	    width: 100% !important;
-		margin-bottom:20px !important;
-	}
-	/* ------- Section 1 - Main Billboard Banner ------- */
-	.intro-text
-	{
-		font-size: 45px !important;
-		line-height: 38px !important;
-	}
-	/* ------- Footer ------- */
-	.company-details .icon-left
-	{
-		float: none;
-		text-align: center;
-		margin-bottom: 5px;
-		margin-right:0;
-		height: 29px;
-	}
-	
-}
-
-@media (max-width: 480px) {
-
-	.intro-text {
-	    font-size: 30px !important;
-	    line-height: 30px !important;
-		padding: 10px !important;
-	}
-	#big-banner h4 {
-	    font-size: 26px !important;
-	}
-
-}
-@media (max-width: 320px) {
-
-}
+@import 'responsive';

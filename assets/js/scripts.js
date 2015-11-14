@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 	/*
 	* Center vertically the big banner content 
 	*/
-	function zoocommerce_verticall_align(target, parent) {
+	function zoocommerce_verticall_align(target, parent, minus) {
 
 		if(parent) {
 			bb_parent = $(parent).height();
@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
 			bb_parent = $(target).parent().height();
 		}
 
-		var bb_top = (bb_parent - $(target).height() - $('header#home').height()) / 2;
+		var bb_top = (bb_parent - $(target).height() - minus) / 2;
 
 		$(target).css('top', bb_top);
 	}
@@ -43,12 +43,21 @@ jQuery(document).ready(function($) {
 	* Run functions on resize and load to avoid bugs 
 	*/
 	$(window).resize(function() {
+
+		/*
+		* Responsive fixes
+		*/
+		if($(window).height() < 710) {
+			$('.header-content-wrap').addClass('smallHeightViewport');
+		} else {
+			$('.header-content-wrap').removeClass('smallHeightViewport');
+		}
 		
 		//Add height on big banner
 		zoocommerce_viewport_height('#big-banner');
 
 		//Center vertically the big banner content 
-		zoocommerce_verticall_align('.header-content-wrap', '#big-banner');
+		zoocommerce_verticall_align('.header-content-wrap', '#big-banner', 0);
 
 		//Home products height match
 		zoocommerce_height_match('#home_products .product');
@@ -60,6 +69,9 @@ jQuery(document).ready(function($) {
 		* Home - Add height on products right image
 		*/
 		$('#home_products .right').css('height', $('#home_products .left').outerHeight());
+
+		
+
 	}).trigger('resize');
 
 
@@ -95,5 +107,4 @@ jQuery(document).ready(function($) {
 		homeBlogOwl.trigger('owl.prev');
 	});
 
-	
 });
