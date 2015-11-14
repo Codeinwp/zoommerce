@@ -164,12 +164,16 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 30px;
 	padding-bottom:15px;
 	background: #242424;
+
+	.clients-wrap {
+		margin-bottom: 40px;
+	}
 }
 
 #footer .footer-widgets {
 	border-bottom:#4d4d4d solid 1px;
 	border-top:#4d4d4d solid 1px;
-	margin:50px 0px 20px 0 !important;
+	margin-bottom: 20px;
 	font-size:14px;
 }
 
