@@ -162,11 +162,11 @@ echo '
 			<?php
 				echo '<div class="home_headline">';
 				if(get_theme_mod('latest_contact_headline', __('Get in touch', 'zoocommerce'))) {
-					echo '<h3>'.esc_html(get_theme_mod('latest_contact_headline', __('Newsletter Subscribtion', 'zoocommerce') )).'</h3>';
+					echo '<h3>'.esc_html(get_theme_mod('latest_contact_headline', __('Get in touch', 'zoocommerce') )).'</h3>';
 				}
 
 				if(get_theme_mod('latest_contact_subheading', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoocommerce'))) {
-					echo '<h4>'.esc_html(get_theme_mod('latest_contact_subheading', __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce'))).'</h4>';
+					echo '<h4>'.esc_html(get_theme_mod('latest_contact_subheading', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoocommerce'))).'</h4>';
 				}
 				echo '</div><!-- / .home_headline -->';
 			?>
