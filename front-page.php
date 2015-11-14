@@ -305,13 +305,8 @@ echo '
 	//Home recent posts
 	get_template_part( 'sections/home_blog' );
 
-	?>
-<div id="content" class="site-content">
+} //get_option( 'show_on_front' ) == 'page' ) 
 
-<?php get_footer(); ?>
+get_footer(); 
 
-</div><!-- .site-content -->
-
-<?php } //get_option( 'show_on_front' ) == 'page' ) ?>
-
-
+?>
