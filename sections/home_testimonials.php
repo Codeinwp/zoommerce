@@ -1,9 +1,18 @@
 <section id="testimonials">
 	<div class="container">
-		<div class="home_headline">
-			<h3>Testimonials</h3>
-			<h4>Get testimonials from your clients and then display them here.</h4>
-		</div><!-- / .home_headline -->
+		<?php
+
+		echo '<div class="home_headline">';
+		if(get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoocommerce'))) {
+			echo '<h3>'.esc_html(get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoocommerce'))).'</h3>';
+		}
+
+		if(get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoocommerce'))) {
+			echo '<h4>'.esc_html(get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoocommerce'))).'</h4>';
+		}
+		echo '</div><!-- / .home_headline -->';
+		
+		?>
 		
 		<div class="testimonials_wrap owl-carousel">
 			<?php

@@ -415,76 +415,38 @@ $wp_customize->add_control( 'zerif_contactus_message_placeholder', array(
 		'priority'    => 9,
 ));
 
-/* zerif_contacus_background */
-$wp_customize->add_setting( 'zerif_contacus_background', array( 'default' => 'rgba(255, 255, 255, 1)' ) );					 
-$wp_customize->add_control(
-					new Zerif_Customize_Alpha_Color_Control(
-						$wp_customize,
-						'zerif_contacus_background',
-						array(
-							'label'    => __( 'Background color', 'zoocommerce' ),
-							'palette' => true,
-							'section'  => 'home_contactform_section',
-							'priority'   => 10
-						)
-					)
-);
-		
-/* zerif_contacus_header */
-$wp_customize->add_setting( 'zerif_contacus_header', array( 'default' => '#fff' ) );
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'zerif_contacus_header',
-		array(
-			'label'      => __( 'Title and subtitle color', 'zoocommerce' ),
-			'section'    => 'home_contactform_section',
-			'priority'   => 11
-		)
-	)
-);
+/**
+ * Home: Blog section
+ */
+$wp_customize->add_section( 'home_blog_section' , array(
+	'title'		=> __( 'Home Blog Section', 'zoocommerce' ),
+	'priority'	=> 31
+) );
 
-/* zerif_contacus_button_background */
-$wp_customize->add_setting( 'zerif_contacus_button_background', array( 'default' => '#e96656' ) );
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'zerif_contacus_button_background',
-		array(
-			'label'      => __( 'Submit button background color', 'zoocommerce' ),
-			'section'    => 'home_contactform_section',
-			'priority'   => 12
-		)
-	)
-);
 
-/* zerif_contacus_button_background_hover */
-$wp_customize->add_setting( 'zerif_contacus_button_background_hover', array( 'default' => '#cb4332' ) );
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'zerif_contacus_button_background_hover',
-		array(
-			'label'      => __( 'Submit button background color - hover', 'zoocommerce' ),
-			'section'    => 'home_contactform_section',
-			'priority'   => 13
-		)
-	)
-);
+$wp_customize->add_setting( 'home_latest_posts_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Latest blog posts', 'zoocommerce')));
+$wp_customize->add_control( 'home_latest_posts_headline', array(
+		'label'    => __( 'Headline', 'zoocommerce' ),
+		'section'  => 'home_blog_section',
+		'settings' => 'home_latest_posts_headline',
+		'priority'    => 1,
+));
 
-/* zerif_contacus_button_color */
-$wp_customize->add_setting( 'zerif_contacus_button_color', array( 'default' => '#fff' ) );
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'zerif_contacus_button_color',
-		array(
-			'label'      => __( 'Section button color', 'zoocommerce' ),
-			'section'    => 'home_contactform_section',
-			'priority'   => 14
-		)
-	)
-);
+$wp_customize->add_setting( 'home_latest_posts_subheading', array('sanitize_callback' => 'zerif_sanitize_number'));
+$wp_customize->add_control( 'home_latest_posts_subheading', array(
+		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'section'  => 'home_blog_section',
+		'settings' => 'home_latest_posts_subheading',
+		'priority'    => 2,
+));
+
+$wp_customize->add_setting( 'home_latest_posts_count', array('sanitize_callback' => 'zerif_sanitize_number', 'default' => 4));
+$wp_customize->add_control( 'home_latest_posts_count', array(
+		'label'    => __( 'Count', 'zoocommerce' ),
+		'section'  => 'home_blog_section',
+		'settings' => 'home_latest_posts_count',
+		'priority'    => 3,
+));
 
 
 	if ( class_exists( 'WP_Customize_Panel' ) ):		
@@ -611,7 +573,7 @@ $wp_customize->add_control(
 		));
 		
 		/* zerif_footer_background */
-		$wp_customize->add_setting( 'zerif_footer_background', array( 'default' => '#2d2d2d' ) );
+		$wp_customize->add_setting( 'zerif_footer_background', array( 'default' => '#242424' ) );
 		
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
@@ -632,7 +594,6 @@ $wp_customize->add_control(
 		
 		/* zerif_footer_text_color */
 		$wp_customize->add_setting( 'zerif_footer_text_color', array( 'default' => '#737373' ) );
-		
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -649,7 +610,7 @@ $wp_customize->add_control(
 		$wp_customize->get_setting( 'zerif_footer_text_color' )->transport = 'postMessage';
 		
 		/* zerif_footer_socials */
-		$wp_customize->add_setting( 'zerif_footer_socials', array( 'default' => '#939393' ) );
+		$wp_customize->add_setting( 'zerif_footer_socials', array( 'default' => '#737373' ) );
 		
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
@@ -667,7 +628,7 @@ $wp_customize->add_control(
 		$wp_customize->get_setting( 'zerif_footer_socials' )->transport = 'postMessage';
 		
 		/* zerif_footer_socials_hover */
-		$wp_customize->add_setting( 'zerif_footer_socials_hover', array( 'default' => '#e96656' ) );
+		$wp_customize->add_setting( 'zerif_footer_socials_hover', array( 'default' => '#f33b3b' ) );
 		
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
@@ -1861,7 +1822,7 @@ $wp_customize->add_control(
 		
 
 		/* zerif_copyright */
-		$wp_customize->add_setting( 'zerif_copyright', array('sanitize_callback' => 'zerif_sanitize_text'));
+		$wp_customize->add_setting( 'zerif_copyright', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => __('© Themeisle. All Rights Reserved', 'zoocommerce')));
 
 		$wp_customize->add_control( 'zerif_copyright', array(
 				'label'    => __( 'Footer Copyright', 'zoocommerce' ),

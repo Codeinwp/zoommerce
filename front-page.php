@@ -144,7 +144,7 @@ echo '
 		get_template_part( 'sections/home_products' );
 
 	} else {
-		echo '<p style="margin: 20px;">'. __('Please install WooCommerce plugin in order to display the shop categories section and latest producs section', 'zoocommerce'). '</p>';
+		echo '<p style="margin: 20px; height: 391px; background: url('.get_stylesheet_directory_uri() . '/assets/images/demo/latest_product_demo.jpg'.') no-repeat center center; line-height: 391px;">'. __('Please install WooCommerce plugin in order to display the shop categories section and latest producs section', 'zoocommerce'). '</p>';
 	}
 
 	//Home newsletter section
@@ -162,11 +162,11 @@ echo '
 			<?php
 				echo '<div class="home_headline">';
 				if(get_theme_mod('latest_contact_headline', __('Get in touch', 'zoocommerce'))) {
-					echo '<h3>'.esc_html(get_theme_mod('latest_contact_headline', __('Newsletter Subscribtion', 'zoocommerce') )).'</h3>';
+					echo '<h3>'.esc_html(get_theme_mod('latest_contact_headline', __('Get in touch', 'zoocommerce') )).'</h3>';
 				}
 
 				if(get_theme_mod('latest_contact_subheading', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoocommerce'))) {
-					echo '<h4>'.esc_html(get_theme_mod('latest_contact_subheading', __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce'))).'</h4>';
+					echo '<h4>'.esc_html(get_theme_mod('latest_contact_subheading', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoocommerce'))).'</h4>';
 				}
 				echo '</div><!-- / .home_headline -->';
 			?>
@@ -305,13 +305,8 @@ echo '
 	//Home recent posts
 	get_template_part( 'sections/home_blog' );
 
-	?>
-<div id="content" class="site-content">
+} //get_option( 'show_on_front' ) == 'page' ) 
 
-<?php get_footer(); ?>
+get_footer(); 
 
-</div><!-- .site-content -->
-
-<?php } //get_option( 'show_on_front' ) == 'page' ) ?>
-
-
+?>

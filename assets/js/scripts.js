@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 	/*
 	* Center vertically the big banner content 
 	*/
-	function zoocommerce_verticall_align(target, parent) {
+	function zoocommerce_verticall_align(target, parent, minus) {
 
 		if(parent) {
 			bb_parent = $(parent).height();
@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
 			bb_parent = $(target).parent().height();
 		}
 
-		var bb_top = (bb_parent - $(target).height() - $('header#home').height()) / 2;
+		var bb_top = (bb_parent - $(target).height() - minus) / 2;
 
 		$(target).css('top', bb_top);
 	}
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 		    maxHeight = '';
 		    
 		    $(target).each(function() {
-		        var heights = $(this).height();
+		        var heights = $(this).outerHeight();
 
 		        allHeights.push(heights);
 		        maxHeight = Math.max.apply(null, allHeights);
@@ -43,20 +43,35 @@ jQuery(document).ready(function($) {
 	* Run functions on resize and load to avoid bugs 
 	*/
 	$(window).resize(function() {
+
+		/*
+		* Responsive fixes
+		*/
+		if($(window).height() < 710) {
+			$('.header-content-wrap').addClass('smallHeightViewport');
+		} else {
+			$('.header-content-wrap').removeClass('smallHeightViewport');
+		}
 		
 		//Add height on big banner
 		zoocommerce_viewport_height('#big-banner');
 
 		//Center vertically the big banner content 
-		zoocommerce_verticall_align('.header-content-wrap', '#big-banner');
+		zoocommerce_verticall_align('.header-content-wrap', '#big-banner', 0);
 
 		//Home products height match
 		zoocommerce_height_match('#home_products .product');
+
+		//Home blog posts height match
+		zoocommerce_height_match('#home_blog .post');
 
 		/*
 		* Home - Add height on products right image
 		*/
 		$('#home_products .right').css('height', $('#home_products .left').outerHeight());
+
+		
+
 	}).trigger('resize');
 
 
@@ -72,11 +87,14 @@ jQuery(document).ready(function($) {
 	    transitionStyle:"fade"
 	});
 
+	/*
+	* Call owl carousel for blog posts
+	*/
 	var homeBlogOwl = $("#home_blog .items_wrapper");
 	homeBlogOwl.owlCarousel({
 		items : 2, //10 items above 1000px browser width
 		itemsDesktop : [1000,2], //5 items between 1000px and 901px
-		itemsDesktopSmall : [900,2], // betweem 900px and 601px
+		itemsDesktopSmall : [960,1], // betweem 900px and 601px
 		itemsTablet: [600,1], //2 items between 600 and 0
 		itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
 	});
@@ -89,5 +107,12 @@ jQuery(document).ready(function($) {
 		homeBlogOwl.trigger('owl.prev');
 	});
 
-	
+	/*
+	* Big banner arrow scroll
+	*/
+	$('#big-banner .down-arrow').click(function(e) {
+		e.preventDefault();
+
+		$('html, body').animate({scrollTop: $(this).offset().top});
+	});
 });
