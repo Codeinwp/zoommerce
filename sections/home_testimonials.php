@@ -1,3 +1,7 @@
+<?php
+	if(get_theme_mod('zoocommerce_testimonials_hide')) 
+		return NULL;
+?>
 <section id="testimonials">
 	<div class="container">
 		<?php

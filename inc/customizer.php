@@ -214,8 +214,20 @@ $wp_customize->add_control(
 		'zoocommerce_display_latest_cats',
 		array(
 			'type' 		=> 'checkbox',
-			'label' 	=> __('Disable latest shop categories?','zoocommerce'),
-			'description' => __('If you check this box, the latest five shop categories will display on index, to use the custom selector please uncheck this box.','zoocommerce'),
+			'label' 	=> __('Display latest 5 shop categories?','zoocommerce'),
+			'description' => __('If you check this box, the latest five shop categories will display on home page, to use the custom selector please uncheck this box.','zoocommerce'),
+			'section' 	=> 'home_categories',
+			'priority'	=> 2,
+		)
+);
+
+$wp_customize->add_setting( 'zoocommerce_shopcats_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_control(
+		'zoocommerce_shopcats_hide',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Hide this section?','zoocommerce'),
+			'description' => __('Check to hide this section from home page.','zoocommerce'),
 			'section' 	=> 'home_categories',
 			'priority'	=> 2,
 		)
@@ -246,6 +258,18 @@ $wp_customize->add_control( 'latest_testimonials_subheading', array(
 		'priority'    => 2,
 ));
 
+$wp_customize->add_setting( 'zoocommerce_testimonials_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_control(
+		'zoocommerce_testimonials_hide',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Hide this section?','zoocommerce'),
+			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'section' 	=> 'home_testimonials_section',
+			'priority'	=> 2,
+		)
+);
+
 /**
  * Home: Subscribe section
  */
@@ -270,6 +294,18 @@ $wp_customize->add_control( 'latest_subscribe_subheading', array(
 		'settings' => 'latest_subscribe_subheading',
 		'priority'    => 2,
 ));
+
+$wp_customize->add_setting( 'zoocommerce_subscribe_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_control(
+		'zoocommerce_subscribe_hide',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Hide this section?','zoocommerce'),
+			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'section' 	=> 'home_subscribe_section',
+			'priority'	=> 2,
+		)
+);
 
 
 /**
@@ -313,6 +349,18 @@ $wp_customize->add_control( 'latest_products_count', array(
 		'priority'    => 4,
 ));
 
+$wp_customize->add_setting( 'zoocommerce_shopproducts_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_control(
+		'zoocommerce_shopproducts_hide',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Hide this section?','zoocommerce'),
+			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'section' 	=> 'home_latest_products',
+			'priority'	=> 2,
+		)
+);
+
 /**
  * Home: Google Map Section
  */
@@ -338,6 +386,18 @@ $wp_customize->add_control(
 			'description' => __('If you check this box, the Google map section will display as a static google map.','zoocommerce'),
 			'section' => 'home_map',
 			'priority'    => 2,
+		)
+);
+
+$wp_customize->add_setting( 'zoocommerce_map_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_control(
+		'zoocommerce_map_hide',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Hide this section?','zoocommerce'),
+			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'section' 	=> 'home_map',
+			'priority'	=> 2,
 		)
 );
 
@@ -415,6 +475,18 @@ $wp_customize->add_control( 'zerif_contactus_message_placeholder', array(
 		'priority'    => 9,
 ));
 
+$wp_customize->add_setting( 'zoocommerce_contactform_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_control(
+		'zoocommerce_contactform_hide',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Hide this section?','zoocommerce'),
+			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'section' 	=> 'home_contactform_section',
+			'priority'	=> 10,
+		)
+);
+
 /**
  * Home: Blog section
  */
@@ -447,6 +519,18 @@ $wp_customize->add_control( 'home_latest_posts_count', array(
 		'settings' => 'home_latest_posts_count',
 		'priority'    => 3,
 ));
+
+$wp_customize->add_setting( 'zoocommerce_blog_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_control(
+		'zoocommerce_blog_hide',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Hide this section?','zoocommerce'),
+			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'section' 	=> 'home_blog_section',
+			'priority'	=> 4,
+		)
+);
 
 
 	if ( class_exists( 'WP_Customize_Panel' ) ):		

@@ -1,3 +1,7 @@
+<?php
+	if(get_theme_mod('zoocommerce_shopcats_hide'))
+		return NULL;
+?>
 <section id="shop_cats">
 	<div class="container">
 		<?php

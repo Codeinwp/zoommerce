@@ -1,4 +1,6 @@
 <?php
+if(get_theme_mod('zoocommerce_map_hide'))
+	return NULL;
 
 $zerif_googlemap_address = get_theme_mod('zerif_googlemap_address',__('New York, Leroy Street','zoocommerce'));
 

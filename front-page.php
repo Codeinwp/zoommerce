@@ -155,6 +155,9 @@ echo '
 
 	//Home google map
 	get_template_part( 'sections/home_map' );
+
+	//Check if contactform is enabled
+	if(get_theme_mod('zoocommerce_contactform_hide') == '0'):
 	?>
 	<section class="contact-us" id="contact">
 		<div class="container">
@@ -301,6 +304,8 @@ echo '
 		</div> <!-- / END CONTAINER -->
 	</section> <!-- / END CONTACT US SECTION-->
 	<?php
+
+	endif; //Check if contactform is enabled
 
 	//Home recent posts
 	get_template_part( 'sections/home_blog' );

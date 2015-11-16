@@ -1,4 +1,6 @@
 <?php
+if(get_theme_mod('zoocommerce_shopproducts_hide'))
+	return NULL;
 
 //Data
 $right_image = get_theme_mod('latest_products_wide_image', get_stylesheet_directory_uri() . '/assets/images/demo/products_background.jpg');

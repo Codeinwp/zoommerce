@@ -1,3 +1,7 @@
+<?php
+if(get_theme_mod('zoocommerce_blog_hide'))
+	return NULL;
+?>
 <section id="home_blog">
 	<div class="container">
 		<?php

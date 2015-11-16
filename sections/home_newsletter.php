@@ -1,3 +1,7 @@
+<?php
+	if(get_theme_mod('zoocommerce_subscribe_hide'))
+		return NULL;
+?>
 <section id="newsletter_section">
 	<div class="container">
 		<?php
