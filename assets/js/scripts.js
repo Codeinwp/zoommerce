@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 	* Add height on big banner
 	*/
 	function zoocommerce_viewport_height(target) {
-		$(target).css('height', $(window).height() - $('header#home').height() - 32);
+		$(target).css('height', $(window).height() - $('header#home').height());
 	}
 
 	function zoocommerce_height_match(target) {
