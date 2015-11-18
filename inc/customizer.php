@@ -1522,7 +1522,7 @@ $wp_customize->add_control(
 		);
 
 		
-		$wp_customize->add_setting(	'zerif_background_image', array('default' => get_stylesheet_directory_uri() . '/assets/images/demo/home_background.png') );
+		$wp_customize->add_setting(	'zerif_background_image', array('default' => get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg') );
 		
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control(
