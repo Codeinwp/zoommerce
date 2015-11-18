@@ -71,7 +71,6 @@ function zoocommerce_setup() {
  * TGM Plugin Activation
  */
 if(!function_exists('zoocommerce_tgm_activation')) {
-	require_once get_template_directory() . '/class-tgm-plugin-activation.php';
 
 	add_action( 'tgmpa_register', 'zoocommerce_tgm_activation' );
 	function zoocommerce_tgm_activation() {
