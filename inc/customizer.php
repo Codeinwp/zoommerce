@@ -1316,7 +1316,7 @@ $wp_customize->add_control(
 		));
 
 		/* zerif_bigtitle_title */
-		$wp_customize->add_setting( 'zerif_bigtitle_title', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('To add a title here please go to Customizer, "Big banner section"','zoocommerce')));
+		$wp_customize->add_setting( 'zerif_bigtitle_title', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('ZOOMMERCE','zoocommerce')));
 
 		$wp_customize->add_control( 'zerif_bigtitle_title', array(
 				'label'    => __( 'Big Banner Heading', 'zoocommerce' ),
@@ -1329,7 +1329,7 @@ $wp_customize->add_control(
 		$wp_customize->get_setting( 'zerif_bigtitle_title' )->transport = 'postMessage';
 		
 		/* zerif_bigtitle_small_heading */
-		$wp_customize->add_setting( 'zerif_bigtitle_subtitle', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Add Sub Title','zoocommerce')));
+		$wp_customize->add_setting( 'zerif_bigtitle_subtitle', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Introducing','zoocommerce')));
 
 		$wp_customize->add_control( 'zerif_bigtitle_subtitle', array(
 				'label'    => __( 'Big Banner Sub Heading', 'zoocommerce' ),

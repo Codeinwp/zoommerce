@@ -45,7 +45,7 @@ if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_cus
 		
 		/* Sub title */
 		
-		$zerif_subtitle = get_theme_mod( 'zerif_bigtitle_subtitle', __('Add Sub Title','zoocommerce') );
+		$zerif_subtitle = get_theme_mod( 'zerif_bigtitle_subtitle', __('Introducing','zoocommerce') );
 		
 		if( !empty($zerif_subtitle) ):
 
@@ -59,7 +59,7 @@ if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_cus
 
 		/* Big title */
 		
-		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('To add a title here please go to Customizer, "Big title section"','zoocommerce') );
+		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('ZOOMMERCE','zoocommerce') );
 		
 		if( !empty($zerif_bigtitle_title) ):
 
