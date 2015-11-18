@@ -6,3 +6,6 @@ Photo by myquiel burton
 
 Default home latest products image - http://ift.tt/1OwogEU
 CC0 - http://mystock.photos
+
+OWL Carousel jQuery plugin
+MIT - http://owlgraphic.com/owlcarousel/
