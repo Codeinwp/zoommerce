@@ -31,6 +31,19 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }	
 
+.header_title {
+	color: #fff;
+
+	a {
+		color: #fff;
+	}
+
+	h1 {
+		text-align: left;
+		font-weight: 700;
+	}
+}
+
 /* ------- Navbar ------- */
 .navbar-inverse {
 	background: #000;
