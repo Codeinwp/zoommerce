@@ -69,9 +69,19 @@ jQuery(document).ready(function($) {
 		* Home - Add height on products right image
 		*/
 		$('#home_products .right').css('height', $('#home_products .left').outerHeight());
-
 		
-
+		if($(window).width() <= 960 && $(window).width() >= 481) {
+			if(document.getElementsByClassName("center_on_responsive").length == 0) {
+				var full_width = 0;
+				jQuery("nav#site-navigation ul:first > li").each(function( index ) {    
+					if((jQuery(this).width() + full_width) > 460) {
+						jQuery(this).remove();
+					}
+					full_width = full_width + jQuery(this).width(); 
+				});
+				console.log(full_width);
+			}
+		}
 	}).trigger('resize');
 
 

@@ -8,6 +8,16 @@
  * @subpackage zoocommerce
  */
 
+
+$zoocommerce_myaccount = get_theme_mod('myaccount_icon', get_stylesheet_directory_uri().'/assets/images/menu-profile.png'); 
+$zoocommerce_myaccount_link = get_theme_mod('myaccount_link');
+
+$zoocommerce_cart = get_theme_mod('cart_icon', get_stylesheet_directory_uri().'/assets/images/menu-cart.png'); 
+$zoocommerce_cart_link = get_theme_mod('cart_link');
+$header_icons = false;
+if($zoocommerce_myaccount && $zoocommerce_myaccount_link && $zoocommerce_cart && $zoocommerce_cart_link)
+	$header_icons = true;
+
 ?><!DOCTYPE html>
 
 <html <?php language_attributes(); ?>>
@@ -96,40 +106,38 @@
 						?>
 					</div>
                     
-                    <?php 
-						
-						$zoocommerce_myaccount = get_theme_mod('myaccount_icon', get_stylesheet_directory_uri().'/assets/images/menu-profile.png'); 
-						$zoocommerce_myaccount_link = get_theme_mod('myaccount_link');
-						
-						$zoocommerce_cart = get_theme_mod('cart_icon', get_stylesheet_directory_uri().'/assets/images/menu-cart.png'); 
-						$zoocommerce_cart_link = get_theme_mod('cart_link');	
+                    <?php 	
 						
 					//Check if links are active and display the box
 					if(zoocommerce_is_woocommerce_activated()):
 
-						if(!empty($zoocommerce_cart_link) or !empty($zoocommerce_myaccount_link)): ?>
+						if($header_icons): ?>
 	                    <div class="menu-icons">
 	                        <ul id="icons-menu">
-	                            <li class="menu-item"> 
-	                            	<?php if(!empty($zoocommerce_myaccount) or !empty($zoocommerce_myaccount_link)): ?>
+	                            
+                            	<?php if(!empty($zoocommerce_myaccount) or !empty($zoocommerce_myaccount_link)): ?>
+                            	<li class="menu-item"> 
 	                                <a href="<?php echo esc_url($zoocommerce_myaccount_link); ?>">
 	                                    <img src="<?php echo esc_url($zoocommerce_myaccount); ?>">
 	                                </a> 
-	                                <?php endif; ?>
-	                            </li>
-	                            <li class="menu-item"> 
-	                            	<?php if(!empty($zoocommerce_cart) or !empty($zoocommerce_cart_link)): ?>
+                                </li>
+                                <?php endif; ?>
+	                            
+	                           
+                            	<?php if(!empty($zoocommerce_cart) or !empty($zoocommerce_cart_link)): ?>
+                            	<li class="menu-item"> 
 	                                <a href="<?php echo esc_url($zoocommerce_cart_link); ?>">
 	                                    <img src="<?php echo esc_url($zoocommerce_cart); ?>">
 	                                </a> 
-	                                <?php endif; ?>
-	                            </li>
+                                </li>
+                                <?php endif; ?>
+	                            
 	                        </ul>
 	                    </div>
 						<?php endif; 
 					endif; ?>
 
-					<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+					<nav class="navbar-collapse bs-navbar-collapse collapse<?php echo ($header_icons) ? true : ' center_on_responsive'; ?>" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
 
 						<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right responsive-nav main-nav-list' ,'fallback_cb'     => 'zerif_wp_page_menu')); ?>  
 
