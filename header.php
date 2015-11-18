@@ -135,9 +135,10 @@ if($zoocommerce_myaccount && $zoocommerce_myaccount_link && $zoocommerce_cart &&
 	                        </ul>
 	                    </div>
 						<?php endif; 
-					endif; ?>
+					endif;
+					 ?>
 
-					<nav class="navbar-collapse bs-navbar-collapse collapse<?php echo ($header_icons) ? true : ' center_on_responsive'; ?>" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+					<nav class="navbar-collapse bs-navbar-collapse collapse<?php echo ($header_icons == true ? ' center_on_responsive' : ''); ?>" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
 
 						<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right responsive-nav main-nav-list' ,'fallback_cb'     => 'zerif_wp_page_menu')); ?>  
 

@@ -23,9 +23,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #site-navigation {
-	width: 64%;
-	overflow-x: hidden;
-}
+	overflow-x: hidden !important;
+	width: 74%;
+
+	&.center_on_responsive {
+		width: 64%;
+	}
+}	
 
 /* ------- Navbar ------- */
 .navbar-inverse {
