@@ -40,6 +40,19 @@ jQuery(document).ready(function($) {
 	}
 
 	/*
+	* Reduce menu width function
+	*/
+	function zoocommerce_reduce_menu_width(target, maxval) {
+		var full_width = 0;
+		jQuery(target).each(function( index ) {    
+			if((jQuery(this).width() + full_width) > maxval) {
+				jQuery(this).remove();
+			}
+			full_width = full_width + jQuery(this).width(); 
+		});
+	}
+
+	/*
 	* Run functions on resize and load to avoid bugs 
 	*/
 	$(window).resize(function() {
@@ -72,18 +85,21 @@ jQuery(document).ready(function($) {
 		
 		if($(window).width() <= 960 && $(window).width() >= 481) {
 			if(document.getElementsByClassName("center_on_responsive").length == 0) {
-				var full_width = 0;
-				jQuery("nav#site-navigation ul:first > li").each(function( index ) {    
-					if((jQuery(this).width() + full_width) > 460) {
-						jQuery(this).remove();
-					}
-					full_width = full_width + jQuery(this).width(); 
-				});
-				console.log(full_width);
+				zoocommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
 			}
 		}
 	}).trigger('resize');
-
+	
+	/*
+	* Reduce menu size on desktop
+	*/
+	if($(window).width() >= 960) {
+		if(document.getElementsByClassName("center_on_responsive").length == 0) {
+			zoocommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
+		}
+	} else {
+		zoocommerce_reduce_menu_width('nav#site-navigation ul:first > li', 713);
+	}
 
 	/*
 	* Call owl carousel for testimonials
