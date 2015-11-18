@@ -192,7 +192,7 @@ require_once ( 'class/zoocommerce_general_control.php');
 
 $wp_customize->add_section( 'home_categories' , array(
 	'title'		=> __( 'Shop Categories', 'zoocommerce' ),
-	'priority'	=> 31
+	'priority'	=> 2
 ) );
 
 $wp_customize->add_setting( 'customizer_shop_cats', array(
@@ -237,8 +237,8 @@ $wp_customize->add_control(
  * Home: Testimonials section
  */
 $wp_customize->add_section( 'home_testimonials_section' , array(
-	'title'		=> __( 'Home Testimonials Section', 'zoocommerce' ),
-	'priority'	=> 31
+	'title'		=> __( 'Testimonials Section', 'zoocommerce' ),
+	'priority'	=> 5
 ) );
 
 
@@ -274,8 +274,8 @@ $wp_customize->add_control(
  * Home: Subscribe section
  */
 $wp_customize->add_section( 'home_subscribe_section' , array(
-	'title'		=> __( 'Home Subscribe Section', 'zoocommerce' ),
-	'priority'	=> 31
+	'title'		=> __( 'Subscribe Section', 'zoocommerce' ),
+	'priority'	=> 4
 ) );
 
 
@@ -312,8 +312,8 @@ $wp_customize->add_control(
  * Home: Latest Products section
  */
 $wp_customize->add_section( 'home_latest_products' , array(
-	'title'		=> __( 'Home latest products', 'zoocommerce' ),
-	'priority'	=> 31
+	'title'		=> __( 'Latest products', 'zoocommerce' ),
+	'priority'	=> 3
 ) );
 
 $wp_customize->add_setting( 'latest_products_wide_image', array('default' =>  get_stylesheet_directory_uri() . '/assets/images/demo/products_background.jpg'));
@@ -357,7 +357,7 @@ $wp_customize->add_control(
 			'label' 	=> __('Hide this section?','zoocommerce'),
 			'description' => __('Check to hide this section from home page.','zoocommerce'),
 			'section' 	=> 'home_latest_products',
-			'priority'	=> 2,
+			'priority'	=> 5,
 		)
 );
 
@@ -365,8 +365,8 @@ $wp_customize->add_control(
  * Home: Google Map Section
  */
 $wp_customize->add_section( 'home_map' , array(
-	'title'		=> __( 'Home Google Map Section', 'zoocommerce' ),
-	'priority'	=> 31
+	'title'		=> __( 'Google Map Section', 'zoocommerce' ),
+	'priority'	=> 6
 ) );
 
 
@@ -405,8 +405,8 @@ $wp_customize->add_control(
  * Home: Contact us Form
  */
 $wp_customize->add_section( 'home_contactform_section' , array(
-	'title'		=> __( 'Home Contactform Section', 'zoocommerce' ),
-	'priority'	=> 31
+	'title'		=> __( 'Contact form Section', 'zoocommerce' ),
+	'priority'	=> 7
 ) );
 
 
@@ -491,8 +491,8 @@ $wp_customize->add_control(
  * Home: Blog section
  */
 $wp_customize->add_section( 'home_blog_section' , array(
-	'title'		=> __( 'Home Blog Section', 'zoocommerce' ),
-	'priority'	=> 31
+	'title'		=> __( 'Blog Section', 'zoocommerce' ),
+	'priority'	=> 8
 ) );
 
 
@@ -1301,7 +1301,7 @@ $wp_customize->add_control(
 	if ( class_exists( 'WP_Customize_Panel' ) ) :
 		
 		$wp_customize->add_panel( 'panel_3', array(
-			'priority' => 101,
+			'priority' => 1,
 			'capability' => 'edit_theme_options',
 			'theme_supports' => '',
 			'title' => __( 'Big Banner section', 'zoocommerce' )
@@ -1593,7 +1593,7 @@ $wp_customize->add_control(
 		
 		$wp_customize->add_section( 'zerif_bigtitle_section' , array(
 			'title'       => __( 'Big Banner section', 'zoocommerce' ),
-			'priority'    => 32
+			'priority'    => 2
 		));
 			
 			

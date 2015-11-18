@@ -157,7 +157,7 @@ echo '
 	get_template_part( 'sections/home_map' );
 
 	//Check if contactform is enabled
-	if(get_theme_mod('zoocommerce_contactform_hide') == '0'):
+	if(empty(get_theme_mod('zoocommerce_contactform_hide'))):
 	?>
 	<section class="contact-us" id="contact">
 		<div class="container">
