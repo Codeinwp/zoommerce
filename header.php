@@ -111,14 +111,14 @@
 	                    <div class="menu-icons">
 	                        <ul id="icons-menu">
 	                            <li class="menu-item"> 
-	                            	<?php if(!empty($zoocommerce_myaccount) && !empty($zoocommerce_myaccount_link)): ?>
+	                            	<?php if(!empty($zoocommerce_myaccount) or !empty($zoocommerce_myaccount_link)): ?>
 	                                <a href="<?php echo esc_url($zoocommerce_myaccount_link); ?>">
 	                                    <img src="<?php echo esc_url($zoocommerce_myaccount); ?>">
 	                                </a> 
 	                                <?php endif; ?>
 	                            </li>
 	                            <li class="menu-item"> 
-	                            	<?php if(!empty($zoocommerce_cart) && !empty($zoocommerce_cart_link)): ?>
+	                            	<?php if(!empty($zoocommerce_cart) or !empty($zoocommerce_cart_link)): ?>
 	                                <a href="<?php echo esc_url($zoocommerce_cart_link); ?>">
 	                                    <img src="<?php echo esc_url($zoocommerce_cart); ?>">
 	                                </a> 
