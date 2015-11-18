@@ -104,6 +104,12 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+.slide-item .overlay {
+	width: 100%;
+	height: 100%;
+	background: rgba(black, 0.45);
+}
+
 .fadein-slider{
 	position:absolute !important;
 }
@@ -118,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 20px 0 15px 0px;
 	margin-top: 10px;
 	color: #fff;
-	background: rgba(black, 0.45);
+	// background: rgba(black, 0.45);
 	line-height: 90px;
 }
 

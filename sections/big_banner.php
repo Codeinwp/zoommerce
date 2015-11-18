@@ -25,7 +25,7 @@
 
 	$zerif_slide_style = 'background-repeat:no-repeat;background-position:'.esc_attr($zerif_hpos).' '.esc_attr($zerif_vpos).';background-size:'.esc_attr($zerif_bgsize).';';
 
-	echo '<div class="slide-item" style="background-image:url('.esc_url($zerif_background_image).');'.$zerif_slide_style.'"></div></div>';
+	echo '<div class="slide-item" style="background-image:url('.esc_url($zerif_background_image).');'.$zerif_slide_style.'"><div class="overlay"></div><!-- / .overlay --></div></div>';
 
 $zerif_bigtitle_show = get_theme_mod('zerif_bigtitle_show');
 	
