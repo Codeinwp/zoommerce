@@ -5,3 +5,9 @@
  * @package WordPress
  * @subpackage zoommerce
  */
+
+/*
+ * Remove footer icons
+ */
+$wp_customize->remove_control('zerif_bigtitle_greenbutton_label');
+$wp_customize->remove_control('zerif_bigtitle_greenbutton_url');

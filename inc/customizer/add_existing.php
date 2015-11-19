@@ -9,16 +9,21 @@
 /**
  * Home: Big banner
  */
-
-$wp_customize->add_setting( 'zerif_bigtitle_title', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('ZOOMMERCE','zoommerce')));
-$wp_customize->add_control( 'zerif_bigtitle_title', array(
-	'label'    => __( 'Big Banner Heading', 'zoommerce' ),
-	'section'  => 'zerif_bigtitle_texts_section',
-	'settings' => 'zerif_bigtitle_title',
-	'priority'    => 2,
-
+$wp_customize->add_setting( 'zerif_bigtitle_redbutton_label', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Shop Now','zoommerce'), 'transport' =>'postMessage'));			
+$wp_customize->add_control( 'zerif_bigtitle_redbutton_label', array(
+		'label'    => __( 'Button label', 'zoommerce' ),
+		'description' => __('This is the text that will appear on the button','zoommerce'),
+		'section'  => 'zerif_bigtitle_texts_section',
+		'priority'    => 5,
 ));
-$wp_customize->get_setting( 'zerif_bigtitle_title' )->transport = 'postMessage';
+
+$wp_customize->add_setting( 'zerif_bigtitle_redbutton_url', array('sanitize_callback' => 'esc_url','default' => '#', 'transport' =>'postMessage'));
+$wp_customize->add_control( 'zerif_bigtitle_redbutton_url', array(
+		'label'    => __( 'Button link', 'zoommerce' ),
+		'description' => __('The button is linked to this URL','zoommerce'),
+		'section'  => 'zerif_bigtitle_texts_section',
+		'priority'    => 4,
+));
 
 $wp_customize->add_setting( 'zerif_bigtitle_subtitle', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Introducing','zoommerce')));
 $wp_customize->add_control( 'zerif_bigtitle_subtitle', array(
@@ -57,3 +62,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zeri
 	'priority'    => 6,
 
 )));
+
+/**
+ * Hom
+ */
