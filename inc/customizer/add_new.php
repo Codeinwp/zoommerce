@@ -54,6 +54,16 @@ $wp_customize->add_control( 'zerif_myaccount_link', array(
 	'priority'    => 2,
 ));
 
+/**
+ * Home: Big banner
+ */
+$wp_customize->add_setting( 'zerif_bigtitle_subtitle', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Introducing','zoommerce')));
+$wp_customize->add_control( 'zerif_bigtitle_subtitle', array(
+	'label'    => __( 'Big Banner Sub Heading', 'zoommerce' ),
+	'section'  => 'zerif_bigtitle_texts_section',
+	'settings' => 'zerif_bigtitle_subtitle',
+	'priority'    => 2,
+));
 
 /**
  * Home: Shop Categories
