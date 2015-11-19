@@ -14,7 +14,7 @@
  * General: Header
  */
 $wp_customize->add_section( 'zoommerce_general_shop_header' , array(
-	'title'       => __( 'Header shop', 'zerif' ),
+	'title'       => __( 'Header shop', 'zoommerce' ),
 	'priority'    => 4,
 	'panel' => 'panel_2'
 ));
@@ -57,6 +57,7 @@ $wp_customize->add_control( 'zerif_myaccount_link', array(
 /**
  * Home: Big banner
  */
+	//Subtitle text field
 $wp_customize->add_setting( 'zerif_bigtitle_subtitle', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Introducing','zoommerce')));
 $wp_customize->add_control( 'zerif_bigtitle_subtitle', array(
 	'label'    => __( 'Big Banner Sub Heading', 'zoommerce' ),
@@ -64,6 +65,69 @@ $wp_customize->add_control( 'zerif_bigtitle_subtitle', array(
 	'settings' => 'zerif_bigtitle_subtitle',
 	'priority'    => 2,
 ));
+	
+	//Background color
+$wp_customize->add_setting( 'zerif_bigbanner_background_color', array( 'default' => 'rgba(0, 0, 0, 0.45)', 'transport' =>'postMessage' )); 
+$wp_customize->add_control(new Zerif_Customize_Alpha_Color_Control($wp_customize, 'zerif_bigbanner_background_color',array(
+	'label'    => __( 'Button background color', 'zoommerce' ),
+	'palette' => true,
+	'section'  => 'zerif_bigtitle_colors_section',
+	'priority'   => 1
+)));
+
+	//Text Colors
+$wp_customize->add_setting( 'zerif_bigbanner_subtitle_color', array( 'default' => '#fff', 'transport' =>'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'zerif_bigbanner_subtitle_color', array(
+	'label'      => __( 'Sub heading title color', 'zoommerce' ),
+	'section'    => 'zerif_bigtitle_colors_section',
+	'priority'   => 2
+)));
+
+	//Button colors
+$wp_customize->add_setting( 'zerif_bigbanner_button_bg_color', array( 'default' => 'rgba(0, 0, 0, 0)', 'transport' =>'postMessage' )); 
+$wp_customize->add_control(new Zerif_Customize_Alpha_Color_Control($wp_customize, 'zerif_bigbanner_button_bg_color',array(
+	'label'    => __( 'Button background color', 'zoommerce' ),
+	'palette' => true,
+	'section'  => 'zerif_bigtitle_colors_section',
+	'priority'   => 3
+)));
+
+$wp_customize->add_setting( 'zerif_bigbanner_button_bg_color_hover', array( 'default' => 'rgba(0, 0, 0, 0)', 'transport' =>'postMessage' )); 
+$wp_customize->add_control(new Zerif_Customize_Alpha_Color_Control($wp_customize, 'zerif_bigbanner_button_bg_color_hover',array(
+	'label'    => __( 'Button background hover color', 'zoommerce' ),
+	'palette' => true,
+	'section'  => 'zerif_bigtitle_colors_section',
+	'priority'   => 4
+)));
+
+$wp_customize->add_setting( 'zerif_bigbanner_button_bg_color_hover', array( 'default' => 'rgba(0, 0, 0, 0)', 'transport' =>'postMessage' )); 
+$wp_customize->add_control(new Zerif_Customize_Alpha_Color_Control($wp_customize, 'zerif_bigbanner_button_bg_color_hover',array(
+	'label'    => __( 'Button background hover color', 'zoommerce' ),
+	'palette' => true,
+	'section'  => 'zerif_bigtitle_colors_section',
+	'priority'   => 4
+)));
+
+$wp_customize->add_setting( 'zerif_bigbanner_button_text_hover', array( 'default' => '#fff', 'transport' =>'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'zerif_bigbanner_button_text_hover', array(
+	'label'      => __( 'Button text hover color', 'zoommerce' ),
+	'section'    => 'zerif_bigtitle_colors_section',
+	'priority'   => 6
+)));
+
+$wp_customize->add_setting( 'zerif_bigbanner_button_border_color', array( 'default' => '#fff', 'transport' =>'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'zerif_bigbanner_button_border_color', array(
+	'label'      => __( 'Button border color', 'zoommerce' ),
+	'section'    => 'zerif_bigtitle_colors_section',
+	'priority'   => 7
+)));
+
+$wp_customize->add_setting( 'zerif_bigbanner_button_border_color_hover', array( 'default' => '#fff', 'transport' =>'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'zerif_bigbanner_button_border_color_hover', array(
+	'label'      => __( 'Button border hover color', 'zoommerce' ),
+	'section'    => 'zerif_bigtitle_colors_section',
+	'priority'   => 8
+)));
 
 /**
  * Home: Shop Categories
@@ -133,7 +197,7 @@ $wp_customize->add_panel( 'panel_shop_products', array(
 	'priority' => 33,
 	'capability' => 'edit_theme_options',
 	'theme_supports' => '',
-	'title' => __( 'Latest products', 'zerif' )
+	'title' => __( 'Latest products', 'zoommerce' )
 ) );
 	
 	//Sections

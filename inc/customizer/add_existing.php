@@ -20,6 +20,12 @@ $wp_customize->get_control( 'zerif_bigtitle_redbutton_url' )->label = __( 'Butto
 $wp_customize->get_control( 'zerif_bigtitle_redbutton_url' )->description = __('The button is linked to this URL','zoommerce');
 $wp_customize->get_control( 'zerif_bigtitle_redbutton_url' )->priority = 4;
 
+	//Colors
+$wp_customize->get_setting( 'zerif_bigtitle_background' )->default = 'rgba(0, 0, 0, 0.45)';
+$wp_customize->get_setting( 'zerif_bigtitle_1button_background_color' )->default = 'rgba(0, 0, 0, 0)';
+$wp_customize->get_control( 'zerif_bigtitle_1button_color' )->label = __( 'Button text color', 'zoommerce' );
+
+
 /**
  * General: Footer
  */

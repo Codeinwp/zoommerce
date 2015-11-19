@@ -25,7 +25,9 @@ include get_template_directory() . '/inc/customizer.php';
 
 function zoommerce_registers() {
 	wp_enqueue_style( 'zoommerce_customizer_style', get_stylesheet_directory_uri() . '/assets/css/admin-style.css');
-	wp_enqueue_script( 'zoommerce_customizer_script', zoommerce_get_file('/assets/js/zoommerce_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
+	wp_enqueue_script( 'zerif_customizer_script', get_template_directory_uri() . '/js/zerif_customizer.js', array("jquery","zerif_jquery_ui"), '20120206', true  );
+
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'zoommerce_registers' );
+

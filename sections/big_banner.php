@@ -1,6 +1,6 @@
 <div id="big-banner">
 
-<div class="home-header-wrap">
+<div class="home-header-wrap overlay">
 
 <?php
 
@@ -60,45 +60,30 @@
 
 		/* Buttons */
 		
-		$zerif_bigtitle_redbutton_label = get_theme_mod( 'zerif_bigtitle_redbutton_label',__('One button','zerif') );
-		$zerif_bigtitle_redbutton_url = get_theme_mod( 'zerif_bigtitle_redbutton_url','#' );
+		$zerif_bigtitle_button_label = get_theme_mod( 'zerif_bigtitle_button_label',__('Shop Now','zoommerce') );
+		$zerif_bigtitle_button_url = get_theme_mod( 'zerif_bigtitle_button_url','#' );
 
-		$zerif_bigtitle_greenbutton_label = get_theme_mod( 'zerif_bigtitle_greenbutton_label',__('Another button','zerif') );
-		$zerif_bigtitle_greenbutton_url = get_theme_mod( 'zerif_bigtitle_greenbutton_url','#' );
-
-
-		if( (!empty($zerif_bigtitle_redbutton_label) && !empty($zerif_bigtitle_redbutton_url)) ||
-
-		(!empty($zerif_bigtitle_greenbutton_label) && !empty($zerif_bigtitle_greenbutton_url))):
+		
+		if( (!empty($zerif_bigtitle_button_label) && !empty($zerif_bigtitle_button_url))):
 
 
 			echo '<div class="buttons">';
 
 				zerif_big_title_buttons_top_trigger();
 
-				/* Red button */
+				/* Shop button */
 			
-				if (!empty($zerif_bigtitle_redbutton_label) && !empty($zerif_bigtitle_redbutton_url)):
+				if (!empty($zerif_bigtitle_button_label) && !empty($zerif_bigtitle_button_url)):
 
-					echo '<a href="'.$zerif_bigtitle_redbutton_url.'" class="btn btn-primary custom-button red-btn">'.$zerif_bigtitle_redbutton_label.'</a>';
+					echo '<a href="'.esc_url($zerif_bigtitle_button_url).'" class="btn btn-primary custom-button">'.esc_html($zerif_bigtitle_button_label).'</a>';
 					
 				elseif ( isset( $wp_customize ) ):
 
-					echo '<a href="" class="btn btn-primary custom-button red-btn zerif_hidden_if_not_customizer"></a>';
+					echo '<a href="" class="btn btn-primary custom-button zerif_hidden_if_not_customizer"></a>';
 
 				endif;
 
-				/* Green button */
-
-				if (!empty($zerif_bigtitle_greenbutton_label) && !empty($zerif_bigtitle_greenbutton_url)):
-
-					echo '<a href="'.$zerif_bigtitle_greenbutton_url.'" class="btn btn-primary custom-button green-btn">'.$zerif_bigtitle_greenbutton_label.'</a>';
-
-				elseif ( isset( $wp_customize ) ):
-
-					echo '<a href="" class="btn btn-primary custom-button green-btn zerif_hidden_if_not_customizer"></a>';
-
-				endif;
+				
 
 				zerif_big_title_buttons_bottom_trigger();
 

@@ -54,38 +54,69 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 		*/
 		$return = '';
 		$styles = array(
+
+				/**
+				 * Big banner colors
+				 */
 				array(
-					'selector' => '.intro-text',
+					'selector' => '.home-header-wrap.overlay',
+					'style' => 'background',
+					'property' => 'zerif_bigbanner_background_color' 
+				),
+				array(
+					'selector' => '.home-header-wrap .sub-text',
+					'style' => 'color',
+					'property' => 'zerif_bigbanner_subtitle_color',
+					'important' => true
+				),
+				array(
+					'selector' => '.home-header-wrap .intro-text',
 					'style' => 'color',
 					'property' => 'zerif_bigtitle_header_color'
 				),
+				
 				array(
-					'selector' => '.sub-text',
-					'style' => 'color',
-					'property' => 'zerif_bigtitle_subheader_color'
-				),
-				array(
-					'selector' => '.buttons .custom-button',
+					'selector' => '.home-header-wrap .buttons .custom-button',
 					'style' => 'background',
-					'property' => 'zerif_bigtitle_button_background_color'
+					'property' => 'zerif_bigbanner_button_bg_color'
 				),
 				array(
-					'selector' => '.buttons .custom-button',
+					'selector' => '.home-header-wrap .buttons .custom-button:hover',
+					'style' => 'background',
+					'property' => 'zerif_bigbanner_button_bg_color_hover'
+				),
+				array(
+					'selector' => '.home-header-wrap .buttons .custom-button',
 					'style' => 'border',
-					'property' =>  'zerif_bigtitle_button_border_color',
+					'property' =>  'zerif_bigbanner_button_border_color',
 					'before_property' => '2px solid ',
 					'important' => true
 				),
 				array(
-					'selector' => '.buttons .custom-button:hover',
-					'style' => 'background',
-					'property' => 'zerif_bigtitle_button_background_color_hover'
+					'selector' => '.home-header-wrap .buttons .custom-button:hover',
+					'style' => 'border',
+					'property' =>  'zerif_bigbanner_button_border_color_hover',
+					'before_property' => '2px solid ',
+					'important' => true
 				),
 				array(
-					'selector' => '.intro-text',
-					'style' => 'background',
-					'property' => 'zerif_bigtitle_background'
+					'selector' => '.home-header-wrap .buttons .custom-button',
+					'style' => 'color',
+					'property' => 'zerif_bigtitle_1button_color'
 				),
+				array(
+					'selector' => '.home-header-wrap .buttons .custom-button:hover',
+					'style' => 'color',
+					'property' => 'zerif_bigbanner_button_text_hover'
+				),
+
+
+
+
+
+
+
+
 				array(
 					'selector' => '#footer',
 					'style' => 'background',

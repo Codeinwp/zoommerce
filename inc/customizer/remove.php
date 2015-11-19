@@ -6,8 +6,19 @@
  * @subpackage zoommerce
  */
 
-/*
- * Remove footer icons
+
+/**
+ * Home: Big banner
+ */
+$wp_customize->remove_control('zerif_bigtitle_2button_background_color');
+$wp_customize->remove_control('zerif_bigtitle_2button_background_color_hover');
+$wp_customize->remove_control('zerif_bigtitle_2button_color');
+$wp_customize->remove_control('zerif_bigtitle_1button_background_color');
+$wp_customize->remove_control('zerif_bigtitle_1button_background_color_hover');
+$wp_customize->remove_control('zerif_bigtitle_background');
+
+/**
+ * General: Footer
  */
 $wp_customize->remove_control('zerif_bigtitle_greenbutton_label');
 $wp_customize->remove_control('zerif_bigtitle_greenbutton_url');
