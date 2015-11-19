@@ -1,5 +1,5 @@
 <?php
-if(get_theme_mod('zoocommerce_blog_hide'))
+if(get_theme_mod('zoommerce_blog_hide'))
 	return NULL;
 ?>
 <section id="home_blog">
@@ -7,8 +7,8 @@ if(get_theme_mod('zoocommerce_blog_hide'))
 		<?php
 
 		echo '<div class="home_headline">';
-		if(get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'zoocommerce'))) {
-			echo '<h3>'.esc_html(get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'zoocommerce'))).'</h3>';
+		if(get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'zoommerce'))) {
+			echo '<h3>'.esc_html(get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'zoommerce'))).'</h3>';
 		}
 
 		if(get_theme_mod('home_latest_posts_subheading')) {
@@ -59,7 +59,7 @@ if(get_theme_mod('zoocommerce_blog_hide'))
 						<a href="'.get_the_permalink().'" class="title" title="'.get_the_title().'">'.get_the_title().'</a>
 						<time>November 4 2015</time>
 						<div class="excerpt"><p>'.get_the_excerpt().'</p></div>
-						<a href="'.get_the_permalink().'" title="'.get_the_title().'" class="readmore">'.__('read more', 'zoocommerce').'</a>
+						<a href="'.get_the_permalink().'" title="'.get_the_title().'" class="readmore">'.__('read more', 'zoommerce').'</a>
 					</div><!-- / .post -->';
 				}
 				echo '</div><!-- / .items_wrapper -->';

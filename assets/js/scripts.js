@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 	/*
 	* Center vertically the big banner content 
 	*/
-	function zoocommerce_verticall_align(target, parent, minus) {
+	function zoommerce_verticall_align(target, parent, minus) {
 
 		if(parent) {
 			bb_parent = $(parent).height();
@@ -19,11 +19,11 @@ jQuery(document).ready(function($) {
 	/*
 	* Add height on big banner
 	*/
-	function zoocommerce_viewport_height(target) {
+	function zoommerce_viewport_height(target) {
 		$(target).css('height', $(window).height() - $('header#home').height());
 	}
 
-	function zoocommerce_height_match(target) {
+	function zoommerce_height_match(target) {
 		$(target).css('height', 'inherit');
 
 		var allHeights = [],
@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
 	/*
 	* Reduce menu width function
 	*/
-	function zoocommerce_reduce_menu_width(target, maxval) {
+	function zoommerce_reduce_menu_width(target, maxval) {
 		var full_width = 0;
 		jQuery(target).each(function( index ) {    
 			if((jQuery(this).width() + full_width) > maxval) {
@@ -67,16 +67,16 @@ jQuery(document).ready(function($) {
 		}
 		
 		//Add height on big banner
-		zoocommerce_viewport_height('#big-banner');
+		zoommerce_viewport_height('#big-banner');
 
 		//Center vertically the big banner content 
-		zoocommerce_verticall_align('.header-content-wrap', '#big-banner', 0);
+		zoommerce_verticall_align('.header-content-wrap', '#big-banner', 0);
 
 		//Home products height match
-		zoocommerce_height_match('#home_products .product');
+		zoommerce_height_match('#home_products .product');
 
 		//Home blog posts height match
-		zoocommerce_height_match('#home_blog .post');
+		zoommerce_height_match('#home_blog .post');
 
 		/*
 		* Home - Add height on products right image
@@ -85,7 +85,7 @@ jQuery(document).ready(function($) {
 		
 		if($(window).width() <= 960 && $(window).width() >= 481) {
 			if(document.getElementsByClassName("center_on_responsive").length == 0) {
-				zoocommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
+				zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
 			}
 		}
 	}).trigger('resize');
@@ -95,10 +95,10 @@ jQuery(document).ready(function($) {
 	*/
 	if($(window).width() >= 960) {
 		if(document.getElementsByClassName("center_on_responsive").length == 0) {
-			zoocommerce_reduce_menu_width('nav#site-navigation ul:first > li', 550);
+			zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 550);
 			console.log('660');
 		} else {
-			zoocommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
+			zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
 			console.log('460');
 		}
 	}

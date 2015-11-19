@@ -3,7 +3,7 @@
 /**
  * Sanitize repeater field
  */
-function zoocommerce_sanitize_repeater($input){
+function zoommerce_sanitize_repeater($input){
 	$input_decoded = json_decode($input,true);
 	$allowed_html = array(
 		'br' => array(),
@@ -38,10 +38,10 @@ function zoocommerce_sanitize_repeater($input){
 /**
  * Customizer CSS output
  */
-if(!function_exists('zoocommerce_customizer_style_css')) {
+if(!function_exists('zoommerce_customizer_style_css')) {
 	
-	add_action('wp_footer','zoocommerce_customizer_style_css');
-	function zoocommerce_customizer_style_css() {
+	add_action('wp_footer','zoommerce_customizer_style_css');
+	function zoommerce_customizer_style_css() {
 		/*
 			array(
 				'selector' => '.buttons .custom-button',
@@ -125,7 +125,7 @@ if(!function_exists('zoocommerce_customizer_style_css')) {
 					if(array_key_exists('selector', $val) && !empty($val['selector'])) {
 						$return .= $val['selector'];
 					} else {
-						error_log("Function: zoocommerce_customizer_style_css() - Array Key 'selector' not defined for " . $val['property']);
+						error_log("Function: zoommerce_customizer_style_css() - Array Key 'selector' not defined for " . $val['property']);
 					}
 
 					$return .= '{';
@@ -133,7 +133,7 @@ if(!function_exists('zoocommerce_customizer_style_css')) {
 					if(array_key_exists('style', $val) && !empty($val['style'])) {
 						$return .= $val['style'] . ':';
 					} else {
-						error_log("Function: zoocommerce_customizer_style_css() - Array Key 'style' not defined for " . $val['property']);
+						error_log("Function: zoommerce_customizer_style_css() - Array Key 'style' not defined for " . $val['property']);
 					}
 
 					if(array_key_exists('before_property', $val) && !empty($val['before_property'])) {
@@ -167,8 +167,8 @@ if(!function_exists('zoocommerce_customizer_style_css')) {
 /**
  * Query WooCommerce activation
  */
-if ( ! function_exists( 'zoocommerce_is_woocommerce_activated' ) ) {
-	function zoocommerce_is_woocommerce_activated() {
+if ( ! function_exists( 'zoommerce_is_woocommerce_activated' ) ) {
+	function zoommerce_is_woocommerce_activated() {
 		return class_exists( 'woocommerce' ) ? true : false;
 	}
 }

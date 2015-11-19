@@ -5,17 +5,17 @@
  * Displays header section
  *
  * @package WordPress
- * @subpackage zoocommerce
+ * @subpackage zoommerce
  */
 
 
-$zoocommerce_myaccount = get_theme_mod('myaccount_icon', get_stylesheet_directory_uri().'/assets/images/menu-profile.png'); 
-$zoocommerce_myaccount_link = get_theme_mod('myaccount_link');
+$zoommerce_myaccount = get_theme_mod('myaccount_icon', get_stylesheet_directory_uri().'/assets/images/menu-profile.png'); 
+$zoommerce_myaccount_link = get_theme_mod('myaccount_link');
 
-$zoocommerce_cart = get_theme_mod('cart_icon', get_stylesheet_directory_uri().'/assets/images/menu-cart.png'); 
-$zoocommerce_cart_link = get_theme_mod('cart_link');
+$zoommerce_cart = get_theme_mod('cart_icon', get_stylesheet_directory_uri().'/assets/images/menu-cart.png'); 
+$zoommerce_cart_link = get_theme_mod('cart_link');
 $header_icons = false;
-if($zoocommerce_myaccount && $zoocommerce_myaccount_link && $zoocommerce_cart && $zoocommerce_cart_link)
+if($zoommerce_myaccount && $zoommerce_myaccount_link && $zoommerce_cart && $zoommerce_cart_link)
 	$header_icons = true;
 
 ?><!DOCTYPE html>
@@ -80,17 +80,17 @@ if($zoocommerce_myaccount && $zoocommerce_myaccount_link && $zoocommerce_cart &&
 				<div class="container">
 					<div class="navbar-header responsive-logo">
 						<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-							<span class="sr-only"><?php _e('Toggle navigation', 'zoocommerce'); ?></span>
+							<span class="sr-only"><?php _e('Toggle navigation', 'zoommerce'); ?></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
 
 						<?php
-							$zoocommerce_logo = get_theme_mod('zerif_logo', get_stylesheet_directory_uri().'/assets/images/logo.png');
-							if( !empty($zoocommerce_logo) ):
+							$zoommerce_logo = get_theme_mod('zerif_logo', get_stylesheet_directory_uri().'/assets/images/logo.png');
+							if( !empty($zoommerce_logo) ):
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
-									echo '<img src="'.esc_url($zoocommerce_logo).'" alt="'.esc_attr(get_bloginfo('title')).'">';
+									echo '<img src="'.esc_url($zoommerce_logo).'" alt="'.esc_attr(get_bloginfo('title')).'">';
 								echo '</a>';
 							else:
 								if( isset( $wp_customize ) ):
@@ -109,25 +109,25 @@ if($zoocommerce_myaccount && $zoocommerce_myaccount_link && $zoocommerce_cart &&
                     <?php 	
 						
 					//Check if links are active and display the box
-					if(zoocommerce_is_woocommerce_activated()):
+					if(zoommerce_is_woocommerce_activated()):
 
 						if($header_icons): ?>
 	                    <div class="menu-icons">
 	                        <ul id="icons-menu">
 	                            
-                            	<?php if(!empty($zoocommerce_myaccount) or !empty($zoocommerce_myaccount_link)): ?>
+                            	<?php if(!empty($zoommerce_myaccount) or !empty($zoommerce_myaccount_link)): ?>
                             	<li class="menu-item"> 
-	                                <a href="<?php echo esc_url($zoocommerce_myaccount_link); ?>">
-	                                    <img src="<?php echo esc_url($zoocommerce_myaccount); ?>">
+	                                <a href="<?php echo esc_url($zoommerce_myaccount_link); ?>">
+	                                    <img src="<?php echo esc_url($zoommerce_myaccount); ?>">
 	                                </a> 
                                 </li>
                                 <?php endif; ?>
 	                            
 	                           
-                            	<?php if(!empty($zoocommerce_cart) or !empty($zoocommerce_cart_link)): ?>
+                            	<?php if(!empty($zoommerce_cart) or !empty($zoommerce_cart_link)): ?>
                             	<li class="menu-item"> 
-	                                <a href="<?php echo esc_url($zoocommerce_cart_link); ?>">
-	                                    <img src="<?php echo esc_url($zoocommerce_cart); ?>">
+	                                <a href="<?php echo esc_url($zoommerce_cart_link); ?>">
+	                                    <img src="<?php echo esc_url($zoommerce_cart); ?>">
 	                                </a> 
                                 </li>
                                 <?php endif; ?>

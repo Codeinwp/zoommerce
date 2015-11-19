@@ -45,7 +45,7 @@ if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_cus
 		
 		/* Sub title */
 		
-		$zerif_subtitle = get_theme_mod( 'zerif_bigtitle_subtitle', __('Introducing','zoocommerce') );
+		$zerif_subtitle = get_theme_mod( 'zerif_bigtitle_subtitle', __('Introducing','zoommerce') );
 		
 		if( !empty($zerif_subtitle) ):
 
@@ -59,7 +59,7 @@ if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_cus
 
 		/* Big title */
 		
-		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('ZOOMMERCE','zoocommerce') );
+		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('ZOOMMERCE','zoommerce') );
 		
 		if( !empty($zerif_bigtitle_title) ):
 
@@ -73,7 +73,7 @@ if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_cus
 
 		/* Buttons */
 		
-		$zerif_bigtitle_button_label = get_theme_mod( 'zerif_bigtitle_button_label',__('Shop Now','zoocommerce') );
+		$zerif_bigtitle_button_label = get_theme_mod( 'zerif_bigtitle_button_label',__('Shop Now','zoommerce') );
 		$zerif_bigtitle_button_url = get_theme_mod( 'zerif_bigtitle_button_url','#' );
 
 		

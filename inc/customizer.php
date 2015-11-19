@@ -1,7 +1,7 @@
 <?php
 
 /**
- * zoocommerce Theme Customizer
+ * zoommerce Theme Customizer
  *
  * @package zerif
  */
@@ -85,7 +85,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	{
 		public function render_content()
 		{
-			echo __('You can insert any HTML code in here, to create links, google maps or anything else.','zoocommerce');
+			echo __('You can insert any HTML code in here, to create links, google maps or anything else.','zoommerce');
 		}
 
 	} 
@@ -94,7 +94,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	{
 		public function render_content()
 		{
-			echo __('The main content of this section is customizable in:<br> Customize -> Widgets -> Our focus section.<br> There you must add the "Zerif - Our focus widget"','zoocommerce');
+			echo __('The main content of this section is customizable in:<br> Customize -> Widgets -> Our focus section.<br> There you must add the "Zerif - Our focus widget"','zoommerce');
 		}
 	}
 	
@@ -102,7 +102,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	{
 		public function render_content()
 		{
-			echo __('To add clients here please go to:<br> Customize -> Widgets -> About us section.<br> There you must add the "Zerif - Clients widget"','zoocommerce');
+			echo __('To add clients here please go to:<br> Customize -> Widgets -> About us section.<br> There you must add the "Zerif - Clients widget"','zoommerce');
 		}
 	}
 	
@@ -110,7 +110,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	{
 		public function render_content()
 		{
-			echo __('The main content of this section is customizable in:<br> Customize -> Widgets -> Our team section.<br> There you must add the "Zerif - Team member widget"','zoocommerce');
+			echo __('The main content of this section is customizable in:<br> Customize -> Widgets -> Our team section.<br> There you must add the "Zerif - Team member widget"','zoommerce');
 		}
 	}
 	
@@ -118,7 +118,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	{
 		public function render_content()
 		{
-			echo __('The main content of this section is customizable in:<br> Customize -> Widgets -> Testimonials section.<br> There you must add the "Zerif - Testimonial widget"','zoocommerce');
+			echo __('The main content of this section is customizable in:<br> Customize -> Widgets -> Testimonials section.<br> There you must add the "Zerif - Testimonial widget"','zoommerce');
 		}
 	}
 	
@@ -126,7 +126,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	{
 		public function render_content()
 		{
-			echo __('The main content of this section is customizable in:<br> Customize -> Widgets -> Packages section.<br> There you must add the "Zerif - Package widget"','zoocommerce');
+			echo __('The main content of this section is customizable in:<br> Customize -> Widgets -> Packages section.<br> There you must add the "Zerif - Package widget"','zoommerce');
 		}
 	}
 	
@@ -134,7 +134,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	{
 		public function render_content()
 		{
-			echo __('The main content of this section is customizable in:<br> Customize -> Widgets -> Subscribe section.<br> There you must add the "SendinBlue Widget"','zoocommerce');
+			echo __('The main content of this section is customizable in:<br> Customize -> Widgets -> Subscribe section.<br> There you must add the "SendinBlue Widget"','zoommerce');
 		}
 	}
 	
@@ -142,7 +142,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	{
 		public function render_content()
 		{
-			echo __('The main content of this section consists of blog posts.','zoocommerce');
+			echo __('The main content of this section consists of blog posts.','zoommerce');
 		}
 	}
 	
@@ -150,7 +150,7 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	{
 		public function render_content()
 		{
-			echo __('To have full control over the colors on homepage sections please visit each section options in Customizer.','zoocommerce');
+			echo __('To have full control over the colors on homepage sections please visit each section options in Customizer.','zoommerce');
 		}
 	}
 
@@ -184,22 +184,22 @@ function wp_themeisle_customize_register( $wp_customize ) {
 	/************** GENERAL OPTIONS  ***************/
 
 	/***********************************************/
-require_once ( 'class/zoocommerce_general_control.php');
+require_once ( 'class/zoommerce_general_control.php');
 
 /**
  * General Customizer fields 
  */
 
 $wp_customize->add_section( 'home_categories' , array(
-	'title'		=> __( 'Shop Categories', 'zoocommerce' ),
+	'title'		=> __( 'Shop Categories', 'zoommerce' ),
 	'priority'	=> 2
 ) );
 
 $wp_customize->add_setting( 'customizer_shop_cats', array(
-	'sanitize_callback' => 'zoocommerce_sanitize_repeater',
+	'sanitize_callback' => 'zoommerce_sanitize_repeater',
 ));
-$wp_customize->add_control( new Zoocommerce_General_Repeater( $wp_customize, 'customizer_shop_cats', array(
-	'label'   => esc_html__('Add new shop category','zoocommerce'),
+$wp_customize->add_control( new zoommerce_General_Repeater( $wp_customize, 'customizer_shop_cats', array(
+	'label'   => esc_html__('Add new shop category','zoommerce'),
 	'section' => 'home_categories',
 	'priority' => 1,
     'parallax_image_control' => false,
@@ -209,25 +209,25 @@ $wp_customize->add_control( new Zoocommerce_General_Repeater( $wp_customize, 'cu
     'parallax_dropdown_categories' => true
 ) ) );
 
-$wp_customize->add_setting( 'zoocommerce_display_latest_cats', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 1));
+$wp_customize->add_setting( 'zoommerce_display_latest_cats', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 1));
 $wp_customize->add_control(
-		'zoocommerce_display_latest_cats',
+		'zoommerce_display_latest_cats',
 		array(
 			'type' 		=> 'checkbox',
-			'label' 	=> __('Display latest 5 shop categories?','zoocommerce'),
-			'description' => __('If you check this box, the latest five shop categories will display on home page, to use the custom selector please uncheck this box.','zoocommerce'),
+			'label' 	=> __('Display latest 5 shop categories?','zoommerce'),
+			'description' => __('If you check this box, the latest five shop categories will display on home page, to use the custom selector please uncheck this box.','zoommerce'),
 			'section' 	=> 'home_categories',
 			'priority'	=> 2,
 		)
 );
 
-$wp_customize->add_setting( 'zoocommerce_shopcats_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'zoommerce_shopcats_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
 $wp_customize->add_control(
-		'zoocommerce_shopcats_hide',
+		'zoommerce_shopcats_hide',
 		array(
 			'type' 		=> 'checkbox',
-			'label' 	=> __('Hide this section?','zoocommerce'),
-			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'label' 	=> __('Hide this section?','zoommerce'),
+			'description' => __('Check to hide this section from home page.','zoommerce'),
 			'section' 	=> 'home_categories',
 			'priority'	=> 2,
 		)
@@ -237,34 +237,34 @@ $wp_customize->add_control(
  * Home: Testimonials section
  */
 $wp_customize->add_section( 'home_testimonials_section' , array(
-	'title'		=> __( 'Testimonials Section', 'zoocommerce' ),
+	'title'		=> __( 'Testimonials Section', 'zoommerce' ),
 	'priority'	=> 5
 ) );
 
 
-$wp_customize->add_setting( 'latest_testimonials_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Testimonials', 'zoocommerce')));
+$wp_customize->add_setting( 'latest_testimonials_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Testimonials', 'zoommerce')));
 $wp_customize->add_control( 'latest_testimonials_headline', array(
-		'label'    => __( 'Headline', 'zoocommerce' ),
+		'label'    => __( 'Headline', 'zoommerce' ),
 		'section'  => 'home_testimonials_section',
 		'settings' => 'latest_testimonials_headline',
 		'priority'    => 1,
 ));
 
-$wp_customize->add_setting( 'latest_testimonials_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce')));
+$wp_customize->add_setting( 'latest_testimonials_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoommerce')));
 $wp_customize->add_control( 'latest_testimonials_subheading', array(
-		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'label'    => __( 'Subtitle', 'zoommerce' ),
 		'section'  => 'home_testimonials_section',
 		'settings' => 'latest_testimonials_subheading',
 		'priority'    => 2,
 ));
 
-$wp_customize->add_setting( 'zoocommerce_testimonials_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'zoommerce_testimonials_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
 $wp_customize->add_control(
-		'zoocommerce_testimonials_hide',
+		'zoommerce_testimonials_hide',
 		array(
 			'type' 		=> 'checkbox',
-			'label' 	=> __('Hide this section?','zoocommerce'),
-			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'label' 	=> __('Hide this section?','zoommerce'),
+			'description' => __('Check to hide this section from home page.','zoommerce'),
 			'section' 	=> 'home_testimonials_section',
 			'priority'	=> 2,
 		)
@@ -274,34 +274,34 @@ $wp_customize->add_control(
  * Home: Subscribe section
  */
 $wp_customize->add_section( 'home_subscribe_section' , array(
-	'title'		=> __( 'Subscribe Section', 'zoocommerce' ),
+	'title'		=> __( 'Subscribe Section', 'zoommerce' ),
 	'priority'	=> 4
 ) );
 
 
-$wp_customize->add_setting( 'latest_subscribe_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Newsletter Subscribtion', 'zoocommerce')));
+$wp_customize->add_setting( 'latest_subscribe_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Newsletter Subscribtion', 'zoommerce')));
 $wp_customize->add_control( 'latest_subscribe_headline', array(
-		'label'    => __( 'Headline', 'zoocommerce' ),
+		'label'    => __( 'Headline', 'zoommerce' ),
 		'section'  => 'home_subscribe_section',
 		'settings' => 'latest_subscribe_headline',
 		'priority'    => 1,
 ));
 
-$wp_customize->add_setting( 'latest_subscribe_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce')));
+$wp_customize->add_setting( 'latest_subscribe_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoommerce')));
 $wp_customize->add_control( 'latest_subscribe_subheading', array(
-		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'label'    => __( 'Subtitle', 'zoommerce' ),
 		'section'  => 'home_subscribe_section',
 		'settings' => 'latest_subscribe_subheading',
 		'priority'    => 2,
 ));
 
-$wp_customize->add_setting( 'zoocommerce_subscribe_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'zoommerce_subscribe_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
 $wp_customize->add_control(
-		'zoocommerce_subscribe_hide',
+		'zoommerce_subscribe_hide',
 		array(
 			'type' 		=> 'checkbox',
-			'label' 	=> __('Hide this section?','zoocommerce'),
-			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'label' 	=> __('Hide this section?','zoommerce'),
+			'description' => __('Check to hide this section from home page.','zoommerce'),
 			'section' 	=> 'home_subscribe_section',
 			'priority'	=> 2,
 		)
@@ -312,29 +312,29 @@ $wp_customize->add_control(
  * Home: Latest Products section
  */
 $wp_customize->add_section( 'home_latest_products' , array(
-	'title'		=> __( 'Latest products', 'zoocommerce' ),
+	'title'		=> __( 'Latest products', 'zoommerce' ),
 	'priority'	=> 3
 ) );
 
 $wp_customize->add_setting( 'latest_products_wide_image', array('default' =>  get_stylesheet_directory_uri() . '/assets/images/demo/products_background.jpg'));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'latest_products_wide_image', array(
-		'label'    => __( 'Latest Products Large Image', 'zoocommerce' ),
+		'label'    => __( 'Latest Products Large Image', 'zoommerce' ),
 		'section'  => 'home_latest_products',
 		'settings' => 'latest_products_wide_image',
 		'priority'    => 1,
 )));
 
-$wp_customize->add_setting( 'latest_products_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('New Arrivals', 'zoocommerce')));
+$wp_customize->add_setting( 'latest_products_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('New Arrivals', 'zoommerce')));
 $wp_customize->add_control( 'latest_products_headline', array(
-		'label'    => __( 'Headline', 'zoocommerce' ),
+		'label'    => __( 'Headline', 'zoommerce' ),
 		'section'  => 'home_latest_products',
 		'settings' => 'latest_products_headline',
 		'priority'    => 2,
 ));
 
-$wp_customize->add_setting( 'latest_products_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Check out our latest products', 'zoocommerce')));
+$wp_customize->add_setting( 'latest_products_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Check out our latest products', 'zoommerce')));
 $wp_customize->add_control( 'latest_products_subheading', array(
-		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'label'    => __( 'Subtitle', 'zoommerce' ),
 		'section'  => 'home_latest_products',
 		'settings' => 'latest_products_subheading',
 		'priority'    => 3,
@@ -343,19 +343,19 @@ $wp_customize->add_control( 'latest_products_subheading', array(
 
 $wp_customize->add_setting( 'latest_products_count', array('sanitize_callback' => 'zerif_sanitize_number','default' => 3));
 $wp_customize->add_control( 'latest_products_count', array(
-		'label'    => __( 'Right products count', 'zoocommerce' ),
+		'label'    => __( 'Right products count', 'zoommerce' ),
 		'section'  => 'home_latest_products',
 		'settings' => 'latest_products_count',
 		'priority'    => 4,
 ));
 
-$wp_customize->add_setting( 'zoocommerce_shopproducts_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'zoommerce_shopproducts_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
 $wp_customize->add_control(
-		'zoocommerce_shopproducts_hide',
+		'zoommerce_shopproducts_hide',
 		array(
 			'type' 		=> 'checkbox',
-			'label' 	=> __('Hide this section?','zoocommerce'),
-			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'label' 	=> __('Hide this section?','zoommerce'),
+			'description' => __('Check to hide this section from home page.','zoommerce'),
 			'section' 	=> 'home_latest_products',
 			'priority'	=> 5,
 		)
@@ -365,14 +365,14 @@ $wp_customize->add_control(
  * Home: Google Map Section
  */
 $wp_customize->add_section( 'home_map' , array(
-	'title'		=> __( 'Google Map Section', 'zoocommerce' ),
+	'title'		=> __( 'Google Map Section', 'zoommerce' ),
 	'priority'	=> 6
 ) );
 
 
-$wp_customize->add_setting( 'zerif_googlemap_address', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('New York, Leroy Street','zoocommerce')));
+$wp_customize->add_setting( 'zerif_googlemap_address', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('New York, Leroy Street','zoommerce')));
 $wp_customize->add_control( 'zerif_googlemap_address', array(
-			'label'    => __( 'Google map address', 'zoocommerce' ),
+			'label'    => __( 'Google map address', 'zoommerce' ),
 			'section'  => 'home_map',
 			'priority'    => 1,
 ));
@@ -382,20 +382,20 @@ $wp_customize->add_control(
 		'zerif_googlemap_static',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Show STATIC google map ?','zoocommerce'),
-			'description' => __('If you check this box, the Google map section will display as a static google map.','zoocommerce'),
+			'label' => __('Show STATIC google map ?','zoommerce'),
+			'description' => __('If you check this box, the Google map section will display as a static google map.','zoommerce'),
 			'section' => 'home_map',
 			'priority'    => 2,
 		)
 );
 
-$wp_customize->add_setting( 'zoocommerce_map_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'zoommerce_map_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
 $wp_customize->add_control(
-		'zoocommerce_map_hide',
+		'zoommerce_map_hide',
 		array(
 			'type' 		=> 'checkbox',
-			'label' 	=> __('Hide this section?','zoocommerce'),
-			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'label' 	=> __('Hide this section?','zoommerce'),
+			'description' => __('Check to hide this section from home page.','zoommerce'),
 			'section' 	=> 'home_map',
 			'priority'	=> 2,
 		)
@@ -405,22 +405,22 @@ $wp_customize->add_control(
  * Home: Contact us Form
  */
 $wp_customize->add_section( 'home_contactform_section' , array(
-	'title'		=> __( 'Contact form Section', 'zoocommerce' ),
+	'title'		=> __( 'Contact form Section', 'zoommerce' ),
 	'priority'	=> 7
 ) );
 
 
-$wp_customize->add_setting( 'latest_contact_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Get in touch', 'zoocommerce')));
+$wp_customize->add_setting( 'latest_contact_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Get in touch', 'zoommerce')));
 $wp_customize->add_control( 'latest_contact_headline', array(
-		'label'    => __( 'Headline', 'zoocommerce' ),
+		'label'    => __( 'Headline', 'zoommerce' ),
 		'section'  => 'home_contactform_section',
 		'settings' => 'latest_contact_headline',
 		'priority'    => 1,
 ));
 
-$wp_customize->add_setting( 'latest_contact_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoocommerce')));
+$wp_customize->add_setting( 'latest_contact_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoommerce')));
 $wp_customize->add_control( 'latest_contact_subheading', array(
-		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'label'    => __( 'Subtitle', 'zoommerce' ),
 		'section'  => 'home_contactform_section',
 		'settings' => 'latest_contact_subheading',
 		'priority'    => 2,
@@ -429,59 +429,59 @@ $wp_customize->add_control( 'latest_contact_subheading', array(
 /* zerif_contactus_email */
 $wp_customize->add_setting( 'zerif_contactus_email', array('sanitize_callback' => 'zerif_sanitize_text'));
 $wp_customize->add_control( 'zerif_contactus_email', array(
-		'label'    => __( 'Email address', 'zoocommerce' ),
-		'description' => __('The contact us form is submitted to this email address.','zoocommerce'),
+		'label'    => __( 'Email address', 'zoommerce' ),
+		'description' => __('The contact us form is submitted to this email address.','zoommerce'),
 		'section'  => 'home_contactform_section',
 		'priority'    => 4,
 ));
 
 /* zerif_contactus_button_label */
-$wp_customize->add_setting( 'zerif_contactus_button_label', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Send Message','zoocommerce')));
+$wp_customize->add_setting( 'zerif_contactus_button_label', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Send Message','zoommerce')));
 $wp_customize->add_control( 'zerif_contactus_button_label', array(
-		'label'    => __( 'Send message button label', 'zoocommerce' ),
+		'label'    => __( 'Send message button label', 'zoommerce' ),
 		'section'  => 'home_contactform_section',
 		'priority'    => 5,
 ));
 
 /* zerif_contactus_name_placeholder */
-$wp_customize->add_setting( 'zerif_contactus_name_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Your Name','zoocommerce')));
+$wp_customize->add_setting( 'zerif_contactus_name_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Your Name','zoommerce')));
 $wp_customize->add_control( 'zerif_contactus_name_placeholder', array(
-		'label'    => __( 'Placeholder for "Your Name" input ', 'zoocommerce' ),
+		'label'    => __( 'Placeholder for "Your Name" input ', 'zoommerce' ),
 		'section'  => 'home_contactform_section',
 		'priority'    => 6,
 ));
 
 /* zerif_contactus_email_placeholder */
-$wp_customize->add_setting( 'zerif_contactus_email_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Your Email','zoocommerce')));
+$wp_customize->add_setting( 'zerif_contactus_email_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Your Email','zoommerce')));
 $wp_customize->add_control( 'zerif_contactus_email_placeholder', array(
-		'label'    => __( 'Placeholder for "Your Email" input', 'zoocommerce' ),
+		'label'    => __( 'Placeholder for "Your Email" input', 'zoommerce' ),
 		'section'  => 'home_contactform_section',
 		'priority'    => 7,
 ));
 
 /* zerif_contactus_subject_placeholder */
-$wp_customize->add_setting( 'zerif_contactus_subject_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Subject','zoocommerce')));
+$wp_customize->add_setting( 'zerif_contactus_subject_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Subject','zoommerce')));
 $wp_customize->add_control( 'zerif_contactus_subject_placeholder', array(
-		'label'    => __( 'Placeholder for "Subject" input', 'zoocommerce' ),
+		'label'    => __( 'Placeholder for "Subject" input', 'zoommerce' ),
 		'section'  => 'home_contactform_section',
 		'priority'    => 8,
 ));
 
 /* zerif_contactus_message_placeholder */
-$wp_customize->add_setting( 'zerif_contactus_message_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Your Message','zoocommerce')));
+$wp_customize->add_setting( 'zerif_contactus_message_placeholder', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Your Message','zoommerce')));
 $wp_customize->add_control( 'zerif_contactus_message_placeholder', array(
-		'label'    => __( 'Placeholder for "Message" input', 'zoocommerce' ),
+		'label'    => __( 'Placeholder for "Message" input', 'zoommerce' ),
 		'section'  => 'home_contactform_section',
 		'priority'    => 9,
 ));
 
-$wp_customize->add_setting( 'zoocommerce_contactform_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'zoommerce_contactform_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
 $wp_customize->add_control(
-		'zoocommerce_contactform_hide',
+		'zoommerce_contactform_hide',
 		array(
 			'type' 		=> 'checkbox',
-			'label' 	=> __('Hide this section?','zoocommerce'),
-			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'label' 	=> __('Hide this section?','zoommerce'),
+			'description' => __('Check to hide this section from home page.','zoommerce'),
 			'section' 	=> 'home_contactform_section',
 			'priority'	=> 10,
 		)
@@ -491,14 +491,14 @@ $wp_customize->add_control(
  * Home: Blog section
  */
 $wp_customize->add_section( 'home_blog_section' , array(
-	'title'		=> __( 'Blog Section', 'zoocommerce' ),
+	'title'		=> __( 'Blog Section', 'zoommerce' ),
 	'priority'	=> 8
 ) );
 
 
-$wp_customize->add_setting( 'home_latest_posts_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Latest blog posts', 'zoocommerce')));
+$wp_customize->add_setting( 'home_latest_posts_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Latest blog posts', 'zoommerce')));
 $wp_customize->add_control( 'home_latest_posts_headline', array(
-		'label'    => __( 'Headline', 'zoocommerce' ),
+		'label'    => __( 'Headline', 'zoommerce' ),
 		'section'  => 'home_blog_section',
 		'settings' => 'home_latest_posts_headline',
 		'priority'    => 1,
@@ -506,7 +506,7 @@ $wp_customize->add_control( 'home_latest_posts_headline', array(
 
 $wp_customize->add_setting( 'home_latest_posts_subheading', array('sanitize_callback' => 'zerif_sanitize_number'));
 $wp_customize->add_control( 'home_latest_posts_subheading', array(
-		'label'    => __( 'Subtitle', 'zoocommerce' ),
+		'label'    => __( 'Subtitle', 'zoommerce' ),
 		'section'  => 'home_blog_section',
 		'settings' => 'home_latest_posts_subheading',
 		'priority'    => 2,
@@ -514,19 +514,19 @@ $wp_customize->add_control( 'home_latest_posts_subheading', array(
 
 $wp_customize->add_setting( 'home_latest_posts_count', array('sanitize_callback' => 'zerif_sanitize_number', 'default' => 4));
 $wp_customize->add_control( 'home_latest_posts_count', array(
-		'label'    => __( 'Count', 'zoocommerce' ),
+		'label'    => __( 'Count', 'zoommerce' ),
 		'section'  => 'home_blog_section',
 		'settings' => 'home_latest_posts_count',
 		'priority'    => 3,
 ));
 
-$wp_customize->add_setting( 'zoocommerce_blog_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'zoommerce_blog_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
 $wp_customize->add_control(
-		'zoocommerce_blog_hide',
+		'zoommerce_blog_hide',
 		array(
 			'type' 		=> 'checkbox',
-			'label' 	=> __('Hide this section?','zoocommerce'),
-			'description' => __('Check to hide this section from home page.','zoocommerce'),
+			'label' 	=> __('Hide this section?','zoommerce'),
+			'description' => __('Check to hide this section from home page.','zoommerce'),
 			'section' 	=> 'home_blog_section',
 			'priority'	=> 4,
 		)
@@ -537,7 +537,7 @@ $wp_customize->add_control(
 		
 		
 		$wp_customize->add_section( 'zerif_general_section' , array(
-				'title'       => __( 'General options', 'zoocommerce' ),
+				'title'       => __( 'General options', 'zoommerce' ),
 				'priority'    => 31
 				
 		));
@@ -548,8 +548,8 @@ $wp_customize->add_control(
 			'zerif_disable_preloader',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Disable preloader?','zoocommerce'),
-				'description' => __('If you check this box, the preloader will be disabled from homepage.','zoocommerce'),
+				'label' => __('Disable preloader?','zoommerce'),
+				'description' => __('If you check this box, the preloader will be disabled from homepage.','zoommerce'),
 				'section' => 'zerif_general_section',
 				'priority'    => 1,
 			)
@@ -562,8 +562,8 @@ $wp_customize->add_control(
 				'zerif_disable_smooth_scroll',
 				array(
 					'type' 		=> 'checkbox',
-					'label' 	=> __('Disable smooth scroll?','zoocommerce'),
-					'description' => __('If you check this box, the smooth scroll will be disabled.','zoocommerce'),
+					'label' 	=> __('Disable smooth scroll?','zoommerce'),
+					'description' => __('If you check this box, the smooth scroll will be disabled.','zoommerce'),
 					'section' 	=> 'zerif_general_section',
 					'priority'	=> 2,
 				)
@@ -574,7 +574,7 @@ $wp_customize->add_control(
 		$wp_customize->add_setting( 'zerif_logo', array('default' => get_stylesheet_directory_uri().'/assets/images/logo.png'));
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
-				'label'    => __( 'Logo', 'zoocommerce' ),
+				'label'    => __( 'Logo', 'zoommerce' ),
 				'section'  => 'zerif_general_section',
 				'settings' => 'zerif_logo',
 				'priority'    => 2,
@@ -586,11 +586,11 @@ $wp_customize->add_control(
 	else:
 		$wp_customize->add_section( 'zerif_general_section' , array(
 
-				'title'       => __( 'General options', 'zoocommerce' ),
+				'title'       => __( 'General options', 'zoommerce' ),
 
 				'priority'    => 31,
 
-				'description' => __('Zerif theme general options','zoocommerce'),
+				'description' => __('Zerif theme general options','zoommerce'),
 
 		));
 		
@@ -602,7 +602,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
 
-				'label'    => __( 'Logo', 'zoocommerce' ),
+				'label'    => __( 'Logo', 'zoommerce' ),
 
 				'section'  => 'zerif_general_section',
 
@@ -629,13 +629,13 @@ $wp_customize->add_control(
 			'priority' => 32,
 			'capability' => 'edit_theme_options',
 			'theme_supports' => '',
-			'title' => __( 'Colors', 'zoocommerce' )
+			'title' => __( 'Colors', 'zoommerce' )
 		) );
 		
 		/* COLORS HOMEPAGE */
 		
 		$wp_customize->add_section( 'zerif_hp_color_section' , array(
-				'title'       => __( 'Homepage sections', 'zoocommerce' ),
+				'title'       => __( 'Homepage sections', 'zoommerce' ),
 				'priority'    => 1,
 				'panel' => 'panel_1'
 		));
@@ -651,7 +651,7 @@ $wp_customize->add_control(
 		/* COLORS FOOTER */
 		
 		$wp_customize->add_section( 'zerif_footer_color_section' , array(
-				'title'       => __( 'Footer colors', 'zoocommerce' ),
+				'title'       => __( 'Footer colors', 'zoommerce' ),
 				'priority'    => 2,
 				'panel' => 'panel_1'
 		));
@@ -664,7 +664,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_footer_background',
 				array(
-					'label'      => __( 'Footer background color', 'zoocommerce' ),
+					'label'      => __( 'Footer background color', 'zoommerce' ),
 					'section'    => 'zerif_footer_color_section',
 					'settings'   => 'zerif_footer_background',
 					'priority'   => 1
@@ -683,7 +683,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_footer_text_color',
 				array(
-					'label'      => __( 'Footer text color', 'zoocommerce' ),
+					'label'      => __( 'Footer text color', 'zoommerce' ),
 					'section'    => 'zerif_footer_color_section',
 					'settings'   => 'zerif_footer_text_color',
 					'priority'   => 3
@@ -701,7 +701,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_footer_socials',
 				array(
-					'label'      => __( 'Footer social icons color', 'zoocommerce' ),
+					'label'      => __( 'Footer social icons color', 'zoommerce' ),
 					'section'    => 'zerif_footer_color_section',
 					'settings'   => 'zerif_footer_socials',
 					'priority'   => 4
@@ -719,7 +719,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_footer_socials_hover',
 				array(
-					'label'      => __( 'Footer socials icons color - hover', 'zoocommerce' ),
+					'label'      => __( 'Footer socials icons color - hover', 'zoommerce' ),
 					'section'    => 'zerif_footer_color_section',
 					'settings'   => 'zerif_footer_socials_hover',
 					'priority'   => 5
@@ -730,7 +730,7 @@ $wp_customize->add_control(
 		/* COLORS FOOTER */
 		
 		$wp_customize->add_section( 'zerif_general_color_section' , array(
-				'title'       => __( 'General colors', 'zoocommerce' ),
+				'title'       => __( 'General colors', 'zoommerce' ),
 				'priority'    => 3,
 				'panel' => 'panel_1'
 		));
@@ -743,7 +743,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_background_color',
 				array(
-					'label'      => __( 'Background color', 'zoocommerce' ),
+					'label'      => __( 'Background color', 'zoommerce' ),
 					'section'    => 'zerif_general_color_section',
 					'settings'   => 'zerif_background_color',
 					'priority'   => 1
@@ -761,7 +761,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_navbar_color',
 				array(
-					'label'      => __( 'Navbar background color', 'zoocommerce' ),
+					'label'      => __( 'Navbar background color', 'zoommerce' ),
 					'section'    => 'zerif_general_color_section',
 					'settings'   => 'zerif_navbar_color',
 					'priority'   => 2
@@ -779,7 +779,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_titles_color',
 				array(
-					'label'      => __( 'Titles color', 'zoocommerce' ),
+					'label'      => __( 'Titles color', 'zoommerce' ),
 					'section'    => 'zerif_general_color_section',
 					'settings'   => 'zerif_titles_color',
 					'priority'   => 3
@@ -797,7 +797,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_titles_bottomborder_color',
 				array(
-					'label'      => __( 'Titles bottom border color', 'zoocommerce' ),
+					'label'      => __( 'Titles bottom border color', 'zoommerce' ),
 					'section'    => 'zerif_general_color_section',
 					'settings'   => 'zerif_titles_bottomborder_color',
 					'priority'   => 4
@@ -813,7 +813,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_texts_color',
 				array(
-					'label'      => __( 'Text color', 'zoocommerce' ),
+					'label'      => __( 'Text color', 'zoommerce' ),
 					'section'    => 'zerif_general_color_section',
 					'settings'   => 'zerif_texts_color',
 					'priority'   => 5
@@ -831,7 +831,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_links_color',
 				array(
-					'label'      => __( 'Links color', 'zoocommerce' ),
+					'label'      => __( 'Links color', 'zoommerce' ),
 					'section'    => 'zerif_general_color_section',
 					'settings'   => 'zerif_links_color',
 					'priority'   => 6
@@ -849,7 +849,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_links_color_hover',
 				array(
-					'label'      => __( 'Links color hover', 'zoocommerce' ),
+					'label'      => __( 'Links color hover', 'zoommerce' ),
 					'section'    => 'zerif_general_color_section',
 					'settings'   => 'zerif_links_color_hover',
 					'priority'   => 7
@@ -860,7 +860,7 @@ $wp_customize->add_control(
 		/* COLORS BUTTONS */
 		
 		$wp_customize->add_section( 'zerif_buttons_color_section' , array(
-				'title'       => __( 'Buttons colors', 'zoocommerce' ),
+				'title'       => __( 'Buttons colors', 'zoommerce' ),
 				'priority'    => 4,
 				'panel' => 'panel_1'
 		));
@@ -873,7 +873,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_buttons_background_color',
 				array(
-					'label'      => __( 'Buttons background color', 'zoocommerce' ),
+					'label'      => __( 'Buttons background color', 'zoommerce' ),
 					'section'    => 'zerif_buttons_color_section',
 					'settings'   => 'zerif_buttons_background_color',
 					'priority'   => 1
@@ -891,7 +891,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_buttons_background_color_hover',
 				array(
-					'label'      => __( 'Buttons background color - hover', 'zoocommerce' ),
+					'label'      => __( 'Buttons background color - hover', 'zoommerce' ),
 					'section'    => 'zerif_buttons_color_section',
 					'settings'   => 'zerif_buttons_background_color_hover',
 					'priority'   => 2
@@ -907,7 +907,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_buttons_text_color',
 				array(
-					'label'      => __( 'Buttons text color', 'zoocommerce' ),
+					'label'      => __( 'Buttons text color', 'zoommerce' ),
 					'section'    => 'zerif_buttons_color_section',
 					'settings'   => 'zerif_buttons_text_color',
 					'priority'   => 3
@@ -920,9 +920,9 @@ $wp_customize->add_control(
 	else: /* Older versions of WordPress */
 	
 		$wp_customize->add_section( 'zerif_color_section' , array(
-				'title'       => __( 'Colors', 'zoocommerce' ),
+				'title'       => __( 'Colors', 'zoommerce' ),
 				'priority'    => 30,
-				'description' => __('Zerif theme colors','zoocommerce'),
+				'description' => __('Zerif theme colors','zoommerce'),
 		));
 		
 		/* zerif_footer_background */
@@ -933,7 +933,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_footer_background',
 				array(
-					'label'      => __( 'Footer background color', 'zoocommerce' ),
+					'label'      => __( 'Footer background color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_footer_background',
 					'priority'   => 1
@@ -949,7 +949,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_footer_socials_background',
 				array(
-					'label'      => __( 'Footer socials background color', 'zoocommerce' ),
+					'label'      => __( 'Footer socials background color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_footer_socials_background',
 					'priority'   => 2
@@ -965,7 +965,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_footer_text_color',
 				array(
-					'label'      => __( 'Footer text color', 'zoocommerce' ),
+					'label'      => __( 'Footer text color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_footer_text_color',
 					'priority'   => 3
@@ -981,7 +981,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_footer_socials',
 				array(
-					'label'      => __( 'Footer social icons color', 'zoocommerce' ),
+					'label'      => __( 'Footer social icons color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_footer_socials',
 					'priority'   => 4
@@ -997,7 +997,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_footer_socials_hover',
 				array(
-					'label'      => __( 'Footer socials icons color - hover', 'zoocommerce' ),
+					'label'      => __( 'Footer socials icons color - hover', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_footer_socials_hover',
 					'priority'   => 5
@@ -1013,7 +1013,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_background_color',
 				array(
-					'label'      => __( 'Background color', 'zoocommerce' ),
+					'label'      => __( 'Background color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_background_color',
 					'priority'   => 6
@@ -1029,7 +1029,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_navbar_color',
 				array(
-					'label'      => __( 'Navbar background color', 'zoocommerce' ),
+					'label'      => __( 'Navbar background color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_navbar_color',
 					'priority'   => 7
@@ -1045,7 +1045,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_titles_color',
 				array(
-					'label'      => __( 'Titles color', 'zoocommerce' ),
+					'label'      => __( 'Titles color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_titles_color',
 					'priority'   => 8
@@ -1061,7 +1061,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_titles_bottomborder_color',
 				array(
-					'label'      => __( 'Titles bottom border color', 'zoocommerce' ),
+					'label'      => __( 'Titles bottom border color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_titles_bottomborder_color',
 					'priority'   => 9
@@ -1077,7 +1077,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_texts_color',
 				array(
-					'label'      => __( 'Text color', 'zoocommerce' ),
+					'label'      => __( 'Text color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_texts_color',
 					'priority'   => 10
@@ -1093,7 +1093,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_links_color',
 				array(
-					'label'      => __( 'Links color', 'zoocommerce' ),
+					'label'      => __( 'Links color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_links_color',
 					'priority'   => 11
@@ -1109,7 +1109,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_links_color_hover',
 				array(
-					'label'      => __( 'Links color hover', 'zoocommerce' ),
+					'label'      => __( 'Links color hover', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_links_color_hover',
 					'priority'   => 12
@@ -1125,7 +1125,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_buttons_background_color',
 				array(
-					'label'      => __( 'Buttons background color', 'zoocommerce' ),
+					'label'      => __( 'Buttons background color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_buttons_background_color',
 					'priority'   => 13
@@ -1141,7 +1141,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_buttons_background_color_hover',
 				array(
-					'label'      => __( 'Buttons background color - hover', 'zoocommerce' ),
+					'label'      => __( 'Buttons background color - hover', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_buttons_background_color_hover',
 					'priority'   => 14
@@ -1157,7 +1157,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_buttons_text_color',
 				array(
-					'label'      => __( 'Buttons text color', 'zoocommerce' ),
+					'label'      => __( 'Buttons text color', 'zoommerce' ),
 					'section'    => 'zerif_color_section',
 					'settings'   => 'zerif_buttons_text_color',
 					'priority'   => 15
@@ -1179,7 +1179,7 @@ $wp_customize->add_control(
 	if ( class_exists( 'WP_Customize_Panel' ) ):
 	
 			$wp_customize->add_section( 'woocommerce_menu_section' , array(
-					'title'       => __( 'Login Menu', 'zoocommerce' ),
+					'title'       => __( 'Login Menu', 'zoommerce' ),
 					'priority'    => 2,
 					'panel' => 'nav_menus'
 			));
@@ -1189,7 +1189,7 @@ $wp_customize->add_control(
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myaccount_icon', array(
 	
-					'label'    => __( 'My Account - Icon', 'zoocommerce' ),	
+					'label'    => __( 'My Account - Icon', 'zoommerce' ),	
 					'section'  => 'woocommerce_menu_section',	
 					'settings' => 'myaccount_icon',	
 					'priority'    => 1,
@@ -1201,7 +1201,7 @@ $wp_customize->add_control(
 
 			$wp_customize->add_control( 'zerif_myaccount_link', array(
 	
-					'label'    => __( 'My Account link', 'zoocommerce' ),	
+					'label'    => __( 'My Account link', 'zoommerce' ),	
 					'section'  => 'woocommerce_menu_section',	
 					'settings' => 'myaccount_link',	
 					'priority'    => 2,
@@ -1214,7 +1214,7 @@ $wp_customize->add_control(
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cart_icon', array(
 	
-					'label'    => __( 'Cart - Icon', 'zoocommerce' ),	
+					'label'    => __( 'Cart - Icon', 'zoommerce' ),	
 					'section'  => 'woocommerce_menu_section',	
 					'settings' => 'cart_icon',	
 					'priority'    => 3,
@@ -1226,7 +1226,7 @@ $wp_customize->add_control(
 
 			$wp_customize->add_control( 'zerif_cart_link', array(
 	
-					'label'    => __( 'Cart link', 'zoocommerce' ),	
+					'label'    => __( 'Cart link', 'zoommerce' ),	
 					'section'  => 'woocommerce_menu_section',	
 					'settings' => 'cart_link',	
 					'priority'    => 4,
@@ -1235,7 +1235,7 @@ $wp_customize->add_control(
 			
 	else:
 			$wp_customize->add_section( 'woocommerce_menu_section' , array(
-					'title'       => __( 'Login Menu', 'zoocommerce' ),
+					'title'       => __( 'Login Menu', 'zoommerce' ),
 					'priority'    => 2,
 					'panel' => 'nav_menus'
 			));
@@ -1245,7 +1245,7 @@ $wp_customize->add_control(
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myaccount_icon', array(
 	
-					'label'    => __( 'My Account - Icon', 'zoocommerce' ),	
+					'label'    => __( 'My Account - Icon', 'zoommerce' ),	
 					'section'  => 'woocommerce_menu_section',	
 					'settings' => 'myaccount_icon',	
 					'priority'    => 1,
@@ -1257,7 +1257,7 @@ $wp_customize->add_control(
 
 			$wp_customize->add_control( 'zerif_myaccount_link', array(
 	
-					'label'    => __( 'My Account link', 'zoocommerce' ),	
+					'label'    => __( 'My Account link', 'zoommerce' ),	
 					'section'  => 'woocommerce_menu_section',	
 					'settings' => 'myaccount_link',	
 					'priority'    => 2,
@@ -1270,7 +1270,7 @@ $wp_customize->add_control(
 	
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cart_icon', array(
 	
-					'label'    => __( 'Cart - Icon', 'zoocommerce' ),	
+					'label'    => __( 'Cart - Icon', 'zoommerce' ),	
 					'section'  => 'woocommerce_menu_section',	
 					'settings' => 'cart_icon',	
 					'priority'    => 3,
@@ -1282,7 +1282,7 @@ $wp_customize->add_control(
 
 			$wp_customize->add_control( 'zerif_cart_link', array(
 	
-					'label'    => __( 'Cart link', 'zoocommerce' ),	
+					'label'    => __( 'Cart link', 'zoommerce' ),	
 					'section'  => 'woocommerce_menu_section',	
 					'settings' => 'cart_link',	
 					'priority'    => 4,
@@ -1304,22 +1304,22 @@ $wp_customize->add_control(
 			'priority' => 1,
 			'capability' => 'edit_theme_options',
 			'theme_supports' => '',
-			'title' => __( 'Big Banner section', 'zoocommerce' )
+			'title' => __( 'Big Banner section', 'zoommerce' )
 		) );
 		
 		/* BIG TITLE CONTENT ------------------------------------------------------*/
 		
 		$wp_customize->add_section( 'zerif_bigtitle_texts_section' , array(
-				'title'       => __( 'Content', 'zoocommerce' ),
+				'title'       => __( 'Content', 'zoommerce' ),
 				'priority'    => 1,
 				'panel' => 'panel_3'
 		));
 
 		/* zerif_bigtitle_title */
-		$wp_customize->add_setting( 'zerif_bigtitle_title', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('ZOOMMERCE','zoocommerce')));
+		$wp_customize->add_setting( 'zerif_bigtitle_title', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('ZOOMMERCE','zoommerce')));
 
 		$wp_customize->add_control( 'zerif_bigtitle_title', array(
-				'label'    => __( 'Big Banner Heading', 'zoocommerce' ),
+				'label'    => __( 'Big Banner Heading', 'zoommerce' ),
 				'section'  => 'zerif_bigtitle_texts_section',
 				'settings' => 'zerif_bigtitle_title',
 				'priority'    => 2,
@@ -1329,10 +1329,10 @@ $wp_customize->add_control(
 		$wp_customize->get_setting( 'zerif_bigtitle_title' )->transport = 'postMessage';
 		
 		/* zerif_bigtitle_small_heading */
-		$wp_customize->add_setting( 'zerif_bigtitle_subtitle', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Introducing','zoocommerce')));
+		$wp_customize->add_setting( 'zerif_bigtitle_subtitle', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Introducing','zoommerce')));
 
 		$wp_customize->add_control( 'zerif_bigtitle_subtitle', array(
-				'label'    => __( 'Big Banner Sub Heading', 'zoocommerce' ),
+				'label'    => __( 'Big Banner Sub Heading', 'zoommerce' ),
 				'section'  => 'zerif_bigtitle_texts_section',
 				'settings' => 'zerif_bigtitle_subtitle',
 				'priority'    => 3,
@@ -1342,11 +1342,11 @@ $wp_customize->add_control(
 		$wp_customize->get_setting( 'zerif_bigtitle_title' )->transport = 'postMessage';
 
 		/* zerif_bigtitle_button_label */
-		$wp_customize->add_setting( 'zerif_bigtitle_button_label', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Shop Now','zoocommerce')));			
+		$wp_customize->add_setting( 'zerif_bigtitle_button_label', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Shop Now','zoommerce')));			
 
 		$wp_customize->add_control( 'zerif_bigtitle_button_label', array(
-				'label'    => __( 'Button label', 'zoocommerce' ),
-				'description' => __('This is the text that will appear on the button','zoocommerce'),
+				'label'    => __( 'Button label', 'zoommerce' ),
+				'description' => __('This is the text that will appear on the button','zoommerce'),
 				'section'  => 'zerif_bigtitle_texts_section',
 				'settings' => 'zerif_bigtitle_button_label',
 				'priority'    => 4,
@@ -1359,8 +1359,8 @@ $wp_customize->add_control(
 		$wp_customize->add_setting( 'zerif_bigtitle_button_url', array('sanitize_callback' => 'esc_url','default' => '#'));
 
 		$wp_customize->add_control( 'zerif_bigtitle_button_url', array(
-				'label'    => __( 'Button link', 'zoocommerce' ),
-				'description' => __('The button is linked to this URL','zoocommerce'),
+				'label'    => __( 'Button link', 'zoommerce' ),
+				'description' => __('The button is linked to this URL','zoommerce'),
 				'section'  => 'zerif_bigtitle_texts_section',
 				'settings' => 'zerif_bigtitle_button_url',
 				'priority'    => 5,
@@ -1373,7 +1373,7 @@ $wp_customize->add_control(
 		/* BIG TITLE COLORS --------------------------------------------------------------------*/
 		
 		$wp_customize->add_section( 'zerif_bigtitle_colors_section' , array(
-				'title'       => __( 'Colors', 'zoocommerce' ),
+				'title'       => __( 'Colors', 'zoommerce' ),
 				'priority'    => 2,
 				'panel' => 'panel_3'
 		));
@@ -1386,7 +1386,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_background',
 				array(
-					'label'    => __( 'Background color', 'zoocommerce' ),
+					'label'    => __( 'Background color', 'zoommerce' ),
 					'palette' => true,
 					'section'  => 'zerif_bigtitle_colors_section',
 					'priority'   => 1
@@ -1404,7 +1404,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_header_color',
 				array(
-					'label'      => __( 'Big title color', 'zoocommerce' ),
+					'label'      => __( 'Big title color', 'zoommerce' ),
 					'section'    => 'zerif_bigtitle_colors_section',
 					'settings'   => 'zerif_bigtitle_header_color',
 					'priority'   => 2
@@ -1421,7 +1421,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_subheader_color',
 				array(
-					'label'      => __( 'Sub title color', 'zoocommerce' ),
+					'label'      => __( 'Sub title color', 'zoommerce' ),
 					'section'    => 'zerif_bigtitle_colors_section',
 					'settings'   => 'zerif_bigtitle_subheader_color',
 					'priority'   => 3
@@ -1438,7 +1438,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_button_background_color',
 				array(
-					'label'      => __( 'Button background color', 'zoocommerce' ),
+					'label'      => __( 'Button background color', 'zoommerce' ),
 					'palette' => true,
 					'section'    => 'zerif_bigtitle_colors_section',
 					'settings'   => 'zerif_bigtitle_button_background_color',
@@ -1457,7 +1457,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_button_background_color_hover',
 				array(
-					'label'      => __( 'Button background color - hover', 'zoocommerce' ),
+					'label'      => __( 'Button background color - hover', 'zoommerce' ),
 					'palette' => true,
 					'section'    => 'zerif_bigtitle_colors_section',
 					'settings'   => 'zerif_bigtitle_button_background_color_hover',
@@ -1476,7 +1476,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_button_color',
 				array(
-					'label'      => __( 'Button text color', 'zoocommerce' ),
+					'label'      => __( 'Button text color', 'zoommerce' ),
 					'section'    => 'zerif_bigtitle_colors_section',
 					'settings'   => 'zerif_bigtitle_button_color',
 					'priority'   => 6
@@ -1494,7 +1494,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_button_border_color',
 				array(
-					'label'      => __( 'Button Border color', 'zoocommerce' ),
+					'label'      => __( 'Button Border color', 'zoommerce' ),
 					'section'    => 'zerif_bigtitle_colors_section',
 					'settings'   => 'zerif_bigtitle_button_border_color',
 					'priority'   => 6
@@ -1515,7 +1515,7 @@ $wp_customize->add_control(
 		$wp_customize->add_section(
 			'zerif_background_image_section',
 			array(
-				'title'       	=> __( 'Background Image', 'zoocommerce' ),
+				'title'       	=> __( 'Background Image', 'zoommerce' ),
 				'priority'    	=> 4,
 				'panel'			=> 'panel_3',
 			)
@@ -1529,7 +1529,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_background_image',
 				array(
-					'label'    => __( 'Background Image', 'zoocommerce' ),
+					'label'    => __( 'Background Image', 'zoommerce' ),
 					'section'  => 'zerif_background_image_section',
 					'priority'    => 1,
 				)
@@ -1545,9 +1545,9 @@ $wp_customize->add_control(
 				'label' 	=> 'Image Vertical align',
 				'section' 	=> 'zerif_background_image_section',
 				'choices' 	=> array(
-					'top' 		=> __('Top','zoocommerce'),
-					'center'	=> __('Center','zoocommerce'),
-					'bottom' 	=> __('Bottom','zoocommerce'),
+					'top' 		=> __('Top','zoommerce'),
+					'center'	=> __('Center','zoommerce'),
+					'bottom' 	=> __('Bottom','zoommerce'),
 				),
 				'priority' 	=> 2,
 			)
@@ -1562,9 +1562,9 @@ $wp_customize->add_control(
 				'label' 	=> 'Image Horizontal align',
 				'section' 	=> 'zerif_background_image_section',
 				'choices' 	=> array(
-					'left' 		=> __('Left','zoocommerce'),
-					'center'	=> __('Center','zoocommerce'),
-					'right' 	=> __('Right','zoocommerce'),
+					'left' 		=> __('Left','zoommerce'),
+					'center'	=> __('Center','zoommerce'),
+					'right' 	=> __('Right','zoommerce'),
 				),
 				'priority' 	=> 3,
 			)
@@ -1579,9 +1579,9 @@ $wp_customize->add_control(
 				'label' 	=> 'Background size',
 				'section' 	=> 'zerif_background_image_section',
 				'choices' 	=> array(
-					'cover' 	=> __('Cover','zoocommerce'),
-					'width' 	=> __('width 100%','zoocommerce'),
-					'height'	=> __('Height 100%','zoocommerce'),
+					'cover' 	=> __('Cover','zoommerce'),
+					'width' 	=> __('width 100%','zoommerce'),
+					'height'	=> __('Height 100%','zoommerce'),
 				),
 				'priority' 	=> 4,
 			)
@@ -1592,26 +1592,26 @@ $wp_customize->add_control(
 	else: /* Old versions of WordPress */
 		
 		$wp_customize->add_section( 'zerif_bigtitle_section' , array(
-			'title'       => __( 'Big Banner section', 'zoocommerce' ),
+			'title'       => __( 'Big Banner section', 'zoommerce' ),
 			'priority'    => 2
 		));
 			
 			
 		/* zerif_bigtitle_title */
-		$wp_customize->add_setting( 'zerif_bigtitle_title', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('To add a title here please go to Customizer, "Big banner section"','zoocommerce')));
+		$wp_customize->add_setting( 'zerif_bigtitle_title', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('To add a title here please go to Customizer, "Big banner section"','zoommerce')));
 
 		$wp_customize->add_control( 'zerif_bigtitle_title', array(
-				'label'    => __( 'Big Heading', 'zoocommerce' ),
+				'label'    => __( 'Big Heading', 'zoommerce' ),
 				'section'  => 'zerif_bigtitle_section',
 				'settings' => 'zerif_bigtitle_title',
 				'priority'    => 2,
 		));
 
 		/* zerif_bigtitle_small_heading */
-		$wp_customize->add_setting( 'zerif_bigtitle_subtitle', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Add Sub Title','zoocommerce')));
+		$wp_customize->add_setting( 'zerif_bigtitle_subtitle', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Add Sub Title','zoommerce')));
 
 		$wp_customize->add_control( 'zerif_bigtitle_subtitle', array(
-				'label'    => __( 'Big Banner Sub Heading', 'zoocommerce' ),
+				'label'    => __( 'Big Banner Sub Heading', 'zoommerce' ),
 				'section'  => 'zerif_bigtitle_section',
 				'settings' => 'zerif_bigtitle_subtitle',
 				'priority'    => 3,
@@ -1620,11 +1620,11 @@ $wp_customize->add_control(
 		
 		
 		/* zerif_bigtitle_button_label */
-		$wp_customize->add_setting( 'zerif_bigtitle_button_label', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Shop','zoocommerce')));			
+		$wp_customize->add_setting( 'zerif_bigtitle_button_label', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Shop','zoommerce')));			
 
 		$wp_customize->add_control( 'zerif_bigtitle_button_label', array(
-				'label'    => __( 'Button label', 'zoocommerce' ),
-				'description' => __('This is the text that will appear on the button','zoocommerce'),
+				'label'    => __( 'Button label', 'zoommerce' ),
+				'description' => __('This is the text that will appear on the button','zoommerce'),
 				'section'  => 'zerif_bigtitle_section',
 				'settings' => 'zerif_bigtitle_button_label',
 				'priority'    => 4,
@@ -1636,8 +1636,8 @@ $wp_customize->add_control(
 		$wp_customize->add_setting( 'zerif_bigtitle_button_url', array('sanitize_callback' => 'esc_url','default' => '#'));
 
 		$wp_customize->add_control( 'zerif_bigtitle_button_url', array(
-				'label'    => __( 'Button link', 'zoocommerce' ),
-				'description' => __('The button is linked to this URL','zoocommerce'),
+				'label'    => __( 'Button link', 'zoommerce' ),
+				'description' => __('The button is linked to this URL','zoommerce'),
 				'section'  => 'zerif_bigtitle_section',
 				'settings' => 'zerif_bigtitle_button_url',
 				'priority'    => 5,
@@ -1652,7 +1652,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_background',
 				array(
-					'label'    => __( 'Background color', 'zoocommerce' ),
+					'label'    => __( 'Background color', 'zoommerce' ),
 					'palette' => true,
 					'section'  => 'zerif_bigtitle_colors_section',
 					'priority'   => 1
@@ -1669,7 +1669,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_header_color',
 				array(
-					'label'      => __( 'Big title color', 'zoocommerce' ),
+					'label'      => __( 'Big title color', 'zoommerce' ),
 					'section'    => 'zerif_bigtitle_colors_section',
 					'settings'   => 'zerif_bigtitle_header_color',
 					'priority'   => 2
@@ -1686,7 +1686,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_subheader_color',
 				array(
-					'label'      => __( 'Sub title color', 'zoocommerce' ),
+					'label'      => __( 'Sub title color', 'zoommerce' ),
 					'section'    => 'zerif_bigtitle_colors_section',
 					'settings'   => 'zerif_bigtitle_subheader_color',
 					'priority'   => 3
@@ -1703,7 +1703,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_button_background_color',
 				array(
-					'label'      => __( 'Button background color', 'zoocommerce' ),
+					'label'      => __( 'Button background color', 'zoommerce' ),
 					'palette' => true,
 					'section'    => 'zerif_bigtitle_colors_section',
 					'settings'   => 'zerif_bigtitle_button_background_color',
@@ -1722,7 +1722,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_button_background_color_hover',
 				array(
-					'label'      => __( 'Button background color - hover', 'zoocommerce' ),
+					'label'      => __( 'Button background color - hover', 'zoommerce' ),
 					'palette' => true,
 					'section'    => 'zerif_bigtitle_colors_section',
 					'settings'   => 'zerif_bigtitle_button_background_color_hover',
@@ -1741,7 +1741,7 @@ $wp_customize->add_control(
 				$wp_customize,
 				'zerif_bigtitle_button_color',
 				array(
-					'label'      => __( 'Button text color', 'zoocommerce' ),
+					'label'      => __( 'Button text color', 'zoommerce' ),
 					'section'    => 'zerif_bigtitle_colors_section',
 					'settings'   => 'zerif_bigtitle_button_color',
 					'priority'   => 6
@@ -1767,7 +1767,7 @@ $wp_customize->add_control(
 		/* IMAGE 1*/
 		$wp_customize->add_setting( 'zerif_parallax_img1', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/assets/images/background1.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_parallax_img1', array(
-				'label'    	=> __( 'Parallax image 1', 'zoocommerce' ),
+				'label'    	=> __( 'Parallax image 1', 'zoommerce' ),
 				'section'  	=> 'zerif_bigtitle_section',
 				'settings' 	=> 'zerif_parallax_img1',
 				'priority'	=> 15,
@@ -1776,7 +1776,7 @@ $wp_customize->add_control(
 		/* IMAGE 2 */
 		$wp_customize->add_setting( 'zerif_parallax_img2', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/assets/images/background2.png'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_parallax_img2', array(
-				'label'    	=> __( 'Parallax image 2', 'zoocommerce' ),
+				'label'    	=> __( 'Parallax image 2', 'zoommerce' ),
 				'section'  	=> 'zerif_bigtitle_section',
 				'settings' 	=> 'zerif_parallax_img2',
 				'priority'	=> 16,
@@ -1894,22 +1894,22 @@ $wp_customize->add_control(
 			'priority' => 121,
 			'capability' => 'edit_theme_options',
 			'theme_supports' => '',
-			'title' => __( 'Footer', 'zoocommerce' )
+			'title' => __( 'Footer', 'zoommerce' )
 		) );
 		
 		
 		$wp_customize->add_section( 'zerif_footer_general_section' , array(
-				'title'       => __( 'General options', 'zoocommerce' ),
+				'title'       => __( 'General options', 'zoommerce' ),
 				'priority'    => 1,
 				'panel' => 'panel_10'
 		));		
 		
 
 		/* zerif_copyright */
-		$wp_customize->add_setting( 'zerif_copyright', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => __('© Themeisle. All Rights Reserved', 'zoocommerce')));
+		$wp_customize->add_setting( 'zerif_copyright', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => __('© Themeisle. All Rights Reserved', 'zoommerce')));
 
 		$wp_customize->add_control( 'zerif_copyright', array(
-				'label'    => __( 'Footer Copyright', 'zoocommerce' ),
+				'label'    => __( 'Footer Copyright', 'zoommerce' ),
 				'section'  => 'zerif_footer_general_section',
 				'settings' => 'zerif_copyright',
 				'priority'    => 3,
@@ -1920,7 +1920,7 @@ $wp_customize->add_control(
 		/* zerif_google_anaytics */
 		$wp_customize->add_setting( 'zerif_google_anaytics' );
         $wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_google_anaytics', array(
-            'label'   => __( 'Google analytics code', 'zoocommerce' ),
+            'label'   => __( 'Google analytics code', 'zoommerce' ),
             'section' => 'zerif_footer_general_section',
             'settings'   => 'zerif_google_anaytics',
             'priority' => 4
@@ -1928,7 +1928,7 @@ $wp_customize->add_control(
 		
 		$wp_customize->add_section( 'zerif_footer_section' , array(
 
-				'title'       => __( 'Footer sections', 'zoocommerce' ),
+				'title'       => __( 'Footer sections', 'zoommerce' ),
 
 				'priority'    => 2,
 
@@ -1949,7 +1949,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_email_icon', array(
 
-				'label'    => __( 'Email section - icon', 'zoocommerce' ),
+				'label'    => __( 'Email section - icon', 'zoommerce' ),
 
 				'section'  => 'zerif_footer_section',
 
@@ -1968,7 +1968,7 @@ $wp_customize->add_control(
             'default'        => '<a href="mailto:friends@themeisle.com">friends@themeisle.com</a>',
         ) );
         $wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_email', array(
-            'label'   => __( 'Email', 'zoocommerce' ),
+            'label'   => __( 'Email', 'zoommerce' ),
             'section' => 'zerif_footer_section',
             'settings'   => 'zerif_email',
             'priority' => 3
@@ -1982,7 +1982,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_phone_icon', array(
 
-				'label'    => __( 'Phone number section - icon', 'zoocommerce' ),
+				'label'    => __( 'Phone number section - icon', 'zoommerce' ),
 
 				'section'  => 'zerif_footer_section',
 
@@ -2000,7 +2000,7 @@ $wp_customize->add_control(
             'default'        => '<a href="tel:0 332 548 954">0 332 548 954</a>',
         ) );
         $wp_customize->add_control(new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_phone', array(
-            'label'   => __( 'Phone number', 'zoocommerce' ),
+            'label'   => __( 'Phone number', 'zoommerce' ),
             'section' => 'zerif_footer_section',
             'settings'   => 'zerif_phone',
             'priority' => 5
@@ -2013,7 +2013,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_address_icon', array(
 
-				'label'    => __( 'Address section - icon', 'zoocommerce' ),
+				'label'    => __( 'Address section - icon', 'zoommerce' ),
 
 				'section'  => 'zerif_footer_section',
 
@@ -2030,7 +2030,7 @@ $wp_customize->add_control(
             'default'        => __('San Francisco - Address - 128 California Street 3200.','zerif-lite'),
         ) );
         $wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_address', array(
-            'label'   => __( 'Address', 'zoocommerce' ),
+            'label'   => __( 'Address', 'zoommerce' ),
             'section' => 'zerif_footer_section',
             'settings'   => 'zerif_address',
             'priority' => 7
@@ -2040,7 +2040,7 @@ $wp_customize->add_control(
 		/* Social Options */
 		$wp_customize->add_section( 'zerif_general_socials_section' , array(
 
-				'title'       => __( 'Socials options', 'zoocommerce' ),
+				'title'       => __( 'Socials options', 'zoommerce' ),
 
 				'priority'    => 3,
 
@@ -2053,7 +2053,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_facebook', array(
 
-				'label'    => __( 'Facebook link', 'zoocommerce' ),
+				'label'    => __( 'Facebook link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2071,7 +2071,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_twitter', array(
 
-				'label'    => __( 'Twitter link', 'zoocommerce' ),
+				'label'    => __( 'Twitter link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2089,7 +2089,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_linkedin', array(
 
-				'label'    => __( 'Linkedin link', 'zoocommerce' ),
+				'label'    => __( 'Linkedin link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2107,7 +2107,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_behance', array(
 
-				'label'    => __( 'Behance link', 'zoocommerce' ),
+				'label'    => __( 'Behance link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2125,7 +2125,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_dribbble', array(
 
-				'label'    => __( 'Dribbble link', 'zoocommerce' ),
+				'label'    => __( 'Dribbble link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2141,7 +2141,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_googleplus', array(
 
-				'label'    => __( 'Google+ link', 'zoocommerce' ),
+				'label'    => __( 'Google+ link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2157,7 +2157,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_pinterest', array(
 
-				'label'    => __( 'Pinterest link', 'zoocommerce' ),
+				'label'    => __( 'Pinterest link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2173,7 +2173,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_tumblr', array(
 
-				'label'    => __( 'Tumblr link', 'zoocommerce' ),
+				'label'    => __( 'Tumblr link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2189,7 +2189,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_reddit', array(
 
-				'label'    => __( 'Reddit link', 'zoocommerce' ),
+				'label'    => __( 'Reddit link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2205,7 +2205,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_youtube', array(
 
-				'label'    => __( 'Youtube link', 'zoocommerce' ),
+				'label'    => __( 'Youtube link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2218,7 +2218,7 @@ $wp_customize->add_control(
 		/* ABOUT US CLIENTS */
 		
 		$wp_customize->add_section( 'zerif_aboutus_clients_section' , array(
-				'title'       => __( 'Clients area', 'zoocommerce' ),
+				'title'       => __( 'Clients area', 'zoommerce' ),
 				'priority'    => 4,
 				'panel' => 'panel_10'
 		));
@@ -2234,17 +2234,17 @@ $wp_customize->add_control(
 		/* ABOUT US CLIENTS TITLE */
 		
 		$wp_customize->add_section( 'zerif_aboutus_clients_title_section' , array(
-				'title'       => __( 'Clients area title', 'zoocommerce' ),
+				'title'       => __( 'Clients area title', 'zoommerce' ),
 				'priority'    => 5,
 				
 				'panel' => 'panel_10'
 		));
 		
-		$wp_customize->add_setting( 'zerif_aboutus_clients_title_text', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('SHOWCASE YOUR CLIENTS HERE','zoocommerce')));
+		$wp_customize->add_setting( 'zerif_aboutus_clients_title_text', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('SHOWCASE YOUR CLIENTS HERE','zoommerce')));
 
 		$wp_customize->add_control( 'zerif_aboutus_clients_title_text', array(
-				'label'    => __( 'Title', 'zoocommerce' ),
-				'description' => __('This title appears only if you have widgets in the About us sidebar.','zoocommerce'),
+				'label'    => __( 'Title', 'zoommerce' ),
+				'description' => __('This title appears only if you have widgets in the About us sidebar.','zoommerce'),
 				'section'  => 'zerif_aboutus_clients_title_section',
 				'settings' => 'zerif_aboutus_clients_title_text',
 				'priority'    => 1,
@@ -2257,11 +2257,11 @@ $wp_customize->add_control(
 	else:
 		$wp_customize->add_section( 'zerif_general_section' , array(
 
-				'title'       => __( 'General options', 'zoocommerce' ),
+				'title'       => __( 'General options', 'zoommerce' ),
 
 				'priority'    => 31,
 
-				'description' => __('Zerif theme general options','zoocommerce'),
+				'description' => __('Zerif theme general options','zoommerce'),
 
 		));
 		
@@ -2271,7 +2271,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
 
-				'label'    => __( 'Logo', 'zoocommerce' ),
+				'label'    => __( 'Logo', 'zoommerce' ),
 
 				'section'  => 'zerif_general_section',
 
@@ -2289,7 +2289,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_copyright', array(
 
-				'label'    => __( 'Copyright', 'zoocommerce' ),
+				'label'    => __( 'Copyright', 'zoommerce' ),
 
 				'section'  => 'zerif_general_section',
 
@@ -2303,7 +2303,7 @@ $wp_customize->add_control(
 		
 		$wp_customize->add_setting( 'zerif_google_anaytics' );
         $wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_google_anaytics', array(
-            'label'   => __( 'Google analytics code', 'zoocommerce' ),
+            'label'   => __( 'Google analytics code', 'zoommerce' ),
             'section' => 'zerif_general_section',
             'settings'   => 'zerif_google_anaytics',
             'priority' => 3
@@ -2315,7 +2315,7 @@ $wp_customize->add_control(
 			'zerif_disable_preloader',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Disable preloader?','zoocommerce'),
+				'label' => __('Disable preloader?','zoommerce'),
 				'section' => 'zerif_general_section',
 				'priority'    => 4,
 			)
@@ -2349,7 +2349,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_email_icon', array(
 
-				'label'    => __( 'Email section - icon', 'zoocommerce' ),
+				'label'    => __( 'Email section - icon', 'zoommerce' ),
 
 				'section'  => 'zerif_general_section',
 
@@ -2363,10 +2363,10 @@ $wp_customize->add_control(
 		/* email */   
 
 		$wp_customize->add_setting( 'zerif_email', array(
-            'default'        => __('Company email','zoocommerce'),
+            'default'        => __('Company email','zoommerce'),
         ) );
         $wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_email', array(
-            'label'   => __( 'Email', 'zoocommerce' ),
+            'label'   => __( 'Email', 'zoommerce' ),
             'section' => 'zerif_general_section',
             'settings'   => 'zerif_email',
             'priority' => 7
@@ -2377,7 +2377,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_phone_icon', array(
 
-				'label'    => __( 'Phone number section - icon', 'zoocommerce' ),
+				'label'    => __( 'Phone number section - icon', 'zoommerce' ),
 
 				'section'  => 'zerif_general_section',
 
@@ -2390,10 +2390,10 @@ $wp_customize->add_control(
 		/* phone number */
 		
 		$wp_customize->add_setting( 'zerif_phone', array(
-            'default'        => __('Phone number','zoocommerce'),
+            'default'        => __('Phone number','zoommerce'),
         ) );
         $wp_customize->add_control(new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_phone', array(
-            'label'   => __( 'Phone number', 'zoocommerce' ),
+            'label'   => __( 'Phone number', 'zoommerce' ),
             'section' => 'zerif_general_section',
             'settings'   => 'zerif_phone',
             'priority' =>9
@@ -2404,7 +2404,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_address_icon', array(
 
-				'label'    => __( 'Address section - icon', 'zoocommerce' ),
+				'label'    => __( 'Address section - icon', 'zoommerce' ),
 
 				'section'  => 'zerif_general_section',
 
@@ -2417,10 +2417,10 @@ $wp_customize->add_control(
 		/* address */
 		
 		$wp_customize->add_setting( 'zerif_address', array(
-            'default'        => __('Company address','zoocommerce'),
+            'default'        => __('Company address','zoommerce'),
         ) );
         $wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_address', array(
-            'label'   => __( 'Address', 'zoocommerce' ),
+            'label'   => __( 'Address', 'zoommerce' ),
             'section' => 'zerif_general_section',
             'settings'   => 'zerif_address',
             'priority' => 11
@@ -2428,7 +2428,7 @@ $wp_customize->add_control(
 		
 		$wp_customize->add_section( 'zerif_general_socials_section' , array(
 
-				'title'       => __( 'Socials options', 'zoocommerce' ),
+				'title'       => __( 'Socials options', 'zoommerce' ),
 
 				'priority'    => 40
 		));	
@@ -2439,7 +2439,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_facebook', array(
 
-				'label'    => __( 'Facebook link', 'zoocommerce' ),
+				'label'    => __( 'Facebook link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2457,7 +2457,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_twitter', array(
 
-				'label'    => __( 'Twitter link', 'zoocommerce' ),
+				'label'    => __( 'Twitter link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2475,7 +2475,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_linkedin', array(
 
-				'label'    => __( 'Linkedin link', 'zoocommerce' ),
+				'label'    => __( 'Linkedin link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2493,7 +2493,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_behance', array(
 
-				'label'    => __( 'Behance link', 'zoocommerce' ),
+				'label'    => __( 'Behance link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2511,7 +2511,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_dribbble', array(
 
-				'label'    => __( 'Dribbble link', 'zoocommerce' ),
+				'label'    => __( 'Dribbble link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2527,7 +2527,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_googleplus', array(
 
-				'label'    => __( 'Google+ link', 'zoocommerce' ),
+				'label'    => __( 'Google+ link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2543,7 +2543,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_pinterest', array(
 
-				'label'    => __( 'Pinterest link', 'zoocommerce' ),
+				'label'    => __( 'Pinterest link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2559,7 +2559,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_tumblr', array(
 
-				'label'    => __( 'Tumblr link', 'zoocommerce' ),
+				'label'    => __( 'Tumblr link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2576,7 +2576,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_reddit', array(
 
-				'label'    => __( 'Reddit link', 'zoocommerce' ),
+				'label'    => __( 'Reddit link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2592,7 +2592,7 @@ $wp_customize->add_control(
 
 		$wp_customize->add_control( 'zerif_socials_youtube', array(
 
-				'label'    => __( 'Youtube link', 'zoocommerce' ),
+				'label'    => __( 'Youtube link', 'zoommerce' ),
 
 				'section'  => 'zerif_general_socials_section',
 
@@ -2604,11 +2604,11 @@ $wp_customize->add_control(
 		
 		/* Clients */
 		
-		$wp_customize->add_setting( 'zerif_aboutus_clients_title_text', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('SHOWCASE YOUR CLIENTS HERE','zoocommerce')));
+		$wp_customize->add_setting( 'zerif_aboutus_clients_title_text', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('SHOWCASE YOUR CLIENTS HERE','zoommerce')));
 
 		$wp_customize->add_control( 'zerif_aboutus_clients_title_text', array(
-				'label'    => __( 'Clients widgets area title', 'zoocommerce' ),
-				'description' => __('This title appears only if you have widgets in the About us sidebar.','zoocommerce'),
+				'label'    => __( 'Clients widgets area title', 'zoommerce' ),
+				'description' => __('This title appears only if you have widgets in the About us sidebar.','zoommerce'),
 				'section'  => 'zerif_aboutus_section',
 				'settings' => 'zerif_aboutus_clients_title_text',
 				'priority'    => 20,
@@ -2660,7 +2660,7 @@ function zerif_registers() {
     wp_enqueue_script( 'zerif_jquery_ui', '//code.jquery.com/ui/1.10.4/jquery-ui.js', array("jquery"), '20120206', true  );
 	wp_enqueue_style( 'zerif_jquery_ui_css', '//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css');	
 	wp_enqueue_script( 'zerif_customizer_script', get_template_directory_uri() . '/js/zerif_customizer.js', array("jquery","zerif_jquery_ui"), '20120206', true  );
-	wp_enqueue_style( 'zoocommerce_customizer_style', get_stylesheet_directory_uri() . '/assets/css/admin-style.css');
+	wp_enqueue_style( 'zoommerce_customizer_style', get_stylesheet_directory_uri() . '/assets/css/admin-style.css');
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'zerif_registers' );

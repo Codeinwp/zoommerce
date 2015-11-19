@@ -1,5 +1,5 @@
 <?php
-	if(get_theme_mod('zoocommerce_subscribe_hide'))
+	if(get_theme_mod('zoommerce_subscribe_hide'))
 		return NULL;
 ?>
 <section id="newsletter_section">
@@ -9,12 +9,12 @@
 		if(is_active_sidebar( 'sidebar-subscribe' )):
 
 			echo '<div class="home_headline">';
-			if(get_theme_mod('latest_subscribe_headline', __('Newsletter Subscribtion', 'zoocommerce'))) {
-				echo '<h3>'.esc_html(get_theme_mod('latest_subscribe_headline', __('Newsletter Subscribtion', 'zoocommerce'))).'</h3>';
+			if(get_theme_mod('latest_subscribe_headline', __('Newsletter Subscribtion', 'zoommerce'))) {
+				echo '<h3>'.esc_html(get_theme_mod('latest_subscribe_headline', __('Newsletter Subscribtion', 'zoommerce'))).'</h3>';
 			}
 
-			if(get_theme_mod('latest_subscribe_subheading', __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce'))) {
-				echo '<h4>'.esc_html(get_theme_mod('latest_subscribe_subheading', __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoocommerce'))).'</h4>';
+			if(get_theme_mod('latest_subscribe_subheading', __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoommerce'))) {
+				echo '<h4>'.esc_html(get_theme_mod('latest_subscribe_subheading', __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoommerce'))).'</h4>';
 			}
 			echo '</div><!-- / .home_headline -->';
 
