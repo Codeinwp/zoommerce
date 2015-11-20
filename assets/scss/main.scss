@@ -1018,6 +1018,92 @@ h1, h2, h3, h4, h5, h6 {
 	display: none;
 }
 
+article.post {
+	border-bottom: 1px solid #e9e9e9;
+}
+
+.sidebar-wrap {
+	border-left: 1px solid #e9e9e9;
+
+	.widget_search {
+		label {
+			font-weight: normal;
+		}
+
+		input[type=search] {
+			border: 1px solid #c8c8c8;
+			border-radius: 17px;
+			height: 46px;
+			line-height: 46px;
+			font-size: 14px;
+			width: 100%;
+			padding-left: 15px;
+			color: #585858;
+		}
+
+		.search-submit {
+			background: url(../images/search_icon.png) no-repeat center center !important;
+			margin-top: 0 !important;
+			height: 46px !important;
+			line-height: 46px;
+		}
+	}
+	
+	.widget {
+		margin-bottom: 60px;
+		
+		.widget-title {
+			margin: 0 0 20px 0;
+
+			&:before {
+				display: none;
+			}
+		}
+
+		input[type=text],
+		input[type=email] {
+			width: 100%;
+			border: 1px solid #c8c8c8;
+			border-radius: 4px;
+		}
+
+		input[type=submit] {
+			background: #F33B3B;
+			border-radius: 4px;
+			color: #fff;
+			text-transform: uppercase;
+			height: 40px;
+			line-height: 40px;
+			margin-top: 12px;
+		}
+
+		ul {
+			li {
+				position: relative;
+				padding-right: 0;
+				border-bottom: 1px dashed #d0d0d0;
+				margin: 0;
+				padding: 15px;
+
+				a {
+					line-height: 18px;
+				}
+
+				&:before {
+					content: '';
+					position: absolute;
+					background: #ed2d2d;
+					width: 6px;
+					height: 6px;
+					left: 0;
+					margin: auto;
+					top: 0; bottom: 0;
+				}
+			}
+		}
+	}
+}
+
 .entry-meta {
     font-family: 'alleritalic';
 	font-style: italic;
@@ -1047,6 +1133,39 @@ h1, h2, h3, h4, h5, h6 {
 		font-style: italic;
 		color: #F33B3B;
 		font-size: 13px;
+	}
+}
+
+#breadcrumb {
+	width: 100%;
+	background: url(../images/shop_cats_pattern.jpg);
+	height: 55px;
+	line-height: 55px;
+	text-align: center;
+
+	a {
+		display: inline-block;
+		font-size: 16px;
+		color: #363636;
+		padding: 0 13px;
+		position: relative;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: -6px;
+			width: 13px;
+			height: 13px;
+			background: url(../images/breadcrumb_arrow.jpg) no-repeat;
+			top: 0; bottom: 0;
+			margin: auto;
+		}
+
+		&:first-of-type {
+			&:before {
+				display: none;
+			}
+		}
 	}
 }
 

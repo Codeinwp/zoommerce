@@ -22,11 +22,25 @@ if($image) {
 
 <div id="wide_header" <?php echo $image_bg;?>>
 	<div class="container">
-		<div class="title">My Blog</div><!-- / .title -->
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum id illo distinctio, quia in reiciendis nam dolorum itaque aliquid eius omnis. Neque adipisci explicabo cumque reiciendis officiis tenetur doloribus delectus.</p>
+		<?php
+
+			$heading = get_theme_mod('blog_heading', __('MY BLOG', 'zoommerce'));
+			if($heading)
+				echo '<div class="title">'.esc_html($heading).'</div>';
+
+			$heading_sub = get_theme_mod('blog_heading_sub');
+			if($heading_sub)
+				echo '<p>'.esc_html($heading_sub).'</p>';
+
+		?>
 	</div><!-- / .container -->
 	<div class="overlay"></div><!-- / .overlay -->
 </div><!-- /#wide_header  -->
+<div id="breadcrumb">
+	<?php $blog_page_id = zoommerce_get_pages_by_template('template-blog.php')->ID; ?>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'zoommerce'); ?></a>
+	<a href="<?php echo get_page_link($blog_page_id); ?>"><?php _e('Blog', 'zoommerce'); ?></a>
+</div><!-- /#breadcrumb  -->
 <div id="content" class="site-content">
 
 	<div class="container">

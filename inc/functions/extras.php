@@ -381,3 +381,25 @@ if ( ! function_exists( 'zoommerce_is_woocommerce_activated' ) ) {
 		return class_exists( 'woocommerce' ) ? true : false;
 	}
 }
+
+if(!function_exists('zoommerce_get_pages_by_template')) {
+	function zoommerce_get_pages_by_template($template, $count = 1) {
+
+		$pages = get_pages(array(
+			'meta_key' => '_wp_page_template',
+			'meta_value' => $template,
+			'number'	=> $count
+		));
+
+		$return = array();
+		foreach($pages as $page){
+			array_push($return, $page);
+		}
+
+		if($count = 1) {
+			return $return[0];
+		} else {
+			return $return;
+		}
+	}	
+}

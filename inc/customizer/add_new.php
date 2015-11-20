@@ -312,3 +312,35 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_r
 	'section'    => 'zerif_bottombribbon_section',
 	'priority'   => 10
 )));
+
+/**
+ * Blog
+ */
+$wp_customize->add_panel( 'panel_blog_page', array(
+	'priority' => 40,
+	'capability' => 'edit_theme_options',
+	'theme_supports' => '',
+	'title' => __( 'Blog page', 'zoommerce' )
+) );
+
+$wp_customize->add_section( 'zoommerce_blog_content' , array(
+	'title'       => __( 'Headings', 'zoommerce' ),
+	'priority'    => 1,
+	'panel' => 'panel_blog_page'
+));
+
+$wp_customize->add_setting( 'blog_heading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('MY BLOG', 'zoommerce')));
+$wp_customize->add_control( 'blog_heading', array(
+		'label'    => __( 'Heading', 'zoommerce' ),
+		'section'  => 'zoommerce_blog_content',
+		'settings' => 'blog_heading',
+		'priority'    => 1,
+));
+
+$wp_customize->add_setting( 'blog_heading_sub', array('sanitize_callback' => 'zerif_sanitize_number'));
+$wp_customize->add_control( 'blog_heading_sub', array(
+		'label'    => __( 'Subheader', 'zoommerce' ),
+		'section'  => 'zoommerce_blog_content',
+		'settings' => 'blog_heading_sub',
+		'priority'    => 2,
+));
