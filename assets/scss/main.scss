@@ -939,6 +939,36 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+
+.purchase-now {
+	background: #F33B3B;
+
+	.btn-primary {
+		border-color: #fff;
+		background: #F33B3B;
+
+		&:hover {
+			background: rgba(black, 0.08);
+		}
+	}
+}
+
+#ribbon_bottom {
+	&.separator-one {
+		background: #2CC457;
+
+	}
+
+	.btn-primary {
+		border-color: #fff;
+		background: #2CC457;
+
+		&:hover {
+			background: rgba(black, 0.08);
+		}
+	}
+}
+
 /*---------------------------------------
  **   Responsive  -----  MEDIA QUERIES
 -----------------------------------------*/

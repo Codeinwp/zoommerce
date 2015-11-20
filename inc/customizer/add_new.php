@@ -250,3 +250,65 @@ $wp_customize->add_control(
 			'priority'	=> 2,
 		)
 );
+
+/**
+ * Home: Ribbon right
+ */
+$wp_customize->add_setting( 'zerif_ribbonright_button_text', array( 'default' => '#fff', 'transport' => 'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_ribbonright_button_text',array(
+	'label'      => __( 'Button text color', 'zerif' ),
+	'section'    => 'zerif_rightbribbon_section',
+	'priority'   => 8
+)));
+
+$wp_customize->add_setting( 'zerif_ribbonright_button_text_hover', array( 'default' => '#fff', 'transport' => 'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_ribbonright_button_text_hover',array(
+	'label'      => __( 'Button text color hover', 'zerif' ),
+	'section'    => 'zerif_rightbribbon_section',
+	'priority'   => 9
+)));
+
+$wp_customize->add_setting( 'zerif_ribbonright_button_border', array( 'default' => '#fff', 'transport' => 'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_ribbonright_button_border',array(
+	'label'      => __( 'Button border color', 'zerif' ),
+	'section'    => 'zerif_rightbribbon_section',
+	'priority'   => 10
+)));
+
+$wp_customize->add_setting( 'zerif_ribbonright_button_border_hover', array( 'default' => '#fff', 'transport' => 'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_ribbonright_button_border_hover',array(
+	'label'      => __( 'Button border color hover', 'zerif' ),
+	'section'    => 'zerif_rightbribbon_section',
+	'priority'   => 10
+)));
+
+/**
+ * Home: Ribbon bottom
+ */
+$wp_customize->add_setting( 'zerif_ribbonbottom_button_text', array( 'default' => '#fff', 'transport' => 'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_ribbonbottom_button_text',array(
+	'label'      => __( 'Button text color', 'zerif' ),
+	'section'    => 'zerif_bottombribbon_section',
+	'priority'   => 8
+)));
+
+$wp_customize->add_setting( 'zerif_ribbonbottom_button_text_hover', array( 'default' => '#fff', 'transport' => 'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_ribbonbottom_button_text_hover',array(
+	'label'      => __( 'Button text color hover', 'zerif' ),
+	'section'    => 'zerif_bottombribbon_section',
+	'priority'   => 9
+)));
+
+$wp_customize->add_setting( 'zerif_ribbonbottom_button_border', array( 'default' => '#fff', 'transport' => 'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_ribbonbottom_button_border',array(
+	'label'      => __( 'Button border color', 'zerif' ),
+	'section'    => 'zerif_bottombribbon_section',
+	'priority'   => 10
+)));
+
+$wp_customize->add_setting( 'zerif_ribbonbottom_button_border_hover', array( 'default' => '#fff', 'transport' => 'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_ribbonbottom_button_border_hover',array(
+	'label'      => __( 'Button border color hover', 'zerif' ),
+	'section'    => 'zerif_bottombribbon_section',
+	'priority'   => 10
+)));

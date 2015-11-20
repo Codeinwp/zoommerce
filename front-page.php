@@ -325,6 +325,12 @@ echo '
 	//Home team section
 	get_template_part( 'sections/home_team' );
 
+	//Home ribbon right button section
+	get_template_part( 'sections/home_ribbon_right' );
+
+	//Home ribbon bottom section
+	get_template_part( 'sections/home_ribbon_bottom' );
+
 	//Home recent posts
 	get_template_part( 'sections/home_blog' );
 

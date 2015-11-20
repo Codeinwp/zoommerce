@@ -35,6 +35,18 @@ $wp_customize->get_setting( 'zerif_ourfocus_3box' )->default = '#454CC4';
 $wp_customize->get_setting( 'zerif_ourfocus_4box' )->default = '#C4A01B';
 
 /**
+ * Home: Ribbon right
+ */
+$wp_customize->get_setting( 'zerif_ribbonright_background' )->default = '#F33B3B';
+$wp_customize->get_setting( 'zerif_ribbonright_button_background' )->default = '#F33B3B';
+
+/**
+ * Home: Ribbon bottom
+ */
+$wp_customize->get_setting( 'zerif_ribbonright_background' )->default = '#2CC457';
+$wp_customize->get_setting( 'zerif_ribbonright_button_background' )->default = '#2CC457';
+
+/**
  * General: Footer
  */
 	//Icons

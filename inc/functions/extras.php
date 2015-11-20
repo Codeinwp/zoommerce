@@ -228,6 +228,67 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'style' => 'color',
 					'property' => 'zerif_ourteam_text'
 				),
+				array(
+					'selector' => '#team .team-member .social-icons ul li a',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_socials'
+				),
+				array(
+					'selector' => '.team-member .social-icons ul li a:hover',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_socials_hover'
+				),
+
+				/**
+				 * Home: Ribbon
+				 */
+				array(
+					'selector' => '#ribbon_right.purchase-now',
+					'style' => 'background',
+					'property' => 'zerif_ribbonright_background'
+				),
+				array(
+					'selector' => '#ribbon_right h3.white-text',
+					'style' => 'color',
+					'property' => 'zerif_ribbonright_text_color'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'style' => 'background',
+					'property' => 'zerif_ribbonright_button_background'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'style' => 'background',
+					'property' => 'zerif_ribbonright_button_background_hover'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'style' => 'color',
+					'property' => 'zerif_ribbonright_button_text'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'style' => 'color',
+					'property' => 'zerif_ribbonright_button_text_hover'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'style' => 'border',
+					'before_property' => '1px solid ',
+					'property' => 'zerif_ribbonright_button_border'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'style' => 'border',
+					'before_property' => '1px solid ',
+					'property' => 'zerif_ribbonright_button_border_hover'
+				),
+
+
+
+
+
 
 
 
