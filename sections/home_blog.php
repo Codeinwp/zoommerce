@@ -1,5 +1,6 @@
 <?php
-if(get_theme_mod('zoommerce_blog_hide'))
+$blog_hide = get_theme_mod('zoommerce_blog_hide');
+if($blog_hide)
 	return NULL;
 ?>
 <section id="home_blog">
@@ -7,11 +8,13 @@ if(get_theme_mod('zoommerce_blog_hide'))
 		<?php
 
 		echo '<div class="home_headline">';
-		if(get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'zoommerce'))) {
+		$headline = get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'zoommerce'));
+		if($headline) {
 			echo '<h3>'.esc_html(get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'zoommerce'))).'</h3>';
 		}
 
-		if(get_theme_mod('home_latest_posts_subheading')) {
+		$subheading = get_theme_mod('home_latest_posts_subheading');
+		if($subheading) {
 			echo '<h4>'.esc_html(get_theme_mod('home_latest_posts_subheading')).'</h4>';
 		}
 		echo '</div><!-- / .home_headline -->';

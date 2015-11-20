@@ -169,18 +169,21 @@ echo '
 	get_template_part( 'sections/home_map' );
 
 	//Check if contactform is enabled
-	if(empty(get_theme_mod('zoommerce_contactform_hide'))):
+	$hide_contactform = get_theme_mod('zoommerce_contactform_hide');
+	if(empty($hide_contactform)):
 	?>
 	<section class="contact-us" id="contact">
 		<div class="container">
 			<!-- SECTION HEADER -->
 			<?php
 				echo '<div class="home_headline">';
-				if(get_theme_mod('latest_contact_headline', __('Get in touch', 'zoommerce'))) {
+				$headline = get_theme_mod('latest_contact_headline', __('Get in touch', 'zoommerce'));
+				if($headline) {
 					echo '<h3>'.esc_html(get_theme_mod('latest_contact_headline', __('Get in touch', 'zoommerce') )).'</h3>';
 				}
 
-				if(get_theme_mod('latest_contact_subheading', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoommerce'))) {
+				$subtitle = get_theme_mod('latest_contact_subheading', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoommerce'));
+				if($subtitle) {
 					echo '<h4>'.esc_html(get_theme_mod('latest_contact_subheading', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoommerce'))).'</h4>';
 				}
 				echo '</div><!-- / .home_headline -->';

@@ -1,5 +1,6 @@
 <?php
-if(get_theme_mod('zoommerce_shopproducts_hide'))
+$prod_hide = get_theme_mod('zoommerce_shopproducts_hide');
+if($prod_hide)
 	return NULL;
 
 //Data
@@ -20,12 +21,13 @@ $products_loop = new WP_Query( $products_args );
 	<div class="left" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
 		<div class="home_headline">
 			<?php
-
-				if(get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'))) {
+				$headline = get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'));
+				if($headline) {
 					echo '<h3>'.esc_html(get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'))).'</h3>';
 				}
 
-				if(get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'))) {
+				$subheading = get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'));
+				if($subheading) {
 					echo '<h4>'.esc_html(get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'))).'</h4>';
 				}
 

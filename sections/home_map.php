@@ -1,5 +1,7 @@
 <?php
-if(get_theme_mod('zoommerce_map_hide'))
+$map_hide = get_theme_mod('zoommerce_map_hide');
+
+if($map_hide)
 	return NULL;
 
 $zerif_googlemap_address = get_theme_mod('zerif_googlemap_address',__('New York, Leroy Street','zoommerce'));

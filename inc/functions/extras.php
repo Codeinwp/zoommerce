@@ -326,7 +326,9 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 			foreach($styles as $key => $val) {
 
 				//If style is added in customizer, create a new row in output
-				if(get_theme_mod($val['property'])) {
+				$property = get_theme_mod($val['property']);
+				
+				if($property) {
 
 					//Display selector
 					if(array_key_exists('selector', $val) && !empty($val['selector'])) {
