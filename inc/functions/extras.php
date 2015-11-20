@@ -170,12 +170,12 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				 * Home: Portfolio
 				 */
 				array(
-					'selector' => '.home_headline h3',
+					'selector' => '#works .home_headline h3',
 					'style' => 'color',
 					'property' => 'zerif_portofolio_header'
 				),
 				array(
-					'selector' => '.home_headline h4',
+					'selector' => '#works .home_headline h4',
 					'style' => 'color',
 					'property' => 'zerif_portofolio_header'
 				),
@@ -185,8 +185,24 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_portofolio_text'
 				),
 
-
-
+				/**
+				 * Home: Aboutus
+				 */
+				array(
+					'selector' => '#aboutus.about-us',
+					'style' => 'background',
+					'property' => 'zerif_aboutus_background'
+				),
+				array(
+					'selector' => '#aboutus .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_aboutus_title_color'
+				),
+				array(
+					'selector' => '#aboutus .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_aboutus_title_color'
+				),
 
 
 

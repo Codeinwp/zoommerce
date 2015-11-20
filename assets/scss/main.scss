@@ -908,6 +908,16 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+#aboutus {
+	&.about-us {
+		padding-bottom: 50px;
+
+		.column {
+			margin-bottom: 0;
+		}
+	}
+}
+
 .focus, .works, .about-us, .features, .packages, .products, .testimonial, .contact-us {
 	padding-top: 50px;
 

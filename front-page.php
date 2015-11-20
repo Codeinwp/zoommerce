@@ -319,6 +319,9 @@ echo '
 
 	endif; //Check if contactform is enabled
 
+	//Home portfolio section
+	get_template_part( 'sections/home_about' );
+
 	//Home recent posts
 	get_template_part( 'sections/home_blog' );
 
