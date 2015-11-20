@@ -205,6 +205,32 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				),
 
 
+				/**
+				 * Home: Our team
+				 */
+				array(
+					'selector' => '#team.our-team',
+					'style' => 'background',
+					'property' => 'zerif_ourteam_background'
+				),
+				array(
+					'selector' => '#team .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_header'
+				),
+				array(
+					'selector' => '#team .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_header'
+				),
+				array(
+					'selector' => '#team .team-member .details',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_text'
+				),
+
+
+
 
 				array(
 					'selector' => '#footer',

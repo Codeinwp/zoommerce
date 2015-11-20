@@ -322,6 +322,9 @@ echo '
 	//Home portfolio section
 	get_template_part( 'sections/home_about' );
 
+	//Home team section
+	get_template_part( 'sections/home_team' );
+
 	//Home recent posts
 	get_template_part( 'sections/home_blog' );
 

@@ -918,7 +918,12 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-.focus, .works, .about-us, .features, .packages, .products, .testimonial, .contact-us {
+.our-team .row > div:nth-child(4n+1) .red-border-bottom:before { background: #F33B3B; }
+.our-team .row > div:nth-child(4n+2) .red-border-bottom:before { background: #2CC457; }
+.our-team .row > div:nth-child(4n+3) .red-border-bottom:before { background: #454CC4; }
+.our-team .row > div:nth-child(4n+4) .red-border-bottom:before { background: #C4A01B; }
+
+.focus, .works, .about-us, .features, .packages, .products, .testimonial, .contact-us, .our-team {
 	padding-top: 50px;
 
 	.home_headline {
