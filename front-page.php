@@ -140,15 +140,27 @@ echo '
 		//Shop categories sections
 		get_template_part( 'sections/home_shop_categories' );
 
+		//Home our focus section
+		get_template_part( 'sections/home_our_focus' );
+
 		//Home Products Section
 		get_template_part( 'sections/home_products' );
 
 	} else {
-		echo '<p style="margin: 20px; height: 391px; background: url('.get_stylesheet_directory_uri() . '/assets/images/demo/latest_product_demo.jpg'.') no-repeat center center; line-height: 391px;">'. __('Please install WooCommerce plugin in order to display the shop categories section and latest producs section', 'zoommerce'). '</p>';
+		$zerif_ourfocus_show = get_theme_mod('zerif_ourfocus_show');
+		if($zerif_ourfocus_show) {
+			//Home our focus section
+			get_template_part( 'sections/home_our_focus' );
+		} else {
+			echo '<p style="margin: 20px; height: 391px; background: url('.get_stylesheet_directory_uri() . '/assets/images/demo/latest_product_demo.jpg'.') no-repeat center center; line-height: 391px;">'. __('Please install WooCommerce plugin in order to display the shop categories section and latest producs section', 'zoommerce'). '</p>';
+		}
 	}
 
 	//Home newsletter section
 	get_template_part( 'sections/home_newsletter' );
+
+	//Home portfolio section
+	get_template_part( 'sections/home_portfolio' );
 
 	//Home testimonials section
 	get_template_part( 'sections/home_testimonials' );

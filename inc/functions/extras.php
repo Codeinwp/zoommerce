@@ -56,7 +56,7 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 		$styles = array(
 
 				/**
-				 * Big banner colors
+				 * Home: Big banner colors
 				 */
 				array(
 					'selector' => '.home-header-wrap.overlay',
@@ -110,7 +110,80 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_bigbanner_button_text_hover'
 				),
 
+				/**
+				 * Home: Our focus
+				 */
+				array(
+					'selector' => '.focus-box:nth-child(4n+1) .service-icon:hover',
+					'style' => 'border',
+					'before_property' => '10px solid ',
+					'property' => 'zerif_ourfocus_1box'
+				),
 
+				array(
+					'selector' => '.focus-box:nth-child(4n+1) .red-border-bottom:before',
+					'style' => 'background',
+					'property' => 'zerif_ourfocus_1box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+2) .service-icon:hover',
+					'style' => 'border',
+					'before_property' => '10px solid ',
+					'property' => 'zerif_ourfocus_2box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+2) .red-border-bottom:before',
+					'style' => 'background',
+					'property' => 'zerif_ourfocus_2box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+3) .service-icon:hover',
+					'style' => 'border',
+					'before_property' => '10px solid ',
+					'property' => 'zerif_ourfocus_3box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+3) .red-border-bottom:before',
+					'style' => 'background',
+					'property' => 'zerif_ourfocus_3box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+4) .service-icon:hover',
+					'style' => 'border',
+					'before_property' => '10px solid ',
+					'property' => 'zerif_ourfocus_4box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+4) .red-border-bottom:before',
+					'style' => 'background',
+					'property' => 'zerif_ourfocus_4box'
+				),
+
+
+				/**
+				 * Home: Portfolio
+				 */
+				array(
+					'selector' => '.home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_portofolio_header'
+				),
+				array(
+					'selector' => '.home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_portofolio_header'
+				),
+				array(
+					'selector' => '.cbp-rfgrid li a .project-info .project-details',
+					'style' => 'color',
+					'property' => 'zerif_portofolio_text'
+				),
 
 
 

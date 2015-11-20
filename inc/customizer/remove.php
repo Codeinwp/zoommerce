@@ -18,6 +18,11 @@ $wp_customize->remove_control('zerif_bigtitle_1button_background_color_hover');
 $wp_customize->remove_control('zerif_bigtitle_background');
 
 /**
+ * Home: Portfolio
+ */
+$wp_customize->remove_control('zerif_portofolio_background');
+
+/**
  * General: Footer
  */
 $wp_customize->remove_control('zerif_bigtitle_greenbutton_label');

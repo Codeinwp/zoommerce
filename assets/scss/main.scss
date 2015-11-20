@@ -880,6 +880,50 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+#focus {
+	background: rgba(0, 0, 0, 0.02);
+
+	&.focus {
+		padding-bottom: 50px;
+	}
+}
+
+#works {
+	background: url(../images/shop_cats_pattern.jpg);
+
+	&.works {
+		padding-bottom: 50px;
+		min-height: auto;
+	}
+
+	.cbp-rfgrid {
+		background: #fff;
+		border: 5px solid #fff;	
+		overflow: hidden;
+	}
+
+	.red-border-bottom:before {
+		background: #e52424;
+	}
+
+}
+
+.focus, .works, .about-us, .features, .packages, .products, .testimonial, .contact-us {
+	padding-top: 50px;
+
+	.home_headline {
+		margin-top: 0;
+
+		h3 {
+			margin-top: 0;
+		}
+
+		h4 {
+			margin-bottom: 50px;
+		}
+	}
+}
+
 /*---------------------------------------
  **   Responsive  -----  MEDIA QUERIES
 -----------------------------------------*/

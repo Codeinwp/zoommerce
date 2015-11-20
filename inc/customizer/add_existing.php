@@ -25,6 +25,14 @@ $wp_customize->get_setting( 'zerif_bigtitle_background' )->default = 'rgba(0, 0,
 $wp_customize->get_setting( 'zerif_bigtitle_1button_background_color' )->default = 'rgba(0, 0, 0, 0)';
 $wp_customize->get_control( 'zerif_bigtitle_1button_color' )->label = __( 'Button text color', 'zoommerce' );
 
+/**
+ * Home: Our focus
+ */
+	//Colors
+$wp_customize->get_setting( 'zerif_ourfocus_1box' )->default = '#F33B3B';
+$wp_customize->get_setting( 'zerif_ourfocus_2box' )->default = '#2CC457';
+$wp_customize->get_setting( 'zerif_ourfocus_3box' )->default = '#454CC4';
+$wp_customize->get_setting( 'zerif_ourfocus_4box' )->default = '#C4A01B';
 
 /**
  * General: Footer

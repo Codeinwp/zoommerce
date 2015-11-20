@@ -100,14 +100,6 @@ $wp_customize->add_control(new Zerif_Customize_Alpha_Color_Control($wp_customize
 	'priority'   => 4
 )));
 
-$wp_customize->add_setting( 'zerif_bigbanner_button_bg_color_hover', array( 'default' => 'rgba(0, 0, 0, 0)', 'transport' =>'postMessage' )); 
-$wp_customize->add_control(new Zerif_Customize_Alpha_Color_Control($wp_customize, 'zerif_bigbanner_button_bg_color_hover',array(
-	'label'    => __( 'Button background hover color', 'zoommerce' ),
-	'palette' => true,
-	'section'  => 'zerif_bigtitle_colors_section',
-	'priority'   => 4
-)));
-
 $wp_customize->add_setting( 'zerif_bigbanner_button_text_hover', array( 'default' => '#fff', 'transport' =>'postMessage' ) );
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'zerif_bigbanner_button_text_hover', array(
 	'label'      => __( 'Button text hover color', 'zoommerce' ),
