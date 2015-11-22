@@ -1235,10 +1235,17 @@ article.post {
 	input#submit {
 		float: right;
 		margin-right: 0;
-		padding: 0 20px;;
+		padding: 0 20px;
 		height: 40px;
 		line-height: 40px;
 		margin-bottom: 45px;
+		border: 1px solid #ed2d2d;
+		@extend .transition;
+	
+		&:hover {
+			background: transparent;
+			color: #ed2d2d !important;
+		}
 	}
 
 	.comment-form-url,
