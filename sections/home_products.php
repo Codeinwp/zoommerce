@@ -33,7 +33,7 @@ $products_loop = new WP_Query( $products_args );
 
 			?>
 		</div><!-- / .headline -->
-		<ul>
+		<ul class="products">
 		<?php
 		
 		if ( $products_loop->have_posts() ) {
