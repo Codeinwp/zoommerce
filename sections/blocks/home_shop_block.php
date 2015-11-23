@@ -4,7 +4,7 @@
  * The template for block style box on home latest categories section
  *
  * @package WordPress
- * @subpackage zoocommerce
+ * @subpackage zoommerce
  */
 
 echo '<div class="box'.esc_attr($cat_class).'">

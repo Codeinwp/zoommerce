@@ -19,7 +19,7 @@ require 'functions/extras.php';
 /**
  * Load WooCommerce compatibility files.
  */
-if(zoocommerce_is_woocommerce_activated()) {
+if(zoommerce_is_woocommerce_activated()) {
 	require 'woocommerce/hooks.php';
 	require 'woocommerce/functions.php';
 	require 'woocommerce/template-tags.php';

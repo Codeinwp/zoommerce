@@ -30,6 +30,15 @@
 		float: left;
 		padding: 0;
 
+		&.center_on_responsive {
+			width: 100%;
+
+			ul {
+				text-align: center;
+				margin-right: 0;
+			}
+		}
+
 		&.navbar-collapse {
 			margin-right: 0 !important;
 		}
@@ -111,12 +120,13 @@
 
 @media (min-width: 480px) and (max-width: 767px) {
 	.container {
-		width: 480px;
+		width: 98%;
+		margin: 0 4%;
 	}
 
 	//Header
 	.menu-align-center .responsive-logo {
-		width: 82%;
+		width: 81.5%;
 		margin-left:0;
 		margin-right: 0;
 		float: left;
@@ -128,7 +138,7 @@
 	}
 
 	.menu-icons {
-		width: 16%;
+		width: 16.5%;
 		margin-top: 21px;
 		border-left: none;
 		padding-left: 16px !important;
@@ -231,3 +241,161 @@
 	}
 }
 
+@media (max-width: 479px) {
+	.container {
+		width: 100%;
+	}
+
+	//Header
+	.menu-align-center .responsive-logo {
+		width: 75%;
+		margin-left:0;
+		margin-right: 0;
+		float: left;
+
+		.navbar-brand {
+			width: 65%;
+			position: relative;
+			margin-top: 7px;
+
+			img {
+				position: absolute;
+				top:0; bottom: 0; left: 0;
+				margin: auto;
+			}
+		}
+	}
+
+	button.navbar-toggle {
+		margin-right: 0;
+		margin-top: 17px;
+	}
+
+	.menu-icons {
+		width: 25%;
+		margin-top: 21px;
+		border-left: none;
+		padding-left: 16px !important;
+
+		#icons-menu {
+			padding: 0 !important;
+
+			li {
+				float: right;
+
+				&:first-of-type {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	#site-navigation {
+		float: none;
+		margin-top: 68px;
+	}
+
+	.navbar-inverse .navbar-nav{
+		margin-bottom: 0;
+
+
+		li {
+			padding-bottom: 0;
+			border-bottom: 1px solid #333;
+
+			a {
+				&:hover {
+					color: #999 !important;
+				}
+			}
+
+			.sub-menu {
+				overflow: hidden;
+				background: transparent;
+
+				li {
+					a {
+						&:last-of-type {
+							border-bottom: none;
+						}
+					}
+				}
+			}
+
+
+			&:last-of-type {
+				border-bottom: none;
+			}
+		}
+	} 
+
+	//Big banner
+	.header-content-wrap {
+		.intro-text {
+			font-size: 38px;
+			line-height: 56px;
+		}
+
+		.sub-text {
+			font-size: 22px !important;
+		}
+	}
+
+	//Shop categories
+	#shop_cats {
+		padding: 10px 0;
+
+		.box,
+		.tower {
+			width: 100%;
+		}
+
+		.tower {
+			&.thirds {
+				width: 100%;
+			}
+
+			&.half {
+				width: 100%;
+			}
+		}
+
+		.box {
+			&.thirds {
+				width: 100%;
+			}
+
+			&.half {
+				width: 100%;
+			}
+		}
+	}
+
+	//Latest products
+	#home_products {
+		.right {
+			display: none;
+		}
+
+		.left {
+			width: 100%;
+
+			.product {
+				width: 100%;
+			}
+		}
+	}
+
+	//Contact
+	#contact {
+		.row {
+			margin-left: 0;
+		}
+	}
+
+	//Latest posts
+	#home_blog {
+		padding-top: 0;
+		padding-bottom: 45px;
+	}
+}

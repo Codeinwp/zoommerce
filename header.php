@@ -5,8 +5,18 @@
  * Displays header section
  *
  * @package WordPress
- * @subpackage zoocommerce
+ * @subpackage zoommerce
  */
+
+
+$zoommerce_myaccount = get_theme_mod('myaccount_icon', get_stylesheet_directory_uri().'/assets/images/menu-profile.png'); 
+$zoommerce_myaccount_link = get_theme_mod('myaccount_link');
+
+$zoommerce_cart = get_theme_mod('cart_icon', get_stylesheet_directory_uri().'/assets/images/menu-cart.png'); 
+$zoommerce_cart_link = get_theme_mod('cart_link');
+$header_icons = false;
+if($zoommerce_myaccount && $zoommerce_myaccount_link && $zoommerce_cart && $zoommerce_cart_link)
+	$header_icons = true;
 
 ?><!DOCTYPE html>
 
@@ -70,17 +80,17 @@
 				<div class="container">
 					<div class="navbar-header responsive-logo">
 						<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-							<span class="sr-only"><?php _e('Toggle navigation', 'zoocommerce'); ?></span>
+							<span class="sr-only"><?php _e('Toggle navigation', 'zoommerce'); ?></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
 
 						<?php
-							$zoocommerce_logo = get_theme_mod('zerif_logo', get_stylesheet_directory_uri().'/assets/images/logo.png');
-							if( !empty($zoocommerce_logo) ):
+							$zoommerce_logo = get_theme_mod('zerif_logo', get_stylesheet_directory_uri().'/assets/images/logo.png');
+							if( !empty($zoommerce_logo) ):
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
-									echo '<img src="'.esc_url($zoocommerce_logo).'" alt="'.esc_attr(get_bloginfo('title')).'">';
+									echo '<img src="'.esc_url($zoommerce_logo).'" alt="'.esc_attr(get_bloginfo('title')).'">';
 								echo '</a>';
 							else:
 								if( isset( $wp_customize ) ):
@@ -96,40 +106,39 @@
 						?>
 					</div>
                     
-                    <?php 
-						
-						$zoocommerce_myaccount = get_theme_mod('myaccount_icon', get_stylesheet_directory_uri().'/assets/images/menu-profile.png'); 
-						$zoocommerce_myaccount_link = get_theme_mod('myaccount_link');
-						
-						$zoocommerce_cart = get_theme_mod('cart_icon', get_stylesheet_directory_uri().'/assets/images/menu-cart.png'); 
-						$zoocommerce_cart_link = get_theme_mod('cart_link');	
+                    <?php 	
 						
 					//Check if links are active and display the box
-					if(zoocommerce_is_woocommerce_activated()):
+					if(zoommerce_is_woocommerce_activated()):
 
-						if(!empty($zoocommerce_cart_link) or !empty($zoocommerce_myaccount_link)): ?>
+						if($header_icons): ?>
 	                    <div class="menu-icons">
 	                        <ul id="icons-menu">
-	                            <li class="menu-item"> 
-	                            	<?php if(!empty($zoocommerce_myaccount) && !empty($zoocommerce_myaccount_link)): ?>
-	                                <a href="<?php echo esc_url($zoocommerce_myaccount_link); ?>">
-	                                    <img src="<?php echo esc_url($zoocommerce_myaccount); ?>">
+	                            
+                            	<?php if(!empty($zoommerce_myaccount) or !empty($zoommerce_myaccount_link)): ?>
+                            	<li class="menu-item"> 
+	                                <a href="<?php echo esc_url($zoommerce_myaccount_link); ?>">
+	                                    <img src="<?php echo esc_url($zoommerce_myaccount); ?>">
 	                                </a> 
-	                                <?php endif; ?>
-	                            </li>
-	                            <li class="menu-item"> 
-	                            	<?php if(!empty($zoocommerce_cart) && !empty($zoocommerce_cart_link)): ?>
-	                                <a href="<?php echo esc_url($zoocommerce_cart_link); ?>">
-	                                    <img src="<?php echo esc_url($zoocommerce_cart); ?>">
+                                </li>
+                                <?php endif; ?>
+	                            
+	                           
+                            	<?php if(!empty($zoommerce_cart) or !empty($zoommerce_cart_link)): ?>
+                            	<li class="menu-item"> 
+	                                <a href="<?php echo esc_url($zoommerce_cart_link); ?>">
+	                                    <img src="<?php echo esc_url($zoommerce_cart); ?>">
 	                                </a> 
-	                                <?php endif; ?>
-	                            </li>
+                                </li>
+                                <?php endif; ?>
+	                            
 	                        </ul>
 	                    </div>
 						<?php endif; 
-					endif; ?>
+					endif;
+					 ?>
 
-					<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+					<nav class="navbar-collapse bs-navbar-collapse collapse<?php echo ($header_icons == true ? ' center_on_responsive' : ''); ?>" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
 
 						<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right responsive-nav main-nav-list' ,'fallback_cb'     => 'zerif_wp_page_menu')); ?>  
 

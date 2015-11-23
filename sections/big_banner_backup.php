@@ -1,61 +1,74 @@
 <div id="big-banner">
-
-<div class="home-header-wrap overlay">
+<div class="home-header-wrap">
 
 <?php
 
-	global $wp_customize;
+	zerif_top_body_trigger();
 
-	$zerif_parallax_img1 = get_theme_mod('zerif_parallax_img1',get_template_directory_uri() . '/images/background1.jpg');
-	$zerif_parallax_img2 = get_theme_mod('zerif_parallax_img2',get_template_directory_uri() . '/images/background2.png');
-	$zerif_parallax_use = get_theme_mod('zerif_parallax_show');
+/*************************************************/
+/**************  Background settings *************/
+/*************************************************/
 
-	if ( $zerif_parallax_use == 1 && (!empty($zerif_parallax_img1) || !empty($zerif_parallax_img2)) ) {
-		echo '<ul id="parallax_move">';
+	/* Background Image */
+	$zerif_background_image = get_theme_mod('zerif_background_image', get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg');
+
+	echo '<div class="fadein-slider">';
+			
+	$zerif_vpos = get_theme_mod('zerif_vposition_bgimage','top');
+	$zerif_hpos = get_theme_mod('zerif_hposition_bgimage','left');
+	$zerif_bgsize = get_theme_mod('zerif_bgsize_bgimage','cover');
+	if ($zerif_bgsize=='width'):
+		$zerif_bgsize = '100% auto';
+	elseif ($zerif_bgsize=='height'):
+		$zerif_bgsize = 'auto 100%';
+	endif;
+
+	$zerif_slide_style = 'background-repeat:no-repeat;background-position:'.esc_attr($zerif_hpos).' '.esc_attr($zerif_vpos).';background-size:'.esc_attr($zerif_bgsize).';';
+
+	echo '<div class="slide-item" style="background-image:url('.esc_url($zerif_background_image).');'.$zerif_slide_style.'"><div class="overlay"></div><!-- / .overlay --></div></div>';
+
+$zerif_bigtitle_show = get_theme_mod('zerif_bigtitle_show');
 	
-			if( !empty($zerif_parallax_img1) ) { 
-				echo '<li class="layer layer1" data-depth="0.10" style="background-image: url(' . $zerif_parallax_img1 . ');"></li>';
-			}
-			if( !empty($zerif_parallax_img2) ) { 
-				echo '<li class="layer layer2" data-depth="0.20" style="background-image: url(' . $zerif_parallax_img2 . ');"></li>';
-			}
-
-		echo '</ul>';
-	
-	}
-
-	$zerif_bigtitle_show = get_theme_mod('zerif_bigtitle_show');
-	
-	if( isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1 ):
+if( isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1 ):
 	
 		echo '<div class="header-content-wrap">';
 	
-	elseif ( isset( $wp_customize ) ):
+elseif ( isset( $wp_customize ) ):
 	
 		echo '<div class="header-content-wrap zerif_hidden_if_not_customizer">';
 	
-	endif;
+endif;
 
-	if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_customize ) ):
+if( (isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1) || isset( $wp_customize ) ):
 
 		echo '<div class="container big-title-container">';
-
+		
 		/* Sub title */
+		
 		$zerif_subtitle = get_theme_mod( 'zerif_bigtitle_subtitle', __('Introducing','zoommerce') );
-
+		
 		if( !empty($zerif_subtitle) ):
+
 			echo '<h4 class="sub-text">'.esc_html($zerif_subtitle).'</h1>';
+			
 		elseif ( isset( $wp_customize ) ):
+		
 			echo '<h4 class="sub-text zerif_hidden_if_not_customizer"></h1>';
+
 		endif;
 
 		/* Big title */
-		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('To add a title here please go to Customizer, "Big title section"','zerif') );
+		
+		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('ZOOMMERCE','zoommerce') );
 		
 		if( !empty($zerif_bigtitle_title) ):
+
 			echo '<h1 class="intro-text">'.esc_html($zerif_bigtitle_title).'</h1>';
+			
 		elseif ( isset( $wp_customize ) ):
+		
 			echo '<h1 class="intro-text zerif_hidden_if_not_customizer"></h1>';
+
 		endif;	
 
 		/* Buttons */
@@ -99,7 +112,7 @@
 	
 	endif;
 
-	echo '<div class="clear"></div>';
+	echo '<div class="clear"></div>';	
 
 
 ?>

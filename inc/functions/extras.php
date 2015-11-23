@@ -3,7 +3,7 @@
 /**
  * Sanitize repeater field
  */
-function zoocommerce_sanitize_repeater($input){
+function zoommerce_sanitize_repeater($input){
 	$input_decoded = json_decode($input,true);
 	$allowed_html = array(
 		'br' => array(),
@@ -38,10 +38,10 @@ function zoocommerce_sanitize_repeater($input){
 /**
  * Customizer CSS output
  */
-if(!function_exists('zoocommerce_customizer_style_css')) {
+if(!function_exists('zoommerce_customizer_style_css')) {
 	
-	add_action('wp_footer','zoocommerce_customizer_style_css');
-	function zoocommerce_customizer_style_css() {
+	add_action('wp_footer','zoommerce_customizer_style_css');
+	function zoommerce_customizer_style_css() {
 		/*
 			array(
 				'selector' => '.buttons .custom-button',
@@ -54,38 +54,245 @@ if(!function_exists('zoocommerce_customizer_style_css')) {
 		*/
 		$return = '';
 		$styles = array(
+
+				/**
+				 * Home: Big banner colors
+				 */
 				array(
-					'selector' => '.intro-text',
+					'selector' => '.home-header-wrap.overlay',
+					'style' => 'background',
+					'property' => 'zerif_bigbanner_background_color' 
+				),
+				array(
+					'selector' => '.home-header-wrap .sub-text',
+					'style' => 'color',
+					'property' => 'zerif_bigbanner_subtitle_color',
+					'important' => true
+				),
+				array(
+					'selector' => '.home-header-wrap .intro-text',
 					'style' => 'color',
 					'property' => 'zerif_bigtitle_header_color'
 				),
+				
 				array(
-					'selector' => '.sub-text',
-					'style' => 'color',
-					'property' => 'zerif_bigtitle_subheader_color'
-				),
-				array(
-					'selector' => '.buttons .custom-button',
+					'selector' => '.home-header-wrap .buttons .custom-button',
 					'style' => 'background',
-					'property' => 'zerif_bigtitle_button_background_color'
+					'property' => 'zerif_bigbanner_button_bg_color'
 				),
 				array(
-					'selector' => '.buttons .custom-button',
+					'selector' => '.home-header-wrap .buttons .custom-button:hover',
+					'style' => 'background',
+					'property' => 'zerif_bigbanner_button_bg_color_hover'
+				),
+				array(
+					'selector' => '.home-header-wrap .buttons .custom-button',
 					'style' => 'border',
-					'property' =>  'zerif_bigtitle_button_border_color',
+					'property' =>  'zerif_bigbanner_button_border_color',
 					'before_property' => '2px solid ',
 					'important' => true
 				),
 				array(
-					'selector' => '.buttons .custom-button:hover',
-					'style' => 'background',
-					'property' => 'zerif_bigtitle_button_background_color_hover'
+					'selector' => '.home-header-wrap .buttons .custom-button:hover',
+					'style' => 'border',
+					'property' =>  'zerif_bigbanner_button_border_color_hover',
+					'before_property' => '2px solid ',
+					'important' => true
 				),
 				array(
-					'selector' => '.intro-text',
-					'style' => 'background',
-					'property' => 'zerif_bigtitle_background'
+					'selector' => '.home-header-wrap .buttons .custom-button',
+					'style' => 'color',
+					'property' => 'zerif_bigtitle_1button_color'
 				),
+				array(
+					'selector' => '.home-header-wrap .buttons .custom-button:hover',
+					'style' => 'color',
+					'property' => 'zerif_bigbanner_button_text_hover'
+				),
+
+				/**
+				 * Home: Our focus
+				 */
+				array(
+					'selector' => '.focus-box:nth-child(4n+1) .service-icon:hover',
+					'style' => 'border',
+					'before_property' => '10px solid ',
+					'property' => 'zerif_ourfocus_1box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+1) .red-border-bottom:before',
+					'style' => 'background',
+					'property' => 'zerif_ourfocus_1box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+2) .service-icon:hover',
+					'style' => 'border',
+					'before_property' => '10px solid ',
+					'property' => 'zerif_ourfocus_2box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+2) .red-border-bottom:before',
+					'style' => 'background',
+					'property' => 'zerif_ourfocus_2box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+3) .service-icon:hover',
+					'style' => 'border',
+					'before_property' => '10px solid ',
+					'property' => 'zerif_ourfocus_3box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+3) .red-border-bottom:before',
+					'style' => 'background',
+					'property' => 'zerif_ourfocus_3box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+4) .service-icon:hover',
+					'style' => 'border',
+					'before_property' => '10px solid ',
+					'property' => 'zerif_ourfocus_4box'
+				),
+
+				array(
+					'selector' => '.focus-box:nth-child(4n+4) .red-border-bottom:before',
+					'style' => 'background',
+					'property' => 'zerif_ourfocus_4box'
+				),
+
+
+				/**
+				 * Home: Portfolio
+				 */
+				array(
+					'selector' => '#works .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_portofolio_header'
+				),
+				array(
+					'selector' => '#works .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_portofolio_header'
+				),
+				array(
+					'selector' => '.cbp-rfgrid li a .project-info .project-details',
+					'style' => 'color',
+					'property' => 'zerif_portofolio_text'
+				),
+
+				/**
+				 * Home: Aboutus
+				 */
+				array(
+					'selector' => '#aboutus.about-us',
+					'style' => 'background',
+					'property' => 'zerif_aboutus_background'
+				),
+				array(
+					'selector' => '#aboutus .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_aboutus_title_color'
+				),
+				array(
+					'selector' => '#aboutus .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_aboutus_title_color'
+				),
+
+
+				/**
+				 * Home: Our team
+				 */
+				array(
+					'selector' => '#team.our-team',
+					'style' => 'background',
+					'property' => 'zerif_ourteam_background'
+				),
+				array(
+					'selector' => '#team .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_header'
+				),
+				array(
+					'selector' => '#team .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_header'
+				),
+				array(
+					'selector' => '#team .team-member .details',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_text'
+				),
+				array(
+					'selector' => '#team .team-member .social-icons ul li a',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_socials'
+				),
+				array(
+					'selector' => '.team-member .social-icons ul li a:hover',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_socials_hover'
+				),
+
+				/**
+				 * Home: Ribbon
+				 */
+				array(
+					'selector' => '#ribbon_right.purchase-now',
+					'style' => 'background',
+					'property' => 'zerif_ribbonright_background'
+				),
+				array(
+					'selector' => '#ribbon_right h3.white-text',
+					'style' => 'color',
+					'property' => 'zerif_ribbonright_text_color'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'style' => 'background',
+					'property' => 'zerif_ribbonright_button_background'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'style' => 'background',
+					'property' => 'zerif_ribbonright_button_background_hover'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'style' => 'color',
+					'property' => 'zerif_ribbonright_button_text'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'style' => 'color',
+					'property' => 'zerif_ribbonright_button_text_hover'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'style' => 'border',
+					'before_property' => '1px solid ',
+					'property' => 'zerif_ribbonright_button_border'
+				),
+				array(
+					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'style' => 'border',
+					'before_property' => '1px solid ',
+					'property' => 'zerif_ribbonright_button_border_hover'
+				),
+
+
+
+
+
+
+
+
+
 				array(
 					'selector' => '#footer',
 					'style' => 'background',
@@ -119,13 +326,15 @@ if(!function_exists('zoocommerce_customizer_style_css')) {
 			foreach($styles as $key => $val) {
 
 				//If style is added in customizer, create a new row in output
-				if(get_theme_mod($val['property'])) {
+				$property = get_theme_mod($val['property']);
+				
+				if($property) {
 
 					//Display selector
 					if(array_key_exists('selector', $val) && !empty($val['selector'])) {
 						$return .= $val['selector'];
 					} else {
-						error_log("Function: zoocommerce_customizer_style_css() - Array Key 'selector' not defined for " . $val['property']);
+						error_log("Function: zoommerce_customizer_style_css() - Array Key 'selector' not defined for " . $val['property']);
 					}
 
 					$return .= '{';
@@ -133,7 +342,7 @@ if(!function_exists('zoocommerce_customizer_style_css')) {
 					if(array_key_exists('style', $val) && !empty($val['style'])) {
 						$return .= $val['style'] . ':';
 					} else {
-						error_log("Function: zoocommerce_customizer_style_css() - Array Key 'style' not defined for " . $val['property']);
+						error_log("Function: zoommerce_customizer_style_css() - Array Key 'style' not defined for " . $val['property']);
 					}
 
 					if(array_key_exists('before_property', $val) && !empty($val['before_property'])) {
@@ -167,8 +376,30 @@ if(!function_exists('zoocommerce_customizer_style_css')) {
 /**
  * Query WooCommerce activation
  */
-if ( ! function_exists( 'zoocommerce_is_woocommerce_activated' ) ) {
-	function zoocommerce_is_woocommerce_activated() {
+if ( ! function_exists( 'zoommerce_is_woocommerce_activated' ) ) {
+	function zoommerce_is_woocommerce_activated() {
 		return class_exists( 'woocommerce' ) ? true : false;
 	}
+}
+
+if(!function_exists('zoommerce_get_pages_by_template')) {
+	function zoommerce_get_pages_by_template($template, $count = 1) {
+
+		$pages = get_pages(array(
+			'meta_key' => '_wp_page_template',
+			'meta_value' => $template,
+			'number'	=> $count
+		));
+
+		$return = array();
+		foreach($pages as $page){
+			array_push($return, $page);
+		}
+
+		if($count = 1) {
+			return $return[0];
+		} else {
+			return $return;
+		}
+	}	
 }

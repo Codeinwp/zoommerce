@@ -1,14 +1,21 @@
+<?php
+	$testimonials_hide = get_theme_mod('zoommerce_testimonials_hide');
+	if($testimonials_hide) 
+		return NULL;
+?>
 <section id="testimonials">
 	<div class="container">
 		<?php
 
 		echo '<div class="home_headline">';
-		if(get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoocommerce'))) {
-			echo '<h3>'.esc_html(get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoocommerce'))).'</h3>';
+		$headline = get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoommerce'));
+		if($headline) {
+			echo '<h3>'.esc_html(get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoommerce'))).'</h3>';
 		}
 
-		if(get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoocommerce'))) {
-			echo '<h4>'.esc_html(get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoocommerce'))).'</h4>';
+		$subheading = get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoommerce'));
+		if($subheading) {
+			echo '<h4>'.esc_html(get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoommerce'))).'</h4>';
 		}
 		echo '</div><!-- / .home_headline -->';
 		
