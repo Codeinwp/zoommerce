@@ -25,6 +25,10 @@ $wp_customize->get_setting( 'zerif_bigtitle_background' )->default = 'rgba(0, 0,
 $wp_customize->get_setting( 'zerif_bigtitle_1button_background_color' )->default = 'rgba(0, 0, 0, 0)';
 $wp_customize->get_control( 'zerif_bigtitle_1button_color' )->label = __( 'Button text color', 'zoommerce' );
 
+	//Headings
+$wp_customize->get_setting( 'zerif_bigtitle_title' )->default = __('Zoommerce', 'zoommerce');
+
+
 /**
  * Home: Our focus
  */
@@ -33,6 +37,22 @@ $wp_customize->get_setting( 'zerif_ourfocus_1box' )->default = '#F33B3B';
 $wp_customize->get_setting( 'zerif_ourfocus_2box' )->default = '#2CC457';
 $wp_customize->get_setting( 'zerif_ourfocus_3box' )->default = '#454CC4';
 $wp_customize->get_setting( 'zerif_ourfocus_4box' )->default = '#C4A01B';
+$wp_customize->get_setting( 'zerif_ourfocus_show' )->default = 1;
+
+/**
+ * Home: Portfolio
+ */
+$wp_customize->get_setting( 'zerif_portofolio_show' )->default = 1;
+
+/**
+ * Home: About us
+ */
+$wp_customize->get_setting( 'zerif_aboutus_show' )->default = '1';
+
+/**
+ * Home: Our team
+ */
+$wp_customize->get_setting( 'zerif_ourteam_show' )->default = 1;
 
 /**
  * Home: Ribbon right
@@ -50,7 +70,12 @@ $wp_customize->get_setting( 'zerif_ribbonright_button_background' )->default = '
  * Home: Priceing table
  */
 $wp_customize->get_setting( 'zerif_packages_background' )->default = '#272727';
+$wp_customize->get_setting( 'zerif_packages_show' )->default = 0;
 
+/**
+ * Home: Google map
+ */
+$wp_customize->get_setting( 'zerif_googlemap_show' )->default = 1;
 
 /**
  * General: Background

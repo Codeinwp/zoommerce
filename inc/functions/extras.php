@@ -334,12 +334,9 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_package_price_color'
 				),
 
-
-
-
-
-
-
+				/**
+				 * General: Footer
+				 */
 				array(
 					'selector' => '#footer',
 					'style' => 'background',

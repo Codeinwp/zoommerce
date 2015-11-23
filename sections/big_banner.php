@@ -4,7 +4,7 @@
 	if($zerif_background_settings == 'zerif-background-image') {
 		echo '<div id="big-banner" style="background-image: url('.get_theme_mod('background_image', get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg').');">';
 	} else {
-		echo '<div id="big-banner">';
+		echo '<div id="big-banner" style="background-image: url('.get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg'.');">';
 	}
 ?>
 
@@ -161,7 +161,7 @@
 		endif;
 
 		/* Big title */
-		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('To add a title here please go to Customizer, "Big title section"','zerif') );
+		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('Zoommerce','zerif') );
 		
 		if( !empty($zerif_bigtitle_title) ):
 			echo '<h1 class="intro-text">'.esc_html($zerif_bigtitle_title).'</h1>';

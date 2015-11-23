@@ -282,6 +282,15 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_r
 	'priority'   => 10
 )));
 
+$wp_customize->add_setting( 'zerif_ribbonright_show',array('transport' => 'postMessage', 'default' => 1) );
+$wp_customize->add_control('zerif_ribbonright_show', array(
+	'type' => 'checkbox',
+	'label' => __('Hide right button ribbon section?','zerif'),
+	'description' => __('If you check this box, the right button ribbon section will disappear from homepage.','zerif'),
+	'section' => 'zerif_rightbribbon_section',
+	'priority'    => 11,
+));
+
 /**
  * Home: Ribbon bottom
  */
@@ -312,6 +321,15 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_r
 	'section'    => 'zerif_bottombribbon_section',
 	'priority'   => 10
 )));
+
+$wp_customize->add_setting( 'zerif_ribbonbottom_show',array('transport' => 'postMessage', 'default' => 1) );
+$wp_customize->add_control('zerif_ribbonbottom_show', array(
+	'type' => 'checkbox',
+	'label' => __('Hide bottom ribbon section?','zerif'),
+	'description' => __('If you check this box, the bottom ribbon section will disappear from homepage.','zerif'),
+	'section' => 'zerif_bottombribbon_section',
+	'priority'    => 11,
+));
 
 /**
  * Home: Priceing table
