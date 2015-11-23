@@ -1,39 +1,40 @@
+<?php
+	$testimonials_hide = get_theme_mod('zoommerce_testimonials_hide');
+	if($testimonials_hide) 
+		return NULL;
+?>
 <section id="testimonials">
 	<div class="container">
-		<div class="home_headline">
-			<h3>Testimonials</h3>
-			<h4>Get testimonials from your clients and then display them here.</h4>
-		</div><!-- / .home_headline -->
+		<?php
 
-		<div class="feedback-box">
+		echo '<div class="home_headline">';
+		$headline = get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoommerce'));
+		if($headline) {
+			echo '<h3>'.esc_html(get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoommerce'))).'</h3>';
+		}
 
-			<!-- MESSAGE OF THE CLIENT -->
+		$subheading = get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoommerce'));
+		if($subheading) {
+			echo '<h4>'.esc_html(get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoommerce'))).'</h4>';
+		}
+		echo '</div><!-- / .home_headline -->';
+		
+		?>
+		
+		<div class="testimonials_wrap owl-carousel">
+			<?php
+			if(is_active_sidebar( 'sidebar-testimonials' )):
 
-			<div class="message">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ipsa quo illum excepturi autem voluptatem, maiores tempora quasi temporibus architecto ratione delectus modi qui cum earum, omnis itaque nam iure!
-			</div>
+				dynamic_sidebar( 'sidebar-testimonials' );
 
-			<!-- CLIENT INFORMATION -->
-
-			<div class="client">
-
-				<div class="quote red-text">
-				
-					<i class="fa fa-quote-left"></i>
-
-				</div>
-
-				<div class="client-info">
-
-					<a class="client-name" target="_blank" href="">Client name</a>
-					<div class="client-company">Client company</div>
-
-				</div>
-
-				<div class="client-image hidden-xs">
-					<img src="https://s3.amazonaws.com/uifaces/faces/twitter/iflendra/128.jpg" alt="" />
-				</div>
-			</div> <!-- / END CLIENT INFORMATION-->
-		</div> <!-- / END SINGLE FEEDBACK BOX-->
+			else:
+			
+				the_widget( 'zerif_testimonial_widget','title=John Dow&text=Add a testimonial widget in the "Widgets: Testimonials section" in Customizer' );
+				the_widget( 'zerif_testimonial_widget','title=John Dow&text=Add a testimonial widget in the "Widgets: Testimonials section" in Customizer' );
+				the_widget( 'zerif_testimonial_widget','title=John Dow&text=Add a testimonial widget in the "Widgets: Testimonials section" in Customizer' );
+			
+			endif;
+			?>
+		</div><!-- / .testimonials_wrap owl-carousel -->
 	</div><!-- / .container -->
 </section><!-- /#etstimonials  -->

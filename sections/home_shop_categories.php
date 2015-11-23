@@ -1,3 +1,8 @@
+<?php
+	$categories_hide  = get_theme_mod('zoommerce_shopcats_hide');
+	if($categories_hide)
+		return NULL;
+?>
 <section id="shop_cats">
 	<div class="container">
 		<?php
@@ -16,7 +21,8 @@
 
 		
 		//If latest cats are selected in customizer display latest 5 categories
-		if(get_theme_mod('zoocommerce_display_latest_cats')) {
+		$zoommerce_display_latest_cats = get_theme_mod('zoommerce_display_latest_cats');
+		if($zoommerce_display_latest_cats) {
 			foreach($categories as $category) {
 	        	//Get data
 	        	$thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
