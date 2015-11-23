@@ -1,5 +1,8 @@
 <?php 
-
+$ribbon_right_show = get_theme_mod('zerif_ribbonright_show');
+if($ribbon_right_show)
+		return NULL;
+	
 	global $wp_customize;
 
 	$zerif_ribbonright_text = get_theme_mod('zerif_ribbonright_text');

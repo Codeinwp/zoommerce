@@ -107,6 +107,10 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     width: 100%;
     height: 100%;
+
+    &.overlay {
+	    background: rgba(0,0,0,0.5);
+	}
 }
 
 .header-content-wrap{
@@ -728,7 +732,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #contact {
-	background: transparent;
+	background: #fff;
 
 	&.contact-us {
 		padding: 45px 0;
@@ -912,7 +916,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #focus {
-	background: rgba(0, 0, 0, 0.02);
+	background: #fefefe;
 
 	&.focus {
 		padding-bottom: 50px;
@@ -997,6 +1001,14 @@ h1, h2, h3, h4, h5, h6 {
 		&:hover {
 			background: rgba(black, 0.08);
 		}
+	}
+}
+
+#pricingtable {
+	background: #272727;
+
+	.custom-button {
+		border: none;
 	}
 }
 

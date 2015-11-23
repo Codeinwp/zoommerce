@@ -15,8 +15,10 @@ $zoommerce_myaccount_link = get_theme_mod('myaccount_link');
 $zoommerce_cart = get_theme_mod('cart_icon', get_stylesheet_directory_uri().'/assets/images/menu-cart.png'); 
 $zoommerce_cart_link = get_theme_mod('cart_link');
 $header_icons = false;
-if($zoommerce_myaccount && $zoommerce_myaccount_link && $zoommerce_cart && $zoommerce_cart_link)
+
+if($zoommerce_myaccount and $zoommerce_myaccount_link and $zoommerce_cart and $zoommerce_cart_link) {
 	$header_icons = true;
+}
 
 ?><!DOCTYPE html>
 
@@ -55,7 +57,7 @@ if($zoommerce_myaccount && $zoommerce_myaccount_link && $zoommerce_cart && $zoom
 	<?php else: ?>
 		<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 	<?php endif; ?>
-
+	
 		<!-- =========================
 
 		   PRE LOADER       
@@ -115,7 +117,7 @@ if($zoommerce_myaccount && $zoommerce_myaccount_link && $zoommerce_cart && $zoom
 	                    <div class="menu-icons">
 	                        <ul id="icons-menu">
 	                            
-                            	<?php if(!empty($zoommerce_myaccount) or !empty($zoommerce_myaccount_link)): ?>
+                            	<?php if(!empty($zoommerce_myaccount) && !empty($zoommerce_myaccount_link)): ?>
                             	<li class="menu-item"> 
 	                                <a href="<?php echo esc_url($zoommerce_myaccount_link); ?>">
 	                                    <img src="<?php echo esc_url($zoommerce_myaccount); ?>">
@@ -124,7 +126,7 @@ if($zoommerce_myaccount && $zoommerce_myaccount_link && $zoommerce_cart && $zoom
                                 <?php endif; ?>
 	                            
 	                           
-                            	<?php if(!empty($zoommerce_cart) or !empty($zoommerce_cart_link)): ?>
+                            	<?php if(!empty($zoommerce_cart) && !empty($zoommerce_cart_link)): ?>
                             	<li class="menu-item"> 
 	                                <a href="<?php echo esc_url($zoommerce_cart_link); ?>">
 	                                    <img src="<?php echo esc_url($zoommerce_cart); ?>">

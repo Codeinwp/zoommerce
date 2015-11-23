@@ -285,14 +285,58 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_ribbonright_button_border_hover'
 				),
 
+				/**
+				 * Home: Priceing table
+				 */
+				array(
+					'selector' => '#pricingtable.packages',
+					'style' => 'background',
+					'property' => 'zerif_packages_background'
+				),
+				array(
+					'selector' => '#pricingtable.packages .package-header h4',
+					'style' => 'color',
+					'property' => 'zerif_package_title_color'
+				),
+				array(
+					'selector' => '#pricingtable.packages .package-header .meta-text',
+					'style' => 'color',
+					'property' => 'zerif_package_title_color'
+				),
+				array(
+					'selector' => '#pricingtable.packages .price-meta',
+					'style' => 'color',
+					'property' => 'zerif_package_text_color'
+				),
+				array(
+					'selector' => '#pricingtable.packages .package ul li',
+					'style' => 'color',
+					'property' => 'zerif_package_text_color'
+				),
+				array(
+					'selector' => '#pricingtable.packages .package a.custom-button',
+					'style' => 'color',
+					'property' => 'zerif_package_button_text_color'
+				),
+				array(
+					'selector' => '#pricingtable.packages .package a.custom-button',
+					'style' => 'background',
+					'property' => 'zerif_package_button_background_color'
+				),
+				array(
+					'selector' => '#pricingtable.packages .package .price-container',
+					'style' => 'background',
+					'property' => 'zerif_package_price_background_color'
+				),
+				array(
+					'selector' => '#pricingtable.packages .package .price h4',
+					'style' => 'color',
+					'property' => 'zerif_package_price_color'
+				),
 
-
-
-
-
-
-
-
+				/**
+				 * General: Footer
+				 */
 				array(
 					'selector' => '#footer',
 					'style' => 'background',
@@ -382,6 +426,9 @@ if ( ! function_exists( 'zoommerce_is_woocommerce_activated' ) ) {
 	}
 }
 
+/**
+ * Get page object by page template
+ */
 if(!function_exists('zoommerce_get_pages_by_template')) {
 	function zoommerce_get_pages_by_template($template, $count = 1) {
 

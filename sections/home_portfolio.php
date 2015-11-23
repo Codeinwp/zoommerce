@@ -14,7 +14,7 @@
 
 	endif;
 	
-	$zerif_portofolio_show = get_theme_mod('zerif_portofolio_show');
+	$zerif_portofolio_show = get_theme_mod('zerif_portofolio_show', 1);
 
 	$zerif_query = new WP_Query( apply_filters( 'zerif_portfolio_parameters',$args ) );
 

@@ -11,6 +11,55 @@
 /*------------------------------------------------------------------*/
 
 /**
+ * Home: Sections Order
+ */
+$wp_customize->add_setting( 'section13', array( 'default' => 'bottom_ribbon' ));
+$wp_customize->add_control( 'section13', array(
+	'type' => 'select',
+	'label' => '13th section',
+	'section' => 'zerif_order_section',
+	'choices' => array(
+		'shop_cats' => __('Shop Categories','zerif'),
+		'shop_products' => __('Shop latest Products','zerif'),
+		'our_focus' => __('Our focus','zerif'),
+		'portofolio' => __('Portfolio','zerif'),
+		'about_us' => __('About us','zerif'),
+		'our_team' => __('Our team','zerif'),
+		'testimonials' => __('Testimonials','zerif'),
+		'bottom_ribbon' => __('Bottom ribbon','zerif'),
+		'right_ribbon' => __('Right ribbon','zerif'),
+		'contact_us' => __('Contact us','zerif'),
+		'packages' => __('Packages','zerif'),
+		'map' => __('Google map','zerif'),
+		'subscribe' => __('Subscribe','zerif'),
+		'latest_news' => __('Latest news','zerif')
+	),
+	'priority' => 13
+));
+$wp_customize->add_setting( 'section14', array( 'default' => 'latest_news' ));
+$wp_customize->add_control( 'section14', array(
+	'type' => 'select',
+	'label' => '14th section',
+	'section' => 'zerif_order_section',
+	'choices' => array(
+		'shop_cats' => __('Shop Categories','zerif'),
+		'shop_products' => __('Shop latest Products','zerif'),
+		'our_focus' => __('Our focus','zerif'),
+		'portofolio' => __('Portfolio','zerif'),
+		'about_us' => __('About us','zerif'),
+		'our_team' => __('Our team','zerif'),
+		'testimonials' => __('Testimonials','zerif'),
+		'bottom_ribbon' => __('Bottom ribbon','zerif'),
+		'right_ribbon' => __('Right ribbon','zerif'),
+		'contact_us' => __('Contact us','zerif'),
+		'packages' => __('Packages','zerif'),
+		'map' => __('Google map','zerif'),
+		'subscribe' => __('Subscribe','zerif'),
+		'latest_news' => __('Latest news','zerif')
+	),
+	'priority' => 13
+));
+/**
  * General: Header
  */
 $wp_customize->add_section( 'zoommerce_general_shop_header' , array(
@@ -41,7 +90,7 @@ $wp_customize->add_control( 'zerif_cart_link', array(
 $wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-profile.png'));			
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myaccount_icon', array(
 	'label'    => __( 'My Account - Icon', 'zoommerce' ),	
-	'section'  => 'woocommerce_menu_section',	
+	'section'  => 'zoommerce_general_shop_header',	
 	'settings' => 'myaccount_icon',	
 	'priority'    => 1,
 )));
@@ -49,7 +98,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myac
 $wp_customize->add_setting( 'myaccount_link', array('sanitize_callback' => 'esc_url_raw','default' => '#'));			
 $wp_customize->add_control( 'zerif_myaccount_link', array(
 	'label'    => __( 'My Account link', 'zoommerce' ),	
-	'section'  => 'woocommerce_menu_section',	
+	'section'  => 'zoommerce_general_shop_header',	
 	'settings' => 'myaccount_link',	
 	'priority'    => 2,
 ));
@@ -282,6 +331,15 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_r
 	'priority'   => 10
 )));
 
+$wp_customize->add_setting( 'zerif_ribbonright_show',array('transport' => 'postMessage', 'default' => 1) );
+$wp_customize->add_control('zerif_ribbonright_show', array(
+	'type' => 'checkbox',
+	'label' => __('Hide right button ribbon section?','zerif'),
+	'description' => __('If you check this box, the right button ribbon section will disappear from homepage.','zerif'),
+	'section' => 'zerif_rightbribbon_section',
+	'priority'    => 11,
+));
+
 /**
  * Home: Ribbon bottom
  */
@@ -311,6 +369,25 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_r
 	'label'      => __( 'Button border color hover', 'zerif' ),
 	'section'    => 'zerif_bottombribbon_section',
 	'priority'   => 10
+)));
+
+$wp_customize->add_setting( 'zerif_ribbonbottom_show',array('transport' => 'postMessage', 'default' => 1) );
+$wp_customize->add_control('zerif_ribbonbottom_show', array(
+	'type' => 'checkbox',
+	'label' => __('Hide bottom ribbon section?','zerif'),
+	'description' => __('If you check this box, the bottom ribbon section will disappear from homepage.','zerif'),
+	'section' => 'zerif_bottombribbon_section',
+	'priority'    => 11,
+));
+
+/**
+ * Home: Priceing table
+ */
+$wp_customize->add_setting( 'zerif_package_button_background_color', array( 'default' => '#F33B3B', 'transport' =>'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'zerif_package_button_background_color', array(
+	'label'      => __( 'Package button background color', 'zerif' ),
+	'section'    => 'zerif_packages_colors_section',
+	'priority'   => 5
 )));
 
 /**

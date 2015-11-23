@@ -1,5 +1,8 @@
 <?php
-
+$ribbon_bottom_show = get_theme_mod('zerif_ribbonbottom_show');
+if($ribbon_bottom_show)
+		return NULL;
+	
 	global $wp_customize;
 
 	$zerif_bottomribbon_text = get_theme_mod('zerif_bottomribbon_text');

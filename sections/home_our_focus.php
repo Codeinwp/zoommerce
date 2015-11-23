@@ -2,7 +2,7 @@
 
 global $wp_customize;
 
-$zerif_ourfocus_show = get_theme_mod('zerif_ourfocus_show');
+$zerif_ourfocus_show = get_theme_mod('zerif_ourfocus_show', 1);
 
 zerif_before_our_focus_trigger();
 

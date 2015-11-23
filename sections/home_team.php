@@ -2,7 +2,7 @@
 
 	global $wp_customize;
 	
-	$zerif_ourteam_show = get_theme_mod('zerif_ourteam_show');
+	$zerif_ourteam_show = get_theme_mod('zerif_ourteam_show', 1);
 
 	zerif_before_our_team_trigger();
 				

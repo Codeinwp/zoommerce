@@ -2,7 +2,7 @@
 
 	global $wp_customize;
 	
-	$zerif_aboutus_show = get_theme_mod('zerif_aboutus_show');
+	$zerif_aboutus_show = get_theme_mod('zerif_aboutus_show', 1);
 
 	zerif_before_about_us_trigger();
 				
