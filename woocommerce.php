@@ -37,4 +37,36 @@ get_header(); ?>
 			</div><!-- #primary -->
 		</div><!-- .content-left-wrap -->
 	</div><!-- .container -->
+
+<?php
+	if(is_post_type_archive('product') or is_tax('product_cat')) {
+		echo '<div id="popular_products">
+
+		<div class="container"><div class="home_headline">
+			<h3>'.__('Popular products', 'zoommerce').'</h3>
+		</div><!-- / .home_headline -->';
+
+		echo wp_kses_post( do_shortcode( '[best_selling_products per_page="4"]' ) );
+
+		echo '</div><!-- / .container -->
+		</div><!-- /#popular_products  -->';
+
+		//Home newsletter section
+		get_template_part( 'sections/home_newsletter' );
+	} elseif(is_singular('product')) {
+		echo '<div id="popular_products">
+
+		<div class="container"><div class="home_headline">
+			<h3>'.__('Popular products', 'zoommerce').'</h3>
+		</div><!-- / .home_headline -->';
+
+		echo wp_kses_post( do_shortcode( '[best_selling_products per_page="4"]' ) );
+
+		echo '</div><!-- / .container -->
+		</div><!-- /#popular_products  -->';
+	}
+?>
+
+
+	
 <?php get_footer(); ?>

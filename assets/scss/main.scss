@@ -372,6 +372,7 @@ h1, h2, h3, h4, h5, h6 {
 			position: relative;
 			padding-bottom: 40px;
 			box-sizing: content-box;
+			background: #fff;
 			margin-bottom: 70px;
 
 			.attachment-shop_catalog {
@@ -1403,6 +1404,46 @@ article.post {
 .woocommerce #content nav.woocommerce-pagination ul li span.current, .woocommerce nav.woocommerce-pagination ul li span.current, .woocommerce-page #content nav.woocommerce-pagination ul li span.current, .woocommerce-page nav.woocommerce-pagination ul li span.current, .woocommerce nav.woocommerce-pagination ul li span.current, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce-page nav.woocommerce-pagination ul li a:hover, .woocommerce-page #content nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce #content nav.woocommerce-pagination ul li a:hover {
 	background: #e52424 !important;
 }
+
+#popular_products {
+	background: url(../images/shop_cats_pattern.jpg);
+	padding-bottom: 40px;
+	
+	.woocommerce.columns-4 {
+		margin-top: 0;
+	}
+
+	.home_headline {
+		margin-bottom: 40px;
+
+		h3 {
+			margin-top: 0;
+		}
+	}
+
+	ul.products {
+		background: #fff;
+		padding: 40px !important;
+		margin-top: 0;
+		padding-bottom: 0;
+
+		li.product {
+			margin-bottom: 0;
+			padding-bottom: 0;
+
+			.add_to_cart_button,
+			.added_to_cart  {
+				display: none !important;
+			}
+
+			.price,
+			.ammount {
+				color: #333;
+			}
+		}
+	}
+}
+
 /*---------------------------------------
  **   Responsive  -----  MEDIA QUERIES
 -----------------------------------------*/
