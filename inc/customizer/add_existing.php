@@ -7,10 +7,57 @@
  */
 
 /**
- * Genearl: Header
+ * General: Header
  */
 $wp_customize->get_setting( 'myaccount_link' )->default = '';
 $wp_customize->get_setting( 'cart_link' )->default = '';
+
+/**
+ * Home: Sections Order
+ */
+$sections_choices = array(
+				'shop_cats' => __('Shop Categories','zerif'),
+				'our_focus' => __('Our focus','zerif'),
+				'shop_products' => __('Shop latest Products','zerif'),
+				'subscribe' => __('Subscribe','zerif'),
+				'portofolio' => __('Portfolio','zerif'),
+				'testimonials' => __('Testimonials','zerif'),
+				'map' => __('Google map','zerif'),
+				'contact_us' => __('Contact us','zerif'),
+				'about_us' => __('About us','zerif'),
+				'our_team' => __('Our team','zerif'),
+				'right_ribbon' => __('Right ribbon','zerif'),
+				'packages' => __('Packages','zerif'),
+				'bottom_ribbon' => __('Bottom ribbon','zerif'),
+				'latest_news' => __('Latest news','zerif')
+			);
+$wp_customize->get_control( 'section1' )->choices = $sections_choices;
+$wp_customize->get_control( 'section2' )->choices = $sections_choices;
+$wp_customize->get_control( 'section3' )->choices = $sections_choices;
+$wp_customize->get_control( 'section4' )->choices = $sections_choices;
+$wp_customize->get_control( 'section5' )->choices = $sections_choices;
+$wp_customize->get_control( 'section6' )->choices = $sections_choices;
+$wp_customize->get_control( 'section7' )->choices = $sections_choices;
+$wp_customize->get_control( 'section8' )->choices = $sections_choices;
+$wp_customize->get_control( 'section9' )->choices = $sections_choices;
+$wp_customize->get_control( 'section10' )->choices = $sections_choices;
+$wp_customize->get_control( 'section11' )->choices = $sections_choices;
+$wp_customize->get_control( 'section12' )->choices = $sections_choices;
+
+$wp_customize->get_setting( 'section1' )->default = 'shop_cats';
+$wp_customize->get_setting( 'section2' )->default = 'our_focus';
+$wp_customize->get_setting( 'section3' )->default = 'shop_products';
+$wp_customize->get_setting( 'section4' )->default = 'subscribe';
+$wp_customize->get_setting( 'section5' )->default = 'portofolio';
+$wp_customize->get_setting( 'section6' )->default = 'testimonials';
+$wp_customize->get_setting( 'section7' )->default = 'map';
+$wp_customize->get_setting( 'section8' )->default = 'contact_us';
+$wp_customize->get_setting( 'section9' )->default = 'about_us';
+$wp_customize->get_setting( 'section10' )->default = 'our_team';
+$wp_customize->get_setting( 'section11' )->default = 'right_ribbon';
+$wp_customize->get_setting( 'section12' )->default = 'packages';
+
+
 
 /**
  * Home: Big banner

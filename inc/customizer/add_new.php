@@ -11,6 +11,55 @@
 /*------------------------------------------------------------------*/
 
 /**
+ * Home: Sections Order
+ */
+$wp_customize->add_setting( 'section13', array( 'default' => 'bottom_ribbon' ));
+$wp_customize->add_control( 'section13', array(
+	'type' => 'select',
+	'label' => '13th section',
+	'section' => 'zerif_order_section',
+	'choices' => array(
+		'shop_cats' => __('Shop Categories','zerif'),
+		'shop_products' => __('Shop latest Products','zerif'),
+		'our_focus' => __('Our focus','zerif'),
+		'portofolio' => __('Portfolio','zerif'),
+		'about_us' => __('About us','zerif'),
+		'our_team' => __('Our team','zerif'),
+		'testimonials' => __('Testimonials','zerif'),
+		'bottom_ribbon' => __('Bottom ribbon','zerif'),
+		'right_ribbon' => __('Right ribbon','zerif'),
+		'contact_us' => __('Contact us','zerif'),
+		'packages' => __('Packages','zerif'),
+		'map' => __('Google map','zerif'),
+		'subscribe' => __('Subscribe','zerif'),
+		'latest_news' => __('Latest news','zerif')
+	),
+	'priority' => 13
+));
+$wp_customize->add_setting( 'section14', array( 'default' => 'latest_news' ));
+$wp_customize->add_control( 'section14', array(
+	'type' => 'select',
+	'label' => '14th section',
+	'section' => 'zerif_order_section',
+	'choices' => array(
+		'shop_cats' => __('Shop Categories','zerif'),
+		'shop_products' => __('Shop latest Products','zerif'),
+		'our_focus' => __('Our focus','zerif'),
+		'portofolio' => __('Portfolio','zerif'),
+		'about_us' => __('About us','zerif'),
+		'our_team' => __('Our team','zerif'),
+		'testimonials' => __('Testimonials','zerif'),
+		'bottom_ribbon' => __('Bottom ribbon','zerif'),
+		'right_ribbon' => __('Right ribbon','zerif'),
+		'contact_us' => __('Contact us','zerif'),
+		'packages' => __('Packages','zerif'),
+		'map' => __('Google map','zerif'),
+		'subscribe' => __('Subscribe','zerif'),
+		'latest_news' => __('Latest news','zerif')
+	),
+	'priority' => 13
+));
+/**
  * General: Header
  */
 $wp_customize->add_section( 'zoommerce_general_shop_header' , array(
