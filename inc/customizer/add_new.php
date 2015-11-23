@@ -41,7 +41,7 @@ $wp_customize->add_control( 'zerif_cart_link', array(
 $wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-profile.png'));			
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myaccount_icon', array(
 	'label'    => __( 'My Account - Icon', 'zoommerce' ),	
-	'section'  => 'woocommerce_menu_section',	
+	'section'  => 'zoommerce_general_shop_header',	
 	'settings' => 'myaccount_icon',	
 	'priority'    => 1,
 )));
@@ -49,7 +49,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myac
 $wp_customize->add_setting( 'myaccount_link', array('sanitize_callback' => 'esc_url_raw','default' => '#'));			
 $wp_customize->add_control( 'zerif_myaccount_link', array(
 	'label'    => __( 'My Account link', 'zoommerce' ),	
-	'section'  => 'woocommerce_menu_section',	
+	'section'  => 'zoommerce_general_shop_header',	
 	'settings' => 'myaccount_link',	
 	'priority'    => 2,
 ));

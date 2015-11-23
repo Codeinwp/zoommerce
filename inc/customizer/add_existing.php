@@ -7,6 +7,12 @@
  */
 
 /**
+ * Genearl: Header
+ */
+$wp_customize->get_setting( 'myaccount_link' )->default = '';
+$wp_customize->get_setting( 'cart_link' )->default = '';
+
+/**
  * Home: Big banner
  */
 	//Button label
