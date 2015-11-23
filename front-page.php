@@ -331,6 +331,9 @@ echo '
 	//Home ribbon right button section
 	get_template_part( 'sections/home_ribbon_right' );
 
+	//Home google map
+	get_template_part( 'sections/home_packages' );
+
 	//Home ribbon bottom section
 	get_template_part( 'sections/home_ribbon_bottom' );
 

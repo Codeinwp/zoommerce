@@ -314,6 +314,16 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'zerif_r
 )));
 
 /**
+ * Home: Priceing table
+ */
+$wp_customize->add_setting( 'zerif_package_button_background_color', array( 'default' => '#F33B3B', 'transport' =>'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'zerif_package_button_background_color', array(
+	'label'      => __( 'Package button background color', 'zerif' ),
+	'section'    => 'zerif_packages_colors_section',
+	'priority'   => 5
+)));
+
+/**
  * Blog
  */
 $wp_customize->add_panel( 'panel_blog_page', array(

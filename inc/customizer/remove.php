@@ -23,6 +23,12 @@ $wp_customize->remove_control('zerif_bigtitle_background');
 $wp_customize->remove_control('zerif_portofolio_background');
 
 /**
+ * Home: Priceing tables
+ */
+$wp_customize->remove_control('zerif_packages_header');
+
+
+/**
  * General: Footer
  */
 $wp_customize->remove_control('zerif_bigtitle_greenbutton_label');
