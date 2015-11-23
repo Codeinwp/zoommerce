@@ -53,7 +53,7 @@ $wp_customize->get_setting( 'zerif_portofolio_show' )->default = 1;
 /**
  * Home: About us
  */
-$wp_customize->get_setting( 'zerif_aboutus_show' )->default = '1';
+$wp_customize->get_setting( 'zerif_aboutus_show' )->default = 1;
 
 /**
  * Home: Our team
