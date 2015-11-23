@@ -47,6 +47,11 @@ $wp_customize->get_setting( 'zerif_ribbonright_background' )->default = '#2CC457
 $wp_customize->get_setting( 'zerif_ribbonright_button_background' )->default = '#2CC457';
 
 /**
+ * General: Background
+ */
+$wp_customize->get_setting( 'background_image' )->default = get_stylesheet_directory_uri().'/assets/images/demo/home_background.jpg';
+
+/**
  * General: Footer
  */
 	//Icons

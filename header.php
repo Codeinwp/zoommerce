@@ -55,7 +55,7 @@ if($zoommerce_myaccount && $zoommerce_myaccount_link && $zoommerce_cart && $zoom
 	<?php else: ?>
 		<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 	<?php endif; ?>
-
+	
 		<!-- =========================
 
 		   PRE LOADER       
