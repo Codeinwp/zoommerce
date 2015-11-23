@@ -1444,6 +1444,136 @@ article.post {
 	}
 }
 
+.woocommerce div.product {
+	.product_title {
+    	font-family: 'aller_lightregular' !important;
+		font-size: 24px;
+		text-transform: uppercase;
+		padding: 20px 0;
+		border-top: 1px solid #e8e8e8;
+		border-bottom: 1px solid #e8e8e8;
+		margin-bottom: 20px;
+	}
+
+	.entry-summary {
+		padding-left: 3%;
+	}
+
+	p.price {
+		width: 30%;
+		float: left;
+		font-family: 'aller_lightregular' !important;
+		font-size: 24px !important;
+		text-transform: uppercase;
+		padding: 0;
+
+		span {
+			font-family: 'aller_lightregular' !important;
+			font-size: 24px !important;
+		}
+	}
+
+	form.cart {
+		float: right;
+		clear: none;
+		display: block;
+		width: 60%;
+
+		div.quantity,
+		.single_add_to_cart_button {
+			float: right;
+		}
+
+		.single_add_to_cart_button {
+			font-family: 'aller_lightregular';
+			font-size: 14px;
+			height: 30px;
+			line-height: 32px;
+			background: #e52424;
+			width: 128px;
+			color: #fff;
+			text-transform: uppercase;
+			border-radius: 0;
+			padding: 0;
+			@extend .transition;
+			margin: 0;
+			margin-right: 10px;
+
+			&:hover {
+				cursor: pointer;
+				background: #333;
+			}
+		}
+	}
+
+	div[itemprop="description"] {
+		margin-top: 15px;
+		font-family: 'Open sans';
+		color: #747474;
+
+		p {
+			font-size: 14px;
+		}
+	}
+
+	.product_meta {
+		width: 100%;
+		font-family: 'Open sans';
+
+		> span {
+			width: 100%;
+			display: block;
+			font-size: 14px;
+
+			span {
+				font-size: 14px;
+			}
+		}
+
+		a {
+			font-size: 14px;
+			color: #e52424;
+		}
+	}
+
+	.woocommerce-tabs .tabs {
+		border-bottom: none !important;
+
+		li {
+			float: left;
+			font-family: 'Open sans';
+			border: 1px solid #ccc !important;
+			font-size: 14px; 
+			margin-right: 10px !important;
+			border-radius: 0 !important;
+			margin-bottom: 5px !important;
+			margin-left: 0 !important;
+
+			&.reviews_tab {
+				a {
+					color: #e52424;
+				}
+			}
+
+			&.active {
+				background: #3b3b3b !important;
+				border: 1px solid #3b3b3b !important;
+
+				a {
+					color: #e8e8e8 !important;
+				}
+			}
+
+			a {
+				font-weight: normal !important;
+				font-size: 14px;
+			}
+		}
+	}
+}
+.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
+	width: 52%;
+}
 /*---------------------------------------
  **   Responsive  -----  MEDIA QUERIES
 -----------------------------------------*/

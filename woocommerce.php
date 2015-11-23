@@ -66,7 +66,5 @@ get_header(); ?>
 		</div><!-- /#popular_products  -->';
 	}
 ?>
-
-
 	
 <?php get_footer(); ?>

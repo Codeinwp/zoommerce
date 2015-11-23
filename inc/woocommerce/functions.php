@@ -15,4 +15,3 @@ if ( ! function_exists( 'zoommerce_product_search' ) ) {
 		}
 	}
 }
-
