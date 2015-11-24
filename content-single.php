@@ -17,7 +17,10 @@
 		echo '<img style="margin-top: 20px;" src="'.esc_url($url).'" />';
 	} else {
 		$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
-		echo '<div class="featured" style="background-image: url('.esc_url($url).');"></div><!-- / .featured -->';
+		
+		if($url) {
+			echo '<div class="featured" style="background-image: url('.esc_url($url).');"></div><!-- / .featured -->';
+		}
 	}
 
 	?>
