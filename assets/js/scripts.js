@@ -96,10 +96,8 @@ jQuery(document).ready(function($) {
 	if($(window).width() >= 960) {
 		if(document.getElementsByClassName("center_on_responsive").length == 0) {
 			zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 550);
-			console.log('660');
 		} else {
 			zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
-			console.log('460');
 		}
 	}
 
