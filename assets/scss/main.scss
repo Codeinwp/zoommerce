@@ -1464,12 +1464,14 @@ article.post {
 
 		a {
 			border-radius: 0;
+			border-radius: 0 !important;
 			color: #333;
 		}
 
 		span.page-numbers {
 			background: #e52424 !important;
 			color: #fff;
+			border-radius: 0 !important;
 		}
 	}
 }
