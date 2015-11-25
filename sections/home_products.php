@@ -18,7 +18,7 @@ $products_loop = new WP_Query( $products_args );
 
 ?>
 <section id="home_products">
-	<div class="left" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
+	<div class="left" data-scrollreveal="enter left after 0s over 1s" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
 		<div class="home_headline">
 			<?php
 				$headline = get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'));
