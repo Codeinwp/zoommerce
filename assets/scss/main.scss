@@ -1599,64 +1599,66 @@ article.post {
 		}
 
 		&.product-type-variable {
-			.variations_button {
-				overflow: hidden;
-			}
-			
-			div[itemprop="offers"] {
-				display: none;
-			}
-
-			span.price {
-				width: 40%;
-				display: inline-block;
-				float: left;
-				font-family: 'aller_lightregular' !important;
-				font-size: 24px !important;
-				text-transform: uppercase;
-				padding: 0;
-				color: #e52424;
-			
-				ins {
-					float: none;
+			.summary  {
+				.variations_button {
+					overflow: hidden;
 				}
 
-				del {
-					float: none;
-					color: #bbb;
-					clear: both;
-					margin-top: 3px;
+				div[itemprop="offers"] {
+					display: none;
+				}
+
+				span.price {
+					width: 40%;
+					display: inline-block;
+					float: left;
+					font-family: 'aller_lightregular' !important;
+					font-size: 24px !important;
+					text-transform: uppercase;
+					padding: 0;
+					color: #e52424;
+				
+					ins {
+						float: none;
+					}
+
+					del {
+						float: none;
+						color: #bbb;
+						clear: both;
+						margin-top: 3px;
+
+						span {
+							font-size: 14px !important;
+							color: #bbb;
+						}
+					}
 
 					span {
-						font-size: 14px !important;
-						color: #bbb;
+						font-family: 'aller_lightregular' !important;
+						font-size: 22px !important;
 					}
 				}
 
-				span {
-					font-family: 'aller_lightregular' !important;
-					font-size: 22px !important;
+				form.cart {
+					width: 100%;
+
+					.reset_variations {
+						float: right;
+						font-size: 12px;
+						color: #777;
+					}
 				}
-			}
 
-			form.cart {
-				width: 100%;
+				.label {
+					color: #999;
+					font-weight: normal;
+					font-size: 14px;
+					display: block;
 
-				.reset_variations {
-					float: right;
-					font-size: 12px;
-					color: #777;
-				}
-			}
-
-			.label {
-				color: #999;
-				font-weight: normal;
-				font-size: 14px;
-				display: block;
-
-				label {
-					vertical-align: middle;
+					label {
+						vertical-align: middle;
+					}
 				}
 			}
 		}
@@ -1760,9 +1762,17 @@ article.post {
 		}
 	}
 }
+
+.upsells .product {
+	> a:first-child {
+		min-height: 300px;	
+	}
+}
+
 .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
 	width: 52%;
 }
+
 /*---------------------------------------
  **   Responsive  -----  MEDIA QUERIES
 -----------------------------------------*/
