@@ -89,6 +89,10 @@ h1, h2, h3, h4, h5, h6 {
 	width:auto;
 }
 
+ul.nav > li.current_page_item > a:before {
+	background: #e52424;
+}
+
 /* ------- Section 1 - Big Banner ------- */
 #big-banner {
 	width:100%; 
@@ -1426,14 +1430,22 @@ article.post {
     		font-family: 'allerbold';
 		}
 
-		h2, h1 {
-    		font-family: 'allerbold' !important;
-			text-transform: uppercase !important;
-			font-weight: 400;
+		form .form-row.woocommerce-invalid .select2-container, 
+		form .form-row.woocommerce-invalid input.input-text,
+		.woocommerce form .form-row.woocommerce-invalid select {
+			border-color: #e52424;	
 		}
 
-		h2 {
-			font-size: 24px;
+		form {
+			.form-row {
+				.input-checkbox {
+					margin: 18px 0 0 10px;
+				}
+			}
+		}
+
+		input[type="text"], input[type="email"], input[type="url"], input[type="tel"], input[type="password"], input[type="search"], textarea {
+			border: 1px solid #ccc;
 		}
 	}
 		
@@ -1511,6 +1523,18 @@ article.post {
 }
 
 .woocommerce {
+
+	h2, h1, h3 {
+		font-family: 'allerbold' !important;
+		text-transform: uppercase !important;
+		font-weight: 400;
+	}
+
+	h2 {
+		font-size: 24px;
+	}
+
+
 	table.shop_table {
 		border-radius: 0;
 		border: 1px solid #ccc;
