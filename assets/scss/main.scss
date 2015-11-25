@@ -1397,6 +1397,54 @@ article.post {
 			top: 0;
 		}
 	}
+	
+	.woocommerce {
+		a.remove {
+			line-height: 24px;
+			color: #e52424 !important;
+
+			&:hover {
+				background: #e52424;
+				line-height: 24px;
+			}
+		}
+
+		#coupon_code {
+			border-radius: 0 !important;
+			height: 30px;
+			line-height: 30px;
+    		font-family: 'allerregular';
+    		margin-top: 4px;
+			font-size: 14px;
+			margin-right: 0;
+		}
+
+		a.button.alt {
+			background: #e52424;
+			border-radius: 0;
+			font-weight: 400;
+    		font-family: 'allerbold';
+		}
+
+		h2, h1 {
+    		font-family: 'allerbold' !important;
+			text-transform: uppercase !important;
+			font-weight: 400;
+		}
+
+		h2 {
+			font-size: 24px;
+		}
+	}
+		
+	.woocommerce input[type="submit"], #content input.button {
+		background: #e52424;
+		border-radius: 0;
+		padding-top: 9px;
+		padding-bottom: 9px;
+		font-weight: 400;
+    	font-family: 'allerbold';
+	}
 }
 
 .woocommerce-pagination {
@@ -1413,6 +1461,7 @@ article.post {
 		}
 	}
 }
+
 .woocommerce #content nav.woocommerce-pagination ul li span.current, .woocommerce nav.woocommerce-pagination ul li span.current, .woocommerce-page #content nav.woocommerce-pagination ul li span.current, .woocommerce-page nav.woocommerce-pagination ul li span.current, .woocommerce nav.woocommerce-pagination ul li span.current, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce-page nav.woocommerce-pagination ul li a:hover, .woocommerce-page #content nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce #content nav.woocommerce-pagination ul li a:hover {
 	background: #e52424 !important;
 }
@@ -1456,10 +1505,30 @@ article.post {
 	}
 }
 
+.entry-title {
+	text-transform: uppercase;
+	font-family: 'allerbold';
+}
+
 .woocommerce {
 	table.shop_table {
 		border-radius: 0;
 		border: 1px solid #ccc;
+
+		th {
+			font-weight: 400;
+			text-transform: none;
+			font-family: 'allerbold';
+		}
+
+		.product-subtotal,
+		.product-price {
+			text-align: right;
+		}
+
+		input.qty {
+			border: 1px solid #eee;
+		}
 	}
 
 	div.product {
