@@ -80,7 +80,7 @@ if($zoommerce_myaccount and $zoommerce_myaccount_link and $zoommerce_cart and $z
 		<header id="home" class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
 			<div id="main-nav" class="navbar navbar-inverse bs-docs-nav">
 				<div class="container">
-					<div class="navbar-header responsive-logo">
+					<div class="navbar-header responsive-logo <?php echo ($header_icons == true ? '' : 'no_shop_icons'); ?>">
 						<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
 							<span class="sr-only"><?php _e('Toggle navigation', 'zoommerce'); ?></span>
 							<span class="icon-bar"></span>
@@ -140,7 +140,7 @@ if($zoommerce_myaccount and $zoommerce_myaccount_link and $zoommerce_cart and $z
 					endif;
 					 ?>
 
-					<nav class="navbar-collapse bs-navbar-collapse collapse<?php echo ($header_icons == true ? ' center_on_responsive' : ''); ?>" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+					<nav class="navbar-collapse bs-navbar-collapse collapse<?php echo ($header_icons == true ? '' : ' center_on_responsive'); ?>" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
 
 						<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right responsive-nav main-nav-list' ,'fallback_cb'     => 'zerif_wp_page_menu')); ?>  
 
