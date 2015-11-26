@@ -39,72 +39,29 @@ get_header(); ?>
 	</div><!-- .container -->
 
 <?php
-	
 	if(is_post_type_archive('product') or is_tax('product_cat')) {
+		echo '<div id="popular_products">
 
-		$shop_last_display = get_theme_mod('shop_last_products_hide');
+		<div class="container"><div class="home_headline">
+			<h3>'.__('Popular products', 'zoommerce').'</h3>
+		</div><!-- / .home_headline -->';
 
-		if(!$shop_last_display) {
-			$shop_last_headline = get_theme_mod('shop_page_last_headline', __('Popular products', 'zoommerce'));
-			$shop_last_type = get_theme_mod('shop_last_products_type', 'popular');
-			$shop_last_cat = get_theme_mod('shop_last_products_category');
+		echo wp_kses_post( do_shortcode( '[best_selling_products per_page="4"]' ) );
 
-			echo '<div id="popular_products">
-			<div class="container"><div class="home_headline">
-				<h3>'.esc_html($shop_last_headline).'</h3>
-			</div><!-- / .home_headline -->';
-
-			if($shop_last_type == 'popular') {
-				echo wp_kses_post( do_shortcode( '[best_selling_products per_page="4"]' ) );
-			} elseif($shop_last_type == 'latest') {
-				echo wp_kses_post( do_shortcode( '[recent_products per_page="4"]' ) );
-			} elseif($shop_last_type == 'featured') {
-				echo wp_kses_post( do_shortcode( '[featured_products per_page="4"]' ) );
-			} elseif($shop_last_type == 'rated') {
-				echo wp_kses_post( do_shortcode( '[top_rated_products per_page="4"]' ) );
-			} elseif($shop_last_type == 'sale') {
-				echo wp_kses_post( do_shortcode( '[sale_products per_page="4"]' ) );
-			} elseif($shop_last_type == 'cat') {
-				$shop_term = get_term($shop_last_cat, 'product_cat');
-				echo wp_kses_post( do_shortcode( '[product_category category="'.$shop_term->slug.'" per_page="4"]' ) );
-			}
-			
-			echo '</div><!-- / .container -->
-			</div><!-- /#popular_products  -->';
-		}
+		echo '</div><!-- / .container -->
+		</div><!-- /#popular_products  -->';
 
 		//Home newsletter section
 		get_template_part( 'sections/home_newsletter' );
-
 	} elseif(is_singular('product')) {
-		$shop_single_last_display = get_theme_mod('single_shop_last_products_hide');
+		echo '<div id="popular_products">
 
-		if(!$shop_single_last_display) {
-			$shop_single_last_headline = get_theme_mod('single_shop_last_headline', __('Popular products', 'zoommerce'));
-			$shop_single_last_type = get_theme_mod('single_shop_last_products_type', 'popular');
-			$shop_single_last_cat = get_theme_mod('single_shop_last_products_category');
+		<div class="container"><div class="home_headline">
+			<h3>'.__('Popular products', 'zoommerce').'</h3>
+		</div><!-- / .home_headline -->';
 
-			echo '<div id="popular_products">
-			<div class="container"><div class="home_headline">
-				<h3>'.esc_html($shop_single_last_headline).'</h3>
-			</div><!-- / .home_headline -->';
+		echo wp_kses_post( do_shortcode( '[best_selling_products per_page="4"]' ) );
 
-			if($shop_single_last_type == 'popular') {
-				echo wp_kses_post( do_shortcode( '[best_selling_products per_page="4"]' ) );
-			} elseif($shop_single_last_type == 'latest') {
-				echo wp_kses_post( do_shortcode( '[recent_products per_page="4"]' ) );
-			} elseif($shop_single_last_type == 'featured') {
-				echo wp_kses_post( do_shortcode( '[featured_products per_page="4"]' ) );
-			} elseif($shop_single_last_type == 'rated') {
-				echo wp_kses_post( do_shortcode( '[top_rated_products per_page="4"]' ) );
-			} elseif($shop_single_last_type == 'sale') {
-				echo wp_kses_post( do_shortcode( '[sale_products per_page="4"]' ) );
-			} elseif($shop_single_last_type == 'cat') {
-				$shop_term = get_term($shop_single_last_cat, 'product_cat');
-				echo wp_kses_post( do_shortcode( '[product_category category="'.$shop_term->slug.'" per_page="4"]' ) );
-			}
-		}
-		
 		echo '</div><!-- / .container -->
 		</div><!-- /#popular_products  -->';
 	}
