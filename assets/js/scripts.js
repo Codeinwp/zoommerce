@@ -83,7 +83,7 @@ jQuery(document).ready(function($) {
 		*/
 		$('#home_products .right').css('height', $('#home_products .left').outerHeight());
 		
-		if($(window).width() <= 960 && $(window).width() >= 767) {
+		if($(window).width() <= 960 && $(window).width() >= 481) {
 			if(document.getElementsByClassName("center_on_responsive").length == 0) {
 				zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
 			}
@@ -96,8 +96,10 @@ jQuery(document).ready(function($) {
 	if($(window).width() >= 960) {
 		if(document.getElementsByClassName("center_on_responsive").length == 0) {
 			zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 550);
+			console.log('660');
 		} else {
 			zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
+			console.log('460');
 		}
 	}
 

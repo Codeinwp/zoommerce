@@ -18,7 +18,7 @@ $products_loop = new WP_Query( $products_args );
 
 ?>
 <section id="home_products">
-	<div class="left" data-scrollreveal="enter left after 0s over 1s" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
+	<div class="left" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
 		<div class="home_headline">
 			<?php
 				$headline = get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'));
@@ -48,23 +48,7 @@ $products_loop = new WP_Query( $products_args );
 		?>
 		</ul>
 		<div class="clearfix"></div><!-- / .clearfix -->
-
-		<?php
-
-		//All products url
-		$customizer_link = get_theme_mod('home_latest_products_content');
-		$shop_page_id = woocommerce_get_page_id( 'shop' );
-
-		if($customizer_link) {
-			echo '<a href="'.esc_url($customizer_link).'" class="viewallproducts">'.__('view all products', 'zoommerce').'</a>';
-		} else {
-			if($shop_page_id) {
-				echo '<a href="'.esc_url(get_permalink( $shop_page_id )).'" class="viewallproducts">'.__('view all products', 'zoommerce').'</a>';
-			}
-		}
-		
-		?>
-		
+		<a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="viewallproducts"><?php _e('view all products', 'zoommerce'); ?></a>
 	</div><!-- / .left -->
 	<?php
 	if($right_image) {
