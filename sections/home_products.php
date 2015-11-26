@@ -48,7 +48,23 @@ $products_loop = new WP_Query( $products_args );
 		?>
 		</ul>
 		<div class="clearfix"></div><!-- / .clearfix -->
-		<a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="viewallproducts"><?php _e('view all products', 'zoommerce'); ?></a>
+
+		<?php
+
+		//All products url
+		$customizer_link = get_theme_mod('home_latest_products_content');
+		$shop_page_id = woocommerce_get_page_id( 'shop' );
+
+		if($customizer_link) {
+			echo '<a href="'.esc_url($customizer_link).'" class="viewallproducts">'.__('view all products', 'zoommerce').'</a>';
+		} else {
+			if($shop_page_id) {
+				echo '<a href="'.esc_url(get_permalink( $shop_page_id )).'" class="viewallproducts">'.__('view all products', 'zoommerce').'</a>';
+			}
+		}
+		
+		?>
+		
 	</div><!-- / .left -->
 	<?php
 	if($right_image) {

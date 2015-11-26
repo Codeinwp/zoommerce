@@ -279,6 +279,14 @@ $wp_customize->add_control( 'latest_products_subheading', array(
 		'priority'    => 3,
 ));
 
+$wp_customize->add_setting( 'latest_products_shop_page_link', array('sanitize_callback' => 'zerif_sanitize_number'));
+$wp_customize->add_control( 'latest_products_shop_page_link', array(
+		'label'    => __( 'View all products page link', 'zoommerce' ),
+		'section'  => 'home_latest_products_content',
+		'settings' => 'latest_products_shop_page_link',
+		'priority'    => 3,
+));
+
 	//Fields in section 'home_latest_products_settings'
 $wp_customize->add_setting( 'latest_products_count', array('sanitize_callback' => 'zerif_sanitize_number','default' => 3));
 $wp_customize->add_control( 'latest_products_count', array(
