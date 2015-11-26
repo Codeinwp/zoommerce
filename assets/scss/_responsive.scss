@@ -120,7 +120,7 @@
 
 @media (min-width: 480px) and (max-width: 767px) {
 	.container {
-		width: 98%;
+		width: 92%;
 		margin: 0 4%;
 	}
 
@@ -160,40 +160,6 @@
 		float: none;
 		margin-top: 68px;
 	}
-
-	.navbar-inverse .navbar-nav{
-		margin-bottom: 0;
-
-
-		li {
-			padding-bottom: 0;
-			border-bottom: 1px solid #333;
-
-			a {
-				&:hover {
-					color: #999 !important;
-				}
-			}
-
-			.sub-menu {
-				overflow: hidden;
-				background: transparent;
-
-				li {
-					a {
-						&:last-of-type {
-							border-bottom: none;
-						}
-					}
-				}
-			}
-
-
-			&:last-of-type {
-				border-bottom: none;
-			}
-		}
-	} 
 
 	//Big banner
 	.header-content-wrap {
@@ -295,40 +261,6 @@
 		margin-top: 68px;
 	}
 
-	.navbar-inverse .navbar-nav{
-		margin-bottom: 0;
-
-
-		li {
-			padding-bottom: 0;
-			border-bottom: 1px solid #333;
-
-			a {
-				&:hover {
-					color: #999 !important;
-				}
-			}
-
-			.sub-menu {
-				overflow: hidden;
-				background: transparent;
-
-				li {
-					a {
-						&:last-of-type {
-							border-bottom: none;
-						}
-					}
-				}
-			}
-
-
-			&:last-of-type {
-				border-bottom: none;
-			}
-		}
-	} 
-
 	//Big banner
 	.header-content-wrap {
 		.intro-text {
@@ -398,4 +330,55 @@
 		padding-top: 0;
 		padding-bottom: 45px;
 	}
+}
+
+@media (max-width: 767px) {
+	.dropdownmenu {
+		background: url(../images/menu-icon.png) center center no-repeat  #e52424;
+	}
+
+	.navbar-header {
+		&.no_shop_icons {
+			width: 100%;
+		}
+	}
+
+	.navbar-inverse .navbar-nav{
+		margin-bottom: 0;
+
+
+		li {
+			padding-bottom: 0;
+			border-bottom: 1px solid #333;
+
+			a {
+				
+				&:hover {
+					color: #aaa !important;
+				}
+			}
+
+			.sub-menu {
+				overflow: hidden;
+				background: transparent;
+
+				li {
+					border-bottom: 0;
+					border-top: 1px solid #333;
+
+					a {
+						color: #999;
+						&:last-of-type {
+							border-bottom: none;
+						}
+					}
+				}
+			}
+
+
+			&:last-of-type {
+				border-bottom: none;
+			}
+		}
+	} 
 }
