@@ -1,5 +1,13 @@
 
 
+### 1.0.0.2 - 26/11/2015
+
+ Changes: 
+
+
+ * Revert "Development"
+
+
 ### 1.0.0.2 - 23/11/2015
 
  Changes: 
