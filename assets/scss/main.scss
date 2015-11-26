@@ -1446,9 +1446,12 @@ article.post {
 		}
 	}
 		
-	.woocommerce input[type="submit"], #content input.button {
-		background: #e52424;
-		border-radius: 0;
+	.woocommerce 
+	#content input[type="submit"], 
+	#content input.button,
+	input.button.alt {
+		background: #e52424 !important;
+		border-radius: 0 !important;
 		padding-top: 9px;
 		padding-bottom: 9px;
 		font-weight: 400;
