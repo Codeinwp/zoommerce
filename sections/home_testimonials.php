@@ -29,9 +29,9 @@
 
 			else:
 			
-				the_widget( 'zerif_testimonial_widget','title=John Dow&text=Add a testimonial widget in the "Widgets: Testimonials section" in Customizer' );
-				the_widget( 'zerif_testimonial_widget','title=John Dow&text=Add a testimonial widget in the "Widgets: Testimonials section" in Customizer' );
-				the_widget( 'zerif_testimonial_widget','title=John Dow&text=Add a testimonial widget in the "Widgets: Testimonials section" in Customizer' );
+				the_widget( 'zerif_testimonial_widget','title=Samantha Dow&text=Add a testimonial widget in the "Widgets: Testimonials section" in Customizer&image_uri=https://s3.amazonaws.com/uifaces/faces/twitter/pixeliris/128.jpg' );
+				the_widget( 'zerif_testimonial_widget','title=John Doe&text=Add a testimonial widget in the "Widgets: Testimonials section" in Customizer&image_uri=https://s3.amazonaws.com/uifaces/faces/twitter/rem/128.jpg' );
+				the_widget( 'zerif_testimonial_widget','title=Emil Emilton&text=Add a testimonial widget in the "Widgets: Testimonials section" in Customizer&image_uri=https://s3.amazonaws.com/uifaces/faces/twitter/leemunroe/128.jpg' );
 			
 			endif;
 			?>
