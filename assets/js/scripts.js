@@ -83,23 +83,23 @@ jQuery(document).ready(function($) {
 		*/
 		$('#home_products .right').css('height', $('#home_products .left').outerHeight());
 		
-		if($(window).width() <= 960 && $(window).width() >= 767) {
-			if(document.getElementsByClassName("center_on_responsive").length == 0) {
-				zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
-			}
-		}
+		// if($(window).width() <= 960 && $(window).width() >= 767) {
+		// 	if(document.getElementsByClassName("center_on_responsive").length == 0) {
+		// 		zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
+		// 	}
+		// }
 	}).trigger('resize');
 	
 	/*
 	* Reduce menu size on desktop
 	*/
-	if($(window).width() >= 960) {
-		if(document.getElementsByClassName("center_on_responsive").length == 0) {
-			zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 550);
-		} else {
-			zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
-		}
-	}
+	// if($(window).width() >= 960) {
+	// 	if(document.getElementsByClassName("center_on_responsive").length == 0) {
+	// 		zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 550);
+	// 	} else {
+	// 		zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);
+	// 	}
+	// }
 
 	/*
 	* Call owl carousel for testimonials

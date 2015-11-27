@@ -4,8 +4,8 @@
 Default home big area image - https://unsplash.com/photos/yMMrrUGvisY
 Photo by myquiel burton
 
-Default home latest products image - http://ift.tt/1OwogEU
-CC0 - http://mystock.photos
+Default home latest products image - https://unsplash.com/photos/GvZ3whhRQfE
+CC0 - Yaoqi LAI - https://unsplash.com/yaoqiqiqilai
 
 OWL Carousel jQuery plugin
 MIT - http://owlgraphic.com/owlcarousel/

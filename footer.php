@@ -83,40 +83,46 @@
 		endif;
 		
 		
-		/* CLIENTS */	
+		/* CLIENTS */		
 			
-		if(is_active_sidebar( 'sidebar-aboutus' )):
-			
-				$zerif_aboutus_clients_title_text = get_theme_mod('zerif_aboutus_clients_title_text',__('SHOWCASE YOUR CLIENTS HERE','zoommerce'));
-				
-				echo '<div class="clients-wrap">';
-				
-					echo '<div class="container">';
-					
-						echo '<div class="our-clients">';
-						
-							if( !empty($zerif_aboutus_clients_title_text) ):
-						
-								echo '<h5><span class="section-footer-title">'.$zerif_aboutus_clients_title_text.'</span></h5>';
-								
-							else:
-							
-								echo '<h5><span class="section-footer-title">'.__('SHOWCASE YOUR CLIENTS HERE','zoommerce').'</span></h5>';
+		$zerif_aboutus_clients_title_text = get_theme_mod('zerif_aboutus_clients_title_text',__('SHOWCASE YOUR CLIENTS HERE','zoommerce'));
 		
-							endif;
-							
-						echo '</div>';
-						
-						echo '<div class="client-list">';
-							echo '<div data-scrollreveal="enter right move 60px after 0.00s over 2.5s">';
-							dynamic_sidebar( 'sidebar-aboutus' );
-							echo '</div>';
-						echo '</div> ';
-					
-					echo '</div> '; /* container end */
+		echo '<div class="clients-wrap">';
+		
+			echo '<div class="container">';
+			
+				echo '<div class="our-clients">';
 				
-				echo '</div> '; /* clients-wrap end */
-		endif;
+					if( !empty($zerif_aboutus_clients_title_text) ):
+				
+						echo '<h5><span class="section-footer-title">'.$zerif_aboutus_clients_title_text.'</span></h5>';
+						
+					else:
+					
+						echo '<h5><span class="section-footer-title">'.__('SHOWCASE YOUR CLIENTS HERE','zoommerce').'</span></h5>';
+
+					endif;
+					
+				echo '</div>';
+				
+				echo '<div class="client-list">';
+					echo '<div data-scrollreveal="enter right move 60px after 0.00s over 2.5s">';
+						if(is_active_sidebar( 'sidebar-aboutus' )):
+							dynamic_sidebar( 'sidebar-aboutus' );
+						else:
+							the_widget( 'zerif_clients_widget','new_tab=on&link=http://themeisle.com/demo/?theme=Constructzine&image_uri=' . get_stylesheet_directory_uri() . '/assets/images/demo/logo1.png' );
+							the_widget( 'zerif_clients_widget','new_tab=on&link=http://themeisle.com/demo/?theme=RokoPhoto&image_uri=' . get_stylesheet_directory_uri() . '/assets/images/demo/logo2.png' );
+							the_widget( 'zerif_clients_widget','new_tab=on&link=http://themeisle.com/demo/?theme=Arkitek%20Pro&image_uri=' . get_stylesheet_directory_uri() . '/assets/images/demo/logo3.png' );
+							the_widget( 'zerif_clients_widget','new_tab=on&link=http://themeisle.com/demo/?theme=Zerif%20Pro&image_uri=' . get_stylesheet_directory_uri() . '/assets/images/demo/logo4.png' );
+							the_widget( 'zerif_clients_widget','new_tab=on&link=http://themeisle.com/demo/?theme=Medica%20Pro&image_uri=' . get_stylesheet_directory_uri() . '/assets/images/demo/logo5.png' );
+							the_widget( 'zerif_clients_widget','new_tab=on&link=http://themeisle.com&image_uri=' . get_stylesheet_directory_uri() . '/assets/images/demo/logo6.png' );
+						endif;
+					echo '</div>';
+				echo '</div> ';
+			
+			echo '</div> '; /* container end */
+		
+		echo '</div> '; /* clients-wrap end */
 		
 
 		/* COMPANY ADDRESS */		
