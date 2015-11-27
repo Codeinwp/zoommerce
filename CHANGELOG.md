@@ -1,5 +1,18 @@
 
 
+### 1.0.0.3 - 27/11/2015
+
+ Changes: 
+
+
+ * Merge pull request #26 from robi09/development
+
+Development
+ * Merge pull request #27 from robi09/development
+
+Development
+
+
 ### 1.0.0.2 - 26/11/2015
 
  Changes: 
