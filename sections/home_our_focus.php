@@ -29,7 +29,7 @@ if( (isset($zerif_ourfocus_show) && $zerif_ourfocus_show != 1) || isset( $wp_cus
 				
 			if( !empty($zerif_ourfocus_title) ):
 				
-				echo '<h3>'.$zerif_ourfocus_title.'</h3>';
+				echo '<h3>'.esc_html($zerif_ourfocus_title).'</h3>';
 					
 			elseif ( isset( $wp_customize ) ):	
 				
@@ -42,7 +42,7 @@ if( (isset($zerif_ourfocus_show) && $zerif_ourfocus_show != 1) || isset( $wp_cus
 
 			if( !empty($zerif_ourfocus_subtitle) ):
 
-				echo '<h4>'.$zerif_ourfocus_subtitle.'</h4>';
+				echo '<h4>'.esc_html($zerif_ourfocus_subtitle).'</h4>';
 					
 			elseif ( isset( $wp_customize ) ):
 				

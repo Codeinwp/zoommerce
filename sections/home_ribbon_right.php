@@ -29,7 +29,7 @@ if($ribbon_right_show)
 
 					echo '<div class="col-md-9 zerif-rtl-ribbon-text" data-scrollreveal="enter left after 0s over 1s">';
 
-						echo '<h3 class="white-text">'.$zerif_ribbonright_text.'</h3>';	
+						echo '<h3 class="white-text">'.esc_html($zerif_ribbonright_text).'</h3>';	
 
 					echo '</div>';
 
@@ -39,7 +39,7 @@ if($ribbon_right_show)
 						echo '<div class="col-md-3 zerif-rtl-ribbon-btn" data-scrollreveal="enter right after 0s over 1s">';
 
 
-							echo '<a href="'.$zerif_ribbonright_buttonlink.'" class="btn btn-primary custom-button red-btn">'.$zerif_ribbonright_buttonlabel.'</a>';
+							echo '<a href="'.esc_url($zerif_ribbonright_buttonlink).'" class="btn btn-primary custom-button red-btn">'.esc_html($zerif_ribbonright_buttonlabel).'</a>';
 
 
 						echo '</div>';
@@ -97,7 +97,7 @@ if($ribbon_right_show)
 						echo '<div class="col-md-3" data-scrollreveal="enter right after 0s over 1s">';
 
 
-							echo '<a href="'.$zerif_ribbonright_buttonlink.'" class="btn btn-primary custom-button red-btn">'.$zerif_ribbonright_buttonlabel.'</a>';
+							echo '<a href="'.esc_url($zerif_ribbonright_buttonlink).'" class="btn btn-primary custom-button red-btn">'.esc_html($zerif_ribbonright_buttonlabel).'</a>';
 
 
 						echo '</div>';
