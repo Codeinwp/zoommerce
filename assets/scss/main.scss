@@ -851,7 +851,6 @@ ul.nav > li.current_page_item > a:before {
 		text-align: left;
 		color: #595959;
 		overflow: hidden;
-		padding-bottom: 45px;
 
 		figure {
 			height: 250px;
@@ -890,6 +889,7 @@ ul.nav > li.current_page_item > a:before {
 			font-style: italic;
 			margin: 0 2.5% 20px 2.5%;
 			font-size: 14px;
+			display: block;
 		}
 
 		.excerpt {
