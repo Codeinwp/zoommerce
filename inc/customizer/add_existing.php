@@ -11,6 +11,7 @@
  */
 $wp_customize->get_setting( 'myaccount_link' )->default = '';
 $wp_customize->get_setting( 'cart_link' )->default = '';
+$wp_customize->get_setting( 'zerif_logo' )->default = get_stylesheet_directory_uri().'/assets/images/logo.png';
 
 /**
  * Home: Sections Order

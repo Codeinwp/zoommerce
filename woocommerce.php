@@ -74,7 +74,7 @@ get_header(); ?>
 		}
 
 		//Home newsletter section
-		get_template_part( 'sections/home_newsletter' );
+		get_template_part( 'sections/shop_newsletter' );
 
 	} elseif(is_singular('product')) {
 		$shop_single_last_display = get_theme_mod('single_shop_last_products_hide');
