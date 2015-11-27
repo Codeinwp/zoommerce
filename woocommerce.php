@@ -13,18 +13,7 @@ get_header(); ?>
 <div class="clear"></div>
 </header> <!-- / END HOME SECTION  -->
 <div id="breadcrumb">
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'zoommerce'); ?></a>
-
-	<?php if(is_post_type_archive('product')): ?>
-		<a><?php _e('Shop', 'zoommerce'); ?></a>
-	<?php elseif(is_tax('product_cat')): 
-		$term = $wp_query->get_queried_object(); ?>	
-		<a href="<?php echo esc_url(get_post_type_archive_link('product')); ?>"><?php _e('Shop', 'zoommerce'); ?></a>
-		<a><?php echo esc_html($term->name); ?></a>
-	<?php elseif(is_singular('product')): ?>
-		<a href="<?php echo esc_url(get_post_type_archive_link('product')); ?>"><?php _e('Shop', 'zoommerce'); ?></a>
-		<a><?php echo esc_html(the_title()); ?></a>
-	<?php endif; ?>
+	<?php woocommerce_breadcrumb(); ?>
 	
 </div><!-- /#breadcrumb  -->
 <div id="content" class="site-content">

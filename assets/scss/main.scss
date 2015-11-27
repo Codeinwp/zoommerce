@@ -1535,6 +1535,13 @@ article.post {
 }
 
 .woocommerce {
+	.button.wc-backward {
+		color: #fff;
+		font-family: 'allerbold';
+		font-weight: 400;
+		background: #e52424;
+		border-radius: 0;
+	}
 
 	h2, h1, h3 {
 		font-family: 'allerbold' !important;
