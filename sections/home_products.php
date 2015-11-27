@@ -16,43 +16,65 @@ $products_args = array(
 );
 $products_loop = new WP_Query( $products_args );
 
+
 ?>
 <section id="home_products">
-	<div class="left" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
-		<div class="home_headline">
-			<?php
-				$headline = get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'));
-				if($headline) {
-					echo '<h3>'.esc_html(get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'))).'</h3>';
-				}
+	<?php if ( $products_loop->have_posts() ): ?>
+		<div class="left" data-scrollreveal="enter left after 0s over 1s" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
+			<div class="home_headline">
+				<?php
+					$headline = get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'));
+					if($headline) {
+						echo '<h3>'.esc_html(get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'))).'</h3>';
+					}
 
-				$subheading = get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'));
-				if($subheading) {
-					echo '<h4>'.esc_html(get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'))).'</h4>';
-				}
+					$subheading = get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'));
+					if($subheading) {
+						echo '<h4>'.esc_html(get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'))).'</h4>';
+					}
+
+				?>
+			</div><!-- / .headline -->
+			<ul class="products">
+			<?php
+			
+			if ( $products_loop->have_posts() ) {
+				while ( $products_loop->have_posts() ) : $products_loop->the_post();
+					wc_get_template_part( 'content', 'product' );
+				endwhile;
+			} else {
+				echo __( 'No products found', 'zoommerce' );
+			}
+			wp_reset_postdata();
 
 			?>
-		</div><!-- / .headline -->
-		<ul class="products">
-		<?php
-		
-		if ( $products_loop->have_posts() ) {
-			while ( $products_loop->have_posts() ) : $products_loop->the_post();
-				wc_get_template_part( 'content', 'product' );
-			endwhile;
-		} else {
-			echo __( 'No products found', 'zoommerce' );
-		}
-		wp_reset_postdata();
+			</ul>
+			<div class="clearfix"></div><!-- / .clearfix -->
 
-		?>
-		</ul>
-		<div class="clearfix"></div><!-- / .clearfix -->
-		<a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="viewallproducts"><?php _e('view all products', 'zoommerce'); ?></a>
-	</div><!-- / .left -->
+			<?php
+
+			//All products url
+			$customizer_link = get_theme_mod('home_latest_products_content');
+			$shop_page_id = woocommerce_get_page_id( 'shop' );
+
+			if($customizer_link) {
+				echo '<a href="'.esc_url($customizer_link).'" class="viewallproducts">'.__('view all products', 'zoommerce').'</a>';
+			} else {
+				if($shop_page_id) {
+					echo '<a href="'.esc_url(get_permalink( $shop_page_id )).'" class="viewallproducts">'.__('view all products', 'zoommerce').'</a>';
+				}
+			}
+			
+			?>
+			
+		</div><!-- / .left -->
+	
 	<?php
+
+	endif;//$products_loop->have_posts()
+
 	if($right_image) {
-		echo '<div class="right" style="background-image: url('.esc_url($right_image).');"></div><!-- / .right -->';
+		echo '<div class="right" style="background-image: url('.esc_url($right_image).'); '.($products_loop->have_posts() == true ? '' : 'height: 400px; width: 100%;').'"></div><!-- / .right -->';
 	}
 	?>
 	

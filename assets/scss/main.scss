@@ -1376,6 +1376,16 @@ article.post {
 	}
 }
 
+.client-list {
+	.widget {
+		display: inline-block;
+		margin: 0 10px;
+	}
+}
+.woocommerce #respond input#submit.loading:after, .woocommerce a.button.loading:after, .woocommerce button.button.loading:after, .woocommerce input.button.loading:after {
+	right: 0; left: 0; bottom: 0; top: 0;
+	margin: auto;
+}
 .woocommerce-page {
 	.woocommerce-ordering {
 		float: left;
