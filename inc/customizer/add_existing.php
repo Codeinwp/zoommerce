@@ -93,6 +93,12 @@ $wp_customize->get_setting( 'zerif_ourfocus_4box' )->default = '#C4A01B';
 $wp_customize->get_setting( 'zerif_ourfocus_show' )->default = 1;
 
 /**
+ * Home: Subscribe
+ */
+$wp_customize->get_setting( 'zerif_subscribe_title' )->default = __('Newsletter Subscribtion','zoommerce');
+$wp_customize->get_setting( 'zerif_subscribe_subtitle' )->default = __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.','zoommerce');
+
+/**
  * Home: Portfolio
  */
 $wp_customize->get_setting( 'zerif_portofolio_show' )->default = 1;
