@@ -12,7 +12,7 @@ if( !empty($zerif_googlemap_address) ):
 
 	if( isset($zerif_googlemap_static) && $zerif_googlemap_static == 1 ):
 
-		echo "<img id='map' src='https://maps.googleapis.com/maps/api/staticmap?center=".$zerif_googlemap_address."&size=1240x490&scale=2' >";
+		echo "<img id='map' src='https://maps.googleapis.com/maps/api/staticmap?center=".esc_attr($zerif_googlemap_address)."&size=1240x490&scale=2' >";
 		
 	else:
 		?>

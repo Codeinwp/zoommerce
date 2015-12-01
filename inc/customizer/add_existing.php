@@ -11,6 +11,7 @@
  */
 $wp_customize->get_setting( 'myaccount_link' )->default = '';
 $wp_customize->get_setting( 'cart_link' )->default = '';
+$wp_customize->get_setting( 'zerif_logo' )->default = get_stylesheet_directory_uri().'/assets/images/logo.png';
 
 /**
  * Home: Sections Order
@@ -93,6 +94,12 @@ $wp_customize->get_setting( 'zerif_ourfocus_4box' )->default = '#C4A01B';
 $wp_customize->get_setting( 'zerif_ourfocus_show' )->default = 1;
 
 /**
+ * Home: Subscribe
+ */
+$wp_customize->get_setting( 'zerif_subscribe_title' )->default = __('Newsletter Subscribtion','zoommerce');
+$wp_customize->get_setting( 'zerif_subscribe_subtitle' )->default = __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.','zoommerce');
+
+/**
  * Home: Portfolio
  */
 $wp_customize->get_setting( 'zerif_portofolio_show' )->default = 1;
@@ -142,3 +149,4 @@ $wp_customize->get_setting( 'background_image' )->default = get_stylesheet_direc
 $wp_customize->get_setting( 'zerif_email_icon' )->default = get_stylesheet_directory_uri().'/assets/images/icon-address.png';
 $wp_customize->get_setting( 'zerif_phone_icon' )->default = get_stylesheet_directory_uri().'/assets/images/icon-contact.png';
 $wp_customize->get_setting( 'zerif_address_icon' )->default = get_stylesheet_directory_uri().'/assets/images/icon-location.png';
+$wp_customize->get_setting( 'zerif_copyright' )->default = __('© Themeisle. All Rights Reserved', 'zoommerce');

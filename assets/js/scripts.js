@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 		    maxHeight = '';
 		    
 		    $(target).each(function() {
-		        var heights = $(this).outerHeight();
+		        var heights = $(this).outerHeight(true);
 
 		        allHeights.push(heights);
 		        maxHeight = Math.max.apply(null, allHeights);
@@ -72,12 +72,15 @@ jQuery(document).ready(function($) {
 		//Center vertically the big banner content 
 		zoommerce_verticall_align('.header-content-wrap', '#big-banner', 0);
 
-		//Home products height match
-		zoommerce_height_match('#home_products .product');
+		//Run functions after window is ready and assets are loaded
+		$(window).load(function() {
+			//Home products height match
+			zoommerce_height_match('#home_products .product');
 
-		//Home blog posts height match
-		zoommerce_height_match('#home_blog .post');
-
+			//Home blog posts height match
+			zoommerce_height_match('#home_blog .post');
+		});
+		
 		/*
 		* Home - Add height on products right image
 		*/

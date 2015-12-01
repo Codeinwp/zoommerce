@@ -32,7 +32,7 @@
 			
 			if( !empty($zerif_packages_title) ):
 			
-				echo '<h3 class="white-text">'.$zerif_packages_title.'</h3>';
+				echo '<h3 class="white-text">'.esc_html($zerif_packages_title).'</h3>';
 				
 			elseif ( isset( $wp_customize ) ):
 
@@ -46,7 +46,7 @@
 
 			if( !empty($zerif_packages_subtitle) ):
 
-				echo '<h6 class="white-text">'.$zerif_packages_subtitle.'</h6>';
+				echo '<h6 class="white-text">'.esc_html($zerif_packages_subtitle).'</h6>';
 				
 			elseif ( isset( $wp_customize ) ):
 			
