@@ -32,7 +32,7 @@ if($ribbon_bottom_show)
 					echo '<div data-scrollreveal="enter right after 0s over 1s">';
 
 
-						echo '<a href="'.$zerif_bottomribbon_buttonlink.'" class="btn btn-primary custom-button green-btn">'.$zerif_bottomribbon_buttonlabel.'</a>';
+						echo '<a href="'.esc_url($zerif_bottomribbon_buttonlink).'" class="btn btn-primary custom-button green-btn">'.esc_html($zerif_bottomribbon_buttonlabel).'</a>';
 
 
 					echo '</div>';
@@ -76,7 +76,7 @@ if($ribbon_bottom_show)
 					echo '<div data-scrollreveal="enter right after 0s over 1s">';
 
 
-						echo '<a href="'.$zerif_bottomribbon_buttonlink.'" class="btn btn-primary custom-button green-btn">'.$zerif_bottomribbon_buttonlabel.'</a>';
+						echo '<a href="'.esc_url($zerif_bottomribbon_buttonlink).'" class="btn btn-primary custom-button green-btn">'.esc_html($zerif_bottomribbon_buttonlabel).'</a>';
 
 
 					echo '</div>';

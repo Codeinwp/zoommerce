@@ -279,6 +279,14 @@ $wp_customize->add_control( 'latest_products_subheading', array(
 		'priority'    => 3,
 ));
 
+$wp_customize->add_setting( 'latest_products_shop_page_link', array('sanitize_callback' => 'zerif_sanitize_number'));
+$wp_customize->add_control( 'latest_products_shop_page_link', array(
+		'label'    => __( 'View all products page link', 'zoommerce' ),
+		'section'  => 'home_latest_products_content',
+		'settings' => 'latest_products_shop_page_link',
+		'priority'    => 3,
+));
+
 	//Fields in section 'home_latest_products_settings'
 $wp_customize->add_setting( 'latest_products_count', array('sanitize_callback' => 'zerif_sanitize_number','default' => 3));
 $wp_customize->add_control( 'latest_products_count', array(
@@ -420,4 +428,172 @@ $wp_customize->add_control( 'blog_heading_sub', array(
 		'section'  => 'zoommerce_blog_content',
 		'settings' => 'blog_heading_sub',
 		'priority'    => 2,
+));
+
+/**
+ * Shop Section
+ */
+	//Panels
+$wp_customize->add_panel( 'panel_shop_page', array(
+	'priority' => 46,
+	'capability' => 'edit_theme_options',
+	'theme_supports' => '',
+	'title' => __( 'Shop Page', 'zoommerce' )
+) );
+
+$wp_customize->add_panel( 'panel_shop_page_single', array(
+	'priority' => 47,
+	'capability' => 'edit_theme_options',
+	'theme_supports' => '',
+	'title' => __( 'Single  Product Page', 'zoommerce' )
+) );
+	
+	//Sections in panel 'panel_shop_page'
+$wp_customize->add_section( 'shop_page_settings_section' , array(
+	'title'		=> __( 'Settings', 'zoommerce' ),
+	'priority'	=> 1,
+	'panel'		=> 'panel_shop_page'
+) );
+
+$wp_customize->add_section( 'shop_page_popularprod_section' , array(
+	'title'		=> __( 'Popular Products Section', 'zoommerce' ),
+	'priority'	=> 2,
+	'panel'		=> 'panel_shop_page'
+) );
+
+$wp_customize->add_section( 'shop_page_subscribe_section' , array(
+	'title'		=> __( 'Subscribe Section', 'zoommerce' ),
+	'priority'	=> 3,
+	'panel'		=> 'panel_shop_page'
+) );
+
+	//Sections in panel 'panel_shop_page_single'
+$wp_customize->add_section( 'single_shop_settings_section' , array(
+	'title'		=> __( 'Settings', 'zoommerce' ),
+	'priority'	=> 1,
+	'panel'		=> 'panel_shop_page_single'
+) );
+
+$wp_customize->add_section( 'single_shop_content_section' , array(
+	'title'		=> __( 'Content', 'zoommerce' ),
+	'priority'	=> 2,
+	'panel'		=> 'panel_shop_page_single'
+) );
+
+	//Fields in section 'shop_page_settings_section'
+$wp_customize->add_setting( 'shop_last_products_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_control('shop_last_products_hide',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Check this box to hide "Popular Products" section on shop page.','zoommerce'),
+			'section' 	=> 'shop_page_settings_section',
+			'priority'	=> 1,
+		)
+);
+$wp_customize->add_setting( 'shop_newsletter_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_control('shop_newsletter_hide',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Check this box to display "Subscribe" section on shop page.','zoommerce'),
+			'section' 	=> 'shop_page_settings_section',
+			'priority'	=> 2,
+		)
+);
+
+	//Fields in section 'shop_page_popularprod_section'
+$wp_customize->add_setting( 'shop_page_last_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Popular products', 'zoommerce')));
+$wp_customize->add_control( 'shop_page_last_headline', array(
+		'label'    => __( 'Heading', 'zoommerce' ),
+		'section'  => 'shop_page_popularprod_section',
+		'settings' => 'shop_page_last_headline',
+		'priority'    => 1,
+));
+
+$wp_customize->add_setting( 'shop_last_products_type', array( 'default' => 'popular' ));
+$wp_customize->add_control( 'shop_last_products_type', array(
+	'type' => 'select',
+	'label' => 'What do you want to display in this section?',
+	'section' => 'shop_page_popularprod_section',
+	'choices' => array(
+		'popular' => __('Popular Products','zoommerce'),
+		'latest' => __('Latest Products','zoommerce'),
+		'featured' => __('Featured Products','zoommerce'),
+		'rated' => __('Top Rated Products','zoommerce'),
+		'sale' => __('On Sale Products','zoommerce'),
+		'cat' => __('Product Category','zoommerce')
+	),
+	'priority' => 1
+));
+
+$wooc_terms = get_terms(array('product_cat'), array('fields' => 'id=>name'));
+$wp_customize->add_setting( 'shop_last_products_category');
+$wp_customize->add_control( 'shop_last_products_category', array(
+	'type' => 'select',
+	'label' => 'Select category to display',
+	'description' => __('This selection will only work if you select "Product Category" above.', 'zoommerce'),
+	'section' => 'shop_page_popularprod_section',
+	'choices' => $wooc_terms,
+	'priority' => 2
+));
+	//Fields in section 'shop_page_subscribe_section'
+$wp_customize->add_setting( 'shop_page_subscribe_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Newsletter Subscribtion', 'zoommerce')));
+$wp_customize->add_control( 'shop_page_subscribe_headline', array(
+		'label'    => __( 'Heading', 'zoommerce' ),
+		'section'  => 'shop_page_subscribe_section',
+		'settings' => 'shop_page_subscribe_headline',
+		'priority'    => 1,
+));
+
+$wp_customize->add_setting( 'shop_page_subscribe_subtitle', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoommerce')));
+$wp_customize->add_control( 'shop_page_subscribe_subtitle', array(
+		'label'    => __( 'Subtitle', 'zoommerce' ),
+		'section'  => 'shop_page_subscribe_section',
+		'settings' => 'shop_page_subscribe_subtitle',
+		'priority'    => 2,
+));
+
+//Fields in section 'single_shop_settings_section'
+$wp_customize->add_setting( 'single_shop_last_products_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_control('single_shop_last_products_hide',
+		array(
+			'type' 		=> 'checkbox',
+			'label' 	=> __('Check this box to hide "Popular Products" section on shop page.','zoommerce'),
+			'section' 	=> 'single_shop_settings_section',
+			'priority'	=> 1,
+		)
+);
+
+	//Fields in section 'single_shop_content_section'
+$wp_customize->add_setting( 'single_shop_last_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Popular products', 'zoommerce')));
+$wp_customize->add_control( 'single_shop_last_headline', array(
+		'label'    => __( 'Heading', 'zoommerce' ),
+		'section'  => 'single_shop_content_section',
+		'settings' => 'single_shop_last_headline',
+		'priority'    => 1,
+));
+
+$wp_customize->add_setting( 'single_shop_last_products_type', array( 'default' => 'popular' ));
+$wp_customize->add_control( 'single_shop_last_products_type', array(
+	'type' => 'select',
+	'label' => 'What do you want to display in this section?',
+	'section' => 'single_shop_content_section',
+	'choices' => array(
+		'popular' => __('Popular Products','zoommerce'),
+		'latest' => __('Latest Products','zoommerce'),
+		'featured' => __('Featured Products','zoommerce'),
+		'rated' => __('Top Rated Products','zoommerce'),
+		'sale' => __('On Sale Products','zoommerce'),
+		'cat' => __('Product Category','zoommerce')
+	),
+	'priority' => 2
+));
+
+$wp_customize->add_setting( 'single_shop_last_products_category');
+$wp_customize->add_control( 'single_shop_last_products_category', array(
+	'type' => 'select',
+	'label' => 'Select category to display',
+	'description' => __('This selection will only work if you select "Product Category" above.', 'zoommerce'),
+	'section' => 'single_shop_content_section',
+	'choices' => $wooc_terms,
+	'priority' => 3
 ));
