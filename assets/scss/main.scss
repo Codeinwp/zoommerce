@@ -1931,7 +1931,7 @@ article.post {
 
 						del {
 							color: #ccc;
-							
+
 							span.amount {
 								font-size: 12px;
 								color: #ccc;
@@ -1993,6 +1993,13 @@ article.post {
 }
 
 
+#parallax_move {
+	height: 100%;
+
+	li.layer {
+		height: 120% !important;
+	}
+}
 
 /*---------------------------------------
  **   Responsive  -----  MEDIA QUERIES
