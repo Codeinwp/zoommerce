@@ -1432,6 +1432,15 @@ article.post {
 	}
 	
 	.woocommerce {
+		
+		.order-actions .button {
+			border-radius: 0;
+
+			&:hover {
+				background: #e52424;
+				color: #fff;
+			}
+		}
 
 		input {
 			border-radius: 0;
