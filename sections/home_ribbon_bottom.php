@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for home section: Ribbon Bottom
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
 $ribbon_bottom_show = get_theme_mod('zerif_ribbonbottom_show');
 if($ribbon_bottom_show)
 		return NULL;

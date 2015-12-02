@@ -1,4 +1,10 @@
 <?php
+/**
+ * The template for home section: Portfolio
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
 
 	global $wp_customize;
 

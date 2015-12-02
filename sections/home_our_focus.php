@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * The template for home section: Our focus
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
 global $wp_customize;
 
 $zerif_ourfocus_show = get_theme_mod('zerif_ourfocus_show', 1);

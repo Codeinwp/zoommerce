@@ -1,4 +1,10 @@
 <?php 
+/**
+ * The template for displaying the front-page.
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
 
 get_header(); 
 

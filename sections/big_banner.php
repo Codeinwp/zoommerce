@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for home section: Big banner
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
 	$zerif_parallax_use = get_theme_mod('zerif_parallax_show');
 	$zerif_background_settings = get_theme_mod('zerif_background_settings');
 
@@ -15,8 +22,6 @@
 	/*************************************************/
 	/**************  Background settings *************/
 	/*************************************************/
-
-	
 
 	/* Default case when no setting is checked or Slider is selected */
 	if( empty($zerif_background_settings) || ($zerif_background_settings == 'zerif-background-slider') ):

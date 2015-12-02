@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for home section: Latest Products
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
 $prod_hide = get_theme_mod('zoommerce_shopproducts_hide');
 if($prod_hide)
 	return NULL;

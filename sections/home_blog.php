@@ -1,4 +1,10 @@
 <?php
+/**
+ * The template for home section: Latest blog posts
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
 $blog_hide = get_theme_mod('zoommerce_blog_hide');
 if($blog_hide)
 	return NULL;

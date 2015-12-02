@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for home section: Shop Categories
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
 	$categories_hide  = get_theme_mod('zoommerce_shopcats_hide');
 	if($categories_hide)
 		return NULL;

@@ -1,4 +1,10 @@
 <?php
+/**
+ * The template for home section: Map
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
 $map_hide = get_theme_mod('zoommerce_map_hide');
 
 if($map_hide)
