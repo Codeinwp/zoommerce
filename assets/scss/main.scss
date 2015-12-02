@@ -15,6 +15,10 @@ b, strong {
 	font-weight: 400;
 }
 
+.btn {
+	border-radius: 0;
+}
+
 .section-title {
 	font-family: 'allerbold', sans-serif !important;
 	text-transform:uppercase;
@@ -781,20 +785,22 @@ ul.nav > li.current_page_item > a:before {
 	textarea {
 		font-family: 'allerregular', sans-serif;
 		font-size: 16px;
+		border-radius: 0;
+		border-color: #ddd;
 	}
 
 	button,
 	.btn-primary {
-		background: #f33b3b;
-		border-color: #f33b3b;
+		background: #e52424;
+		border: none;
 		@extend .transition;
 		height: 42px;
 		padding: 6px 16px;
 		padding-top: 7px;
 
 		&:hover {
-			background: #fff;
-			color: #f33b3b;
+			background: #333;
+			color: #fff;
 		}
 	}
 	
