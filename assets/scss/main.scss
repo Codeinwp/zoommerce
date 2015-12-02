@@ -1812,6 +1812,28 @@ article.post {
 			}
 		}
 	}
+
+	#reviews #comments ol.commentlist li {
+		.comment-text {
+			border: 1px solid #ccc;
+			border-radius: 0;
+		}
+	}
+
+	#review_form {
+		#respond {
+			textarea {
+				border-radius: 0;
+				border: 1px solid #ccc;
+			}
+
+			.form-submit input {
+				background: #e52424;
+				border-radius: 0;
+				margin-left: 0;
+			}
+		}
+	}
 }
 
 .upsells .product {
@@ -1823,6 +1845,8 @@ article.post {
 .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
 	width: 52%;
 }
+
+
 
 /*---------------------------------------
  **   Responsive  -----  MEDIA QUERIES
