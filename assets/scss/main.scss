@@ -380,6 +380,10 @@ ul.nav > li.current_page_item > a:before {
 	}
 }
 
+.entry-title:after {
+	display: none;
+}
+
 .woocommerce,
 #home_products {
 	ul.products {
@@ -1626,6 +1630,7 @@ article.post {
 			span {
 				font-family: 'aller_lightregular' !important;
 				font-size: 22px !important;
+				color: #e52424;
 			}
 		}
 
