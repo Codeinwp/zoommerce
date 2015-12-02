@@ -9,6 +9,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'allerregular', sans-serif !important;
 }
+
+b, strong {
+	font-family: 'allerbold', sans-serif;
+	font-weight: 400;
+}
+
 .section-title {
 	font-family: 'allerbold', sans-serif !important;
 	text-transform:uppercase;
@@ -453,12 +459,12 @@ ul.nav > li.current_page_item > a:before {
 				padding: 0;
 				
 				del {
-					color: #ccc;
+					color: #ddd;
 					display: inline;
 
 					.amount {
 						font-size: 12px;
-						color: #ccc;
+						color: #ddd;
 					}
 				}	
 
@@ -756,7 +762,7 @@ ul.nav > li.current_page_item > a:before {
 
 		input {
 			box-shadow: none;
-			border: 1px solid #ccc !important;
+			border: 1px solid #ddd !important;
 		}
 	}
 
@@ -765,7 +771,7 @@ ul.nav > li.current_page_item > a:before {
 		color: #585858;
 
 		&:focus {
-			border-color: #ccc;
+			border-color: #ddd;
 		}
 	}
 
@@ -1426,6 +1432,11 @@ article.post {
 	}
 	
 	.woocommerce {
+
+		input {
+			border-radius: 0;
+		}
+
 		a.remove {
 			line-height: 24px;
 			color: #e52424 !important;
@@ -1439,7 +1450,6 @@ article.post {
 		#coupon_code {
 			border-radius: 0 !important;
 			height: 30px;
-			line-height: 30px;
     		font-family: 'allerregular';
     		margin-top: 4px;
 			font-size: 14px;
@@ -1468,7 +1478,22 @@ article.post {
 		}
 
 		input[type="text"], input[type="email"], input[type="url"], input[type="tel"], input[type="password"], input[type="search"], textarea {
-			border: 1px solid #ccc;
+			border: 1px solid #ddd;
+		}
+
+		#payment {
+			.payment_box {
+
+				border-top: 2px solid #dfdcde;
+
+				&:after {
+					display: none;
+				}
+
+				&:before {
+					top: -.95em;
+				}
+			}
 		}
 	}
 		
@@ -1551,6 +1576,14 @@ article.post {
 }
 
 .woocommerce {
+	
+	form.checkout_coupon {
+		overflow: hidden;
+	}
+
+	input {
+		border-radius: 0;
+	}
 
 	table.shop_attributes th {
 		text-transform: none;
@@ -1577,7 +1610,7 @@ article.post {
 
 	table.shop_table {
 		border-radius: 0;
-		border: 1px solid #ccc;
+		border: 1px solid #ddd;
 
 		th {
 			font-weight: 400;
@@ -1774,7 +1807,7 @@ article.post {
 				li {
 					float: left;
 					font-family: 'Open sans';
-					border: 1px solid #ccc !important;
+					border: 1px solid #ddd !important;
 					font-size: 14px; 
 					margin-right: 10px !important;
 					border-radius: 0 !important;
@@ -1815,7 +1848,7 @@ article.post {
 
 	#reviews #comments ol.commentlist li {
 		.comment-text {
-			border: 1px solid #ccc;
+			border: 1px solid #ddd;
 			border-radius: 0;
 		}
 	}
@@ -1824,7 +1857,7 @@ article.post {
 		#respond {
 			textarea {
 				border-radius: 0;
-				border: 1px solid #ccc;
+				border: 1px solid #ddd;
 			}
 
 			.form-submit input {
