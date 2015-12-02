@@ -368,6 +368,18 @@ ul.nav > li.current_page_item > a:before {
 	}
 }
 
+#home_products {
+	ul.products {
+		padding-top: 30px;
+
+		li.product {
+			margin-bottom: 0 !important;
+			margin-top: 0 !important;
+			padding-bottom: 20px !important;
+		}
+	}
+}
+
 .woocommerce,
 #home_products {
 	ul.products {
