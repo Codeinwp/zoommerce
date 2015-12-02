@@ -13,11 +13,11 @@ get_header(); ?>
 <div class="clear"></div>
 </header> <!-- / END HOME SECTION  -->
 <div id="breadcrumb">
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'zoommerce'); ?></a>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'Zoommerce'); ?></a>
 	<?php if( (function_exists('is_cart') && is_cart()) || (function_exists('is_checkout') && is_checkout() ) || (function_exists('is_account_page') && is_account_page()) ): ?>
-		<a><?php _e('Shop', 'zoommerce'); ?></a>
+		<a><?php _e('Shop', 'Zoommerce'); ?></a>
 	<?php else: ?>
-		<a><?php _e('Page', 'zoommerce'); ?></a>
+		<a><?php _e('Page', 'Zoommerce'); ?></a>
 	<?php endif; ?>
 	<a><?php the_title(); ?></a>
 </div><!-- /#breadcrumb  -->

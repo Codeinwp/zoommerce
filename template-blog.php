@@ -24,7 +24,7 @@ if($image) {
 	<div class="container">
 		<?php
 
-			$heading = get_theme_mod('blog_heading', __('MY BLOG', 'zoommerce'));
+			$heading = get_theme_mod('blog_heading', __('MY BLOG', 'Zoommerce'));
 			if($heading)
 				echo '<div class="title">'.esc_html($heading).'</div>';
 
@@ -38,8 +38,8 @@ if($image) {
 </div><!-- /#wide_header  -->
 <div id="breadcrumb">
 	<?php $blog_page_id = zoommerce_get_pages_by_template('template-blog.php')->ID; ?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'zoommerce'); ?></a>
-	<a href="<?php echo esc_url(get_page_link($blog_page_id)); ?>"><?php _e('Blog', 'zoommerce'); ?></a>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'Zoommerce'); ?></a>
+	<a href="<?php echo esc_url(get_page_link($blog_page_id)); ?>"><?php _e('Blog', 'Zoommerce'); ?></a>
 </div><!-- /#breadcrumb  -->
 <div id="content" class="site-content">
 

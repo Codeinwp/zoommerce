@@ -8,14 +8,14 @@
 		<?php
 
 		echo '<div class="home_headline">';
-		$headline = get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoommerce'));
+		$headline = get_theme_mod('latest_testimonials_headline', __('Testimonials', 'Zoommerce'));
 		if($headline) {
-			echo '<h3>'.esc_html(get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoommerce'))).'</h3>';
+			echo '<h3>'.esc_html(get_theme_mod('latest_testimonials_headline', __('Testimonials', 'Zoommerce'))).'</h3>';
 		}
 
-		$subheading = get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoommerce'));
+		$subheading = get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'Zoommerce'));
 		if($subheading) {
-			echo '<h4>'.esc_html(get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoommerce'))).'</h4>';
+			echo '<h4>'.esc_html(get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'Zoommerce'))).'</h4>';
 		}
 		echo '</div><!-- / .home_headline -->';
 		

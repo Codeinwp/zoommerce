@@ -51,7 +51,7 @@
 		
 		$zerif_socials_youtube = esc_url(get_theme_mod('zerif_socials_youtube'));
 			
-		$zerif_copyright = esc_html(get_theme_mod('zerif_copyright', __('© Themeisle. All Rights Reserved', 'zoommerce')));
+		$zerif_copyright = esc_html(get_theme_mod('zerif_copyright', __('© Themeisle. All Rights Reserved', 'Zoommerce')));
 
 		
 		if(!empty($zerif_address) || !empty($zerif_address_icon)):
@@ -85,7 +85,7 @@
 		
 		/* CLIENTS */		
 			
-		$zerif_aboutus_clients_title_text = esc_html(get_theme_mod('zerif_aboutus_clients_title_text',__('SHOWCASE YOUR CLIENTS HERE','zoommerce')));
+		$zerif_aboutus_clients_title_text = esc_html(get_theme_mod('zerif_aboutus_clients_title_text',__('SHOWCASE YOUR CLIENTS HERE','Zoommerce')));
 		
 		echo '<div class="clients-wrap">';
 		
@@ -99,7 +99,7 @@
 						
 					else:
 					
-						echo '<h5><span class="section-footer-title">'.__('SHOWCASE YOUR CLIENTS HERE','zoommerce').'</span></h5>';
+						echo '<h5><span class="section-footer-title">'.__('SHOWCASE YOUR CLIENTS HERE','Zoommerce').'</span></h5>';
 
 					endif;
 					

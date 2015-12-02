@@ -23,14 +23,14 @@ $products_loop = new WP_Query( $products_args );
 		<div class="left" data-scrollreveal="enter left after 0s over 1s" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
 			<div class="home_headline">
 				<?php
-					$headline = get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'));
+					$headline = get_theme_mod('latest_products_headline', __('New Arrivals', 'Zoommerce'));
 					if($headline) {
-						echo '<h3>'.esc_html(get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'))).'</h3>';
+						echo '<h3>'.esc_html(get_theme_mod('latest_products_headline', __('New Arrivals', 'Zoommerce'))).'</h3>';
 					}
 
-					$subheading = get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'));
+					$subheading = get_theme_mod('latest_products_subheading', __('Check out our latest products', 'Zoommerce'));
 					if($subheading) {
-						echo '<h4>'.esc_html(get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'))).'</h4>';
+						echo '<h4>'.esc_html(get_theme_mod('latest_products_subheading', __('Check out our latest products', 'Zoommerce'))).'</h4>';
 					}
 
 				?>
@@ -43,7 +43,7 @@ $products_loop = new WP_Query( $products_args );
 					wc_get_template_part( 'content', 'product' );
 				endwhile;
 			} else {
-				echo __( 'No products found', 'zoommerce' );
+				echo __( 'No products found', 'Zoommerce' );
 			}
 			wp_reset_postdata();
 
@@ -58,10 +58,10 @@ $products_loop = new WP_Query( $products_args );
 			$shop_page_id = woocommerce_get_page_id( 'shop' );
 
 			if($customizer_link) {
-				echo '<a href="'.esc_url($customizer_link).'" class="viewallproducts">'.__('view all products', 'zoommerce').'</a>';
+				echo '<a href="'.esc_url($customizer_link).'" class="viewallproducts">'.__('view all products', 'Zoommerce').'</a>';
 			} else {
 				if($shop_page_id) {
-					echo '<a href="'.esc_url(get_permalink( $shop_page_id )).'" class="viewallproducts">'.__('view all products', 'zoommerce').'</a>';
+					echo '<a href="'.esc_url(get_permalink( $shop_page_id )).'" class="viewallproducts">'.__('view all products', 'Zoommerce').'</a>';
 				}
 			}
 			

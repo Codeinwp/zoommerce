@@ -8,9 +8,9 @@ if($blog_hide)
 		<?php
 
 		echo '<div class="home_headline">';
-		$headline = get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'zoommerce'));
+		$headline = get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'Zoommerce'));
 		if($headline) {
-			echo '<h3>'.esc_html(get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'zoommerce'))).'</h3>';
+			echo '<h3>'.esc_html(get_theme_mod('home_latest_posts_headline', __('Latest blog posts', 'Zoommerce'))).'</h3>';
 		}
 
 		$subheading = get_theme_mod('home_latest_posts_subheading');
@@ -62,7 +62,7 @@ if($blog_hide)
 						<a href="'.get_the_permalink().'" class="title" title="'.get_the_title().'">'.get_the_title().'</a>
 						<time>November 4 2015</time>
 						<div class="excerpt"><p>'.get_the_excerpt().'</p></div>
-						<a href="'.get_the_permalink().'" title="'.get_the_title().'" class="readmore">'.__('read more', 'zoommerce').'</a>
+						<a href="'.get_the_permalink().'" title="'.get_the_title().'" class="readmore">'.__('read more', 'Zoommerce').'</a>
 					</div><!-- / .post -->';
 				}
 				echo '</div><!-- / .items_wrapper -->';

@@ -161,7 +161,7 @@
 				}
 			}//$zoommerce_display_latest_cats
         } else {
-        	echo '<p style="margin-top: 10px; padding: 120px 0; background: url('.get_stylesheet_directory_uri().'/assets/images/demo/latest_product_demo.jpg);">'.__('In order to display this awesome section, please go to Products > Categories and add categories', 'zoommerce').'</p>';
+        	echo '<p style="margin-top: 10px; padding: 120px 0; background: url('.get_stylesheet_directory_uri().'/assets/images/demo/latest_product_demo.jpg);">'.__('In order to display this awesome section, please go to Products > Categories and add categories', 'Zoommerce').'</p>';
         }//!empty($categories)
 
 		?>

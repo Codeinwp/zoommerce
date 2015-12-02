@@ -11,30 +11,30 @@ get_header(); ?>
 <div class="clear"></div>
 </header> <!-- / END HOME SECTION  -->
 <div id="breadcrumb">
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'zoommerce'); ?></a>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'Zoommerce'); ?></a>
 	<?php
 		if ( is_category() ) :
 			$cat = get_category( get_query_var( 'cat' ) );
-			echo '<a>'.__('Posts Category', 'zoommerce').'</a>';
+			echo '<a>'.__('Posts Category', 'Zoommerce').'</a>';
 			echo '<a>'.esc_html($cat->name).'</a>';
 		elseif ( is_tag() ) :
 			$tag = get_query_var( 'tag' );
-			echo '<a>'.__('Posts Tag', 'zoommerce').'</a>';
+			echo '<a>'.__('Posts Tag', 'Zoommerce').'</a>';
 			echo '<a>'.esc_html($tag).'</a>';
 		elseif ( is_author() ) :
-			echo '<a>'.__('Author', 'zoommerce').'</a>';
+			echo '<a>'.__('Author', 'Zoommerce').'</a>';
 			echo '<a itemprop="name">'.esc_html(get_the_author()).'</a>';
 		elseif ( is_day() ) :
-			echo '<a>'.__('Day', 'zoommerce').'</a>';
+			echo '<a>'.__('Day', 'Zoommerce').'</a>';
 			echo '<a>'.esc_html(get_the_date()).'</a>';
 		elseif ( is_month() ) :
-			echo '<a>'.__('Month', 'zoommerce').'</a>';
-			echo '<a>'.get_the_date( _x( 'F Y', 'monthly archives date format', 'zoommerce' ) ).'</a>';
+			echo '<a>'.__('Month', 'Zoommerce').'</a>';
+			echo '<a>'.get_the_date( _x( 'F Y', 'monthly archives date format', 'Zoommerce' ) ).'</a>';
 		elseif ( is_year() ) :
-			echo '<a>'.__('Month', 'zoommerce').'</a>';
-			echo '<a>'.get_the_date( _x( 'Y', 'yearly archives date format', 'zoommerce' ) ).'</a>';
+			echo '<a>'.__('Month', 'Zoommerce').'</a>';
+			echo '<a>'.get_the_date( _x( 'Y', 'yearly archives date format', 'Zoommerce' ) ).'</a>';
 		else :
-			echo '<a>'.__( 'Archives', 'zoommerce' ).'</a>';
+			echo '<a>'.__( 'Archives', 'Zoommerce' ).'</a>';
 		endif;
 	?>
 </div><!-- /#breadcrumb  -->
@@ -52,33 +52,33 @@ get_header(); ?>
 							elseif ( is_tag() ) :
 								single_tag_title();
 							elseif ( is_author() ) :
-								printf( __( 'Author: %s', 'zoommerce' ), '<span class="author vcard" itemprop="name">' . get_the_author() . '</span>' );
+								printf( __( 'Author: %s', 'Zoommerce' ), '<span class="author vcard" itemprop="name">' . get_the_author() . '</span>' );
 							elseif ( is_day() ) :
-								printf( __( 'Day: %s', 'zoommerce' ), '<span>' . get_the_date() . '</span>' );
+								printf( __( 'Day: %s', 'Zoommerce' ), '<span>' . get_the_date() . '</span>' );
 							elseif ( is_month() ) :
-								printf( __( 'Month: %s', 'zoommerce' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'zoommerce' ) ) . '</span>' );
+								printf( __( 'Month: %s', 'Zoommerce' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'Zoommerce' ) ) . '</span>' );
 							elseif ( is_year() ) :
-								printf( __( 'Year: %s', 'zoommerce' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'zoommerce' ) ) . '</span>' );
+								printf( __( 'Year: %s', 'Zoommerce' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'Zoommerce' ) ) . '</span>' );
 							elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-								_e( 'Asides', 'zoommerce' );
+								_e( 'Asides', 'Zoommerce' );
 							elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-								_e( 'Galleries', 'zoommerce');
+								_e( 'Galleries', 'Zoommerce');
 							elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-								_e( 'Images', 'zoommerce');
+								_e( 'Images', 'Zoommerce');
 							elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-								_e( 'Videos', 'zoommerce' );
+								_e( 'Videos', 'Zoommerce' );
 							elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-								_e( 'Quotes', 'zoommerce' );
+								_e( 'Quotes', 'Zoommerce' );
 							elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-								_e( 'Links', 'zoommerce' );
+								_e( 'Links', 'Zoommerce' );
 							elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-								_e( 'Statuses', 'zoommerce' );
+								_e( 'Statuses', 'Zoommerce' );
 							elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-								_e( 'Audios', 'zoommerce' );
+								_e( 'Audios', 'Zoommerce' );
 							elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-								_e( 'Chats', 'zoommerce' );
+								_e( 'Chats', 'Zoommerce' );
 							else :
-								_e( 'Archives', 'zoommerce' );
+								_e( 'Archives', 'Zoommerce' );
 							endif;
 						?>
 					</h1>
