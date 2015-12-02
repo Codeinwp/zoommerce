@@ -11,21 +11,24 @@
         'parent'  => 0,
         'number' => '5'
     );
-    $cat_count = $cats_args['number'];
     $categories = get_categories($cats_args);
+    $cat_count = count($categories);
 
     	//Customizer
 	$zoommerce_display_latest_cats = get_theme_mod('zoommerce_display_latest_cats');
 	$customizer_cats = get_theme_mod('customizer_shop_cats');
 
+	//Reset $cat_count if categories are from customizer
+	if($customizer_cats && $zoommerce_display_latest_cats != '1') {
+		$cat_count = count(json_decode($customizer_cats));
+	}
+
+	//Hide section if any of these two are not available
 	if($zoommerce_display_latest_cats or $customizer_cats):
 ?>
 <section id="shop_cats">
 	<div class="container">
 		<?php
-
-		
-		
 
 		if(!empty($categories)) {	
         	$i = 1;
