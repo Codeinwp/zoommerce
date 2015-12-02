@@ -1432,7 +1432,7 @@ article.post {
 	}
 	
 	.woocommerce {
-		
+
 		.order-actions .button {
 			border-radius: 0;
 
@@ -1586,6 +1586,17 @@ article.post {
 
 .woocommerce {
 	
+	a.button.alt {
+		background: #e52424;
+		border-radius: 0;
+
+		&:hover {
+			cursor: pointer;
+		    background: #333;
+		    text-decoration: none;
+		}
+	}
+
 	form.checkout_coupon {
 		overflow: hidden;
 	}
@@ -1873,6 +1884,12 @@ article.post {
 				background: #e52424;
 				border-radius: 0;
 				margin-left: 0;
+
+				&:hover {
+					cursor: pointer;
+				    background: #333;
+				    text-decoration: none;
+				}
 			}
 		}
 	}
