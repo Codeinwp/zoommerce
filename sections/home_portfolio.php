@@ -99,7 +99,7 @@
 						<!-- PROJECT -->	
 
 
-						<li data-scrollreveal="enter left after 0s over 1s">
+						<li>
 
 
 						<a href="<?php the_permalink(); ?>" class="more">
