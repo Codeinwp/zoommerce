@@ -926,6 +926,10 @@ ul.nav > li.current_page_item > a:before {
 			margin-bottom: 10px;
 			padding: 0 2.8%;
 
+			a {
+				display: none;
+			}
+
 			p {
 				font-size: 14px;
 				margin-bottom: 0;

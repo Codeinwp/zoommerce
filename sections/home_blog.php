@@ -65,9 +65,12 @@ if(!$blog_hide)
 					}
 
 					echo'
-						<a href="'.get_the_permalink().'" class="title" title="'.get_the_title().'">'.get_the_title().'</a>
-						<time>November 4 2015</time>
-						<div class="excerpt"><p>'.get_the_excerpt().'</p></div>
+						<a href="'.get_the_permalink().'" class="title" title="'.get_the_title().'">'.get_the_title().'</a>'; ?>
+
+						<time><?php the_time( esc_html__("F j, Y", 'zoommerce') ); ?></time>
+
+						<?php
+					echo '<div class="excerpt"><p>'.get_the_excerpt().'</p></div>
 						<a href="'.get_the_permalink().'" title="'.get_the_title().'" class="readmore">'.__('read more', 'zoommerce').'</a>
 					</div><!-- / .post -->';
 				}
