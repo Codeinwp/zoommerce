@@ -138,6 +138,12 @@ $wp_customize->get_setting( 'zerif_packages_show' )->default = 0;
 $wp_customize->get_setting( 'zerif_googlemap_show' )->default = 1;
 
 /**
+ * Home: Latest posts
+ */
+$wp_customize->get_setting( 'zerif_latestnews_subtitle' )->default = '';
+$wp_customize->get_setting( 'zerif_latest_news_show' )->default = 1;
+
+/**
  * General: Background
  */
 $wp_customize->get_setting( 'background_image' )->default = get_stylesheet_directory_uri().'/assets/images/demo/home_background.jpg';
