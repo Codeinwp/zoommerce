@@ -335,6 +335,24 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				),
 
 				/**
+				 * Home: Latest posts
+				 */
+				array(
+					'selector' => '#home_blog .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_latestnews_header_title_color'
+				),
+
+				array(
+					'selector' => '#home_blog .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_latestnews_header_subtitle_color'
+				),
+
+
+
+
+				/**
 				 * General: Footer
 				 */
 				array(

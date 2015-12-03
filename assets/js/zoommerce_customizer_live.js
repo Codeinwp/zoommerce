@@ -39,5 +39,58 @@
 			$('.home-header-wrap .buttons .custom-button').attr('style', 'color: ' + to + ' !important');
 		} );
 	} );
+
+
+	/**
+	 * Home: Latest news
+	 */
+	wp.customize( 'zerif_latest_news_show', function( value ) {
+		value.bind( function( to ) {
+			if(!to == '1') {
+				$('#home_blog').attr('style', 'display: none !important');
+			} else {
+				$('#home_blog').attr('style', 'display: block');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_latestnews_title', function( value ) {
+		value.bind( function( to ) {
+			$('#home_blog .home_headline h3').text(to);
+		} );
+	} );
+
+	wp.customize( 'zerif_latestnews_subtitle', function( value ) {
+		value.bind( function( to ) {
+			if ($('#home_blog .home_headline h4').length){
+		        $('#home_blog .home_headline h4').text(to);
+		    } else {
+		    	$('#home_blog .home_headline').append('<h4>'+to+'</h4>');
+		    }
+			
+		} );
+	} );
+
+	wp.customize( 'zerif_latestnews_background', function( value ) {
+		value.bind( function( to ) {
+			if(to == '#') {
+				$('#home_blog').removeAttr('style');
+			} else {
+				$('#home_blog').attr('style', 'background-image: none; background-color: ' + to + ' !important');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_latestnews_header_title_color', function( value ) {
+		value.bind( function( to ) {
+			$('#home_blog .home_headline h3').attr('style', 'color: ' + to + ' !important');
+		} );
+	} );
+
+	wp.customize( 'zerif_latestnews_header_subtitle_color', function( value ) {
+		value.bind( function( to ) {
+			$('#home_blog .home_headline h4').attr('style', 'color: ' + to + ' !important');
+		} );
+	} );
 	
 } )( jQuery );
