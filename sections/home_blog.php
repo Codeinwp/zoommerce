@@ -27,7 +27,7 @@ if($blog_hide)
 		
 		?>
 
-		<div class="items_with_navigation" data-scrollreveal="enter left after 0s over 1s">
+		<div class="items_with_navigation">
 			
 			<?php
 

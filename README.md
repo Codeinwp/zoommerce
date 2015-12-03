@@ -1,6 +1,6 @@
 # Zoommerce
 
-==Licenses==
+Licenses
 Default home big area image - https://unsplash.com/photos/yMMrrUGvisY
 Photo by myquiel burton
 
@@ -9,6 +9,3 @@ CC0 - Yaoqi LAI - https://unsplash.com/yaoqiqiqilai
 
 OWL Carousel jQuery plugin
 MIT - http://owlgraphic.com/owlcarousel/
-
-Aller Font
-GPL - http://www.fontsquirrel.com/fonts/aller
