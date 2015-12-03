@@ -93,6 +93,12 @@ $wp_customize->get_setting( 'zerif_ourfocus_3box' )->default = '#454CC4';
 $wp_customize->get_setting( 'zerif_ourfocus_4box' )->default = '#C4A01B';
 $wp_customize->get_setting( 'zerif_ourfocus_show' )->default = 1;
 
+$wp_customize->get_setting( 'zerif_ourfocus_1box' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_ourfocus_2box' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_ourfocus_3box' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_ourfocus_4box' )->transport = 'postMessage';
+
+
 /**
  * Home: Subscribe
  */

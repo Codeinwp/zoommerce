@@ -202,5 +202,15 @@
 			$('#testimonials .client-info .client-name').attr('style', 'color: ' + to + ' !important');
 		} );
 	} );
+
+	/**
+	 * Home: Our focus
+	 */
+	wp.customize( 'zerif_ourfocus_header', function( value ) {
+		value.bind( function( to ) {
+			$('#focus .home_headline h3').attr('style', 'color: ' + to + ' !important');
+			$('#focus .home_headline h4').attr('style', 'color: ' + to + ' !important');
+		} );
+	} );
 	
 } )( jQuery );
