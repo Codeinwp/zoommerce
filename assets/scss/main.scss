@@ -406,10 +406,6 @@ ul.nav > li.current_page_item > a:before {
 			background: #fff;
 			margin-bottom: 70px;
 
-			.attachment-shop_catalog {
-				margin: 0;
-			}
-
 			a {
 				position: relative;
 				display: block;
@@ -433,6 +429,7 @@ ul.nav > li.current_page_item > a:before {
 				display: block;
 				position: relative;
 				background: #efefef;
+				margin: 0;
 			}
 
 			h3 {
@@ -569,6 +566,24 @@ ul.nav > li.current_page_item > a:before {
 
 	.left {
 		padding: 0 4% 45px 4%;
+
+		&.two {
+			.product {
+				width: 47.5%;
+			}
+		}
+
+		&.one {
+			.product {
+				width: 100%;
+				margin-right: 0;
+
+				.attachment-shop_catalog {
+					display: inline-block;
+					text-align: center;
+				}
+			}
+		}
 	}
 
 	.right {

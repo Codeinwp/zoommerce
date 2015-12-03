@@ -212,5 +212,47 @@
 			$('#focus .home_headline h4').attr('style', 'color: ' + to + ' !important');
 		} );
 	} );
+
+	/**
+	 * Home: Latest products
+	 */
+	wp.customize( 'zoommerce_shopproducts_hide', function( value ) {
+		value.bind( function( to ) {
+			if(to == '1') {
+				$('#home_products').attr('style', 'display: none !important');
+			} else {
+				$('#home_products').attr('style', 'display: block');
+			}
+		} );
+	} );
+
+	wp.customize( 'latest_products_headline', function( value ) {
+		value.bind( function( to ) {
+			if ($('#home_products .home_headline h3').length){
+		        $('#home_products .home_headline h3').text(to);
+		    } else {
+		    	$('#home_products .home_headline').append('<h3>'+to+'</h3>');
+		    }
+			
+		} );
+	} );
+
+	wp.customize( 'latest_products_subheading', function( value ) {
+		value.bind( function( to ) {
+			if ($('#home_products .home_headline h4').length){
+		        $('#home_products .home_headline h4').text(to);
+		    } else {
+		    	$('#home_products .home_headline').append('<h4>'+to+'</h4>');
+		    }
+			
+		} );
+	} );
+
+	wp.customize( 'latest_products_shop_page_link', function( value ) {
+		value.bind( function( to ) {
+			$('#home_products .viewallproducts').attr('href', to);
+		} );
+	} );
+
 	
 } )( jQuery );

@@ -13,7 +13,7 @@
 /**
  * Home: Sections Order
  */
-$wp_customize->add_setting( 'section13', array( 'default' => 'bottom_ribbon' ));
+$wp_customize->add_setting( 'section13', array( 'default' => 'bottom_ribbon', 'transport' =>'postMessage' ));
 $wp_customize->add_control( 'section13', array(
 	'type' => 'select',
 	'label' => '13th section',
@@ -36,7 +36,7 @@ $wp_customize->add_control( 'section13', array(
 	),
 	'priority' => 13
 ));
-$wp_customize->add_setting( 'section14', array( 'default' => 'latest_news' ));
+$wp_customize->add_setting( 'section14', array( 'default' => 'latest_news', 'transport' =>'postMessage' ));
 $wp_customize->add_control( 'section14', array(
 	'type' => 'select',
 	'label' => '14th section',
@@ -69,7 +69,7 @@ $wp_customize->add_section( 'zoommerce_general_shop_header' , array(
 ));
 
 	//Cart
-$wp_customize->add_setting( 'cart_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-cart.png'));			
+$wp_customize->add_setting( 'cart_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-cart.png', 'transport' =>'postMessage'));			
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cart_icon', array(
 		'label'    => __( 'Cart - Icon', 'zoommerce' ),	
 		'section'  => 'zoommerce_general_shop_header',	
@@ -77,7 +77,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cart
 		'priority'    => 3,
 
 )));
-$wp_customize->add_setting( 'cart_link', array('sanitize_callback' => 'esc_url_raw','default' => '#'));			
+$wp_customize->add_setting( 'cart_link', array('sanitize_callback' => 'esc_url_raw','default' => '#', 'transport' =>'postMessage'));			
 $wp_customize->add_control( 'zerif_cart_link', array(
 		'label'    => __( 'Cart link', 'zoommerce' ),	
 		'section'  => 'zoommerce_general_shop_header',	
@@ -87,7 +87,7 @@ $wp_customize->add_control( 'zerif_cart_link', array(
 ));
 
 	//My account
-$wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-profile.png'));			
+$wp_customize->add_setting( 'myaccount_icon', array('default' => get_stylesheet_directory_uri().'/assets/images/menu-profile.png', 'transport' =>'postMessage'));			
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myaccount_icon', array(
 	'label'    => __( 'My Account - Icon', 'zoommerce' ),	
 	'section'  => 'zoommerce_general_shop_header',	
@@ -95,7 +95,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'myac
 	'priority'    => 1,
 )));
 
-$wp_customize->add_setting( 'myaccount_link', array('sanitize_callback' => 'esc_url_raw','default' => '#'));			
+$wp_customize->add_setting( 'myaccount_link', array('sanitize_callback' => 'esc_url_raw','default' => '#', 'transport' =>'postMessage'));			
 $wp_customize->add_control( 'zerif_myaccount_link', array(
 	'label'    => __( 'My Account link', 'zoommerce' ),	
 	'section'  => 'zoommerce_general_shop_header',	
@@ -107,7 +107,7 @@ $wp_customize->add_control( 'zerif_myaccount_link', array(
  * Home: Big banner
  */
 	//Subtitle text field
-$wp_customize->add_setting( 'zerif_bigtitle_subtitle', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Introducing','zoommerce')));
+$wp_customize->add_setting( 'zerif_bigtitle_subtitle', array('sanitize_callback' => 'zerif_sanitize_text','default' => __('Introducing','zoommerce'), 'transport' =>'postMessage'));
 $wp_customize->add_control( 'zerif_bigtitle_subtitle', array(
 	'label'    => __( 'Big Banner Sub Heading', 'zoommerce' ),
 	'section'  => 'zerif_bigtitle_texts_section',
@@ -195,7 +195,7 @@ $wp_customize->add_section( 'home_categories_settings' , array(
 ) );
 	
 	//Fields in section 'home_categories_content'
-$wp_customize->add_setting( 'customizer_shop_cats', array('sanitize_callback' => 'zoommerce_sanitize_repeater',));
+$wp_customize->add_setting( 'customizer_shop_cats', array('sanitize_callback' => 'zoommerce_sanitize_repeater', 'transport' =>'postMessage'));
 $wp_customize->add_control( new zoommerce_General_Repeater( $wp_customize, 'customizer_shop_cats', array(
 	'label'   => esc_html__('Add new shop category','zoommerce'),
 	'section' => 'home_categories_content',
@@ -207,7 +207,7 @@ $wp_customize->add_control( new zoommerce_General_Repeater( $wp_customize, 'cust
     'parallax_dropdown_categories' => true
 ) ) );
 
-$wp_customize->add_setting( 'zoommerce_display_latest_cats', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 1));
+$wp_customize->add_setting( 'zoommerce_display_latest_cats', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 1, 'transport' =>'postMessage'));
 $wp_customize->add_control('zoommerce_display_latest_cats',
 		array(
 			'type' 		=> 'checkbox',
@@ -219,7 +219,7 @@ $wp_customize->add_control('zoommerce_display_latest_cats',
 );
 	
 	//Fields in section 'home_categories_settings'
-$wp_customize->add_setting( 'zoommerce_shopcats_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'zoommerce_shopcats_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0, 'transport' =>'postMessage'));
 $wp_customize->add_control('zoommerce_shopcats_hide',
 		array(
 			'type' 		=> 'checkbox',
@@ -255,7 +255,7 @@ $wp_customize->add_section( 'home_latest_products_settings' , array(
 ) );
 	
 	//Fields in section 'home_latest_products_content'
-$wp_customize->add_setting( 'latest_products_wide_image', array('default' =>  get_stylesheet_directory_uri() . '/assets/images/demo/products_background.jpg'));
+$wp_customize->add_setting( 'latest_products_wide_image', array('default' =>  get_stylesheet_directory_uri() . '/assets/images/demo/products_background.jpg', 'transport' =>'postMessage'));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'latest_products_wide_image', array(
 		'label'    => __( 'Latest Products Large Image', 'zoommerce' ),
 		'section'  => 'home_latest_products_content',
@@ -263,7 +263,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'late
 		'priority'    => 1,
 )));
 
-$wp_customize->add_setting( 'latest_products_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('New Arrivals', 'zoommerce')));
+$wp_customize->add_setting( 'latest_products_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('New Arrivals', 'zoommerce'), 'transport' =>'postMessage'));
 $wp_customize->add_control( 'latest_products_headline', array(
 		'label'    => __( 'Headline', 'zoommerce' ),
 		'section'  => 'home_latest_products_content',
@@ -271,7 +271,7 @@ $wp_customize->add_control( 'latest_products_headline', array(
 		'priority'    => 2,
 ));
 
-$wp_customize->add_setting( 'latest_products_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Check out our latest products', 'zoommerce')));
+$wp_customize->add_setting( 'latest_products_subheading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Check out our latest products', 'zoommerce'), 'transport' =>'postMessage'));
 $wp_customize->add_control( 'latest_products_subheading', array(
 		'label'    => __( 'Subtitle', 'zoommerce' ),
 		'section'  => 'home_latest_products_content',
@@ -279,7 +279,7 @@ $wp_customize->add_control( 'latest_products_subheading', array(
 		'priority'    => 3,
 ));
 
-$wp_customize->add_setting( 'latest_products_shop_page_link', array('sanitize_callback' => 'zerif_sanitize_number'));
+$wp_customize->add_setting( 'latest_products_shop_page_link', array('sanitize_callback' => 'zerif_sanitize_number', 'transport' =>'postMessage'));
 $wp_customize->add_control( 'latest_products_shop_page_link', array(
 		'label'    => __( 'View all products page link', 'zoommerce' ),
 		'section'  => 'home_latest_products_content',
@@ -296,7 +296,7 @@ $wp_customize->add_control( 'latest_products_count', array(
 		'priority'    => 1,
 ));
 
-$wp_customize->add_setting( 'zoommerce_shopproducts_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'zoommerce_shopproducts_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0, 'transport' =>'postMessage'));
 $wp_customize->add_control(
 		'zoommerce_shopproducts_hide',
 		array(
@@ -414,7 +414,7 @@ $wp_customize->add_section( 'zoommerce_blog_content' , array(
 	'panel' => 'panel_blog_page'
 ));
 
-$wp_customize->add_setting( 'blog_heading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('MY BLOG', 'zoommerce')));
+$wp_customize->add_setting( 'blog_heading', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('MY BLOG', 'zoommerce'), 'transport' =>'postMessage'));
 $wp_customize->add_control( 'blog_heading', array(
 		'label'    => __( 'Heading', 'zoommerce' ),
 		'section'  => 'zoommerce_blog_content',
@@ -422,7 +422,7 @@ $wp_customize->add_control( 'blog_heading', array(
 		'priority'    => 1,
 ));
 
-$wp_customize->add_setting( 'blog_heading_sub', array('sanitize_callback' => 'zerif_sanitize_number'));
+$wp_customize->add_setting( 'blog_heading_sub', array('sanitize_callback' => 'zerif_sanitize_number', 'transport' =>'postMessage'));
 $wp_customize->add_control( 'blog_heading_sub', array(
 		'label'    => __( 'Subheader', 'zoommerce' ),
 		'section'  => 'zoommerce_blog_content',
@@ -481,7 +481,7 @@ $wp_customize->add_section( 'single_shop_content_section' , array(
 ) );
 
 	//Fields in section 'shop_page_settings_section'
-$wp_customize->add_setting( 'shop_last_products_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'shop_last_products_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0, 'transport' =>'postMessage'));
 $wp_customize->add_control('shop_last_products_hide',
 		array(
 			'type' 		=> 'checkbox',
@@ -490,7 +490,7 @@ $wp_customize->add_control('shop_last_products_hide',
 			'priority'	=> 1,
 		)
 );
-$wp_customize->add_setting( 'shop_newsletter_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'shop_newsletter_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0, 'transport' =>'postMessage'));
 $wp_customize->add_control('shop_newsletter_hide',
 		array(
 			'type' 		=> 'checkbox',
@@ -501,7 +501,7 @@ $wp_customize->add_control('shop_newsletter_hide',
 );
 
 	//Fields in section 'shop_page_popularprod_section'
-$wp_customize->add_setting( 'shop_page_last_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Popular products', 'zoommerce')));
+$wp_customize->add_setting( 'shop_page_last_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Popular products', 'zoommerce'), 'transport' =>'postMessage'));
 $wp_customize->add_control( 'shop_page_last_headline', array(
 		'label'    => __( 'Heading', 'zoommerce' ),
 		'section'  => 'shop_page_popularprod_section',
@@ -509,7 +509,7 @@ $wp_customize->add_control( 'shop_page_last_headline', array(
 		'priority'    => 1,
 ));
 
-$wp_customize->add_setting( 'shop_last_products_type', array( 'default' => 'popular' ));
+$wp_customize->add_setting( 'shop_last_products_type', array( 'default' => 'popular', 'transport' =>'postMessage' ));
 $wp_customize->add_control( 'shop_last_products_type', array(
 	'type' => 'select',
 	'label' => 'What do you want to display in this section?',
@@ -526,7 +526,7 @@ $wp_customize->add_control( 'shop_last_products_type', array(
 ));
 
 $wooc_terms = get_terms(array('product_cat'), array('fields' => 'id=>name'));
-$wp_customize->add_setting( 'shop_last_products_category');
+$wp_customize->add_setting( 'shop_last_products_category', array('transport' =>'postMessage'));
 $wp_customize->add_control( 'shop_last_products_category', array(
 	'type' => 'select',
 	'label' => 'Select category to display',
@@ -536,7 +536,7 @@ $wp_customize->add_control( 'shop_last_products_category', array(
 	'priority' => 2
 ));
 	//Fields in section 'shop_page_subscribe_section'
-$wp_customize->add_setting( 'shop_page_subscribe_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Newsletter Subscribtion', 'zoommerce')));
+$wp_customize->add_setting( 'shop_page_subscribe_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Newsletter Subscribtion', 'zoommerce'), 'transport' =>'postMessage'));
 $wp_customize->add_control( 'shop_page_subscribe_headline', array(
 		'label'    => __( 'Heading', 'zoommerce' ),
 		'section'  => 'shop_page_subscribe_section',
@@ -544,7 +544,7 @@ $wp_customize->add_control( 'shop_page_subscribe_headline', array(
 		'priority'    => 1,
 ));
 
-$wp_customize->add_setting( 'shop_page_subscribe_subtitle', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoommerce')));
+$wp_customize->add_setting( 'shop_page_subscribe_subtitle', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoommerce'), 'transport' =>'postMessage'));
 $wp_customize->add_control( 'shop_page_subscribe_subtitle', array(
 		'label'    => __( 'Subtitle', 'zoommerce' ),
 		'section'  => 'shop_page_subscribe_section',
@@ -553,7 +553,7 @@ $wp_customize->add_control( 'shop_page_subscribe_subtitle', array(
 ));
 
 //Fields in section 'single_shop_settings_section'
-$wp_customize->add_setting( 'single_shop_last_products_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'single_shop_last_products_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0, 'transport' =>'postMessage'));
 $wp_customize->add_control('single_shop_last_products_hide',
 		array(
 			'type' 		=> 'checkbox',
@@ -564,7 +564,7 @@ $wp_customize->add_control('single_shop_last_products_hide',
 );
 
 	//Fields in section 'single_shop_content_section'
-$wp_customize->add_setting( 'single_shop_last_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Popular products', 'zoommerce')));
+$wp_customize->add_setting( 'single_shop_last_headline', array('sanitize_callback' => 'zerif_sanitize_number','default' => __('Popular products', 'zoommerce'), 'transport' =>'postMessage'));
 $wp_customize->add_control( 'single_shop_last_headline', array(
 		'label'    => __( 'Heading', 'zoommerce' ),
 		'section'  => 'single_shop_content_section',
@@ -572,7 +572,7 @@ $wp_customize->add_control( 'single_shop_last_headline', array(
 		'priority'    => 1,
 ));
 
-$wp_customize->add_setting( 'single_shop_last_products_type', array( 'default' => 'popular' ));
+$wp_customize->add_setting( 'single_shop_last_products_type', array( 'default' => 'popular', 'transport' =>'postMessage' ));
 $wp_customize->add_control( 'single_shop_last_products_type', array(
 	'type' => 'select',
 	'label' => 'What do you want to display in this section?',
@@ -588,7 +588,7 @@ $wp_customize->add_control( 'single_shop_last_products_type', array(
 	'priority' => 2
 ));
 
-$wp_customize->add_setting( 'single_shop_last_products_category');
+$wp_customize->add_setting( 'single_shop_last_products_category', array('transport' =>'postMessage'));
 $wp_customize->add_control( 'single_shop_last_products_category', array(
 	'type' => 'select',
 	'label' => 'Select category to display',
