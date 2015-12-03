@@ -22,6 +22,13 @@ $wp_customize->remove_control('zerif_bigtitle_background');
  */
 $wp_customize->remove_control('zerif_portofolio_background');
 
+
+/**
+ * Home: Testimonials
+ */
+$wp_customize->remove_control('zerif_testimonials_quote');
+
+
 /**
  * Home: Priceing tables
  */

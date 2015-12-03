@@ -351,7 +351,38 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				),
 
 
+				/**
+				 * Home: Testimonials
+				 */
+				array(
+					'selector' => '#testimonials',
+					'style' => 'background',
+					'property' => 'zerif_testimonials_background'
+				),
 
+				array(
+					'selector' => '#testimonials .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_header_subtitle_color'
+				),
+
+				array(
+					'selector' => '#testimonials .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_header'
+				),
+
+				array(
+					'selector' => '#testimonials .message',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_text'
+				),
+
+				array(
+					'selector' => '#testimonials .client-info .client-name',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_author'
+				),
 
 				/**
 				 * General: Footer

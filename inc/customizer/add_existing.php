@@ -105,6 +105,13 @@ $wp_customize->get_setting( 'zerif_subscribe_subtitle' )->default = __('Display 
 $wp_customize->get_setting( 'zerif_portofolio_show' )->default = 1;
 
 /**
+ * Home: Testimonials
+ */
+$wp_customize->get_control( 'zerif_testimonials_header' )->label = __('Subtitle color', 'zoommerce');
+$wp_customize->get_control( 'zerif_testimonials_header' )->priority = 3;
+$wp_customize->get_setting( 'zerif_testimonials_author' )->default = '#f33b3b';
+
+/**
  * Home: About us
  */
 $wp_customize->get_setting( 'zerif_aboutus_show' )->default = 1;

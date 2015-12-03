@@ -597,3 +597,15 @@ $wp_customize->add_control( 'single_shop_last_products_category', array(
 	'choices' => $wooc_terms,
 	'priority' => 3
 ));
+
+/**
+ * Testimonials
+ */
+
+$wp_customize->add_setting( 'zerif_testimonials_header_subtitle_color', array( 'default' => '#f33b3b', 'transport' => 'postMessage' ) );
+		
+$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'zerif_testimonials_header_subtitle_color',array(
+	'label'      => __( 'Title color', 'zerif' ),
+	'section'    => 'zerif_testimonials_colors_section',
+	'priority'   => 2
+)));
