@@ -56,7 +56,12 @@
 
 	wp.customize( 'zerif_latestnews_title', function( value ) {
 		value.bind( function( to ) {
-			$('#home_blog .home_headline h3').text(to);
+			if ($('#home_blog .home_headline h3').length){
+		        $('#home_blog .home_headline h3').text(to);
+		    } else {
+		    	$('#home_blog .home_headline').append('<h3>'+to+'</h3>');
+		    }
+			
 		} );
 	} );
 
@@ -92,5 +97,46 @@
 			$('#home_blog .home_headline h4').attr('style', 'color: ' + to + ' !important');
 		} );
 	} );
+
+	/**
+	 * Home: Portfolio
+	 */
+
+	wp.customize( 'zerif_portofolio_title', function( value ) {
+		value.bind( function( to ) {
+			if ($('#works .home_headline h3').length){
+		        $('#works .home_headline h3').text(to);
+		    } else {
+		    	$('#works .home_headline').append('<h3>'+to+'</h3>');
+		    }
+			
+		} );
+	} );
+
+	wp.customize( 'zerif_portofolio_subtitle', function( value ) {
+		value.bind( function( to ) {
+			if ($('#works .home_headline h4').length){
+		        $('#works .home_headline h4').text(to);
+		    } else {
+		    	$('#works .home_headline').append('<h4>'+to+'</h4>');
+		    }
+			
+		} );
+	} );
+
+	wp.customize( 'zerif_portofolio_header', function( value ) {
+		value.bind( function( to ) {
+			$('#works .home_headline h3').attr('style', 'color: ' + to + ' !important');
+			$('#works .home_headline h4').attr('style', 'color: ' + to + ' !important');
+		} );
+	} );
+
+	wp.customize( 'zerif_portofolio_text', function( value ) {
+		value.bind( function( to ) {
+			$('#works .project-details').attr('style', 'color: ' + to + ' !important');
+		} );
+	} );
+
+
 	
 } )( jQuery );

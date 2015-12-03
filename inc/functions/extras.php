@@ -180,9 +180,10 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_portofolio_header'
 				),
 				array(
-					'selector' => '.cbp-rfgrid li a .project-info .project-details',
+					'selector' => '#works .project-details > *',
 					'style' => 'color',
-					'property' => 'zerif_portofolio_text'
+					'property' => 'zerif_portofolio_text',
+					'important'	=> true
 				),
 
 				/**
