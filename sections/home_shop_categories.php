@@ -1,29 +1,46 @@
 <?php
+/**
+ * The template for home section: Shop Categories
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
 	$categories_hide  = get_theme_mod('zoommerce_shopcats_hide');
 	if($categories_hide)
 		return NULL;
+
+
+	//Get data
+		//Categories
+	$cats_args = array(
+        'taxonomy' => 'product_cat',
+        'parent'  => 0,
+        'number' => '5'
+    );
+    $categories = get_categories($cats_args);
+    $cat_count = count($categories);
+
+    	//Customizer
+	$zoommerce_display_latest_cats = get_theme_mod('zoommerce_display_latest_cats');
+	$customizer_cats = get_theme_mod('customizer_shop_cats');
+
+	//Reset $cat_count if categories are from customizer
+	if($customizer_cats && $zoommerce_display_latest_cats != '1') {
+		$cat_count = count(json_decode($customizer_cats));
+	}
+
+	//Hide section if any of these two are not available
+	if($zoommerce_display_latest_cats or $customizer_cats):
 ?>
 <section id="shop_cats">
 	<div class="container">
 		<?php
 
-		//Default categories
-		$cats_args = array(
-            'taxonomy' => 'product_cat',
-            'parent'  => 0,
-            'number' => '5'
-        );
-
-        $cat_count = $cats_args['number'];
-
-        $categories = get_categories($cats_args);
-		
-
 		if(!empty($categories)) {	
         	$i = 1;
 
 			//If latest cats are selected in customizer display latest 5 categories
-			$zoommerce_display_latest_cats = get_theme_mod('zoommerce_display_latest_cats');
 			if($zoommerce_display_latest_cats) {
 				foreach($categories as $category) {
 		        	//Get data
@@ -82,8 +99,6 @@
 		        }
 			} else {
 				//If latest categories on customizer is not checked, display custom selected categories
-				$customizer_cats = get_theme_mod('customizer_shop_cats');
-
 				if( !empty( $customizer_cats ) ){
 
 					$customizer_cats_decoded = json_decode($customizer_cats);
@@ -160,3 +175,4 @@
 
 	</div><!-- / .container -->
 </section><!-- /#shop_cats  -->
+<?php endif; ?>

@@ -7,8 +7,11 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package zerif
+ * @package WordPress
+ * @subpackage zoommerce
  */
+
+
 get_header(); ?>
 <div class="clear"></div>
 </header> <!-- / END HOME SECTION  -->

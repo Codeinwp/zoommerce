@@ -1,14 +1,11 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying all woocommerce pages.
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package zoommerce
+ * @package WordPress
+ * @subpackage zoommerce
  */
+
 get_header(); ?>
 <div class="clear"></div>
 </header> <!-- / END HOME SECTION  -->

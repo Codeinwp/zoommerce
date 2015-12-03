@@ -80,7 +80,7 @@ $wp_customize->get_setting( 'zerif_bigtitle_1button_background_color' )->default
 $wp_customize->get_control( 'zerif_bigtitle_1button_color' )->label = __( 'Button text color', 'zoommerce' );
 
 	//Headings
-$wp_customize->get_setting( 'zerif_bigtitle_title' )->default = __('Zoommerce', 'zoommerce');
+$wp_customize->get_setting( 'zerif_bigtitle_title' )->default = __('zoommerce', 'zoommerce');
 
 
 /**

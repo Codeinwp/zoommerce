@@ -374,7 +374,7 @@ class zoommerce_General_Repeater extends WP_Customize_Control {
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                         <?php
                                                             foreach($wooc_terms as $key => $term) {
-                                                                echo '<option value="'.esc_attr($key).'" '.selected($icon->icon_value,$key).'">'.esc_attr($term).'</option>';
+                                                                echo '<option value="'.esc_attr($key).'" '.(empty($icon) ? '' : selected($icon->icon_value,$key)).'">'.esc_attr($term).'</option>';
                                                             }
                                                         ?>
                                                     </select>

@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for home section: Testimonials
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
 	$testimonials_hide = get_theme_mod('zoommerce_testimonials_hide');
 	if($testimonials_hide) 
 		return NULL;

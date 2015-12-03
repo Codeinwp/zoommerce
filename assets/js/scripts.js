@@ -84,7 +84,7 @@ jQuery(document).ready(function($) {
 		/*
 		* Home - Add height on products right image
 		*/
-		$('#home_products .right').css('height', $('#home_products .left').outerHeight());
+		$('#home_products .right').css('height', $('#home_products .left').outerHeight() + 45);
 		
 		// if($(window).width() <= 960 && $(window).width() >= 767) {
 		// 	if(document.getElementsByClassName("center_on_responsive").length == 0) {

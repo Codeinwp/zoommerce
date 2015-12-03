@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for shop page newsletter sidebar
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
 $newsletter_hide = get_theme_mod('shop_newsletter_hide');
 
 	if(!$newsletter_hide)
