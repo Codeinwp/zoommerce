@@ -1,4 +1,10 @@
 <?php
+/**
+ * The template for home section: Newsletter sidebar
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
 $newsletter_hide = get_theme_mod('zerif_subscribe_show');
 
 	if($newsletter_hide)

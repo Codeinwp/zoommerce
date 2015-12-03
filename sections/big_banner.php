@@ -1,8 +1,18 @@
 <?php
+/**
+ * The template for home section: Big banner
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
+	$zerif_parallax_use = get_theme_mod('zerif_parallax_show');
 	$zerif_background_settings = get_theme_mod('zerif_background_settings');
 
 	if($zerif_background_settings == 'zerif-background-image') {
 		echo '<div id="big-banner" style="background-image: url('.get_theme_mod('background_image', get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg').');">';
+	} elseif($zerif_parallax_use == 1) {
+		echo '<div id="big-banner">';
 	} else {
 		echo '<div id="big-banner" style="background-image: url('.get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg'.');">';
 	}
@@ -12,8 +22,6 @@
 	/*************************************************/
 	/**************  Background settings *************/
 	/*************************************************/
-
-	
 
 	/* Default case when no setting is checked or Slider is selected */
 	if( empty($zerif_background_settings) || ($zerif_background_settings == 'zerif-background-slider') ):
@@ -118,7 +126,6 @@
 	global $wp_customize;
 	$zerif_parallax_img1 = get_theme_mod('zerif_parallax_img1',get_template_directory_uri() . '/images/background1.jpg');
 	$zerif_parallax_img2 = get_theme_mod('zerif_parallax_img2',get_template_directory_uri() . '/images/background2.png');
-	$zerif_parallax_use = get_theme_mod('zerif_parallax_show');
 
 	if ( $zerif_parallax_use == 1 && (!empty($zerif_parallax_img1) || !empty($zerif_parallax_img2)) ) {
 
@@ -161,7 +168,7 @@
 		endif;
 
 		/* Big title */
-		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('Zoommerce','zerif') );
+		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('zoommerce','zerif') );
 		
 		if( !empty($zerif_bigtitle_title) ):
 			echo '<h1 class="intro-text">'.esc_html($zerif_bigtitle_title).'</h1>';

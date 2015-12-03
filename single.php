@@ -2,8 +2,10 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package zoommerce
+ * @package WordPress
+ * @subpackage zoommerce
  */
+
 get_header(); ?>
 <div class="clear"></div>
 </header> <!-- / END HOME SECTION  -->

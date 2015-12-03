@@ -1,4 +1,11 @@
 <?php 
+/**
+ * The template for home section: Ribbon Right
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
 $ribbon_right_show = get_theme_mod('zerif_ribbonright_show');
 if($ribbon_right_show)
 		return NULL;

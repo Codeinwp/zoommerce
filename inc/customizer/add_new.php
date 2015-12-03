@@ -118,7 +118,7 @@ $wp_customize->add_control( 'zerif_bigtitle_subtitle', array(
 	//Background color
 $wp_customize->add_setting( 'zerif_bigbanner_background_color', array( 'default' => 'rgba(0, 0, 0, 0.45)', 'transport' =>'postMessage' )); 
 $wp_customize->add_control(new Zerif_Customize_Alpha_Color_Control($wp_customize, 'zerif_bigbanner_background_color',array(
-	'label'    => __( 'Button background color', 'zoommerce' ),
+	'label'    => __( 'Background color', 'zoommerce' ),
 	'palette' => true,
 	'section'  => 'zerif_bigtitle_colors_section',
 	'priority'   => 1

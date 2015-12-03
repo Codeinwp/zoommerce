@@ -1,6 +1,9 @@
 <?php
 /**
- * @package zoommerce
+ * The template for single posts content
+ *
+ * @package WordPress
+ * @subpackage zoommerce
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">

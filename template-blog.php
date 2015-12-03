@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for displaying the blog page template.
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
 /*
 Template Name: Blog template
 */

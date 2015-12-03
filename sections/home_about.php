@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * The template for home section: About
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
 	global $wp_customize;
 	
 	$zerif_aboutus_show = get_theme_mod('zerif_aboutus_show', 1);
