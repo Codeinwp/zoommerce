@@ -17,14 +17,14 @@ $newsletter_hide = get_theme_mod('zerif_subscribe_show');
 		if(is_active_sidebar( 'sidebar-subscribe' )):
 
 			echo '<div class="home_headline">';
-			$headline = get_theme_mod('zerif_subscribe_title', __('Newsletter Subscribtion', 'Zoommerce'));
+			$headline = get_theme_mod('zerif_subscribe_title', __('Newsletter Subscribtion', 'zoommerce'));
 			if($headline) {
-				echo '<h3>'.esc_html(get_theme_mod('zerif_subscribe_title', __('Newsletter Subscribtion', 'Zoommerce'))).'</h3>';
+				echo '<h3>'.esc_html(get_theme_mod('zerif_subscribe_title', __('Newsletter Subscribtion', 'zoommerce'))).'</h3>';
 			}
 
-			$subtitle = get_theme_mod('zerif_subscribe_subtitle', __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'Zoommerce'));
+			$subtitle = get_theme_mod('zerif_subscribe_subtitle', __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoommerce'));
 			if($subtitle) {
-				echo '<h4>'.esc_html(get_theme_mod('zerif_subscribe_subtitle', __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'Zoommerce'))).'</h4>';
+				echo '<h4>'.esc_html(get_theme_mod('zerif_subscribe_subtitle', __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.', 'zoommerce'))).'</h4>';
 			}
 			echo '</div><!-- / .home_headline -->';
 

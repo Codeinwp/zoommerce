@@ -159,7 +159,7 @@
 		echo '<div class="container big-title-container">';
 
 		/* Sub title */
-		$zerif_subtitle = get_theme_mod( 'zerif_bigtitle_subtitle', __('Introducing','Zoommerce') );
+		$zerif_subtitle = get_theme_mod( 'zerif_bigtitle_subtitle', __('Introducing','zoommerce') );
 
 		if( !empty($zerif_subtitle) ):
 			echo '<h4 class="sub-text">'.esc_html($zerif_subtitle).'</h1>';
@@ -168,7 +168,7 @@
 		endif;
 
 		/* Big title */
-		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('Zoommerce','zerif') );
+		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('zoommerce','zerif') );
 		
 		if( !empty($zerif_bigtitle_title) ):
 			echo '<h1 class="intro-text">'.esc_html($zerif_bigtitle_title).'</h1>';
@@ -178,7 +178,7 @@
 
 		/* Buttons */
 		
-		$zerif_bigtitle_button_label = get_theme_mod( 'zerif_bigtitle_button_label',__('Shop Now','Zoommerce') );
+		$zerif_bigtitle_button_label = get_theme_mod( 'zerif_bigtitle_button_label',__('Shop Now','zoommerce') );
 		$zerif_bigtitle_button_url = get_theme_mod( 'zerif_bigtitle_button_url','#' );
 
 		

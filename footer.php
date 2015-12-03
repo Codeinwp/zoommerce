@@ -44,7 +44,7 @@ zerif_before_footer_trigger(); ?>
 	
 	$zerif_socials_youtube = esc_url(get_theme_mod('zerif_socials_youtube'));
 		
-	$zerif_copyright = esc_html(get_theme_mod('zerif_copyright', __('© Themeisle. All Rights Reserved', 'Zoommerce')));
+	$zerif_copyright = esc_html(get_theme_mod('zerif_copyright', __('© Themeisle. All Rights Reserved', 'zoommerce')));
 
 	
 	if(!empty($zerif_address) || !empty($zerif_address_icon)):
@@ -77,7 +77,7 @@ zerif_before_footer_trigger(); ?>
 	
 	
 	/* CLIENTS */		
-	$zerif_aboutus_clients_title_text = esc_html(get_theme_mod('zerif_aboutus_clients_title_text',__('SHOWCASE YOUR CLIENTS HERE','Zoommerce')));
+	$zerif_aboutus_clients_title_text = esc_html(get_theme_mod('zerif_aboutus_clients_title_text',__('SHOWCASE YOUR CLIENTS HERE','zoommerce')));
 	
 	echo '<div class="clients-wrap">';
 		echo '<div class="container">';
@@ -85,7 +85,7 @@ zerif_before_footer_trigger(); ?>
 				if( !empty($zerif_aboutus_clients_title_text) ):
 					echo '<h5><span class="section-footer-title">'.$zerif_aboutus_clients_title_text.'</span></h5>';
 				else:
-					echo '<h5><span class="section-footer-title">'.__('SHOWCASE YOUR CLIENTS HERE','Zoommerce').'</span></h5>';
+					echo '<h5><span class="section-footer-title">'.__('SHOWCASE YOUR CLIENTS HERE','zoommerce').'</span></h5>';
 				endif;
 			echo '</div>';
 			echo '<div class="client-list">';

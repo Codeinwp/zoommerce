@@ -82,7 +82,7 @@ if($zoommerce_myaccount and $zoommerce_myaccount_link and $zoommerce_cart and $z
 				<div class="container">
 					<div class="navbar-header responsive-logo <?php echo ($header_icons == true ? '' : 'no_shop_icons'); ?>">
 						<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-							<span class="sr-only"><?php _e('Toggle navigation', 'Zoommerce'); ?></span>
+							<span class="sr-only"><?php _e('Toggle navigation', 'zoommerce'); ?></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>

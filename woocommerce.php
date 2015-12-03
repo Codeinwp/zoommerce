@@ -31,7 +31,7 @@ get_header(); ?>
 		$shop_last_display = get_theme_mod('shop_last_products_hide');
 
 		if(!$shop_last_display) {
-			$shop_last_headline = get_theme_mod('shop_page_last_headline', __('Popular products', 'Zoommerce'));
+			$shop_last_headline = get_theme_mod('shop_page_last_headline', __('Popular products', 'zoommerce'));
 			$shop_last_type = get_theme_mod('shop_last_products_type', 'popular');
 			$shop_last_cat = get_theme_mod('shop_last_products_category');
 
@@ -66,7 +66,7 @@ get_header(); ?>
 		$shop_single_last_display = get_theme_mod('single_shop_last_products_hide');
 
 		if(!$shop_single_last_display) {
-			$shop_single_last_headline = get_theme_mod('single_shop_last_headline', __('Popular products', 'Zoommerce'));
+			$shop_single_last_headline = get_theme_mod('single_shop_last_headline', __('Popular products', 'zoommerce'));
 			$shop_single_last_type = get_theme_mod('single_shop_last_products_type', 'popular');
 			$shop_single_last_cat = get_theme_mod('single_shop_last_products_category');
 

@@ -70,7 +70,7 @@ class zoommerce_General_Repeater extends WP_Customize_Control {
                         
                 ?>
                         <div class="parallax_one_general_control_repeater_container">
-                            <div class="parallax-customize-control-title"><?php esc_html_e('Zoommerce','parallax-one')?></div>
+                            <div class="parallax-customize-control-title"><?php esc_html_e('zoommerce','parallax-one')?></div>
                             <div class="parallax-box-content-hidden">
                                 <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
@@ -175,7 +175,7 @@ class zoommerce_General_Repeater extends WP_Customize_Control {
                              
                 ?>
                                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
-                                    <div class="parallax-customize-control-title"><?php esc_html_e('Zoommerce','parallax-one')?></div>
+                                    <div class="parallax-customize-control-title"><?php esc_html_e('zoommerce','parallax-one')?></div>
                                     <div class="parallax-box-content-hidden">
                                          <?php
                                             if($parallax_image_control == true && $parallax_icon_control == true){ ?>
@@ -290,7 +290,7 @@ class zoommerce_General_Repeater extends WP_Customize_Control {
                             foreach($json as $icon){
                     ?>
                                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
-                                    <div class="parallax-customize-control-title"><?php esc_html_e('Zoommerce','parallax-one')?></div>
+                                    <div class="parallax-customize-control-title"><?php esc_html_e('zoommerce','parallax-one')?></div>
                                     <div class="parallax-box-content-hidden">
                                     <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
