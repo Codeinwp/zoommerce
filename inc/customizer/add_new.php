@@ -599,7 +599,7 @@ $wp_customize->add_control( 'single_shop_last_products_category', array(
 ));
 
 /**
- * Testimonials
+ * Home: Testimonials
  */
 
 $wp_customize->add_setting( 'zerif_testimonials_header_subtitle_color', array( 'default' => '#f33b3b', 'transport' => 'postMessage' ) );
@@ -607,5 +607,22 @@ $wp_customize->add_setting( 'zerif_testimonials_header_subtitle_color', array( '
 $wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'zerif_testimonials_header_subtitle_color',array(
 	'label'      => __( 'Title color', 'zerif' ),
 	'section'    => 'zerif_testimonials_colors_section',
+	'priority'   => 2
+)));
+
+/**
+ * Home: Our Team
+ */
+$wp_customize->add_setting( 'our_team_heading_clor', array( 'default' => '#404040', 'transport' => 'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'our_team_heading_clor',array(
+	'label'      => __( 'Heading color', 'zerif' ),
+	'section'    => 'zerif_ourteam_colors_section',
+	'priority'   => 2
+)));
+
+$wp_customize->add_setting( 'our_team_subtitle_clor', array( 'default' => '#404040', 'transport' => 'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'our_team_subtitle_clor',array(
+	'label'      => __( 'Subtitle color', 'zerif' ),
+	'section'    => 'zerif_ourteam_colors_section',
 	'priority'   => 2
 )));

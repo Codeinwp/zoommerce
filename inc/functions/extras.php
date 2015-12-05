@@ -217,12 +217,14 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				array(
 					'selector' => '#team .home_headline h3',
 					'style' => 'color',
-					'property' => 'zerif_ourteam_header'
+					'property' => 'our_team_heading_clor',
+					'important'	=> true
 				),
 				array(
 					'selector' => '#team .home_headline h4',
 					'style' => 'color',
-					'property' => 'zerif_ourteam_header'
+					'property' => 'our_team_subtitle_clor',
+					'important'	=> true
 				),
 				array(
 					'selector' => '#team .team-member .details',

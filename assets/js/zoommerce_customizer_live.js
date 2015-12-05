@@ -302,6 +302,19 @@
 		} );
 	} );
 
-	
+	/**
+	 * Home: Our team
+	 */
+	wp.customize( 'our_team_heading_clor', function( value ) {
+		value.bind( function( to ) {
+			$('#team .home_headline h3').attr('style', 'color: ' + to + ' !important');
+		} );
+	} );
+
+	wp.customize( 'our_team_subtitle_clor', function( value ) {
+		value.bind( function( to ) {
+			$('#team .home_headline h4').attr('style', 'color: ' + to + ' !important');
+		} );
+	} );
 
 } )( jQuery );
