@@ -140,8 +140,8 @@ $wp_customize->get_setting( 'zerif_ribbonright_button_background' )->default = '
 /**
  * Home: Ribbon bottom
  */
-$wp_customize->get_setting( 'zerif_bottomribbon_background' )->default = '#2CC457';
-$wp_customize->get_setting( 'zerif_bottomribbon_button_background' )->default = '#2CC457';
+$wp_customize->get_setting( 'zerif_ribbon_background' )->default = '#2CC457';
+$wp_customize->get_setting( 'zerif_ribbon_button_background' )->default = '#2CC457';
 
 /**
  * Home: Priceing table
@@ -173,3 +173,9 @@ $wp_customize->get_setting( 'zerif_email_icon' )->default = get_stylesheet_direc
 $wp_customize->get_setting( 'zerif_phone_icon' )->default = get_stylesheet_directory_uri().'/assets/images/icon-contact.png';
 $wp_customize->get_setting( 'zerif_address_icon' )->default = get_stylesheet_directory_uri().'/assets/images/icon-location.png';
 $wp_customize->get_setting( 'zerif_copyright' )->default = __('© Themeisle. All Rights Reserved', 'zoommerce');
+
+/**
+ * General: Background
+ */
+$wp_customize->get_control( 'zerif_contacus_button_color' )->label = __( 'Button text color', 'zoommerce' );
+$wp_customize->get_setting( 'zerif_contacus_button_background_hover' )->transport = 'postMessage';

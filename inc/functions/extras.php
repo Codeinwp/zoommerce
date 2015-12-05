@@ -476,6 +476,51 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'style' => 'color',
 					'property' => 'zerif_footer_socials_hover'
 				),
+
+				/**
+				 * Home: Contact us
+				 */
+				array(
+					'selector' => '#contact',
+					'style' => 'background',
+					'property' => 'zerif_contacus_background',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_contacus_header',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_contacus_header',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .btn-primary',
+					'style' => 'background',
+					'property' => 'zerif_contacus_button_background',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .btn-primary:hover',
+					'style' => 'background',
+					'property' => 'zerif_contacus_button_background_hover',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .btn-primary',
+					'style' => 'color',
+					'property' => 'zerif_contacus_button_color',
+					'important' => true
+				),
 			);
 
 		if($styles) {

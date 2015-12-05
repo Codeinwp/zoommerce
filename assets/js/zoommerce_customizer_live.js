@@ -339,7 +339,48 @@
 		} );
 	} );
 
-	
+	/**
+	 * Home: Contact
+	 */
+	wp.customize( 'zerif_contactus_title', function( value ) {
+		value.bind( function( to ) {
+			if ($('#contact .home_headline h3').length){
+		        $('#contact .home_headline h3').text(to);
+		    } else {
+		    	$('#contact .home_headline').append('<h3>'+to+'</h3>');
+		    }
+			
+		} );
+	} );
 
+	wp.customize( 'zerif_contactus_subtitle', function( value ) {
+		value.bind( function( to ) {
+			if ($('#contact .home_headline h4').length){
+		        $('#contact .home_headline h4').text(to);
+		    } else {
+		    	$('#contact .home_headline').append('<h4>'+to+'</h4>');
+		    }
+			
+		} );
+	} );
+
+	wp.customize( 'zerif_contacus_header', function( value ) {
+		value.bind( function( to ) {
+			$('#contact .home_headline h3').attr('style', 'color: ' + to + ' !important');
+			$('#contact .home_headline h4').attr('style', 'color: ' + to + ' !important');
+		} );
+	} );
+
+	wp.customize( 'zerif_contacus_button_background', function( value ) {
+		value.bind( function( to ) {
+			$('#contact .btn-primary').attr('style', 'background: ' + to + ' !important');
+		} );
+	} );
+
+	wp.customize( 'zerif_contacus_button_color', function( value ) {
+		value.bind( function( to ) {
+			$('#contact .btn-primary').attr('style', 'color: ' + to + ' !important');
+		} );
+	} );
 
 } )( jQuery );
