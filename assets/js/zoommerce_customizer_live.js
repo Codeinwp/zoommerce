@@ -254,5 +254,54 @@
 		} );
 	} );
 
+
+	/**
+	 * Home: About us
+	 */
+	wp.customize( 'zerif_aboutus_title', function( value ) {
+		value.bind( function( to ) {
+			if ($('#aboutus .home_headline h3').length){
+		        $('#aboutus .home_headline h3').text(to);
+		    } else {
+		    	$('#aboutus .home_headline').append('<h3>'+to+'</h3>');
+		    }
+			
+		} );
+	} );
+
+	wp.customize( 'zerif_aboutus_subtitle', function( value ) {
+		value.bind( function( to ) {
+			if ($('#aboutus .home_headline h4').length){
+		        $('#aboutus .home_headline h4').text(to);
+		    } else {
+		    	$('#aboutus .home_headline').append('<h4>'+to+'</h4>');
+		    }
+			
+		} );
+	} );
+
+	wp.customize( 'zerif_aboutus_biglefttitle', function( value ) {
+		value.bind( function( to ) {
+			$('#aboutus .big-intro').text(to);
+		} );
+	} );
+
+	wp.customize( 'zerif_aboutus_text', function( value ) {
+		value.bind( function( to ) {
+			$('#aboutus .zerif_about_us_center p').text(to);
+		} );
+	} );
 	
+	wp.customize( 'zerif_aboutus_title_color', function( value ) {
+		value.bind( function( to ) {
+			$('#aboutus .home_headline h3').attr('style', 'color: ' + to + ' !important');
+			$('#aboutus .home_headline h4').attr('style', 'color: ' + to + ' !important');
+			$('#aboutus').removeAttr('style');
+			$('.about-us p').removeAttr('style');
+			$('.skills .skill h6').removeAttr('style');
+		} );
+	} );
+
+	
+
 } )( jQuery );

@@ -121,6 +121,10 @@ $wp_customize->get_setting( 'zerif_testimonials_author' )->default = '#f33b3b';
  * Home: About us
  */
 $wp_customize->get_setting( 'zerif_aboutus_show' )->default = 1;
+$wp_customize->get_setting( 'zerif_aboutus_title' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_aboutus_subtitle' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_aboutus_biglefttitle' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_aboutus_text' )->transport = 'postMessage';
 
 /**
  * Home: Our team
