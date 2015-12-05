@@ -317,4 +317,29 @@
 		} );
 	} );
 
+	/**
+	 * Home: Ribbon Bottom
+	 */
+	wp.customize( 'zerif_ribbon_text_color', function( value ) {
+		value.bind( function( to ) {
+			$('.separator-one .container').attr('style', 'color: ' + to + ' !important');
+			$('#ribbon_bottom .btn-primary').removeAttr('style');
+		} );
+	} );
+
+	wp.customize( 'zerif_bottomribbon_text_color', function( value ) {
+		value.bind( function( to ) {
+			$('#ribbon_bottom .btn-primary').attr('style', 'color: ' + to + ' !important');
+		} );
+	} );
+
+	wp.customize( 'zerif_bottomribbon_button_border', function( value ) {
+		value.bind( function( to ) {
+			$('#ribbon_bottom .btn-primary').attr('style', 'border: 1px solid ' + to + ' !important');
+		} );
+	} );
+
+	
+
+
 } )( jQuery );

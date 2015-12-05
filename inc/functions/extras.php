@@ -243,49 +243,111 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				),
 
 				/**
-				 * Home: Ribbon
+				 * Home: Ribbon Right
 				 */
 				array(
-					'selector' => '#ribbon_right.purchase-now',
+					'selector' => '#ribbon_right',
 					'style' => 'background',
-					'property' => 'zerif_ribbonright_background'
+					'property' => 'zerif_ribbonright_background',
+					'important' => true
 				),
 				array(
 					'selector' => '#ribbon_right h3.white-text',
 					'style' => 'color',
-					'property' => 'zerif_ribbonright_text_color'
+					'property' => 'zerif_ribbonright_text_color',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'selector' => '#ribbon_right .btn-primary',
 					'style' => 'background',
-					'property' => 'zerif_ribbonright_button_background'
+					'property' => 'zerif_ribbonright_button_background',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'selector' => '#ribbon_right .btn-primary:hover',
 					'style' => 'background',
-					'property' => 'zerif_ribbonright_button_background_hover'
+					'property' => 'zerif_ribbonright_button_background_hover',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'selector' => '#ribbon_right .btn-primary',
 					'style' => 'color',
-					'property' => 'zerif_ribbonright_button_text'
+					'property' => 'zerif_ribbonright_button_text',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'selector' => '#ribbon_right .btn-primary:hover',
 					'style' => 'color',
-					'property' => 'zerif_ribbonright_button_text_hover'
+					'property' => 'zerif_ribbonright_button_text_hover',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'selector' => '#ribbon_right .btn-primary',
 					'style' => 'border',
 					'before_property' => '1px solid ',
-					'property' => 'zerif_ribbonright_button_border'
+					'property' => 'zerif_ribbonright_button_border',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'selector' => '#ribbon_right .btn-primary:hover',
 					'style' => 'border',
 					'before_property' => '1px solid ',
-					'property' => 'zerif_ribbonright_button_border_hover'
+					'property' => 'zerif_ribbonright_button_border_hover',
+					'important' => true
+				),
+
+				/**
+				 * Home: Ribbon Bottom
+				 */
+				array(
+					'selector' => '#ribbon_bottom',
+					'style' => 'background',
+					'property' => 'zerif_ribbon_background',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom h3.white-text',
+					'style' => 'color',
+					'property' => 'zerif_ribbon_text_color',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary',
+					'style' => 'background',
+					'property' => 'zerif_ribbon_button_background',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary:hover',
+					'style' => 'background',
+					'property' => 'zerif_ribbon_button_background_hover',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary',
+					'style' => 'color',
+					'property' => 'zerif_ribbonbottom_button_text',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary:hover',
+					'style' => 'color',
+					'property' => 'zerif_ribbonbottom_button_text_hover',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary',
+					'style' => 'border',
+					'before_property' => '1px solid ',
+					'property' => 'zerif_ribbonbottom_button_border',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary:hover',
+					'style' => 'border',
+					'before_property' => '1px solid ',
+					'property' => 'zerif_ribbonbottom_button_border_hover',
+					'important' => true
 				),
 
 				/**
@@ -420,11 +482,12 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 			$return .= ' <style type="text/css">';
 
 			foreach($styles as $key => $val) {
-
+					
 				//If style is added in customizer, create a new row in output
 				$property = get_theme_mod($val['property']);
 				
 				if($property) {
+
 
 					//Display selector
 					if(array_key_exists('selector', $val) && !empty($val['selector'])) {

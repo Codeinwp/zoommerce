@@ -140,8 +140,8 @@ $wp_customize->get_setting( 'zerif_ribbonright_button_background' )->default = '
 /**
  * Home: Ribbon bottom
  */
-$wp_customize->get_setting( 'zerif_ribbonright_background' )->default = '#2CC457';
-$wp_customize->get_setting( 'zerif_ribbonright_button_background' )->default = '#2CC457';
+$wp_customize->get_setting( 'zerif_bottomribbon_background' )->default = '#2CC457';
+$wp_customize->get_setting( 'zerif_bottomribbon_button_background' )->default = '#2CC457';
 
 /**
  * Home: Priceing table
