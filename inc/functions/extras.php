@@ -484,7 +484,6 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'selector' => '#contact',
 					'style' => 'background',
 					'property' => 'zerif_contacus_background',
-					'important' => true
 				),
 
 				array(

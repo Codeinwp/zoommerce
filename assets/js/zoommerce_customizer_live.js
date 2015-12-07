@@ -383,4 +383,10 @@
 		} );
 	} );
 
+	wp.customize( 'zerif_contacus_background', function( value ) {
+		value.bind( function( to ) {
+			$('#contact').attr('style', 'background: ' + to + ' !important');
+		} );
+	} );
+
 } )( jQuery );
