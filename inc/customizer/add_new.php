@@ -490,7 +490,7 @@ $wp_customize->add_control('shop_last_products_hide',
 			'priority'	=> 1,
 		)
 );
-$wp_customize->add_setting( 'shop_newsletter_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0, 'transport' =>'postMessage'));
+$wp_customize->add_setting( 'shop_newsletter_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
 $wp_customize->add_control('shop_newsletter_hide',
 		array(
 			'type' 		=> 'checkbox',
@@ -509,7 +509,7 @@ $wp_customize->add_control( 'shop_page_last_headline', array(
 		'priority'    => 1,
 ));
 
-$wp_customize->add_setting( 'shop_last_products_type', array( 'default' => 'popular', 'transport' =>'postMessage' ));
+$wp_customize->add_setting( 'shop_last_products_type', array( 'default' => 'popular'));
 $wp_customize->add_control( 'shop_last_products_type', array(
 	'type' => 'select',
 	'label' => 'What do you want to display in this section?',
@@ -526,7 +526,7 @@ $wp_customize->add_control( 'shop_last_products_type', array(
 ));
 
 $wooc_terms = get_terms(array('product_cat'), array('fields' => 'id=>name'));
-$wp_customize->add_setting( 'shop_last_products_category', array('transport' =>'postMessage'));
+$wp_customize->add_setting( 'shop_last_products_category');
 $wp_customize->add_control( 'shop_last_products_category', array(
 	'type' => 'select',
 	'label' => 'Select category to display',
@@ -553,7 +553,7 @@ $wp_customize->add_control( 'shop_page_subscribe_subtitle', array(
 ));
 
 //Fields in section 'single_shop_settings_section'
-$wp_customize->add_setting( 'single_shop_last_products_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0, 'transport' =>'postMessage'));
+$wp_customize->add_setting( 'single_shop_last_products_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
 $wp_customize->add_control('single_shop_last_products_hide',
 		array(
 			'type' 		=> 'checkbox',
@@ -572,7 +572,7 @@ $wp_customize->add_control( 'single_shop_last_headline', array(
 		'priority'    => 1,
 ));
 
-$wp_customize->add_setting( 'single_shop_last_products_type', array( 'default' => 'popular', 'transport' =>'postMessage' ));
+$wp_customize->add_setting( 'single_shop_last_products_type', array( 'default' => 'popular'));
 $wp_customize->add_control( 'single_shop_last_products_type', array(
 	'type' => 'select',
 	'label' => 'What do you want to display in this section?',
@@ -588,7 +588,7 @@ $wp_customize->add_control( 'single_shop_last_products_type', array(
 	'priority' => 2
 ));
 
-$wp_customize->add_setting( 'single_shop_last_products_category', array('transport' =>'postMessage'));
+$wp_customize->add_setting( 'single_shop_last_products_category');
 $wp_customize->add_control( 'single_shop_last_products_category', array(
 	'type' => 'select',
 	'label' => 'Select category to display',

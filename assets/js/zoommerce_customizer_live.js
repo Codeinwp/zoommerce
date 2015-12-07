@@ -487,6 +487,16 @@
 		} );
 	} );
 
-	
-
+	/**
+	 * Shop page: Popular products row
+	 */
+	wp.customize( 'single_shop_last_headline', function( value ) {
+		value.bind( function( to ) {
+			if ($('#popular_products .home_headline h3').length){
+		        $('#popular_products .home_headline h3').text(to);
+		    } else {
+		    	$('#popular_products .home_headline').append('<h3>'+to+'</h3>');
+		    }
+		} );
+	} );
 } )( jQuery );
