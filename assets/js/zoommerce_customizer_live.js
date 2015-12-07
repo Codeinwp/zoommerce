@@ -437,6 +437,56 @@
 		} );
 	} );
 
+	/**
+	 * Home: Subscribe
+	 */
+	wp.customize( 'zerif_subscribe_title', function( value ) {
+		value.bind( function( to ) {
+			if ($('#newsletter_section .home_headline h3').length){
+		        $('#newsletter_section .home_headline h3').text(to);
+		    } else {
+		    	$('#newsletter_section .home_headline').append('<h3>'+to+'</h3>');
+		    }
+		} );
+	} );
+
+	wp.customize( 'zerif_subscribe_subtitle', function( value ) {
+		value.bind( function( to ) {
+			if ($('#newsletter_section .home_headline h4').length){
+		        $('#newsletter_section .home_headline h4').text(to);
+		    } else {
+		    	$('#newsletter_section .home_headline').append('<h4>'+to+'</h4>');
+		    }
+		} );
+	} );
+
+	wp.customize( 'zerif_subscribe_header_color', function( value ) {
+		value.bind( function( to ) {
+			$('#newsletter_section .home_headline h3').attr('style', 'color: ' + to + ' !important');
+			$('#newsletter_section .home_headline h4').attr('style', 'color: ' + to + ' !important');
+		} );
+	} );
+
+	var subscribe_button_background = '';
+	var subscribe_button_text = '';
+	wp.customize( 'zerif_subscribe_button_background_color', function( value ) {
+		value.bind( function( to ) {
+			subscribe_button_background = to;
+			if(subscribe_button_text) {
+				$('#newsletter_section input[type="submit"], #newsletter_section button').attr('style', 'background: ' + to + ' !important; color: ' + subscribe_button_text + ' !important');
+			} else {
+				$('#newsletter_section input[type="submit"], #newsletter_section button').attr('style', 'background: ' + to + ' !important');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_subscribe_button_color', function( value ) {
+		value.bind( function( to ) {
+			subscribe_button_text = to;
+			$('#newsletter_section input[type="submit"], #newsletter_section button').attr('style', 'background: ' + subscribe_button_background + ' !important; color: ' + to + ' !important');
+		} );
+	} );
+
 	
 
 } )( jQuery );

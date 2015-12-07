@@ -521,6 +521,33 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_contacus_button_color',
 					'important' => true
 				),
+
+				/**
+				 * Home: Subscribe
+				 */
+				array(
+					'selector' => '#newsletter_section .home_headline h3, #newsletter_section .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_subscribe_header_color'
+				),
+
+				array(
+					'selector' => '#newsletter_section input[type="submit"], #newsletter_section button',
+					'style' => 'background',
+					'property' => 'zerif_subscribe_button_background_color'
+				),
+
+				array(
+					'selector' => '#newsletter_section input[type="submit"], #newsletter_section button',
+					'style' => 'color',
+					'property' => 'zerif_subscribe_button_color'
+				),
+
+				array(
+					'selector' => '#newsletter_section input[type="submit"]:hover, #newsletter_section button:hover',
+					'style' => 'background',
+					'property' => 'zerif_subscribe_button_background_color_hover'
+				),
 			);
 
 		if($styles) {

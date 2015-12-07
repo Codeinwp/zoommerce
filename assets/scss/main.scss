@@ -19,6 +19,10 @@ b, strong {
 	border-radius: 0;
 }
 
+body.custom-background {
+	background: transparent !important;
+}
+
 .section-title {
 	font-family: 'allerbold', sans-serif !important;
 	text-transform:uppercase;

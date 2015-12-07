@@ -104,6 +104,7 @@ $wp_customize->get_setting( 'zerif_ourfocus_4box' )->transport = 'postMessage';
  */
 $wp_customize->get_setting( 'zerif_subscribe_title' )->default = __('Newsletter Subscribtion','zoommerce');
 $wp_customize->get_setting( 'zerif_subscribe_subtitle' )->default = __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.','zoommerce');
+$wp_customize->get_setting( 'zerif_subscribe_button_background_color_hover' )->transport = 'postMessage';
 
 /**
  * Home: Portfolio
