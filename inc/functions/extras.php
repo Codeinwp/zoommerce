@@ -180,9 +180,10 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_portofolio_header'
 				),
 				array(
-					'selector' => '.cbp-rfgrid li a .project-info .project-details',
+					'selector' => '#works .project-details > *',
 					'style' => 'color',
-					'property' => 'zerif_portofolio_text'
+					'property' => 'zerif_portofolio_text',
+					'important'	=> true
 				),
 
 				/**
@@ -216,12 +217,14 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				array(
 					'selector' => '#team .home_headline h3',
 					'style' => 'color',
-					'property' => 'zerif_ourteam_header'
+					'property' => 'our_team_heading_clor',
+					'important'	=> true
 				),
 				array(
 					'selector' => '#team .home_headline h4',
 					'style' => 'color',
-					'property' => 'zerif_ourteam_header'
+					'property' => 'our_team_subtitle_clor',
+					'important'	=> true
 				),
 				array(
 					'selector' => '#team .team-member .details',
@@ -240,49 +243,111 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				),
 
 				/**
-				 * Home: Ribbon
+				 * Home: Ribbon Right
 				 */
 				array(
-					'selector' => '#ribbon_right.purchase-now',
+					'selector' => '#ribbon_right',
 					'style' => 'background',
-					'property' => 'zerif_ribbonright_background'
+					'property' => 'zerif_ribbonright_background',
+					'important' => true
 				),
 				array(
 					'selector' => '#ribbon_right h3.white-text',
 					'style' => 'color',
-					'property' => 'zerif_ribbonright_text_color'
+					'property' => 'zerif_ribbonright_text_color',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'selector' => '#ribbon_right .btn-primary',
 					'style' => 'background',
-					'property' => 'zerif_ribbonright_button_background'
+					'property' => 'zerif_ribbonright_button_background',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'selector' => '#ribbon_right .btn-primary:hover',
 					'style' => 'background',
-					'property' => 'zerif_ribbonright_button_background_hover'
+					'property' => 'zerif_ribbonright_button_background_hover',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'selector' => '#ribbon_right .btn-primary',
 					'style' => 'color',
-					'property' => 'zerif_ribbonright_button_text'
+					'property' => 'zerif_ribbonright_button_text',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'selector' => '#ribbon_right .btn-primary:hover',
 					'style' => 'color',
-					'property' => 'zerif_ribbonright_button_text_hover'
+					'property' => 'zerif_ribbonright_button_text_hover',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'selector' => '#ribbon_right .btn-primary',
 					'style' => 'border',
 					'before_property' => '1px solid ',
-					'property' => 'zerif_ribbonright_button_border'
+					'property' => 'zerif_ribbonright_button_border',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'selector' => '#ribbon_right .btn-primary:hover',
 					'style' => 'border',
 					'before_property' => '1px solid ',
-					'property' => 'zerif_ribbonright_button_border_hover'
+					'property' => 'zerif_ribbonright_button_border_hover',
+					'important' => true
+				),
+
+				/**
+				 * Home: Ribbon Bottom
+				 */
+				array(
+					'selector' => '#ribbon_bottom',
+					'style' => 'background',
+					'property' => 'zerif_ribbon_background',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom h3.white-text',
+					'style' => 'color',
+					'property' => 'zerif_ribbon_text_color',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary',
+					'style' => 'background',
+					'property' => 'zerif_ribbon_button_background',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary:hover',
+					'style' => 'background',
+					'property' => 'zerif_ribbon_button_background_hover',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary',
+					'style' => 'color',
+					'property' => 'zerif_ribbonbottom_button_text',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary:hover',
+					'style' => 'color',
+					'property' => 'zerif_ribbonbottom_button_text_hover',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary',
+					'style' => 'border',
+					'before_property' => '1px solid ',
+					'property' => 'zerif_ribbonbottom_button_border',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary:hover',
+					'style' => 'border',
+					'before_property' => '1px solid ',
+					'property' => 'zerif_ribbonbottom_button_border_hover',
+					'important' => true
 				),
 
 				/**
@@ -321,7 +386,8 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				array(
 					'selector' => '#pricingtable.packages .package a.custom-button',
 					'style' => 'background',
-					'property' => 'zerif_package_button_background_color'
+					'property' => 'zerif_package_button_background_color',
+					'important' => true
 				),
 				array(
 					'selector' => '#pricingtable.packages .package .price-container',
@@ -332,6 +398,55 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'selector' => '#pricingtable.packages .package .price h4',
 					'style' => 'color',
 					'property' => 'zerif_package_price_color'
+				),
+
+				/**
+				 * Home: Latest posts
+				 */
+				array(
+					'selector' => '#home_blog .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_latestnews_header_title_color'
+				),
+
+				array(
+					'selector' => '#home_blog .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_latestnews_header_subtitle_color'
+				),
+
+
+				/**
+				 * Home: Testimonials
+				 */
+				array(
+					'selector' => '#testimonials',
+					'style' => 'background',
+					'property' => 'zerif_testimonials_background'
+				),
+
+				array(
+					'selector' => '#testimonials .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_header_subtitle_color'
+				),
+
+				array(
+					'selector' => '#testimonials .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_header'
+				),
+
+				array(
+					'selector' => '#testimonials .message',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_text'
+				),
+
+				array(
+					'selector' => '#testimonials .client-info .client-name',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_author'
 				),
 
 				/**
@@ -362,17 +477,89 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'style' => 'color',
 					'property' => 'zerif_footer_socials_hover'
 				),
+
+				/**
+				 * Home: Contact us
+				 */
+				array(
+					'selector' => '#contact',
+					'style' => 'background',
+					'property' => 'zerif_contacus_background',
+				),
+
+				array(
+					'selector' => '#contact .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_contacus_header',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_contacus_header',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .btn-primary',
+					'style' => 'background',
+					'property' => 'zerif_contacus_button_background',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .btn-primary:hover',
+					'style' => 'background',
+					'property' => 'zerif_contacus_button_background_hover',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .btn-primary',
+					'style' => 'color',
+					'property' => 'zerif_contacus_button_color',
+					'important' => true
+				),
+
+				/**
+				 * Home: Subscribe
+				 */
+				array(
+					'selector' => '#newsletter_section .home_headline h3, #newsletter_section .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_subscribe_header_color'
+				),
+
+				array(
+					'selector' => '#newsletter_section input[type="submit"], #newsletter_section button',
+					'style' => 'background',
+					'property' => 'zerif_subscribe_button_background_color'
+				),
+
+				array(
+					'selector' => '#newsletter_section input[type="submit"], #newsletter_section button',
+					'style' => 'color',
+					'property' => 'zerif_subscribe_button_color'
+				),
+
+				array(
+					'selector' => '#newsletter_section input[type="submit"]:hover, #newsletter_section button:hover',
+					'style' => 'background',
+					'property' => 'zerif_subscribe_button_background_color_hover'
+				),
 			);
 
 		if($styles) {
 			$return .= ' <style type="text/css">';
 
 			foreach($styles as $key => $val) {
-
+					
 				//If style is added in customizer, create a new row in output
 				$property = get_theme_mod($val['property']);
 				
 				if($property) {
+
 
 					//Display selector
 					if(array_key_exists('selector', $val) && !empty($val['selector'])) {

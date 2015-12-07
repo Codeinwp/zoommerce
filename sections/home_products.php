@@ -26,8 +26,18 @@ $products_loop = new WP_Query( $products_args );
 
 ?>
 <section id="home_products">
-	<?php if ( $products_loop->have_posts() ): ?>
-		<div class="left" data-scrollreveal="enter left after 0s over 1s" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
+	<?php if ( $products_loop->have_posts() ): 
+
+		//Products class
+		if($prod_count == '2') {
+			$prod_class = ' two';
+		} elseif($prod_count == '1') {
+			$prod_class = ' one';
+		} else {
+			$prod_class = '';
+		}
+	?>
+		<div class="left<?php echo esc_attr($prod_class); ?>" data-scrollreveal="enter left after 0s over 1s" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
 			<div class="home_headline">
 				<?php
 					$headline = get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'));

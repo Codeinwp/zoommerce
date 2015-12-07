@@ -7,7 +7,7 @@
  */
 $newsletter_hide = get_theme_mod('zerif_subscribe_show');
 
-	if($newsletter_hide)
+	if(!$newsletter_hide)
 		return NULL;
 ?>
 <section id="newsletter_section">

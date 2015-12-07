@@ -93,11 +93,18 @@ $wp_customize->get_setting( 'zerif_ourfocus_3box' )->default = '#454CC4';
 $wp_customize->get_setting( 'zerif_ourfocus_4box' )->default = '#C4A01B';
 $wp_customize->get_setting( 'zerif_ourfocus_show' )->default = 1;
 
+$wp_customize->get_setting( 'zerif_ourfocus_1box' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_ourfocus_2box' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_ourfocus_3box' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_ourfocus_4box' )->transport = 'postMessage';
+
+
 /**
  * Home: Subscribe
  */
 $wp_customize->get_setting( 'zerif_subscribe_title' )->default = __('Newsletter Subscribtion','zoommerce');
 $wp_customize->get_setting( 'zerif_subscribe_subtitle' )->default = __('Display a small newsletter subscription form. Integrates with services such as MailChimp, SendinBlue.','zoommerce');
+$wp_customize->get_setting( 'zerif_subscribe_button_background_color_hover' )->transport = 'postMessage';
 
 /**
  * Home: Portfolio
@@ -105,9 +112,20 @@ $wp_customize->get_setting( 'zerif_subscribe_subtitle' )->default = __('Display 
 $wp_customize->get_setting( 'zerif_portofolio_show' )->default = 1;
 
 /**
+ * Home: Testimonials
+ */
+$wp_customize->get_control( 'zerif_testimonials_header' )->label = __('Subtitle color', 'zoommerce');
+$wp_customize->get_control( 'zerif_testimonials_header' )->priority = 3;
+$wp_customize->get_setting( 'zerif_testimonials_author' )->default = '#f33b3b';
+
+/**
  * Home: About us
  */
 $wp_customize->get_setting( 'zerif_aboutus_show' )->default = 1;
+$wp_customize->get_setting( 'zerif_aboutus_title' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_aboutus_subtitle' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_aboutus_biglefttitle' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_aboutus_text' )->transport = 'postMessage';
 
 /**
  * Home: Our team
@@ -123,8 +141,8 @@ $wp_customize->get_setting( 'zerif_ribbonright_button_background' )->default = '
 /**
  * Home: Ribbon bottom
  */
-$wp_customize->get_setting( 'zerif_ribbonright_background' )->default = '#2CC457';
-$wp_customize->get_setting( 'zerif_ribbonright_button_background' )->default = '#2CC457';
+$wp_customize->get_setting( 'zerif_ribbon_background' )->default = '#2CC457';
+$wp_customize->get_setting( 'zerif_ribbon_button_background' )->default = '#2CC457';
 
 /**
  * Home: Priceing table
@@ -136,6 +154,12 @@ $wp_customize->get_setting( 'zerif_packages_show' )->default = 0;
  * Home: Google map
  */
 $wp_customize->get_setting( 'zerif_googlemap_show' )->default = 1;
+
+/**
+ * Home: Latest posts
+ */
+$wp_customize->get_setting( 'zerif_latestnews_subtitle' )->default = '';
+$wp_customize->get_setting( 'zerif_latest_news_show' )->default = 1;
 
 /**
  * General: Background
@@ -150,3 +174,9 @@ $wp_customize->get_setting( 'zerif_email_icon' )->default = get_stylesheet_direc
 $wp_customize->get_setting( 'zerif_phone_icon' )->default = get_stylesheet_directory_uri().'/assets/images/icon-contact.png';
 $wp_customize->get_setting( 'zerif_address_icon' )->default = get_stylesheet_directory_uri().'/assets/images/icon-location.png';
 $wp_customize->get_setting( 'zerif_copyright' )->default = __('© Themeisle. All Rights Reserved', 'zoommerce');
+
+/**
+ * General: Background
+ */
+$wp_customize->get_control( 'zerif_contacus_button_color' )->label = __( 'Button text color', 'zoommerce' );
+$wp_customize->get_setting( 'zerif_contacus_button_background_hover' )->transport = 'postMessage';

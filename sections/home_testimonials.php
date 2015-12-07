@@ -6,7 +6,7 @@
  * @subpackage zoommerce
  */
 
-	$testimonials_hide = get_theme_mod('zoommerce_testimonials_hide');
+	$testimonials_hide = get_theme_mod('zerif_testimonials_show');
 	if($testimonials_hide) 
 		return NULL;
 ?>
@@ -15,14 +15,14 @@
 		<?php
 
 		echo '<div class="home_headline">';
-		$headline = get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoommerce'));
+		$headline = get_theme_mod('zerif_testimonials_title', __('Testimonials', 'zoommerce'));
 		if($headline) {
-			echo '<h3>'.esc_html(get_theme_mod('latest_testimonials_headline', __('Testimonials', 'zoommerce'))).'</h3>';
+			echo '<h3>'.esc_html(get_theme_mod('zerif_testimonials_title', __('Testimonials', 'zoommerce'))).'</h3>';
 		}
 
-		$subheading = get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoommerce'));
+		$subheading = get_theme_mod('zerif_testimonials_subtitle', __('Get testimonials from your clients and then display them here.', 'zoommerce'));
 		if($subheading) {
-			echo '<h4>'.esc_html(get_theme_mod('latest_testimonials_subheading', __('Get testimonials from your clients and then display them here.', 'zoommerce'))).'</h4>';
+			echo '<h4>'.esc_html(get_theme_mod('zerif_testimonials_subtitle', __('Get testimonials from your clients and then display them here.', 'zoommerce'))).'</h4>';
 		}
 		echo '</div><!-- / .home_headline -->';
 		
