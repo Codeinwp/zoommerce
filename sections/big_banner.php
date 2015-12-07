@@ -8,13 +8,15 @@
 
 	$zerif_parallax_use = get_theme_mod('zerif_parallax_show');
 	$zerif_background_settings = get_theme_mod('zerif_background_settings');
+	$zerif_bigtitle_show = get_theme_mod('zerif_bigtitle_show');
+
 
 	if($zerif_background_settings == 'zerif-background-image') {
-		echo '<div id="big-banner" style="background-image: url('.get_theme_mod('background_image', get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg').');">';
+		echo '<div id="big-banner" '.($zerif_bigtitle_show == true ? 'class="zerif_hidden_if_not_customizer"' : '').' style="background-image: url('.get_theme_mod('background_image', get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg').');">';
 	} elseif($zerif_parallax_use == 1) {
-		echo '<div id="big-banner">';
+		echo '<div id="big-banner" '.($zerif_bigtitle_show == true ? 'class="zerif_hidden_if_not_customizer"' : '').'>';
 	} else {
-		echo '<div id="big-banner" style="background-image: url('.get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg'.');">';
+		echo '<div id="big-banner" '.($zerif_bigtitle_show == true ? 'class="zerif_hidden_if_not_customizer"' : '').'style="background-image: url('.get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg'.');">';
 	}
 ?>
 
@@ -141,8 +143,6 @@
 		echo '</ul>';
 	
 	}
-
-	$zerif_bigtitle_show = get_theme_mod('zerif_bigtitle_show');
 	
 	if( isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1 ):
 	
@@ -178,7 +178,7 @@
 
 		/* Buttons */
 		
-		$zerif_bigtitle_button_label = get_theme_mod( 'zerif_bigtitle_button_label',__('Shop Now','zoommerce') );
+		$zerif_bigtitle_button_label = get_theme_mod( 'zerif_bigtitle_redbutton_label',__('Shop Now','zoommerce') );
 		$zerif_bigtitle_button_url = get_theme_mod( 'zerif_bigtitle_button_url','#' );
 
 		
