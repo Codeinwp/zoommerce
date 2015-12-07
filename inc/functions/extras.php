@@ -386,7 +386,8 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				array(
 					'selector' => '#pricingtable.packages .package a.custom-button',
 					'style' => 'background',
-					'property' => 'zerif_package_button_background_color'
+					'property' => 'zerif_package_button_background_color',
+					'important' => true
 				),
 				array(
 					'selector' => '#pricingtable.packages .package .price-container',
