@@ -483,6 +483,28 @@
 		} );
 	} );
 
+	wp.customize( 'zerif_ourteam_title', function( value ) {
+		value.bind( function( to ) {
+			if ($('#team .home_headline h3').length){
+		        $('#team .home_headline h3').text(to);
+		    } else {
+		    	$('#team .home_headline').append('<h3>'+to+'</h3>');
+		    }
+			
+		} );
+	} );
+
+	wp.customize( 'zerif_ourteam_subtitle', function( value ) {
+		value.bind( function( to ) {
+			if ($('#team .home_headline h4').length){
+		        $('#team .home_headline h4').text(to);
+		    } else {
+		    	$('#team .home_headline').append('<h4>'+to+'</h4>');
+		    }
+			
+		} );
+	} );
+
 	/**
 	 * Home: Ribbon Bottom
 	 */
