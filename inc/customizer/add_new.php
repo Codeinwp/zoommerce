@@ -184,13 +184,13 @@ $wp_customize->add_panel( 'panel_shop_cats', array(
 	//Sections in panel 'panel_shop_cats'
 $wp_customize->add_section( 'home_categories_content' , array(
 	'title'		=> __( 'Content', 'zoommerce' ),
-	'priority'	=> 1,
+	'priority'	=> 2,
 	'panel'		=> 'panel_shop_cats'
 ) );
 
 $wp_customize->add_section( 'home_categories_settings' , array(
 	'title'		=> __( 'Settings', 'zoommerce' ),
-	'priority'	=> 2,
+	'priority'	=> 1,
 	'panel'		=> 'panel_shop_cats'
 ) );
 	
@@ -244,13 +244,13 @@ $wp_customize->add_panel( 'panel_shop_products', array(
 	//Sections
 $wp_customize->add_section( 'home_latest_products_content' , array(
 	'title'		=> __( 'Content', 'zoommerce' ),
-	'priority'	=> 1,
+	'priority'	=> 2,
 	'panel'		=> 'panel_shop_products'
 ) );
 
 $wp_customize->add_section( 'home_latest_products_settings' , array(
 	'title'		=> __( 'Settings', 'zoommerce' ),
-	'priority'	=> 2,
+	'priority'	=> 1,
 	'panel'		=> 'panel_shop_products'
 ) );
 	
