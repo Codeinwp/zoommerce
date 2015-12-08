@@ -626,3 +626,14 @@ $wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'our_t
 	'section'    => 'zerif_ourteam_colors_section',
 	'priority'   => 2
 )));
+
+/**
+ * Home: Latest news
+ */
+$wp_customize->add_setting( 'latestnews_bg_image', array('default' => get_stylesheet_directory_uri().'/assets/images/shop_cats_pattern.jpg', 'transport' =>'postMessage'));			
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'latestnews_bg_image', array(
+	'label'    => __( 'Background Image', 'zoommerce' ),	
+	'section'  => 'zerif_latest_news_colors_section',	
+	'settings' => 'latestnews_bg_image',	
+	'priority'    => 2,
+)));

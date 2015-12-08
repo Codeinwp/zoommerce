@@ -160,6 +160,9 @@ $wp_customize->get_setting( 'zerif_googlemap_show' )->default = 1;
  */
 $wp_customize->get_setting( 'zerif_latestnews_subtitle' )->default = '';
 $wp_customize->get_setting( 'zerif_latest_news_show' )->default = 1;
+$wp_customize->get_control( 'zerif_latestnews_background' )->description = __('In order to use background color, make sure you removed the background image first.','zoommerce');
+$wp_customize->get_setting( 'zerif_latestnews_background' )->default = '';
+$wp_customize->get_section( 'zerif_latest_news_colors_section' )->title = __('Style', 'zoommerce');
 
 /**
  * General: Background
@@ -176,7 +179,7 @@ $wp_customize->get_setting( 'zerif_address_icon' )->default = get_stylesheet_dir
 $wp_customize->get_setting( 'zerif_copyright' )->default = __('© Themeisle. All Rights Reserved', 'zoommerce');
 
 /**
- * General: Background
+ * Home: Contact us
  */
 $wp_customize->get_control( 'zerif_contacus_button_color' )->label = __( 'Button text color', 'zoommerce' );
 $wp_customize->get_setting( 'zerif_contacus_button_background_hover' )->transport = 'postMessage';

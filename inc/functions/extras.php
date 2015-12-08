@@ -548,18 +548,60 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'style' => 'background',
 					'property' => 'zerif_subscribe_button_background_color_hover'
 				),
+
+				/**
+				 * Home: Latest news
+				 */
+				array(
+					'selector' => '#home_blog',
+					'style' => 'background-image',
+					'property' => 'latestnews_bg_image',
+					'before_property' => 'url(',
+					'after_property' => ')',
+					'exclude' => 'zerif_latestnews_background'
+				),
+
+				array(
+					'selector' => '#home_blog',
+					'style' => 'background',
+					'property' => 'zerif_latestnews_background',
+				),
+
 			);
 
 		if($styles) {
 			$return .= ' <style type="text/css">';
+			$excludes = array();
+			$excludes_keys = array();
+
+			//Add items to exclude list
+			foreach($styles as $key => $val) {
+				if(array_key_exists('exclude', $val) && !empty($val['exclude'])) {
+					$property = get_theme_mod($val['property']);
+
+					if($property) {
+						array_push($excludes, $val['exclude']);
+					}
+				}
+			}
+
+			// Add items to exclude keys list
+			foreach($styles as $key => $val) {
+				if(array_key_exists('property', $val) && !empty($val['property'])) {
+					foreach ($excludes as $poz => $exclude) {
+						if($val['property'] == $exclude) {
+							array_push($excludes_keys, $key);
+						}
+					}
+				}
+			}
 
 			foreach($styles as $key => $val) {
 					
 				//If style is added in customizer, create a new row in output
 				$property = get_theme_mod($val['property']);
-				
-				if($property) {
 
+				if($property && !in_array($key, $excludes_keys)) {
 
 					//Display selector
 					if(array_key_exists('selector', $val) && !empty($val['selector'])) {

@@ -127,12 +127,30 @@
 		} );
 	} );
 
+	var latest_news_bg_img = '',
+		latest_news_bg_color = '';
+		
 	wp.customize( 'zerif_latestnews_background', function( value ) {
 		value.bind( function( to ) {
+			latest_news_bg_color = to;
+			if(!$(latest_news_bg_img).length) {
+				if(to == '#') {
+					$('#home_blog').removeAttr('style');
+				} else {
+					$('#home_blog').attr('style', 'background-image: none !important; background-color: ' + to + ' !important');
+				}
+			}
+		} );
+	} );
+
+	wp.customize( 'latestnews_bg_image', function( value ) {
+		value.bind( function( to ) {
+		latest_news_bg_img = to;
+
 			if(to == '#') {
 				$('#home_blog').removeAttr('style');
 			} else {
-				$('#home_blog').attr('style', 'background-image: none; background-color: ' + to + ' !important');
+				$('#home_blog').attr('style', 'background-color: none; background-image: url(' + to + ') !important');
 			}
 		} );
 	} );
