@@ -263,6 +263,28 @@
 		} );
 	} );
 
+	wp.customize( 'zerif_ourfocus_title', function( value ) {
+		value.bind( function( to ) {
+			if ($('#focus .home_headline h3').length){
+		        $('#focus .home_headline h3').text(to);
+		    } else {
+		    	$('#focus .home_headline').append('<h3>'+to+'</h3>');
+		    }
+			
+		} );
+	} );
+
+	wp.customize( 'zerif_ourfocus_subtitle', function( value ) {
+		value.bind( function( to ) {
+			if ($('#focus .home_headline h4').length){
+		        $('#focus .home_headline h4').text(to);
+		    } else {
+		    	$('#focus .home_headline').append('<h4>'+to+'</h4>');
+		    }
+			
+		} );
+	} );
+
 	/**
 	 * Home: Latest products
 	 */
