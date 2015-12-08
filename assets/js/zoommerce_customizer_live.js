@@ -643,4 +643,17 @@
 		    }
 		} );
 	} );
+
+	/**
+	 * Home: Products Categories
+	 */
+	wp.customize( 'zoommerce_shopcats_hide', function( value ) {
+		value.bind( function( to ) {
+			if(!to == '1') {
+				$('#shop_cats').attr('style', 'display: block');
+			} else {
+				$('#shop_cats').attr('style', 'display: none !important');
+			}
+		} );
+	} );
 } )( jQuery );
