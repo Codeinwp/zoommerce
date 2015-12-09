@@ -29,17 +29,6 @@ if($zoommerce_myaccount and $zoommerce_myaccount_link and $zoommerce_cart and $z
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-		<?php
-
-			//Get analytics code from customizer
-			$zerif_google_anaytics = get_theme_mod('zerif_google_anaytics');
-			if( !empty($zerif_google_anaytics) ):
-				echo $zerif_google_anaytics;
-			endif;
-
-		?>
-
 		<?php 
 
 			//WP Header
@@ -47,6 +36,12 @@ if($zoommerce_myaccount and $zoommerce_myaccount_link and $zoommerce_cart and $z
 
 			//Extra hook
 			zerif_bottom_head_trigger(); 
+
+			//Get analytics code from customizer
+			$zerif_google_anaytics = get_theme_mod('zerif_google_anaytics');
+			if( !empty($zerif_google_anaytics) ):
+				echo $zerif_google_anaytics;
+			endif;
 
 		?>
 
