@@ -7,6 +7,7 @@
 add_action('init', 'zoommerce_remove_hooks');
 function zoommerce_remove_hooks() {
 	remove_action('wp_footer', 'zerif_php_style', 1);
+	remove_action('wp_title', 'wp_themeisle_wp_title', 10);
 }
 
 /**
