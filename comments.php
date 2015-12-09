@@ -65,7 +65,7 @@ if ( post_password_required() )
 	<?php comment_form(
 		array(
 			'comment_notes_after' => '',
-			'label_submit'	=> __('Submit', ''zoommerce''),
+			'label_submit'	=> __('Submit', 'zoommerce'),
 			'fields' => array(
 			  'author' =>
 			    '<p class="comment-form-author"><input id="author" placeholder="Name" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
