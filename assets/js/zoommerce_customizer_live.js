@@ -868,5 +868,39 @@
 		} );
 	} );
 
+	/**
+	 * General: Header shop icons
+	 */
+	wp.customize( 'cart_link', function( value ) {
+		value.bind( function( to ) {
+			$('header.header .menu-icons').attr('style', 'display: block;');
+			$('header.header .menu-icons .myaccount').attr('style', 'display: block;');
+			$('header.header .menu-icons .myaccount a').attr('href', to);
+		} );
+	} );
+
+	wp.customize( 'cart_icon', function( value ) {
+		value.bind( function( to ) {
+			$('header.header .menu-icons').attr('style', 'display: block;');
+			$('header.header .menu-icons .myaccount').attr('style', 'display: block;');
+			$('header.header .menu-icons .myaccount a img').attr('src', to);
+		} );
+	} );
+
+	wp.customize( 'myaccount_link', function( value ) {
+		value.bind( function( to ) {
+			$('header.header .menu-icons').attr('style', 'display: block;');
+			$('header.header .menu-icons .cart').attr('style', 'display: block;');
+			$('header.header .menu-icons .cart a').attr('href', to);
+		} );
+	} );
+
+	wp.customize( 'myaccount_icon', function( value ) {
+		value.bind( function( to ) {
+			$('header.header .menu-icons').attr('style', 'display: block;');
+			$('header.header .menu-icons .cart').attr('style', 'display: block;');
+			$('header.header .menu-icons .cart a img').attr('src', to);
+		} );
+	} );
 
 } )( jQuery );

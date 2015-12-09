@@ -15,8 +15,18 @@ $zoommerce_myaccount_link = get_theme_mod('myaccount_link');
 $zoommerce_cart = get_theme_mod('cart_icon', get_stylesheet_directory_uri().'/assets/images/menu-cart.png'); 
 $zoommerce_cart_link = get_theme_mod('cart_link');
 $header_icons = false;
+$cart_cond = false;
+$account_cond = false;
 
-if($zoommerce_myaccount and $zoommerce_myaccount_link and $zoommerce_cart and $zoommerce_cart_link) {
+if($zoommerce_myaccount and $zoommerce_myaccount_link) {
+	$account_cond = true;
+}
+
+if($zoommerce_cart and $zoommerce_cart_link) {
+	$cart_cond = true;
+}
+
+if($cart_cond or $account_cond) {
 	$header_icons = true;
 }
 
@@ -106,34 +116,25 @@ if($zoommerce_myaccount and $zoommerce_myaccount_link and $zoommerce_cart and $z
                     <?php 	
 						
 					//Check if links are active and display the box
-					if(zoommerce_is_woocommerce_activated()):
-
-						if($header_icons): ?>
-	                    <div class="menu-icons">
+					if(zoommerce_is_woocommerce_activated()): ?>
+	                    <div class="menu-icons" <?php echo ($header_icons == true ? '' : 'style="display: none;"'); ?>>
 	                        <ul id="icons-menu">
-	                            
-                            	<?php if(!empty($zoommerce_myaccount) && !empty($zoommerce_myaccount_link)): ?>
-                            	<li class="menu-item"> 
+                            	
+                            	<li class="menu-item myaccount" <?php if(empty($zoommerce_myaccount) or empty($zoommerce_myaccount_link)) {echo 'style="display: none;"'; } ?>> 
 	                                <a href="<?php echo esc_url($zoommerce_myaccount_link); ?>">
 	                                    <img src="<?php echo esc_url($zoommerce_myaccount); ?>">
 	                                </a> 
                                 </li>
-                                <?php endif; ?>
-	                            
-	                           
-                            	<?php if(!empty($zoommerce_cart) && !empty($zoommerce_cart_link)): ?>
-                            	<li class="menu-item"> 
+                            	
+                            	<li class="menu-item cart" <?php if(empty($zoommerce_cart) or empty($zoommerce_cart_link))  {echo 'style="display: none;"'; } ?>> 
 	                                <a href="<?php echo esc_url($zoommerce_cart_link); ?>">
 	                                    <img src="<?php echo esc_url($zoommerce_cart); ?>">
 	                                </a> 
                                 </li>
-                                <?php endif; ?>
 	                            
 	                        </ul>
 	                    </div>
-						<?php endif; 
-					endif;
-					 ?>
+						<?php endif; ?>
 
 					<nav class="navbar-collapse bs-navbar-collapse collapse<?php echo ($header_icons == true ? ' center_on_responsive' : ''); ?>" role="navigation" id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
 
