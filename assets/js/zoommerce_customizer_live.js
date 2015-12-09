@@ -720,7 +720,7 @@
 	} );
 
 	/**
-	 * General style
+	 * General: Footer colors
 	 */
 	var footer_bg = '',
 		footer_text_color = '';
@@ -754,6 +754,23 @@
 			footer_text_color = 'color: ' + to + ';';
 			$('#footer .company-details a, #zerif-copyright').attr('style', 'color: ' + to + ';');
 			$('#footer').attr('style', 'color: ' + to + ';' + footer_social_bg);
+		} );
+	} );
+
+	/**
+	 * General: General colors
+	 */
+	wp.customize( 'zerif_titles_color', function( value ) {
+		value.bind( function( to ) {
+			$('.entry-title, .woocommerce table.shop_table th, form.woocommerce-checkout h3, .woocommerce-order-received .woocommerce h2').attr('style', 'color: ' + to + ';');
+			$('.cart-collaterals h2').attr('style', 'color: ' + to + ';');
+			$('.woocommerce-account .woocommerce h2').attr('style', 'color: ' + to + ' !important;');
+		} );
+	} );
+
+	wp.customize( 'zerif_links_color', function( value ) {
+		value.bind( function( to ) {
+			$('#content a').attr('style', 'color: ' + to + ' !important;');
 		} );
 	} );
 } )( jQuery );

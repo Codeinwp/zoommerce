@@ -165,11 +165,6 @@ $wp_customize->get_setting( 'zerif_latestnews_background' )->default = '';
 $wp_customize->get_section( 'zerif_latest_news_colors_section' )->title = __('Style', 'zoommerce');
 
 /**
- * General: Background
- */
-$wp_customize->get_setting( 'background_image' )->default = get_stylesheet_directory_uri().'/assets/images/demo/home_background.jpg';
-
-/**
  * General: Footer
  */
 	//Icons
@@ -185,3 +180,13 @@ $wp_customize->get_setting( 'zerif_footer_socials_background' )->default = '#272
  */
 $wp_customize->get_control( 'zerif_contacus_button_color' )->label = __( 'Button text color', 'zoommerce' );
 $wp_customize->get_setting( 'zerif_contacus_button_background_hover' )->transport = 'postMessage';
+
+/**
+ * General
+ */
+	//Background
+$wp_customize->get_setting( 'background_image' )->default = get_stylesheet_directory_uri().'/assets/images/demo/home_background.jpg';
+	
+	//Colors
+$wp_customize->get_setting( 'zerif_navbar_color' )->default = '#000';
+$wp_customize->get_setting( 'zerif_links_color_hover' )->default = '#e52424';

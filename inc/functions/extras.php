@@ -573,6 +573,43 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_latestnews_background',
 				),
 
+				/**
+				 * General: Colors
+				 */
+				array(
+					'selector' => 'body',
+					'style' => 'background',
+					'property' => 'zerif_background_color',
+				),
+				array(
+					'selector' => 'header.header',
+					'style' => 'background',
+					'property' => 'zerif_navbar_color',
+				),
+				array(
+					'selector' => '.entry-title, .woocommerce table.shop_table th, .cart-collaterals h2, form.woocommerce-checkout h3, .woocommerce-order-received .woocommerce h2, .woocommerce-account .woocommerce h2',
+					'style' => 'color',
+					'property' => 'zerif_titles_color',
+				),
+				array(
+					'selector' => 'header.header',
+					'style' => 'background',
+					'property' => 'zerif_navbar_color',
+				),
+				array(
+					'selector' => '#content a',
+					'style' => 'color',
+					'property' => 'zerif_links_color',
+					'important' => true
+				),
+				array(
+					'selector' => '#content a:hover',
+					'style' => 'color',
+					'property' => 'zerif_links_color_hover',
+					'important' => true
+				),
+
+
 			);
 
 		if($styles) {
