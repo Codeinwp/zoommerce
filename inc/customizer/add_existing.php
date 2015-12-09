@@ -59,7 +59,6 @@ $wp_customize->get_setting( 'section11' )->default = 'right_ribbon';
 $wp_customize->get_setting( 'section12' )->default = 'packages';
 
 
-
 /**
  * Home: Big banner
  */
@@ -174,6 +173,13 @@ $wp_customize->get_setting( 'zerif_address_icon' )->default = get_stylesheet_dir
 $wp_customize->get_setting( 'zerif_copyright' )->default = __('© Themeisle. All Rights Reserved', 'zoommerce');
 $wp_customize->get_control( 'zerif_footer_socials_background' )->label = __( 'Footer widgets background color', 'zoommerce' );
 $wp_customize->get_setting( 'zerif_footer_socials_background' )->default = '#272727';
+$wp_customize->get_setting( 'zerif_email_icon' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_phone_icon' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_address_icon' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_email' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_phone' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_address' )->transport = 'postMessage';
+
 
 /**
  * Home: Contact us
@@ -195,3 +201,4 @@ $wp_customize->get_setting( 'zerif_links_color_hover' )->default = '#e52424';
 $wp_customize->get_setting( 'zerif_buttons_background_color' )->default = '#e52424';
 $wp_customize->get_setting( 'zerif_buttons_background_color_hover' )->transport = 'postMessage';
 $wp_customize->get_setting( 'zerif_buttons_background_color_hover' )->default = '#333';
+

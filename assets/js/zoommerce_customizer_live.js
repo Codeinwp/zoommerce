@@ -814,4 +814,59 @@
 		} );
 	} );
 
+	/**
+	 * General: Footer sections
+	 */
+	wp.customize( 'zerif_email_icon', function( value ) {
+		value.bind( function( to ) {
+			if(to.length) {
+				$('#footer .company-details.email .icon-left').attr('style', 'display: block;');
+				$('#footer .company-details.email .icon-left img').attr('src', to);
+			} else {
+				$('#footer .company-details.email .icon-left').attr('style', 'display: none;');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_email', function( value ) {
+		value.bind( function( to ) {
+			$('#footer .company-details.email span').empty().append(to);
+		} );
+	} );
+
+	wp.customize( 'zerif_phone_icon', function( value ) {
+		value.bind( function( to ) {
+			if(to.length) {
+				$('#footer .company-details.phone .icon-left').attr('style', 'display: block;');
+				$('#footer .company-details.phone .icon-left img').attr('src', to);
+			} else {
+				$('#footer .company-details.phone .icon-left').attr('style', 'display: none;');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_phone', function( value ) {
+		value.bind( function( to ) {
+			$('#footer .company-details.phone span').empty().append(to);
+		} );
+	} );
+
+	wp.customize( 'zerif_address_icon', function( value ) {
+		value.bind( function( to ) {
+			if(to.length) {
+				$('#footer .company-details.address .icon-left').attr('style', 'display: block;');
+				$('#footer .company-details.address .icon-left img').attr('src', to);
+			} else {
+				$('#footer .company-details.address .icon-left').attr('style', 'display: none;');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_address', function( value ) {
+		value.bind( function( to ) {
+			$('#footer .company-details.address span').empty().append(to);
+		} );
+	} );
+
+
 } )( jQuery );

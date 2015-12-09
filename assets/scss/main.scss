@@ -226,11 +226,17 @@ ul.nav > li.current_page_item > a:before {
 	color: #737373;
 	display: flex;
     height: 40px;
+    word-break: break-all;
 	
 	.icon-left {
 		float: left;
 		margin-right: 12px;
 		align-self: center;
+	}
+
+	span {
+		align-self: center;
+		float: left;
 	}
 
 	a {
