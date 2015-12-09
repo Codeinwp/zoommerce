@@ -190,3 +190,8 @@ $wp_customize->get_setting( 'background_image' )->default = get_stylesheet_direc
 	//Colors
 $wp_customize->get_setting( 'zerif_navbar_color' )->default = '#000';
 $wp_customize->get_setting( 'zerif_links_color_hover' )->default = '#e52424';
+
+	//Button colors
+$wp_customize->get_setting( 'zerif_buttons_background_color' )->default = '#e52424';
+$wp_customize->get_setting( 'zerif_buttons_background_color_hover' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_buttons_background_color_hover' )->default = '#333';

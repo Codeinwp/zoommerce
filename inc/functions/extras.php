@@ -597,18 +597,82 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_navbar_color',
 				),
 				array(
-					'selector' => '#content a',
+					'selector' => '#content a:not(.button):not(.remove)',
 					'style' => 'color',
 					'property' => 'zerif_links_color',
 					'important' => true
 				),
 				array(
-					'selector' => '#content a:hover',
+					'selector' => '#content a:not(.button):not(.remove):hover',
 					'style' => 'color',
 					'property' => 'zerif_links_color_hover',
 					'important' => true
 				),
 
+				array(
+					'selector' => '#content a.remove',
+					'style' => 'color',
+					'property' => 'zerif_links_color',
+					'important' => true
+				),
+				array(
+					'selector' => '#content a.remove:hover',
+					'style' => 'background',
+					'property' => 'zerif_links_color_hover',
+					'important' => true
+				),
+
+				/**
+				 * General: Normal buttons Colors
+				 */
+				array(
+					'selector' => '#content input.button:not(.add_to_cart_button), .woocommerce a.button.alt, .viewallproducts',
+					'style' => 'background',
+					'property' => 'zerif_buttons_background_color',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#content input.button:not(.add_to_cart_button):hover, .woocommerce a.button.alt:hover, .viewallproducts:hover',
+					'style' => 'background',
+					'property' => 'zerif_buttons_background_color_hover',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#content input.button:not(.add_to_cart_button), .woocommerce a.button.alt, .viewallproducts',
+					'style' => 'color',
+					'property' => 'zerif_buttons_text_color',
+					'important' => true
+				),
+
+				/**
+				 * General: Shop buttons colors
+				 */
+				array(
+					'selector' => 'a.add_to_cart_button, a.product_type_grouped',
+					'style' => 'background',
+					'property' => 'zerif_shop_buttons_background_color',
+					'important' => true
+				),
+				array(
+					'selector' => 'a.add_to_cart_button:hover, a.product_type_grouped:hover',
+					'style' => 'background',
+					'property' => 'zerif_shop_buttons_background_color_hover',
+					'important' => true
+				),
+				array(
+					'selector' => 'a.add_to_cart_button, a.product_type_grouped',
+					'style' => 'color',
+					'property' => 'zerif_shop_buttons_text_color',
+					'important' => true
+				),
+				array(
+					'selector' => 'a.add_to_cart_button:hover, a.product_type_grouped:hover',
+					'style' => 'color',
+					'property' => 'zerif_shop_buttons_text_color_hover',
+					'important' => true
+				),
 
 			);
 

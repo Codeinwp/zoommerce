@@ -773,4 +773,45 @@
 			$('#content a').attr('style', 'color: ' + to + ' !important;');
 		} );
 	} );
+
+	/**
+	 * General: Buttons colors
+	 */
+	var buttons_bg = '',
+		buttons_color = '';
+
+	wp.customize( 'zerif_buttons_background_color', function( value ) {
+		value.bind( function( to ) {
+			buttons_bg = 'background: ' + to + ' !important;';
+			$('#content input.button, .woocommerce a.button.alt, .viewallproducts').not('.add_to_cart_button').attr('style', 'background: ' + to + ' !important;' + buttons_color);
+		} );
+	} );
+
+	wp.customize( 'zerif_buttons_text_color', function( value ) {
+		value.bind( function( to ) {
+			buttons_color = 'color: ' + to + ' !important;';
+			$('#content input.button, .woocommerce a.button.alt, .viewallproducts').not('.add_to_cart_button').attr('style', 'color: ' + to + ' !important;' + buttons_bg);
+		} );
+	} );
+
+	/**
+	 * General: Shop buttons colors
+	 */
+	var shop_buttons_bg = '',
+		shop_buttons_color = '';
+
+	wp.customize( 'zerif_shop_buttons_background_color', function( value ) {
+		value.bind( function( to ) {
+			shop_buttons_bg = 'background: ' + to + ' !important;';
+			$('a.add_to_cart_button, a.product_type_grouped').attr('style', 'background: ' + to + ' !important;' + shop_buttons_color);
+		} );
+	} );
+
+	wp.customize( 'zerif_shop_buttons_text_color', function( value ) {
+		value.bind( function( to ) {
+			shop_buttons_color = 'color: ' + to + ' !important;';
+			$('a.add_to_cart_button, a.product_type_grouped').attr('style', 'color: ' + to + ' !important;' + shop_buttons_bg);
+		} );
+	} );
+
 } )( jQuery );

@@ -648,3 +648,39 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'zerif_
 	'priority'   => 2
 )));
 
+/**
+ * General: Shop buttons colors
+ */
+$wp_customize->add_section( 'zerif_shop_buttons_color_section' , array(
+	'title'       => __( 'Shop buttons colors', 'zoommerce' ),
+	'priority'    => 5,
+	'panel' => 'panel_1'
+));
+		
+$wp_customize->add_setting( 'zerif_shop_buttons_background_color', array( 'default' => '#333', 'transport' =>'postMessage' ) );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'zerif_shop_buttons_background_color',array(
+	'label'      => __( 'Buttons background color', 'zoommerce' ),
+	'section'    => 'zerif_shop_buttons_color_section',
+	'priority'   => 1
+)));
+
+$wp_customize->add_setting( 'zerif_shop_buttons_background_color_hover', array( 'default' => '#e52424', 'transport' =>'postMessage' ) );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'zerif_shop_buttons_background_color_hover',array(
+	'label'      => __( 'Buttons background hover color', 'zoommerce' ),
+	'section'    => 'zerif_shop_buttons_color_section',
+	'priority'   => 2
+)));
+
+$wp_customize->add_setting( 'zerif_shop_buttons_text_color', array( 'default' => '#fff', 'transport' =>'postMessage' ) );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'zerif_shop_buttons_text_color',array(
+	'label'      => __( 'Buttons text color', 'zoommerce' ),
+	'section'    => 'zerif_shop_buttons_color_section',
+	'priority'   => 3
+)));
+
+$wp_customize->add_setting( 'zerif_shop_buttons_text_color_hover', array( 'default' => '#fff', 'transport' =>'postMessage' ) );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'zerif_shop_buttons_text_color_hover',array(
+	'label'      => __( 'Buttons text hover color', 'zoommerce' ),
+	'section'    => 'zerif_shop_buttons_color_section',
+	'priority'   => 3
+)));

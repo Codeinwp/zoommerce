@@ -20,7 +20,7 @@ $prod_count = get_theme_mod('latest_products_count', 3);
 
 //Products loop
 $products_args = array(
-	'post_type' => 'products',
+	'post_type' => 'product',
 	'posts_per_page' => $prod_count
 );
 $products_loop = new WP_Query( $products_args );
