@@ -783,14 +783,14 @@
 	wp.customize( 'zerif_buttons_background_color', function( value ) {
 		value.bind( function( to ) {
 			buttons_bg = 'background: ' + to + ' !important;';
-			$('#content input.button, .woocommerce a.button.alt, .viewallproducts').not('.add_to_cart_button').attr('style', 'background: ' + to + ' !important;' + buttons_color);
+			$('#content input.button, .woocommerce a.button.alt, .viewallproducts, #respond .form-submit input#submit').not('.add_to_cart_button').attr('style', 'background: ' + to + ' !important;' + buttons_color);
 		} );
 	} );
 
 	wp.customize( 'zerif_buttons_text_color', function( value ) {
 		value.bind( function( to ) {
 			buttons_color = 'color: ' + to + ' !important;';
-			$('#content input.button, .woocommerce a.button.alt, .viewallproducts').not('.add_to_cart_button').attr('style', 'color: ' + to + ' !important;' + buttons_bg);
+			$('#content input.button, .woocommerce a.button.alt, .viewallproducts, #respond .form-submit input#submit').not('.add_to_cart_button').attr('style', 'color: ' + to + ' !important;' + buttons_bg);
 		} );
 	} );
 

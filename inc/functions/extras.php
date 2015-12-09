@@ -626,21 +626,21 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				 * General: Normal buttons Colors
 				 */
 				array(
-					'selector' => '#content input.button:not(.add_to_cart_button), .woocommerce a.button.alt, .viewallproducts',
+					'selector' => '#content input.button:not(.add_to_cart_button), .woocommerce a.button.alt, .viewallproducts, #respond .form-submit input#submit',
 					'style' => 'background',
 					'property' => 'zerif_buttons_background_color',
 					'important' => true
 				),
 
 				array(
-					'selector' => '#content input.button:not(.add_to_cart_button):hover, .woocommerce a.button.alt:hover, .viewallproducts:hover',
+					'selector' => '#content input.button:not(.add_to_cart_button):hover, .woocommerce a.button.alt:hover, .viewallproducts:hover, #respond .form-submit input#submit:hover',
 					'style' => 'background',
 					'property' => 'zerif_buttons_background_color_hover',
 					'important' => true
 				),
 
 				array(
-					'selector' => '#content input.button:not(.add_to_cart_button), .woocommerce a.button.alt, .viewallproducts',
+					'selector' => '#content input.button:not(.add_to_cart_button), .woocommerce a.button.alt, .viewallproducts, #respond .form-submit input#submit',
 					'style' => 'color',
 					'property' => 'zerif_buttons_text_color',
 					'important' => true
