@@ -718,4 +718,42 @@
 			}
 		} );
 	} );
+
+	/**
+	 * General style
+	 */
+	var footer_bg = '',
+		footer_text_color = '';
+
+	wp.customize( 'zerif_footer_background', function( value ) {
+		value.bind( function( to ) {
+			footer_bg = 'background: ' + to + ' !important;';
+			$('#footer .section-footer-title').attr('style', 'background: ' + to + ' !important;');
+			$('#footer').attr('style', 'background: ' + to + ' !important;' + footer_text_color);
+		} );
+	} );
+
+	var footer_social_bg = '',
+		footer_social_border = '';
+	wp.customize( 'zerif_footer_socials_background', function( value ) {
+		value.bind( function( to ) {
+			footer_social_bg = 'background:' + to + ' !important;';
+			$('#footer .footer-widgets').attr('style', 'background: ' + to + ' !important;' + footer_social_border);
+		} );
+	} );
+
+	wp.customize( 'zerif_footer_socials_border', function( value ) {
+		value.bind( function( to ) {
+			footer_social_border = 'border-color: ' + to + ' !important;';
+			$('#footer .footer-widgets').attr('style', 'border-color: ' + to + ' !important;' + footer_social_bg);
+		} );
+	} );
+
+	wp.customize( 'zerif_footer_text_color', function( value ) {
+		value.bind( function( to ) {
+			footer_text_color = 'color: ' + to + ';';
+			$('#footer .company-details a, #zerif-copyright').attr('style', 'color: ' + to + ';');
+			$('#footer').attr('style', 'color: ' + to + ';' + footer_social_bg);
+		} );
+	} );
 } )( jQuery );

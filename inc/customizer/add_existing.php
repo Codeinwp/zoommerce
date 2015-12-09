@@ -177,6 +177,8 @@ $wp_customize->get_setting( 'zerif_email_icon' )->default = get_stylesheet_direc
 $wp_customize->get_setting( 'zerif_phone_icon' )->default = get_stylesheet_directory_uri().'/assets/images/icon-contact.png';
 $wp_customize->get_setting( 'zerif_address_icon' )->default = get_stylesheet_directory_uri().'/assets/images/icon-location.png';
 $wp_customize->get_setting( 'zerif_copyright' )->default = __('© Themeisle. All Rights Reserved', 'zoommerce');
+$wp_customize->get_control( 'zerif_footer_socials_background' )->label = __( 'Footer widgets background color', 'zoommerce' );
+$wp_customize->get_setting( 'zerif_footer_socials_background' )->default = '#272727';
 
 /**
  * Home: Contact us

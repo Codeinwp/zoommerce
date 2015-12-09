@@ -637,3 +637,14 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'late
 	'settings' => 'latestnews_bg_image',	
 	'priority'    => 2,
 )));
+
+/**
+ * Footer Settings
+ */
+$wp_customize->add_setting( 'zerif_footer_socials_border', array( 'default' => '#4d4d4d', 'transport' =>'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'zerif_footer_socials_border', array(
+	'label'      => __( 'Footer widgets border color', 'zoommerce' ),
+	'section'    => 'zerif_footer_color_section',
+	'priority'   => 2
+)));
+

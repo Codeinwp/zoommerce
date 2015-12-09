@@ -453,7 +453,7 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				 * General: Footer
 				 */
 				array(
-					'selector' => '#footer',
+					'selector' => '#footer, #footer .section-footer-title',
 					'style' => 'background',
 					'property' => 'zerif_footer_background'
 				),
@@ -463,7 +463,7 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_footer_socials_background'
 				),
 				array(
-					'selector' => '#footer, .company-details',
+					'selector' => '#footer, #footer .company-details, footer .company-details a, #zerif-copyright',
 					'style' => 'color',
 					'property' => 'zerif_footer_text_color'
 				),
@@ -475,7 +475,13 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				array(
 					'selector' => '#footer .social li a:hover',
 					'style' => 'color',
-					'property' => 'zerif_footer_socials_hover'
+					'property' => 'zerif_footer_socials_hover',
+					'important' => true
+				),
+				array(
+					'selector' => '#footer .footer-widgets',
+					'style' => 'border-color',
+					'property' => 'zerif_footer_socials_border'
 				),
 
 				/**
@@ -677,5 +683,5 @@ if(!function_exists('zoommerce_get_pages_by_template')) {
 		} else {
 			return $return;
 		}
-	}	
+	}
 }
