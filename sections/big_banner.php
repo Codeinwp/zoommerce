@@ -179,7 +179,7 @@
 		/* Buttons */
 		
 		$zerif_bigtitle_button_label = get_theme_mod( 'zerif_bigtitle_redbutton_label',__('Shop Now','zoommerce') );
-		$zerif_bigtitle_button_url = get_theme_mod( 'zerif_bigtitle_button_url','#' );
+		$zerif_bigtitle_button_url = get_theme_mod( 'zerif_bigtitle_redbutton_url','#' );
 
 		
 		if( (!empty($zerif_bigtitle_button_label) && !empty($zerif_bigtitle_button_url))):
