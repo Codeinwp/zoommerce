@@ -587,7 +587,7 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_navbar_color',
 				),
 				array(
-					'selector' => '.entry-title, .woocommerce table.shop_table th, .cart-collaterals h2, form.woocommerce-checkout h3, .woocommerce-order-received .woocommerce h2, .woocommerce-account .woocommerce h2',
+					'selector' => '.widget-title, .entry-title, .woocommerce table.shop_table th, .cart-collaterals h2, form.woocommerce-checkout h3, .woocommerce-order-received .woocommerce h2, .woocommerce-account .woocommerce h2',
 					'style' => 'color',
 					'property' => 'zerif_titles_color',
 				),
