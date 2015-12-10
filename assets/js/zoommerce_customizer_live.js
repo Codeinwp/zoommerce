@@ -15,6 +15,10 @@
 		$(target).css('top', bb_top);
 	}
 
+	function zoommerce_viewport_height(target) {
+		$(target).css('height', $(window).height() - $('header#home').height());
+	}
+
 	/**
 	 * Home: Bigbanner
 	 */
@@ -1187,6 +1191,18 @@
 				$('#footer .social .youtube').remove();
 				$('#footer .social').append('<li class="youtube"><a target="_blank" href="'+to+'"><i class="fa fa-youtube"></i></a></li>');
 			}
+		} );
+	} );
+
+	/**
+	 * General: Background image
+	 */
+	wp.customize( 'background_image', function( value ) {
+		value.bind( function( to ) {
+			$('#big-banner').attr('style', 'background-image: url( ' + to + ') !important;' + shop_buttons_color);
+
+			//Add height on big banner
+			zoommerce_viewport_height('#big-banner');
 		} );
 	} );
 
