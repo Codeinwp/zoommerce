@@ -603,8 +603,6 @@
 		} );
 	} );
 
-
-
 	wp.customize( 'zerif_ribbonbottom_button_text', function( value ) {
 		value.bind( function( to ) {
 			ribb_bot_button_color = to;
@@ -623,6 +621,47 @@
 		value.bind( function( to ) {
 			ribb_bot_button_border = to;
 			$('#ribbon_bottom .btn-primary').attr('style', 'color: ' + ribb_bot_button_color + '!important; background: ' + ribb_bot_button_bg + ' !important; border: 1px solid' + to + ' !important;');
+		} );
+	} );
+
+
+	/**
+	 * Home: Ribbon right
+	 */
+	var ribb_right_button_color = '',
+		ribb_right_button_bg = '',
+		ribb_right_button_border = '';
+
+	wp.customize( 'zerif_ribbonright_text_color', function( value ) {
+		value.bind( function( to ) {
+			$('.separator-one .container').not('#ribbon_right .btn-primary').attr('style', 'color: ' + to + ' !important');
+
+			if(ribb_right_button_color.length || ribb_right_button_bg.length || ribb_right_button_border.length) {
+				$('#ribbon_right .btn-primary').attr('style', 'color: ' + ribb_right_button_color + '!important; background: ' + ribb_right_button_bg + ' !important; border: 1px solid' + ribb_right_button_border + ';');
+			} else {
+				$('#ribbon_right .btn-primary').attr('style');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_ribbonright_button_text', function( value ) {
+		value.bind( function( to ) {
+			ribb_right_button_color = to;
+			$('#ribbon_right .btn-primary').attr('style', 'color: ' + to + '!important; background: ' + ribb_right_button_bg + ' !important; border: 1px solid' + ribb_right_button_border + ';');
+		} );
+	} );
+
+	wp.customize( 'zerif_ribbonright_button_background', function( value ) {
+		value.bind( function( to ) {
+			ribb_right_button_bg = to;
+			$('#ribbon_right .btn-primary').attr('style', 'color: ' + ribb_right_button_color + '!important; background: ' + to + ' !important; border: 1px solid' + ribb_right_button_border + ';');
+		} );
+	} );
+
+	wp.customize( 'zerif_ribbonright_button_border', function( value ) {
+		value.bind( function( to ) {
+			ribb_right_button_border = to;
+			$('#ribbon_right .btn-primary').attr('style', 'color: ' + ribb_right_button_color + '!important; background: ' + ribb_right_button_bg + ' !important; border: 1px solid' + to + ' !important;');
 		} );
 	} );
 
