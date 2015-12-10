@@ -903,4 +903,171 @@
 		} );
 	} );
 
+	/**
+	 * General: Social media icons
+	 */
+	if(!$('#footer .social').length) {
+		$('#footer .footer-box').last().append('<ul class="social"></ul>');
+	}
+
+	wp.customize( 'zerif_socials_facebook', function( value ) {
+		value.bind( function( to ) {
+			if($('#footer .social .facebook').length) {
+				if(to.length) {
+					$('#footer .social .facebook a').attr('href', to);
+					$('#footer .social .facebook').attr('style', '');
+				} else {
+					$('#footer .social .facebook').attr('style', 'display: none;');
+				}
+			} else {
+				$('#footer .social .facebook').remove();
+				$('#footer .social').append('<li class="facebook"><a target="_blank" href="'+to+'"><i class="fa fa-facebook"></i></a></li>');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_socials_twitter', function( value ) {
+		value.bind( function( to ) {
+			if($('#footer .social .twitter').length) {
+				if(to.length) {
+					$('#footer .social .twitter a').attr('href', to);
+					$('#footer .social .twitter').attr('style', '');
+				} else {
+					$('#footer .social .twitter').attr('style', 'display: none;');
+				}
+			} else {
+				$('#footer .social .twitter').remove();
+				$('#footer .social').append('<li class="twitter"><a target="_blank" href="'+to+'"><i class="fa fa-twitter"></i></a></li>');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_socials_linkedin', function( value ) {
+		value.bind( function( to ) {
+			if($('#footer .social .linkedin').length) {
+				if(to.length) {
+					$('#footer .social .linkedin a').attr('href', to);
+					$('#footer .social .linkedin').attr('style', '');
+				} else {
+					$('#footer .social .linkedin').attr('style', 'display: none;');
+				}
+			} else {
+				$('#footer .social .linkedin').remove();
+				$('#footer .social').append('<li class="linkedin"><a target="_blank" href="'+to+'"><i class="fa fa-linkedin"></i></a></li>');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_socials_behance', function( value ) {
+		value.bind( function( to ) {
+			if($('#footer .social .behance').length) {
+				if(to.length) {
+					$('#footer .social .behance a').attr('href', to);
+					$('#footer .social .behance').attr('style', '');
+				} else {
+					$('#footer .social .behance').attr('style', 'display: none;');
+				}
+			} else {
+				$('#footer .social .behance').remove();
+				$('#footer .social').append('<li class="behance"><a target="_blank" href="'+to+'"><i class="fa fa-behance"></i></a></li>');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_socials_dribbble', function( value ) {
+		value.bind( function( to ) {
+			if($('#footer .social .dribbble').length) {
+				if(to.length) {
+					$('#footer .social .dribbble a').attr('href', to);
+					$('#footer .social .dribbble').attr('style', '');
+				} else {
+					$('#footer .social .dribbble').attr('style', 'display: none;');
+				}
+			} else {
+				$('#footer .social .dribbble').remove();
+				$('#footer .social').append('<li class="dribbble"><a target="_blank" href="'+to+'"><i class="fa fa-dribbble"></i></a></li>');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_socials_googleplus', function( value ) {
+		value.bind( function( to ) {
+			if($('#footer .social .google').length) {
+				if(to.length) {
+					$('#footer .social .google a').attr('href', to);
+					$('#footer .social .google').attr('style', '');
+				} else {
+					$('#footer .social .google').attr('style', 'display: none;');
+				}
+			} else {
+				$('#footer .social .google').remove();
+				$('#footer .social').append('<li class="google"><a target="_blank" href="'+to+'"><i class="fa fa-google"></i></a></li>');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_socials_pinterest', function( value ) {
+		value.bind( function( to ) {
+			if($('#footer .social .pinterest').length) {
+				if(to.length) {
+					$('#footer .social .pinterest a').attr('href', to);
+					$('#footer .social .pinterest').attr('style', '');
+				} else {
+					$('#footer .social .pinterest').attr('style', 'display: none;');
+				}
+			} else {
+				$('#footer .social .pinterest').remove();
+				$('#footer .social').append('<li class="pinterest"><a target="_blank" href="'+to+'"><i class="fa fa-pinterest"></i></a></li>');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_socials_tumblr', function( value ) {
+		value.bind( function( to ) {
+			if($('#footer .social .tumblr').length) {
+				if(to.length) {
+					$('#footer .social .tumblr a').attr('href', to);
+					$('#footer .social .tumblr').attr('style', '');
+				} else {
+					$('#footer .social .tumblr').attr('style', 'display: none;');
+				}
+			} else {
+				$('#footer .social .tumblr').remove();
+				$('#footer .social').append('<li class="tumblr"><a target="_blank" href="'+to+'"><i class="fa fa-tumblr"></i></a></li>');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_socials_reddit', function( value ) {
+		value.bind( function( to ) {
+			if($('#footer .social .reddit').length) {
+				if(to.length) {
+					$('#footer .social .reddit a').attr('href', to);
+					$('#footer .social .reddit').attr('style', '');
+				} else {
+					$('#footer .social .reddit').attr('style', 'display: none;');
+				}
+			} else {
+				$('#footer .social .reddit').remove();
+				$('#footer .social').append('<li class="reddit"><a target="_blank" href="'+to+'"><i class="fa fa-reddit"></i></a></li>');
+			}
+		} );
+	} );
+
+	wp.customize( 'zerif_socials_youtube', function( value ) {
+		value.bind( function( to ) {
+			if($('#footer .social .youtube').length) {
+				if(to.length) {
+					$('#footer .social .youtube a').attr('href', to);
+					$('#footer .social .youtube').attr('style', '');
+				} else {
+					$('#footer .social .youtube').attr('style', 'display: none;');
+				}
+			} else {
+				$('#footer .social .youtube').remove();
+				$('#footer .social').append('<li class="youtube"><a target="_blank" href="'+to+'"><i class="fa fa-youtube"></i></a></li>');
+			}
+		} );
+	} );
+
 } )( jQuery );

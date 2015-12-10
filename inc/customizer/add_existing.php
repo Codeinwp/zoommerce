@@ -202,3 +202,14 @@ $wp_customize->get_setting( 'zerif_buttons_background_color' )->default = '#e524
 $wp_customize->get_setting( 'zerif_buttons_background_color_hover' )->transport = 'postMessage';
 $wp_customize->get_setting( 'zerif_buttons_background_color_hover' )->default = '#333';
 
+	//Social links
+$wp_customize->get_setting( 'zerif_socials_facebook' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_twitter' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_linkedin' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_behance' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_dribbble' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_googleplus' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_pinterest' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_tumblr' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_reddit' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_youtube' )->transport = 'postMessage';
