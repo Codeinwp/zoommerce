@@ -1281,4 +1281,17 @@
 		    }
 		} );
 	} );
+
+	/**
+	 * Shop Single
+	 */
+	wp.customize( 'single_shop_last_products_hide', function( value ) {
+		value.bind( function( to ) {
+			if(to == '1') {
+				$('.woocommerce.single-product #popular_products').attr('style', 'display: none !important;');
+			} else {
+				$('.woocommerce.single-product #popular_products').attr('style', 'display: block;');
+			}
+		} );
+	} );
 } )( jQuery );
