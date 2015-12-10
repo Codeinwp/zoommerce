@@ -898,8 +898,8 @@
 	wp.customize( 'myaccount_icon', function( value ) {
 		value.bind( function( to ) {
 			$('header.header .menu-icons').attr('style', 'display: block;');
-			$('header.header .menu-icons .cart').attr('style', 'display: block;');
-			$('header.header .menu-icons .cart a img').attr('src', to);
+			$('header.header .menu-icons .account').attr('style', 'display: block;');
+			$('header.header .menu-icons .account a img').attr('src', to);
 		} );
 	} );
 
