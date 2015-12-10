@@ -1206,4 +1206,26 @@
 		} );
 	} );
 
+	/**
+	 * Blog: headings
+	 */
+	wp.customize( 'blog_heading', function( value ) {
+		value.bind( function( to ) {
+			if ($('#wide_header .title').length){
+		        $('#wide_header .title').text(to);
+		    } else {
+		    	$('#wide_header').append('<div class="title">'+to+'</div>');
+		    }
+		} );
+	} );
+
+	wp.customize( 'blog_heading_sub', function( value ) {
+		value.bind( function( to ) {
+			if ($('#wide_header p').length){
+		        $('#wide_header p').text(to);
+		    } else {
+		    	$('#wide_header').append('<p>'+to+'</p>');
+		    }
+		} );
+	} );
 } )( jQuery );
