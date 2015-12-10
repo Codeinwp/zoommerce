@@ -490,7 +490,7 @@ $wp_customize->add_control('shop_last_products_hide',
 			'priority'	=> 1,
 		)
 );
-$wp_customize->add_setting( 'shop_newsletter_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'shop_newsletter_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0, 'transport' =>'postMessage'));
 $wp_customize->add_control('shop_newsletter_hide',
 		array(
 			'type' 		=> 'checkbox',
