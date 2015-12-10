@@ -587,22 +587,42 @@
 	/**
 	 * Home: Ribbon Bottom
 	 */
+	var ribb_bot_button_color = '',
+		ribb_bot_button_bg = '',
+		ribb_bot_button_border = '';
+
 	wp.customize( 'zerif_ribbon_text_color', function( value ) {
 		value.bind( function( to ) {
-			$('.separator-one .container').attr('style', 'color: ' + to + ' !important');
-			$('#ribbon_bottom .btn-primary').removeAttr('style');
+			$('.separator-one .container').not('#ribbon_bottom .btn-primary').attr('style', 'color: ' + to + ' !important');
+
+			if(ribb_bot_button_color.length || ribb_bot_button_bg.length || ribb_bot_button_border.length) {
+				$('#ribbon_bottom .btn-primary').attr('style', 'color: ' + ribb_bot_button_color + '!important; background: ' + ribb_bot_button_bg + ' !important; border: 1px solid' + ribb_bot_button_border + ';');
+			} else {
+				$('#ribbon_bottom .btn-primary').attr('style');
+			}
 		} );
 	} );
 
-	wp.customize( 'zerif_bottomribbon_text_color', function( value ) {
+
+
+	wp.customize( 'zerif_ribbonbottom_button_text', function( value ) {
 		value.bind( function( to ) {
-			$('#ribbon_bottom .btn-primary').attr('style', 'color: ' + to + ' !important');
+			ribb_bot_button_color = to;
+			$('#ribbon_bottom .btn-primary').attr('style', 'color: ' + to + '!important; background: ' + ribb_bot_button_bg + ' !important; border: 1px solid' + ribb_bot_button_border + ';');
 		} );
 	} );
 
-	wp.customize( 'zerif_bottomribbon_button_border', function( value ) {
+	wp.customize( 'zerif_ribbon_button_background', function( value ) {
 		value.bind( function( to ) {
-			$('#ribbon_bottom .btn-primary').attr('style', 'border: 1px solid ' + to + ' !important');
+			ribb_bot_button_bg = to;
+			$('#ribbon_bottom .btn-primary').attr('style', 'color: ' + ribb_bot_button_color + '!important; background: ' + to + ' !important; border: 1px solid' + ribb_bot_button_border + ';');
+		} );
+	} );
+
+	wp.customize( 'zerif_ribbonbottom_button_border', function( value ) {
+		value.bind( function( to ) {
+			ribb_bot_button_border = to;
+			$('#ribbon_bottom .btn-primary').attr('style', 'color: ' + ribb_bot_button_color + '!important; background: ' + ribb_bot_button_bg + ' !important; border: 1px solid' + to + ' !important;');
 		} );
 	} );
 
