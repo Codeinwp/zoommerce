@@ -165,6 +165,36 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_ourfocus_4box'
 				),
 
+				array(
+					'selector' => '#focus',
+					'style' => 'background',
+					'property' => 'zerif_ourfocus_background'
+				),
+
+				array(
+					'selector' => '.focus-box h5',
+					'style' => 'color',
+					'property' => 'zerif_ourfocus_box_title_color'
+				),
+
+				array(
+					'selector' => '.focus-box p',
+					'style' => 'color',
+					'property' => 'zerif_ourfocus_box_text_color'
+				),
+
+				array(
+					'selector' => '.focus-box .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_ourfocus_header'
+				),
+
+				array(
+					'selector' => '.focus-box .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_ourfocus_header'
+				),
+
 
 				/**
 				 * Home: Portfolio
