@@ -21,6 +21,7 @@ $wp_customize->remove_control('zerif_bigtitle_background');
  * Home: Testimonials
  */
 $wp_customize->remove_control('zerif_testimonials_quote');
+$wp_customize->remove_control('zerif_testimonials_pinterest_style');
 
 
 /**
