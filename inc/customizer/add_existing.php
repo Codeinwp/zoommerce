@@ -109,6 +109,7 @@ $wp_customize->get_setting( 'zerif_subscribe_button_background_color_hover' )->t
  * Home: Portfolio
  */
 $wp_customize->get_setting( 'zerif_portofolio_show' )->default = 1;
+$wp_customize->get_section( 'zerif_portofolio_colors_section' )->title = __('Style', 'zoommerce');
 
 /**
  * Home: Testimonials

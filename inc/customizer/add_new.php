@@ -684,3 +684,14 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'zerif
 	'section'    => 'zerif_shop_buttons_color_section',
 	'priority'   => 3
 )));
+
+/**
+ * Home: Portfolio
+ */
+$wp_customize->add_setting( 'portfolio_bg_image', array('default' => get_stylesheet_directory_uri().'/assets/images/shop_cats_pattern.jpg', 'transport' =>'postMessage'));			
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'portfolio_bg_image', array(
+	'label'    => __( 'Background Image', 'zoommerce' ),	
+	'section'  => 'zerif_portofolio_colors_section',	
+	'settings' => 'portfolio_bg_image',	
+	'priority'    => 2,
+)));

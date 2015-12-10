@@ -233,9 +233,39 @@
 
 	wp.customize( 'zerif_portofolio_text', function( value ) {
 		value.bind( function( to ) {
-			$('#works .project-details').attr('style', 'color: ' + to + ' !important');
+			$('#works .project-details .white-text').attr('style', 'color: ' + to + ' !important');
 		} );
 	} );
+
+	var portfolio_bg_img = '',
+		portfolio_bg_color = '';
+		
+	wp.customize( 'zerif_portofolio_background', function( value ) {
+		value.bind( function( to ) {
+			portfolio_bg_color = to;
+			if(!$(portfolio_bg_img).length) {
+				if(to == '#') {
+					$('#works').removeAttr('style');
+				} else {
+					$('#works').attr('style', 'background-image: none !important; background-color: ' + to + ' !important');
+				}
+			}
+		} );
+	} );
+
+	wp.customize( 'portfolio_bg_image', function( value ) {
+		value.bind( function( to ) {
+		portfolio_bg_img = to;
+
+			if(to == '#') {
+				$('#works').removeAttr('style');
+			} else {
+				$('#works').attr('style', 'background-color: none; background-image: url(' + to + ') !important');
+			}
+		} );
+	} );
+
+
 
 	/**
 	 * Home: Testimonials

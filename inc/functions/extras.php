@@ -216,6 +216,21 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'important'	=> true
 				),
 
+				array(
+					'selector' => '#works',
+					'style' => 'background-image',
+					'property' => 'portfolio_bg_image',
+					'before_property' => 'url(',
+					'after_property' => ')',
+					'exclude' => 'zerif_portofolio_background'
+				),
+
+				array(
+					'selector' => '#works',
+					'style' => 'background',
+					'property' => 'zerif_portofolio_background',
+				),
+
 				/**
 				 * Home: Aboutus
 				 */
@@ -445,6 +460,21 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_latestnews_header_subtitle_color'
 				),
 
+				array(
+					'selector' => '#home_blog',
+					'style' => 'background-image',
+					'property' => 'latestnews_bg_image',
+					'before_property' => 'url(',
+					'after_property' => ')',
+					'exclude' => 'zerif_latestnews_background'
+				),
+
+				array(
+					'selector' => '#home_blog',
+					'style' => 'background',
+					'property' => 'zerif_latestnews_background',
+				),
+
 
 				/**
 				 * Home: Testimonials
@@ -583,24 +613,6 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'selector' => '#newsletter_section input[type="submit"]:hover, #newsletter_section button:hover',
 					'style' => 'background',
 					'property' => 'zerif_subscribe_button_background_color_hover'
-				),
-
-				/**
-				 * Home: Latest news
-				 */
-				array(
-					'selector' => '#home_blog',
-					'style' => 'background-image',
-					'property' => 'latestnews_bg_image',
-					'before_property' => 'url(',
-					'after_property' => ')',
-					'exclude' => 'zerif_latestnews_background'
-				),
-
-				array(
-					'selector' => '#home_blog',
-					'style' => 'background',
-					'property' => 'zerif_latestnews_background',
 				),
 
 				/**
