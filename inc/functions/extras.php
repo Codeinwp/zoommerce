@@ -284,8 +284,15 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				array(
 					'selector' => '.team-member .social-icons ul li a:hover',
 					'style' => 'color',
-					'property' => 'zerif_ourteam_socials_hover'
+					'property' => 'zerif_ourteam_socials_hover',
+					'important'	=> true
 				),
+				array(
+					'selector' => '#team .team-member .member-details,#team .team-member .member-details h5',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_header'
+				),
+
 
 				/**
 				 * Home: Ribbon Right
