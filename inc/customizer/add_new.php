@@ -195,7 +195,7 @@ $wp_customize->add_section( 'home_categories_settings' , array(
 ) );
 	
 	//Fields in section 'home_categories_content'
-$wp_customize->add_setting( 'customizer_shop_cats', array('sanitize_callback' => 'zoommerce_sanitize_repeater', 'transport' =>'postMessage'));
+$wp_customize->add_setting( 'customizer_shop_cats', array('sanitize_callback' => 'zoommerce_sanitize_repeater'));
 $wp_customize->add_control( new zoommerce_General_Repeater( $wp_customize, 'customizer_shop_cats', array(
 	'label'   => esc_html__('Add new shop category','zoommerce'),
 	'section' => 'home_categories_content',
@@ -207,7 +207,7 @@ $wp_customize->add_control( new zoommerce_General_Repeater( $wp_customize, 'cust
     'parallax_dropdown_categories' => true
 ) ) );
 
-$wp_customize->add_setting( 'zoommerce_display_latest_cats', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 1, 'transport' =>'postMessage'));
+$wp_customize->add_setting( 'zoommerce_display_latest_cats', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 1));
 $wp_customize->add_control('zoommerce_display_latest_cats',
 		array(
 			'type' 		=> 'checkbox',
