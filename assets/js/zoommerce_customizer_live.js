@@ -164,7 +164,7 @@
 	wp.customize( 'zerif_latestnews_background', function( value ) {
 		value.bind( function( to ) {
 			latest_news_bg_color = to;
-			if(!$(latest_news_bg_img).length) {
+			if(!latest_news_bg_img.length) {
 				if(to == '#') {
 					$('#home_blog').removeAttr('style');
 				} else {
