@@ -85,7 +85,7 @@ if($cart_cond or $account_cond) {
 		<header id="home" class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
 			<div id="main-nav" class="navbar navbar-inverse bs-docs-nav">
 				<div class="container">
-					<div class="navbar-header responsive-logo">
+					<div class="navbar-header responsive-logo <?php echo ($header_icons == true ? ' ' : 'responsive_width'); ?>" >
 						<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
 							<span class="sr-only"><?php _e('Toggle navigation', 'zoommerce'); ?></span>
 							<span class="icon-bar"></span>
