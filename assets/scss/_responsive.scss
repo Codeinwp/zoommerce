@@ -418,3 +418,11 @@
 		padding-bottom: 45px;
 	}
 }
+
+@media (max-width: 620px) {
+	.woocommerce-page form.woocommerce-ordering,
+	.woocommerce-page .site-search {
+		float: none;
+		width: 100%;
+	}
+}
