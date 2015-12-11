@@ -59,7 +59,6 @@ $wp_customize->get_setting( 'section11' )->default = 'right_ribbon';
 $wp_customize->get_setting( 'section12' )->default = 'packages';
 
 
-
 /**
  * Home: Big banner
  */
@@ -110,6 +109,7 @@ $wp_customize->get_setting( 'zerif_subscribe_button_background_color_hover' )->t
  * Home: Portfolio
  */
 $wp_customize->get_setting( 'zerif_portofolio_show' )->default = 1;
+$wp_customize->get_section( 'zerif_portofolio_colors_section' )->title = __('Style', 'zoommerce');
 
 /**
  * Home: Testimonials
@@ -160,11 +160,9 @@ $wp_customize->get_setting( 'zerif_googlemap_show' )->default = 1;
  */
 $wp_customize->get_setting( 'zerif_latestnews_subtitle' )->default = '';
 $wp_customize->get_setting( 'zerif_latest_news_show' )->default = 1;
-
-/**
- * General: Background
- */
-$wp_customize->get_setting( 'background_image' )->default = get_stylesheet_directory_uri().'/assets/images/demo/home_background.jpg';
+$wp_customize->get_control( 'zerif_latestnews_background' )->description = __('In order to use background color, make sure you removed the background image first.','zoommerce');
+$wp_customize->get_setting( 'zerif_latestnews_background' )->default = '';
+$wp_customize->get_section( 'zerif_latest_news_colors_section' )->title = __('Style', 'zoommerce');
 
 /**
  * General: Footer
@@ -174,9 +172,45 @@ $wp_customize->get_setting( 'zerif_email_icon' )->default = get_stylesheet_direc
 $wp_customize->get_setting( 'zerif_phone_icon' )->default = get_stylesheet_directory_uri().'/assets/images/icon-contact.png';
 $wp_customize->get_setting( 'zerif_address_icon' )->default = get_stylesheet_directory_uri().'/assets/images/icon-location.png';
 $wp_customize->get_setting( 'zerif_copyright' )->default = __('© Themeisle. All Rights Reserved', 'zoommerce');
+$wp_customize->get_control( 'zerif_footer_socials_background' )->label = __( 'Footer widgets background color', 'zoommerce' );
+$wp_customize->get_setting( 'zerif_footer_socials_background' )->default = '#272727';
+$wp_customize->get_setting( 'zerif_email_icon' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_phone_icon' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_address_icon' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_email' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_phone' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_address' )->transport = 'postMessage';
+
 
 /**
- * General: Background
+ * Home: Contact us
  */
 $wp_customize->get_control( 'zerif_contacus_button_color' )->label = __( 'Button text color', 'zoommerce' );
 $wp_customize->get_setting( 'zerif_contacus_button_background_hover' )->transport = 'postMessage';
+
+/**
+ * General
+ */
+	//Background
+$wp_customize->get_setting( 'background_image' )->default = get_stylesheet_directory_uri().'/assets/images/demo/home_background.jpg';
+	
+	//Colors
+$wp_customize->get_setting( 'zerif_navbar_color' )->default = '#000';
+$wp_customize->get_setting( 'zerif_links_color_hover' )->default = '#e52424';
+
+	//Button colors
+$wp_customize->get_setting( 'zerif_buttons_background_color' )->default = '#e52424';
+$wp_customize->get_setting( 'zerif_buttons_background_color_hover' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_buttons_background_color_hover' )->default = '#333';
+
+	//Social links
+$wp_customize->get_setting( 'zerif_socials_facebook' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_twitter' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_linkedin' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_behance' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_dribbble' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_googleplus' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_pinterest' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_tumblr' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_reddit' )->transport = 'postMessage';
+$wp_customize->get_setting( 'zerif_socials_youtube' )->transport = 'postMessage';

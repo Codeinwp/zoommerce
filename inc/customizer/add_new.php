@@ -184,18 +184,18 @@ $wp_customize->add_panel( 'panel_shop_cats', array(
 	//Sections in panel 'panel_shop_cats'
 $wp_customize->add_section( 'home_categories_content' , array(
 	'title'		=> __( 'Content', 'zoommerce' ),
-	'priority'	=> 1,
+	'priority'	=> 2,
 	'panel'		=> 'panel_shop_cats'
 ) );
 
 $wp_customize->add_section( 'home_categories_settings' , array(
 	'title'		=> __( 'Settings', 'zoommerce' ),
-	'priority'	=> 2,
+	'priority'	=> 1,
 	'panel'		=> 'panel_shop_cats'
 ) );
 	
 	//Fields in section 'home_categories_content'
-$wp_customize->add_setting( 'customizer_shop_cats', array('sanitize_callback' => 'zoommerce_sanitize_repeater', 'transport' =>'postMessage'));
+$wp_customize->add_setting( 'customizer_shop_cats', array('sanitize_callback' => 'zoommerce_sanitize_repeater'));
 $wp_customize->add_control( new zoommerce_General_Repeater( $wp_customize, 'customizer_shop_cats', array(
 	'label'   => esc_html__('Add new shop category','zoommerce'),
 	'section' => 'home_categories_content',
@@ -207,7 +207,7 @@ $wp_customize->add_control( new zoommerce_General_Repeater( $wp_customize, 'cust
     'parallax_dropdown_categories' => true
 ) ) );
 
-$wp_customize->add_setting( 'zoommerce_display_latest_cats', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 1, 'transport' =>'postMessage'));
+$wp_customize->add_setting( 'zoommerce_display_latest_cats', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 1));
 $wp_customize->add_control('zoommerce_display_latest_cats',
 		array(
 			'type' 		=> 'checkbox',
@@ -244,13 +244,13 @@ $wp_customize->add_panel( 'panel_shop_products', array(
 	//Sections
 $wp_customize->add_section( 'home_latest_products_content' , array(
 	'title'		=> __( 'Content', 'zoommerce' ),
-	'priority'	=> 1,
+	'priority'	=> 2,
 	'panel'		=> 'panel_shop_products'
 ) );
 
 $wp_customize->add_section( 'home_latest_products_settings' , array(
 	'title'		=> __( 'Settings', 'zoommerce' ),
-	'priority'	=> 2,
+	'priority'	=> 1,
 	'panel'		=> 'panel_shop_products'
 ) );
 	
@@ -490,7 +490,7 @@ $wp_customize->add_control('shop_last_products_hide',
 			'priority'	=> 1,
 		)
 );
-$wp_customize->add_setting( 'shop_newsletter_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0));
+$wp_customize->add_setting( 'shop_newsletter_hide', array('sanitize_callback' => 'zerif_sanitize_text', 'default' => 0, 'transport' =>'postMessage'));
 $wp_customize->add_control('shop_newsletter_hide',
 		array(
 			'type' 		=> 'checkbox',
@@ -625,4 +625,73 @@ $wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'our_t
 	'label'      => __( 'Subtitle color', 'zerif' ),
 	'section'    => 'zerif_ourteam_colors_section',
 	'priority'   => 2
+)));
+
+/**
+ * Home: Latest news
+ */
+$wp_customize->add_setting( 'latestnews_bg_image', array('default' => get_stylesheet_directory_uri().'/assets/images/shop_cats_pattern.jpg', 'transport' =>'postMessage'));			
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'latestnews_bg_image', array(
+	'label'    => __( 'Background Image', 'zoommerce' ),	
+	'section'  => 'zerif_latest_news_colors_section',	
+	'settings' => 'latestnews_bg_image',	
+	'priority'    => 2,
+)));
+
+/**
+ * Footer Settings
+ */
+$wp_customize->add_setting( 'zerif_footer_socials_border', array( 'default' => '#4d4d4d', 'transport' =>'postMessage' ) );
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'zerif_footer_socials_border', array(
+	'label'      => __( 'Footer widgets border color', 'zoommerce' ),
+	'section'    => 'zerif_footer_color_section',
+	'priority'   => 2
+)));
+
+/**
+ * General: Shop buttons colors
+ */
+$wp_customize->add_section( 'zerif_shop_buttons_color_section' , array(
+	'title'       => __( 'Shop buttons colors', 'zoommerce' ),
+	'priority'    => 5,
+	'panel' => 'panel_1'
+));
+		
+$wp_customize->add_setting( 'zerif_shop_buttons_background_color', array( 'default' => '#333', 'transport' =>'postMessage' ) );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'zerif_shop_buttons_background_color',array(
+	'label'      => __( 'Buttons background color', 'zoommerce' ),
+	'section'    => 'zerif_shop_buttons_color_section',
+	'priority'   => 1
+)));
+
+$wp_customize->add_setting( 'zerif_shop_buttons_background_color_hover', array( 'default' => '#e52424', 'transport' =>'postMessage' ) );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'zerif_shop_buttons_background_color_hover',array(
+	'label'      => __( 'Buttons background hover color', 'zoommerce' ),
+	'section'    => 'zerif_shop_buttons_color_section',
+	'priority'   => 2
+)));
+
+$wp_customize->add_setting( 'zerif_shop_buttons_text_color', array( 'default' => '#fff', 'transport' =>'postMessage' ) );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'zerif_shop_buttons_text_color',array(
+	'label'      => __( 'Buttons text color', 'zoommerce' ),
+	'section'    => 'zerif_shop_buttons_color_section',
+	'priority'   => 3
+)));
+
+$wp_customize->add_setting( 'zerif_shop_buttons_text_color_hover', array( 'default' => '#fff', 'transport' =>'postMessage' ) );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'zerif_shop_buttons_text_color_hover',array(
+	'label'      => __( 'Buttons text hover color', 'zoommerce' ),
+	'section'    => 'zerif_shop_buttons_color_section',
+	'priority'   => 3
+)));
+
+/**
+ * Home: Portfolio
+ */
+$wp_customize->add_setting( 'portfolio_bg_image', array('default' => get_stylesheet_directory_uri().'/assets/images/shop_cats_pattern.jpg', 'transport' =>'postMessage'));			
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'portfolio_bg_image', array(
+	'label'    => __( 'Background Image', 'zoommerce' ),	
+	'section'  => 'zerif_portofolio_colors_section',	
+	'settings' => 'portfolio_bg_image',	
+	'priority'    => 2,
 )));

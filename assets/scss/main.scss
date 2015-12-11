@@ -38,7 +38,7 @@ body.custom-background {
 
 #site-navigation {
 	// overflow-x: hidden !important;
-	width: 72%;
+	width: 68%;
 	height: auto;
 }	
 
@@ -58,6 +58,7 @@ body.custom-background {
 /* ------- Navbar ------- */
 .navbar-inverse {
 	background: #000;
+	border: none;
 }
 .navbar-brand {
 	padding: 0;
@@ -225,11 +226,17 @@ ul.nav > li.current_page_item > a:before {
 	color: #737373;
 	display: flex;
     height: 40px;
+    word-break: break-all;
 	
 	.icon-left {
 		float: left;
 		margin-right: 12px;
 		align-self: center;
+	}
+
+	span {
+		align-self: center;
+		float: left;
 	}
 
 	a {
@@ -830,7 +837,7 @@ ul.nav > li.current_page_item > a:before {
 }
 
 #home_blog {
-	background: url(../images/shop_cats_pattern.jpg);
+	background-image: url(../images/shop_cats_pattern.jpg);
 	padding: 45px 0 95px 0;
 	
 	.items_with_navigation {
@@ -1062,6 +1069,10 @@ ul.nav > li.current_page_item > a:before {
 
 	.custom-button {
 		border: none;
+	}
+
+	.package .price-container {
+		line-height: 100px;
 	}
 }
 

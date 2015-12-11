@@ -42,7 +42,7 @@
 			<div class="entry-content" itemprop="text">
 
 				<?php 
-					the_excerpt()
+					the_excerpt();
 
 					wp_link_pages( array(
 						'before' => '<div class="page-links">' . __( 'Pages:', 'zerif-lite' ),

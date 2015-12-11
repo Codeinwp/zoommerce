@@ -18,15 +18,10 @@ $wp_customize->remove_control('zerif_bigtitle_1button_background_color_hover');
 $wp_customize->remove_control('zerif_bigtitle_background');
 
 /**
- * Home: Portfolio
- */
-$wp_customize->remove_control('zerif_portofolio_background');
-
-
-/**
  * Home: Testimonials
  */
 $wp_customize->remove_control('zerif_testimonials_quote');
+$wp_customize->remove_control('zerif_testimonials_pinterest_style');
 
 
 /**
@@ -40,3 +35,8 @@ $wp_customize->remove_control('zerif_packages_header');
  */
 $wp_customize->remove_control('zerif_bigtitle_greenbutton_label');
 $wp_customize->remove_control('zerif_bigtitle_greenbutton_url');
+
+/**
+ * General
+ */
+$wp_customize->remove_control('zerif_titles_bottomborder_color');

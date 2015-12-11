@@ -111,32 +111,32 @@ zerif_before_footer_trigger(); ?>
 	echo '<div class="footer-box-wrap">';
 
 	if( !empty($zerif_address) ):
-		echo '<div class="'.esc_attr($footer_class).' company-details">';
+		echo '<div class="'.esc_attr($footer_class).' company-details address">';
 			echo '<div class="icon-left">';
 				if( !empty($zerif_address_icon) ) echo '<img src="'.$zerif_address_icon.'">';
 			echo '</div>';
-			echo $zerif_address;
+			echo '<span>' . $zerif_address . '</span>';
 		echo '</div>';
 	endif;
 
 	/* COMPANY EMAIL */
 	if( !empty($zerif_email) ):
-		echo '<div class="'.$footer_class.' company-details">';
+		echo '<div class="'.$footer_class.' company-details email">';
 			echo '<div class="icon-left">';
 				if( !empty($zerif_email_icon) ) echo '<img src="'.$zerif_email_icon.'">';
 			echo '</div>';
-			echo $zerif_email;
+			echo '<span>' . $zerif_email . '</span>';
 		echo '</div>';
 	endif;
 
 	/* COMPANY PHONE NUMBER */
 	if( !empty($zerif_phone) ):
-		echo '<div class="'.$footer_class.' company-details">';
+		echo '<div class="'.$footer_class.' company-details phone">';
 			echo '<div class="icon-left">';
 				if( !empty($zerif_phone_icon) ) echo '<img src="'.$zerif_phone_icon.'">';
 			echo '</div>';
-			echo $zerif_phone;
-		echo '</div>';
+			echo '<span>' . $zerif_phone . '</span>';
+		echo '</div>'; 
 	endif;
 
 	if( !empty($zerif_socials_facebook) || !empty($zerif_socials_twitter) || !empty($zerif_socials_linkedin) || !empty($zerif_socials_behance) || !empty($zerif_socials_dribbble) || !empty($zerif_socials_reddit) || !empty($zerif_socials_tumblr) || !empty($zerif_socials_pinterest) || !empty($zerif_socials_googleplus) || !empty($zerif_copyright) || !empty($zerif_socials_youtube) ):
@@ -147,52 +147,52 @@ zerif_before_footer_trigger(); ?>
 
 				/* facebook */
 				if( !empty($zerif_socials_facebook) ):
-					echo '<li><a target="_blank" href="'.$zerif_socials_facebook.'"><i class="fa fa-facebook"></i></a></li>';
+					echo '<li class="facebook"><a target="_blank" href="'.$zerif_socials_facebook.'"><i class="fa fa-facebook"></i></a></li>';
 				endif;
 
 				/* twitter */
 				if( !empty($zerif_socials_twitter) ):
-					echo '<li><a target="_blank" href="'.$zerif_socials_twitter.'"><i class="fa fa-twitter"></i></a></li>';
+					echo '<li class="twitter"><a target="_blank" href="'.$zerif_socials_twitter.'"><i class="fa fa-twitter"></i></a></li>';
 				endif;
 
 				/* linkedin */
 				if( !empty($zerif_socials_linkedin) ):
-					echo '<li><a target="_blank" href="'.$zerif_socials_linkedin.'"><i class="fa fa-linkedin"></i></a></li>';
+					echo '<li class="linkedin"><a target="_blank" href="'.$zerif_socials_linkedin.'"><i class="fa fa-linkedin"></i></a></li>';
 				endif;
 
 				/* behance */
 				if( !empty($zerif_socials_behance) ):
-					echo '<li><a target="_blank" href="'.$zerif_socials_behance.'"><i class="fa fa-behance"></i></a></li>';
+					echo '<li class="behance"><a target="_blank" href="'.$zerif_socials_behance.'"><i class="fa fa-behance"></i></a></li>';
 				endif;
 
 				/* dribbble */
 				if( !empty($zerif_socials_dribbble) ):
-					echo '<li><a target="_blank" href="'.$zerif_socials_dribbble.'"><i class="fa fa-dribbble"></i></a></li>';
+					echo '<li class="dribbble"><a target="_blank" href="'.$zerif_socials_dribbble.'"><i class="fa fa-dribbble"></i></a></li>';
 				endif;
 				
 				/* googleplus */
 				if( !empty($zerif_socials_googleplus) ):
-					echo '<li><a target="_blank" href="'.$zerif_socials_googleplus.'"><i class="fa fa-google"></i></a></li>';
+					echo '<li class="google"><a target="_blank" href="'.$zerif_socials_googleplus.'"><i class="fa fa-google"></i></a></li>';
 				endif;
 				
 				/* pinterest */
 				if( !empty($zerif_socials_pinterest) ):
-					echo '<li><a target="_blank" href="'.$zerif_socials_pinterest.'"><i class="fa fa-pinterest"></i></a></li>';
+					echo '<li class="pinterest"><a target="_blank" href="'.$zerif_socials_pinterest.'"><i class="fa fa-pinterest"></i></a></li>';
 				endif;
 				
 				/* tumblr */
 				if( !empty($zerif_socials_tumblr) ):
-					echo '<li><a target="_blank" href="'.$zerif_socials_tumblr.'"><i class="fa fa-tumblr"></i></a></li>';
+					echo '<li class="tumblr"><a target="_blank" href="'.$zerif_socials_tumblr.'"><i class="fa fa-tumblr"></i></a></li>';
 				endif;
 				
 				/* reddit */
 				if( !empty($zerif_socials_reddit) ):
-					echo '<li><a target="_blank" href="'.$zerif_socials_reddit.'"><i class="fa fa-reddit"></i></a></li>';
+					echo '<li class="reddit"><a target="_blank" href="'.$zerif_socials_reddit.'"><i class="fa fa-reddit"></i></a></li>';
 				endif;
 				
 				/* youtube */
 				if( !empty($zerif_socials_youtube) ):
-					echo '<li><a target="_blank" href="'.$zerif_socials_youtube.'"><i class="fa fa-youtube"></i></a></li>';
+					echo '<li class="youtube"><a target="_blank" href="'.$zerif_socials_youtube.'"><i class="fa fa-youtube"></i></a></li>';
 				endif;
 
 				echo '</ul>';
