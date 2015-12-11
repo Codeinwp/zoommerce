@@ -16,9 +16,9 @@
 		}
 	}
 
-	#main-nav {
-		padding-bottom: 15px;
-	}
+	// #main-nav {
+	// 	padding-bottom: 15px;
+	// }
 	
 	.navbar-header {
 		float: left;
@@ -423,6 +423,12 @@
 	.woocommerce-page form.woocommerce-ordering,
 	.woocommerce-page .site-search {
 		float: none;
+		width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
 		width: 100%;
 	}
 }
