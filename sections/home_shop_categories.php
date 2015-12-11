@@ -7,9 +7,6 @@
  */
 
 	$categories_hide  = get_theme_mod('zoommerce_shopcats_hide');
-	if($categories_hide)
-		return NULL;
-
 
 	//Get data
 		//Categories
@@ -22,7 +19,7 @@
     $cat_count = count($categories);
 
     	//Customizer
-	$zoommerce_display_latest_cats = get_theme_mod('zoommerce_display_latest_cats');
+	$zoommerce_display_latest_cats = get_theme_mod('zoommerce_display_latest_cats', '1');
 	$customizer_cats = get_theme_mod('customizer_shop_cats');
 
 	//Reset $cat_count if categories are from customizer
@@ -33,7 +30,7 @@
 	//Hide section if any of these two are not available
 	if($zoommerce_display_latest_cats or $customizer_cats):
 ?>
-<section id="shop_cats">
+<section id="shop_cats" <?php echo ($categories_hide == true ? 'style="display: none;"' : ''); ?>>
 	<div class="container">
 		<?php
 
