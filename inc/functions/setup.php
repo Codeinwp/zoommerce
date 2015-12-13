@@ -131,3 +131,20 @@ if(!function_exists('zoommerce_html5shiv')) {
 	    	<![endif]-->';
 	}
 }
+
+/**
+ * Keep Zerif PRO customizer values
+ */
+if(!function_exists('zoommerce_get_parent_options')) {
+	add_action("after_switch_theme", "zoommerce_get_parent_options");
+
+	function zoommerce_get_parent_options () {
+		$zerif_mods = get_option('theme_mods_zerif-pro');
+
+		if( !empty($zerif_mods) ):
+			foreach($zerif_mods as $zerif_mod_k => $zerif_mod_v):
+				set_theme_mod( $zerif_mod_k, $zerif_mod_v );
+			endforeach;
+		endif;
+	}
+}

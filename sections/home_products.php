@@ -43,7 +43,7 @@ $products_loop = new WP_Query( $products_args );
 			}
 		}
 	?>
-		<div class="left<?php echo esc_attr($prod_class); ?>" data-scrollreveal="enter left after 0s over 1s" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
+		<div class="left<?php echo esc_attr($prod_class); ?> <?php echo (!empty($right_image) ? '' : 'full'); ?>" data-scrollreveal="enter left after 0s over 1s">
 			<div class="home_headline">
 				<?php
 					

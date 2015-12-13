@@ -59,6 +59,29 @@ body.custom-background {
 .navbar-inverse {
 	background: #000;
 	border: none;
+
+	.navbar-nav {
+		margin-top: 20px;
+
+		>li {
+			margin-top: 0;
+			margin-right: 0;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+}
+.sub-menu {
+	> li:hover {
+		background: #e52424;
+		color: #fff !important;
+
+		> a {
+			color: #fff !important;
+			text-decoration: none;
+			display: block;
+		}
+	}
 }
 .navbar-brand {
 	padding: 0;
@@ -577,6 +600,13 @@ ul.nav > li.current_page_item > a:before {
 
 	.left {
 		padding: 0 4% 45px 4%;
+
+		&.full {
+			@extend .container;
+		    margin-right: auto;
+			margin-left: auto;
+    		float: none;
+		}
 
 		&.two {
 			.product {
