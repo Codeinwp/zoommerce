@@ -1,5 +1,28 @@
 
 
+### 1.0.0.3 - 15/12/2015
+
+ Changes: 
+
+
+ * Merge branch 'robi09-development' into development
+ * home categories conditions fixed
+ * home latest products design fix
+ * Merge branch 'robi09-development' into development
+ * Merge pull request #2 from Codeinwp/development
+
+Development
+ * Merge pull request #32 from robi09/development
+
+Development
+ * Merge pull request #33 from robi09/development
+
+Development
+ * Merge pull request #34 from robi09/development
+
+Development
+
+
 ### 1.0.0.3 - 27/11/2015
 
  Changes: 
