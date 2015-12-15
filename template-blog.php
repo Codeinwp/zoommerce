@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for displaying the blog page template.
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
 /*
 Template Name: Blog template
 */
@@ -13,7 +20,7 @@ get_header();
 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 
 if($image) {
-	$image_bg = 'style="background-image: url('.$image[0].');"';
+	$image_bg = 'style="background-image: url('.esc_url($image[0]).');"';
 } else {
 	$image_bg = 'style="background-color: rgba(0, 0, 0, 0.7);"';
 }
@@ -39,7 +46,7 @@ if($image) {
 <div id="breadcrumb">
 	<?php $blog_page_id = zoommerce_get_pages_by_template('template-blog.php')->ID; ?>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'zoommerce'); ?></a>
-	<a href="<?php echo get_page_link($blog_page_id); ?>"><?php _e('Blog', 'zoommerce'); ?></a>
+	<a href="<?php echo esc_url(get_page_link($blog_page_id)); ?>"><?php _e('Blog', 'zoommerce'); ?></a>
 </div><!-- /#breadcrumb  -->
 <div id="content" class="site-content">
 

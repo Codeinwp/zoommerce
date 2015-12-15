@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * The template for home section: About
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
 	global $wp_customize;
 	
 	$zerif_aboutus_show = get_theme_mod('zerif_aboutus_show', 1);
@@ -30,7 +35,7 @@
 					
 					if( !empty($zerif_aboutus_title) ):
 					
-						echo '<h3 class="white-text">'.$zerif_aboutus_title.'</h3>';
+						echo '<h3 class="white-text">'.esc_html($zerif_aboutus_title).'</h3>';
 						
 					elseif ( isset( $wp_customize ) ):	
 						
@@ -45,11 +50,11 @@
 
 					if( !empty($zerif_aboutus_subtitle) ):
 
-						echo '<h4 class="white-text">'.$zerif_aboutus_subtitle.'</h4>';
+						echo '<h4 class="white-text">'.esc_html($zerif_aboutus_subtitle).'</h4>';
 
 					elseif ( isset( $wp_customize ) ):
 					
-						echo '<h4 class="white-text zerif_hidden_if_not_customizer">'.$zerif_aboutus_subtitle.'</h4>';
+						echo '<h4 class="white-text zerif_hidden_if_not_customizer">'.esc_html($zerif_aboutus_subtitle).'</h4>';
 
 					endif;
 
@@ -89,7 +94,7 @@
 						echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . ' column zerif-rtl-big-title">';
 
 
-							echo '<div class="big-intro" data-scrollreveal="enter left after 0s over 1s">'.$zerif_aboutus_biglefttitle.'</div>';
+							echo '<div class="big-intro" data-scrollreveal="enter left after 0s over 1s">'.esc_html($zerif_aboutus_biglefttitle).'</div>';
 
 
 						echo '</div>';
@@ -100,13 +105,13 @@
 
 					if( !empty($zerif_aboutus_text) ):
 
-						echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . ' column zerif_about_us_center" data-scrollreveal="enter bottom after 0s over 1s">';
+						echo '<div class="col-lg-' . esc_attr($colCount) . ' col-md-' . esc_attr($colCount) . ' column zerif_about_us_center" data-scrollreveal="enter bottom after 0s over 1s">';
 
 
 								echo '<p>';
 
 
-									echo $zerif_aboutus_text;
+									echo esc_html($zerif_aboutus_text);
 
 
 								echo '</p>';
@@ -119,7 +124,7 @@
 
 					/* COLUMN 1 - SKILSS */
 
-					echo '<div class="col-lg-'.$colCount.' col-md-'.$colCount.' column zerif-rtl-skills">';
+					echo '<div class="col-lg-'.esc_attr($colCount).' col-md-'.esc_attr($colCount).' column zerif-rtl-skills">';
 
 						echo '<ul class="skills" data-scrollreveal="enter right after 0s over 1s">';
 
@@ -136,7 +141,7 @@
 								echo '<div class="skill-count">';
 
 
-									echo '<input type="text" value="'.$zerif_aboutus_feature1_nr.'" data-thickness=".2" class="skill1">';
+									echo '<input type="text" value="'.esc_attr($zerif_aboutus_feature1_nr).'" data-thickness=".2" class="skill1">';
 
 
 								echo '</div>';
@@ -148,7 +153,7 @@
 							
 							if( !empty($zerif_aboutus_feature1_title) ):
 							
-								echo '<h6>'.$zerif_aboutus_feature1_title.'</h6>';
+								echo '<h6>'.esc_html($zerif_aboutus_feature1_title).'</h6>';
 								
 							elseif ( isset( $wp_customize ) ):
 
@@ -158,7 +163,7 @@
 							
 							if( !empty($zerif_aboutus_feature1_text) ):
 							
-								echo '<p>'.$zerif_aboutus_feature1_text.'</p>';
+								echo '<p>'.esc_html($zerif_aboutus_feature1_text).'</p>';
 								
 							elseif ( isset( $wp_customize ) ):
 
@@ -181,7 +186,7 @@
 								echo '<div class="skill-count">';
 
 
-									echo '<input type="text" value="'.$zerif_aboutus_feature2_nr.'" data-thickness=".2" class="skill2">';
+									echo '<input type="text" value="'.esc_attr($zerif_aboutus_feature2_nr).'" data-thickness=".2" class="skill2">';
 
 
 								echo '</div>';
@@ -194,7 +199,7 @@
 							
 							if( !empty($zerif_aboutus_feature2_title) ):
 							
-								echo '<h6>'.$zerif_aboutus_feature2_title.'</h6>';
+								echo '<h6>'.esc_html($zerif_aboutus_feature2_title).'</h6>';
 								
 							elseif ( isset( $wp_customize ) ):
 							
@@ -204,7 +209,7 @@
 							
 							if( !empty($zerif_aboutus_feature2_text) ):
 							
-								echo '<p>'.$zerif_aboutus_feature2_text.'</p>';
+								echo '<p>'.esc_html($zerif_aboutus_feature2_text).'</p>';
 								
 							elseif ( isset( $wp_customize ) ):
 
@@ -228,7 +233,7 @@
 								echo '<div class="skill-count">';
 
 
-									echo '<input type="text" value="'.$zerif_aboutus_feature3_nr.'" data-thickness=".2" class="skill3">';
+									echo '<input type="text" value="'.esc_attr($zerif_aboutus_feature3_nr).'" data-thickness=".2" class="skill3">';
 
 
 								echo '</div>';
@@ -241,7 +246,7 @@
 							
 							if( !empty($zerif_aboutus_feature3_title) ):
 							
-								echo '<h6>'.$zerif_aboutus_feature3_title.'</h6>';
+								echo '<h6>'.esc_html($zerif_aboutus_feature3_title).'</h6>';
 								
 							elseif ( isset( $wp_customize ) ):
 							
@@ -251,7 +256,7 @@
 							
 							if( !empty($zerif_aboutus_feature3_text) ):
 							
-								echo '<p>'.$zerif_aboutus_feature3_text.'</p>';
+								echo '<p>'.esc_html($zerif_aboutus_feature3_text).'</p>';
 								
 							elseif ( isset( $wp_customize ) ):
 
@@ -276,7 +281,7 @@
 								echo '<div class="skill-count">';
 
 
-									echo '<input type="text" value="'.$zerif_aboutus_feature4_nr.'" data-thickness=".2" class="skill4">';
+									echo '<input type="text" value="'.esc_attr($zerif_aboutus_feature4_nr).'" data-thickness=".2" class="skill4">';
 
 
 								echo '</div>';
@@ -289,7 +294,7 @@
 							
 							if( !empty($zerif_aboutus_feature4_title) ):
 							
-								echo '<h6>'.$zerif_aboutus_feature4_title.'</h6>';
+								echo '<h6>'.esc_html($zerif_aboutus_feature4_title).'</h6>';
 								
 							elseif ( isset( $wp_customize ) ):
 							
@@ -299,7 +304,7 @@
 							
 							if( !empty($zerif_aboutus_feature4_text) ):
 							
-								echo '<p>'.$zerif_aboutus_feature4_text.'</p>';
+								echo '<p>'.esc_html($zerif_aboutus_feature4_text).'</p>';
 								
 							elseif ( isset( $wp_customize ) ):
 

@@ -1,4 +1,10 @@
 <?php 
+/**
+ * The template for displaying the front-page.
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
 
 get_header(); 
 
@@ -216,14 +222,14 @@ echo '
 							<!-- SECTION HEADER -->
 							<?php
 								echo '<div class="home_headline">';
-								$headline = get_theme_mod('latest_contact_headline', __('Get in touch', 'zoommerce'));
+								$headline = get_theme_mod('zerif_contactus_title', __('Get in touch', 'zoommerce'));
 								if($headline) {
-									echo '<h3>'.esc_html(get_theme_mod('latest_contact_headline', __('Get in touch', 'zoommerce') )).'</h3>';
+									echo '<h3>'.esc_html(get_theme_mod('zerif_contactus_title', __('Get in touch', 'zoommerce') )).'</h3>';
 								}
 
-								$subtitle = get_theme_mod('latest_contact_subheading', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoommerce'));
+								$subtitle = get_theme_mod('zerif_contactus_subtitle', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoommerce'));
 								if($subtitle) {
-									echo '<h4>'.esc_html(get_theme_mod('latest_contact_subheading', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoommerce'))).'</h4>';
+									echo '<h4>'.esc_html(get_theme_mod('zerif_contactus_subtitle', __('Big and mobile optimized contact form integrated. All fields are customizable.', 'zoommerce'))).'</h4>';
 								}
 								echo '</div><!-- / .home_headline -->';
 							?>

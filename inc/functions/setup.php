@@ -7,6 +7,7 @@
 add_action('init', 'zoommerce_remove_hooks');
 function zoommerce_remove_hooks() {
 	remove_action('wp_footer', 'zerif_php_style', 1);
+	remove_action('wp_title', 'wp_themeisle_wp_title', 10);
 }
 
 /**
@@ -25,7 +26,6 @@ add_action( 'wp_enqueue_scripts', 'zoommerce_enqueue_scripts' );
 function zoommerce_enqueue_scripts() {
   	wp_enqueue_script( 'zoommerce_scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array(), '1.0', true );
   	wp_enqueue_script( 'owlCarousel', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '1.0', true );
-	wp_enqueue_script( 'zoommerce_customizer_script',get_stylesheet_directory_uri() . '/assets/js/zoommerce_customizer_live.js', array("jquery"),'1.0.0', true  );
 }
 
 function zoommerce_customizer_script() {
@@ -129,5 +129,22 @@ if(!function_exists('zoommerce_html5shiv')) {
 	    echo '<!--[if lt IE 9]>
 	    		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	    	<![endif]-->';
+	}
+}
+
+/**
+ * Keep Zerif PRO customizer values
+ */
+if(!function_exists('zoommerce_get_parent_options')) {
+	add_action("after_switch_theme", "zoommerce_get_parent_options");
+
+	function zoommerce_get_parent_options () {
+		$zerif_mods = get_option('theme_mods_zerif-pro');
+
+		if( !empty($zerif_mods) ):
+			foreach($zerif_mods as $zerif_mod_k => $zerif_mod_v):
+				set_theme_mod( $zerif_mod_k, $zerif_mod_v );
+			endforeach;
+		endif;
 	}
 }

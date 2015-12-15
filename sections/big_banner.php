@@ -1,10 +1,22 @@
 <?php
+/**
+ * The template for home section: Big banner
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
+	$zerif_parallax_use = get_theme_mod('zerif_parallax_show');
 	$zerif_background_settings = get_theme_mod('zerif_background_settings');
+	$zerif_bigtitle_show = get_theme_mod('zerif_bigtitle_show');
+
 
 	if($zerif_background_settings == 'zerif-background-image') {
-		echo '<div id="big-banner" style="background-image: url('.get_theme_mod('background_image', get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg').');">';
+		echo '<div id="big-banner" '.($zerif_bigtitle_show == true ? 'class="zerif_hidden_if_not_customizer"' : '').' style="background-image: url('.get_theme_mod('background_image', get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg').');">';
+	} elseif($zerif_parallax_use == 1) {
+		echo '<div id="big-banner" '.($zerif_bigtitle_show == true ? 'class="zerif_hidden_if_not_customizer"' : '').'>';
 	} else {
-		echo '<div id="big-banner" style="background-image: url('.get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg'.');">';
+		echo '<div id="big-banner" '.($zerif_bigtitle_show == true ? 'class="zerif_hidden_if_not_customizer"' : '').'style="background-image: url('.get_stylesheet_directory_uri() . '/assets/images/demo/home_background.jpg'.');">';
 	}
 ?>
 
@@ -12,8 +24,6 @@
 	/*************************************************/
 	/**************  Background settings *************/
 	/*************************************************/
-
-	
 
 	/* Default case when no setting is checked or Slider is selected */
 	if( empty($zerif_background_settings) || ($zerif_background_settings == 'zerif-background-slider') ):
@@ -47,9 +57,9 @@
 						$zerif_bgsize = 'auto 100%';
 					endif;
 
-					$zerif_slide_style ='background-repeat:no-repeat;background-position:'.$zerif_hpos.' '.$zerif_vpos.';background-size:'.$zerif_bgsize;
+					$zerif_slide_style ='background-repeat:no-repeat;background-position:'.esc_attr($zerif_hpos).' '.esc_attr($zerif_vpos).';background-size:'.esc_attr($zerif_bgsize);
 
-					echo '<div class="slide-item" style="background-image:url('.$zerif_slide.');'.$zerif_slide_style.'"></div>';
+					echo '<div class="slide-item" style="background-image:url('.esc_url($zerif_slide).');'.$zerif_slide_style.'"></div>';
 
 				endif;
 
@@ -71,7 +81,7 @@
 
 				if( !empty($zerif_background_video_thumbnail) ):
 
-					echo '<video class="zerif_video_background" loop autoplay preload="auto" controls="true" poster="'.$zerif_background_video_thumbnail.'" muted>';
+					echo '<video class="zerif_video_background" loop autoplay preload="auto" controls="true" poster="'.esc_url($zerif_background_video_thumbnail).'" muted>';
 
 				else:
 
@@ -79,7 +89,7 @@
 
 				endif;
 
-				echo '<source src="'.$zerif_background_video.'" type="video/mp4" />';
+				echo '<source src="'.esc_url($zerif_background_video).'" type="video/mp4" />';
 				echo '</video>';
 
 			} else {
@@ -89,7 +99,7 @@
 
 				if( !empty($zerif_background_video_thumbnail) ) {
 
-					echo '<div class="slide-item" style="background-image:url('.$zerif_background_video_thumbnail.')"></div>';
+					echo '<div class="slide-item" style="background-image:url('.esc_url($zerif_background_video_thumbnail).')"></div>';
 
 				} else {
 
@@ -99,7 +109,7 @@
 
 						$page_bg_image_url = get_background_image();
 
-						echo '<div class="slide-item" style="background-image:url('.$page_bg_image_url.')"></div>';
+						echo '<div class="slide-item" style="background-image:url('.esc_url($page_bg_image_url).')"></div>';
 
 					}
 				}
@@ -118,24 +128,21 @@
 	global $wp_customize;
 	$zerif_parallax_img1 = get_theme_mod('zerif_parallax_img1',get_template_directory_uri() . '/images/background1.jpg');
 	$zerif_parallax_img2 = get_theme_mod('zerif_parallax_img2',get_template_directory_uri() . '/images/background2.png');
-	$zerif_parallax_use = get_theme_mod('zerif_parallax_show');
 
 	if ( $zerif_parallax_use == 1 && (!empty($zerif_parallax_img1) || !empty($zerif_parallax_img2)) ) {
 
 		echo '<ul id="parallax_move">';
 	
 			if( !empty($zerif_parallax_img1) ) { 
-				echo '<li class="layer layer1" data-depth="0.10" style="background-image: url(' . $zerif_parallax_img1 . ');"></li>';
+				echo '<li class="layer layer1" data-depth="0.10" style="background-image: url(' . esc_url($zerif_parallax_img1) . ');"></li>';
 			}
 			if( !empty($zerif_parallax_img2) ) { 
-				echo '<li class="layer layer2" data-depth="0.20" style="background-image: url(' . $zerif_parallax_img2 . ');"></li>';
+				echo '<li class="layer layer2" data-depth="0.20" style="background-image: url(' . esc_url($zerif_parallax_img2) . ');"></li>';
 			}
 
 		echo '</ul>';
 	
 	}
-
-	$zerif_bigtitle_show = get_theme_mod('zerif_bigtitle_show');
 	
 	if( isset($zerif_bigtitle_show) && $zerif_bigtitle_show != 1 ):
 	
@@ -161,7 +168,7 @@
 		endif;
 
 		/* Big title */
-		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('Zoommerce','zerif') );
+		$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title', __('zoommerce','zerif') );
 		
 		if( !empty($zerif_bigtitle_title) ):
 			echo '<h1 class="intro-text">'.esc_html($zerif_bigtitle_title).'</h1>';
@@ -171,8 +178,8 @@
 
 		/* Buttons */
 		
-		$zerif_bigtitle_button_label = get_theme_mod( 'zerif_bigtitle_button_label',__('Shop Now','zoommerce') );
-		$zerif_bigtitle_button_url = get_theme_mod( 'zerif_bigtitle_button_url','#' );
+		$zerif_bigtitle_button_label = get_theme_mod( 'zerif_bigtitle_redbutton_label',__('Shop Now','zoommerce') );
+		$zerif_bigtitle_button_url = get_theme_mod( 'zerif_bigtitle_redbutton_url','#' );
 
 		
 		if( (!empty($zerif_bigtitle_button_label) && !empty($zerif_bigtitle_button_url))):

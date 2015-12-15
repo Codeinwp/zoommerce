@@ -1,4 +1,10 @@
 <?php	
+/**
+ * The template for home section: Our team
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
 
 	global $wp_customize;
 	
@@ -30,7 +36,7 @@
 					
 						if( !empty($zerif_ourteam_title) ):
 						
-							echo '<h3>'.$zerif_ourteam_title.'</h3>';
+							echo '<h3>'.esc_html($zerif_ourteam_title).'</h3>';
 							
 						elseif ( isset( $wp_customize ) ):
 
@@ -44,7 +50,7 @@
 
 						if( !empty($zerif_ourteam_subtitle) ):
 
-							echo '<h4>'.$zerif_ourteam_subtitle.'</h4>';
+							echo '<h4>'.esc_html($zerif_ourteam_subtitle).'</h4>';
 
 						elseif ( isset( $wp_customize ) ):
 						

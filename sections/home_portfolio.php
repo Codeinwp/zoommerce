@@ -1,4 +1,10 @@
 <?php
+/**
+ * The template for home section: Portfolio
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
 
 	global $wp_customize;
 
@@ -43,7 +49,7 @@
 
 					if( !empty($zerif_portofolio_title) ):
 					
-						echo '<h3>'.$zerif_portofolio_title.'</h3>';
+						echo '<h3>'.esc_html($zerif_portofolio_title).'</h3>';
 						
 					elseif ( isset( $wp_customize ) ):
 
@@ -57,7 +63,7 @@
 
 					if( !empty($zerif_portofolio_subtitle) ):
 
-						echo '<h4>'.$zerif_portofolio_subtitle.'</h4>';
+						echo '<h4>'.esc_html($zerif_portofolio_subtitle).'</h4>';
 						
 					elseif ( isset( $wp_customize ) ):
 
@@ -93,7 +99,7 @@
 						<!-- PROJECT -->	
 
 
-						<li data-scrollreveal="enter left after 0s over 1s">
+						<li>
 
 
 						<a href="<?php the_permalink(); ?>" class="more">

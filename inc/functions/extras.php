@@ -165,6 +165,36 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_ourfocus_4box'
 				),
 
+				array(
+					'selector' => '#focus',
+					'style' => 'background',
+					'property' => 'zerif_ourfocus_background'
+				),
+
+				array(
+					'selector' => '.focus-box h5',
+					'style' => 'color',
+					'property' => 'zerif_ourfocus_box_title_color'
+				),
+
+				array(
+					'selector' => '.focus-box p',
+					'style' => 'color',
+					'property' => 'zerif_ourfocus_box_text_color'
+				),
+
+				array(
+					'selector' => '.focus-box .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_ourfocus_header'
+				),
+
+				array(
+					'selector' => '.focus-box .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_ourfocus_header'
+				),
+
 
 				/**
 				 * Home: Portfolio
@@ -180,9 +210,25 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_portofolio_header'
 				),
 				array(
-					'selector' => '.cbp-rfgrid li a .project-info .project-details',
+					'selector' => '#works .project-details > *',
 					'style' => 'color',
-					'property' => 'zerif_portofolio_text'
+					'property' => 'zerif_portofolio_text',
+					'important'	=> true
+				),
+
+				array(
+					'selector' => '#works',
+					'style' => 'background-image',
+					'property' => 'portfolio_bg_image',
+					'before_property' => 'url(',
+					'after_property' => ')',
+					'exclude' => 'zerif_portofolio_background'
+				),
+
+				array(
+					'selector' => '#works',
+					'style' => 'background',
+					'property' => 'zerif_portofolio_background',
 				),
 
 				/**
@@ -216,12 +262,14 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				array(
 					'selector' => '#team .home_headline h3',
 					'style' => 'color',
-					'property' => 'zerif_ourteam_header'
+					'property' => 'our_team_heading_clor',
+					'important'	=> true
 				),
 				array(
 					'selector' => '#team .home_headline h4',
 					'style' => 'color',
-					'property' => 'zerif_ourteam_header'
+					'property' => 'our_team_subtitle_clor',
+					'important'	=> true
 				),
 				array(
 					'selector' => '#team .team-member .details',
@@ -236,53 +284,122 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				array(
 					'selector' => '.team-member .social-icons ul li a:hover',
 					'style' => 'color',
-					'property' => 'zerif_ourteam_socials_hover'
+					'property' => 'zerif_ourteam_socials_hover',
+					'important'	=> true
+				),
+				array(
+					'selector' => '#team .team-member .member-details,#team .team-member .member-details h5',
+					'style' => 'color',
+					'property' => 'zerif_ourteam_header'
 				),
 
+
 				/**
-				 * Home: Ribbon
+				 * Home: Ribbon Right
 				 */
 				array(
-					'selector' => '#ribbon_right.purchase-now',
+					'selector' => '#ribbon_right',
 					'style' => 'background',
-					'property' => 'zerif_ribbonright_background'
+					'property' => 'zerif_ribbonright_background',
+					'important' => true
 				),
 				array(
 					'selector' => '#ribbon_right h3.white-text',
 					'style' => 'color',
-					'property' => 'zerif_ribbonright_text_color'
+					'property' => 'zerif_ribbonright_text_color',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'selector' => '#ribbon_right .btn-primary',
 					'style' => 'background',
-					'property' => 'zerif_ribbonright_button_background'
+					'property' => 'zerif_ribbonright_button_background',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'selector' => '#ribbon_right .btn-primary:hover',
 					'style' => 'background',
-					'property' => 'zerif_ribbonright_button_background_hover'
+					'property' => 'zerif_ribbonright_button_background_hover',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'selector' => '#ribbon_right .btn-primary',
 					'style' => 'color',
-					'property' => 'zerif_ribbonright_button_text'
+					'property' => 'zerif_ribbonright_button_text',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'selector' => '#ribbon_right .btn-primary:hover',
 					'style' => 'color',
-					'property' => 'zerif_ribbonright_button_text_hover'
+					'property' => 'zerif_ribbonright_button_text_hover',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn',
+					'selector' => '#ribbon_right .btn-primary',
 					'style' => 'border',
 					'before_property' => '1px solid ',
-					'property' => 'zerif_ribbonright_button_border'
+					'property' => 'zerif_ribbonright_button_border',
+					'important' => true
 				),
 				array(
-					'selector' => '#ribbon_right .purchase-now .red-btn:hover',
+					'selector' => '#ribbon_right .btn-primary:hover',
 					'style' => 'border',
 					'before_property' => '1px solid ',
-					'property' => 'zerif_ribbonright_button_border_hover'
+					'property' => 'zerif_ribbonright_button_border_hover',
+					'important' => true
+				),
+
+				/**
+				 * Home: Ribbon Bottom
+				 */
+				array(
+					'selector' => '#ribbon_bottom',
+					'style' => 'background',
+					'property' => 'zerif_ribbon_background',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom h3.white-text',
+					'style' => 'color',
+					'property' => 'zerif_ribbon_text_color',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary',
+					'style' => 'background',
+					'property' => 'zerif_ribbon_button_background',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary:hover',
+					'style' => 'background',
+					'property' => 'zerif_ribbon_button_background_hover',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary',
+					'style' => 'color',
+					'property' => 'zerif_ribbonbottom_button_text',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary:hover',
+					'style' => 'color',
+					'property' => 'zerif_ribbonbottom_button_text_hover',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary',
+					'style' => 'border',
+					'before_property' => '1px solid ',
+					'property' => 'zerif_ribbonbottom_button_border',
+					'important' => true
+				),
+				array(
+					'selector' => '#ribbon_bottom .btn-primary:hover',
+					'style' => 'border',
+					'before_property' => '1px solid ',
+					'property' => 'zerif_ribbonbottom_button_border_hover',
+					'important' => true
 				),
 
 				/**
@@ -321,7 +438,8 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				array(
 					'selector' => '#pricingtable.packages .package a.custom-button',
 					'style' => 'background',
-					'property' => 'zerif_package_button_background_color'
+					'property' => 'zerif_package_button_background_color',
+					'important' => true
 				),
 				array(
 					'selector' => '#pricingtable.packages .package .price-container',
@@ -335,10 +453,74 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				),
 
 				/**
+				 * Home: Latest posts
+				 */
+				array(
+					'selector' => '#home_blog .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_latestnews_header_title_color'
+				),
+
+				array(
+					'selector' => '#home_blog .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_latestnews_header_subtitle_color'
+				),
+
+				array(
+					'selector' => '#home_blog',
+					'style' => 'background-image',
+					'property' => 'latestnews_bg_image',
+					'before_property' => 'url(',
+					'after_property' => ')',
+					'exclude' => 'zerif_latestnews_background'
+				),
+
+				array(
+					'selector' => '#home_blog',
+					'style' => 'background',
+					'property' => 'zerif_latestnews_background',
+				),
+
+
+				/**
+				 * Home: Testimonials
+				 */
+				array(
+					'selector' => '#testimonials',
+					'style' => 'background',
+					'property' => 'zerif_testimonials_background'
+				),
+
+				array(
+					'selector' => '#testimonials .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_header_subtitle_color'
+				),
+
+				array(
+					'selector' => '#testimonials .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_header'
+				),
+
+				array(
+					'selector' => '#testimonials .message',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_text'
+				),
+
+				array(
+					'selector' => '#testimonials .client-info .client-name',
+					'style' => 'color',
+					'property' => 'zerif_testimonials_author'
+				),
+
+				/**
 				 * General: Footer
 				 */
 				array(
-					'selector' => '#footer',
+					'selector' => '#footer, #footer .section-footer-title',
 					'style' => 'background',
 					'property' => 'zerif_footer_background'
 				),
@@ -348,7 +530,7 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 					'property' => 'zerif_footer_socials_background'
 				),
 				array(
-					'selector' => '#footer, .company-details',
+					'selector' => '#footer, #footer .company-details, footer .company-details a, #zerif-copyright',
 					'style' => 'color',
 					'property' => 'zerif_footer_text_color'
 				),
@@ -360,19 +542,222 @@ if(!function_exists('zoommerce_customizer_style_css')) {
 				array(
 					'selector' => '#footer .social li a:hover',
 					'style' => 'color',
-					'property' => 'zerif_footer_socials_hover'
+					'property' => 'zerif_footer_socials_hover',
+					'important' => true
 				),
+				array(
+					'selector' => '#footer .footer-widgets',
+					'style' => 'border-color',
+					'property' => 'zerif_footer_socials_border'
+				),
+
+				/**
+				 * Home: Contact us
+				 */
+				array(
+					'selector' => '#contact',
+					'style' => 'background',
+					'property' => 'zerif_contacus_background',
+				),
+
+				array(
+					'selector' => '#contact .home_headline h3',
+					'style' => 'color',
+					'property' => 'zerif_contacus_header',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_contacus_header',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .btn-primary',
+					'style' => 'background',
+					'property' => 'zerif_contacus_button_background',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .btn-primary:hover',
+					'style' => 'background',
+					'property' => 'zerif_contacus_button_background_hover',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#contact .btn-primary',
+					'style' => 'color',
+					'property' => 'zerif_contacus_button_color',
+					'important' => true
+				),
+
+				/**
+				 * Home: Subscribe
+				 */
+				array(
+					'selector' => '#newsletter_section .home_headline h3, #newsletter_section .home_headline h4',
+					'style' => 'color',
+					'property' => 'zerif_subscribe_header_color'
+				),
+
+				array(
+					'selector' => '#newsletter_section input[type="submit"], #newsletter_section button',
+					'style' => 'background',
+					'property' => 'zerif_subscribe_button_background_color'
+				),
+
+				array(
+					'selector' => '#newsletter_section input[type="submit"], #newsletter_section button',
+					'style' => 'color',
+					'property' => 'zerif_subscribe_button_color'
+				),
+
+				array(
+					'selector' => '#newsletter_section input[type="submit"]:hover, #newsletter_section button:hover',
+					'style' => 'background',
+					'property' => 'zerif_subscribe_button_background_color_hover'
+				),
+
+				/**
+				 * General: Colors
+				 */
+				array(
+					'selector' => 'body',
+					'style' => 'background',
+					'property' => 'zerif_background_color',
+				),
+				array(
+					'selector' => 'header.header',
+					'style' => 'background',
+					'property' => 'zerif_navbar_color',
+				),
+				array(
+					'selector' => '.widget-title, .entry-title, .woocommerce table.shop_table th, .cart-collaterals h2, form.woocommerce-checkout h3, .woocommerce-order-received .woocommerce h2, .woocommerce-account .woocommerce h2',
+					'style' => 'color',
+					'property' => 'zerif_titles_color',
+				),
+				array(
+					'selector' => 'header.header',
+					'style' => 'background',
+					'property' => 'zerif_navbar_color',
+				),
+				array(
+					'selector' => '#content a:not(.button):not(.remove)',
+					'style' => 'color',
+					'property' => 'zerif_links_color',
+					'important' => true
+				),
+				array(
+					'selector' => '#content a:not(.button):not(.remove):hover',
+					'style' => 'color',
+					'property' => 'zerif_links_color_hover',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#content a.remove',
+					'style' => 'color',
+					'property' => 'zerif_links_color',
+					'important' => true
+				),
+				array(
+					'selector' => '#content a.remove:hover',
+					'style' => 'background',
+					'property' => 'zerif_links_color_hover',
+					'important' => true
+				),
+
+				/**
+				 * General: Normal buttons Colors
+				 */
+				array(
+					'selector' => '#content input.button:not(.add_to_cart_button), .woocommerce a.button.alt, .viewallproducts, #respond .form-submit input#submit',
+					'style' => 'background',
+					'property' => 'zerif_buttons_background_color',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#content input.button:not(.add_to_cart_button):hover, .woocommerce a.button.alt:hover, .viewallproducts:hover, #respond .form-submit input#submit:hover',
+					'style' => 'background',
+					'property' => 'zerif_buttons_background_color_hover',
+					'important' => true
+				),
+
+				array(
+					'selector' => '#content input.button:not(.add_to_cart_button), .woocommerce a.button.alt, .viewallproducts, #respond .form-submit input#submit',
+					'style' => 'color',
+					'property' => 'zerif_buttons_text_color',
+					'important' => true
+				),
+
+				/**
+				 * General: Shop buttons colors
+				 */
+				array(
+					'selector' => 'a.add_to_cart_button, a.product_type_grouped',
+					'style' => 'background',
+					'property' => 'zerif_shop_buttons_background_color',
+					'important' => true
+				),
+				array(
+					'selector' => 'a.add_to_cart_button:hover, a.product_type_grouped:hover',
+					'style' => 'background',
+					'property' => 'zerif_shop_buttons_background_color_hover',
+					'important' => true
+				),
+				array(
+					'selector' => 'a.add_to_cart_button, a.product_type_grouped',
+					'style' => 'color',
+					'property' => 'zerif_shop_buttons_text_color',
+					'important' => true
+				),
+				array(
+					'selector' => 'a.add_to_cart_button:hover, a.product_type_grouped:hover',
+					'style' => 'color',
+					'property' => 'zerif_shop_buttons_text_color_hover',
+					'important' => true
+				),
+
 			);
 
 		if($styles) {
 			$return .= ' <style type="text/css">';
+			$excludes = array();
+			$excludes_keys = array();
+
+			//Add items to exclude list
+			foreach($styles as $key => $val) {
+				if(array_key_exists('exclude', $val) && !empty($val['exclude'])) {
+					$property = get_theme_mod($val['property']);
+
+					if($property) {
+						array_push($excludes, $val['exclude']);
+					}
+				}
+			}
+
+			// Add items to exclude keys list
+			foreach($styles as $key => $val) {
+				if(array_key_exists('property', $val) && !empty($val['property'])) {
+					foreach ($excludes as $poz => $exclude) {
+						if($val['property'] == $exclude) {
+							array_push($excludes_keys, $key);
+						}
+					}
+				}
+			}
 
 			foreach($styles as $key => $val) {
-
+					
 				//If style is added in customizer, create a new row in output
 				$property = get_theme_mod($val['property']);
-				
-				if($property) {
+
+				if($property && !in_array($key, $excludes_keys)) {
 
 					//Display selector
 					if(array_key_exists('selector', $val) && !empty($val['selector'])) {
@@ -448,5 +833,5 @@ if(!function_exists('zoommerce_get_pages_by_template')) {
 		} else {
 			return $return;
 		}
-	}	
+	}
 }

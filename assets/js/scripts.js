@@ -1,5 +1,43 @@
 jQuery(document).ready(function($) {
 
+	/*** centered menu */
+	var callback_menu_align = function () {
+
+	    "use strict"
+
+	    var headerWrap      = jQuery('.header');
+	    var navWrap         = jQuery('#site-navigation');
+	    var logoWrap        = jQuery('.logo-header-wrap');
+	    var containerWrap   = jQuery('.container');
+	    var cartHeaderWrap  = jQuery( '.menu-icons' );
+
+	    var classToAdd      = 'menu-align-center';
+
+	    if( cartHeaderWrap.length > 0 && jQuery( '.menu-align-center-cart' ).length < 1 ) {
+	        headerWrap.addClass( 'menu-align-center-cart' );
+	    }
+
+	    if ( headerWrap.hasClass(classToAdd) ) {
+	        headerWrap.removeClass(classToAdd);
+	    }
+	    var logoWidth       = logoWrap.outerWidth();
+	    var menuWidth       = navWrap.outerWidth();
+	    var containerWidth  = containerWrap.width();
+	    var cartHeaderWidth = cartHeaderWrap.outerWidth();
+
+	    if ( menuWidth + logoWidth + cartHeaderWidth > containerWidth-30 ) {
+	        headerWrap.addClass(classToAdd);
+	    }
+	    else {
+	        if ( headerWrap.hasClass(classToAdd) ) {
+	            headerWrap.removeClass(classToAdd);
+	        }
+	    }
+	}
+	jQuery(window).load(callback_menu_align);
+	jQuery(window).resize(callback_menu_align);
+
+
 	/*
 	* Center vertically the big banner content 
 	*/
@@ -30,7 +68,7 @@ jQuery(document).ready(function($) {
 		    maxHeight = '';
 		    
 		    $(target).each(function() {
-		        var heights = $(this).outerHeight();
+		        var heights = $(this).outerHeight(true);
 
 		        allHeights.push(heights);
 		        maxHeight = Math.max.apply(null, allHeights);
@@ -72,16 +110,21 @@ jQuery(document).ready(function($) {
 		//Center vertically the big banner content 
 		zoommerce_verticall_align('.header-content-wrap', '#big-banner', 0);
 
-		//Home products height match
-		zoommerce_height_match('#home_products .product');
+		//Run functions after window is ready and assets are loaded
+		$(window).load(function() {
+			//Home products height match
+			zoommerce_height_match('#home_products .product');
 
-		//Home blog posts height match
-		zoommerce_height_match('#home_blog .post');
-
+			//Home blog posts height match
+			zoommerce_height_match('#home_blog .post');
+		});
+		
 		/*
 		* Home - Add height on products right image
 		*/
-		$('#home_products .right').css('height', $('#home_products .left').outerHeight());
+		if(!$('#home_products .left').hasClass('zerif_hidden_if_not_customizer')) {
+			$('#home_products .right').css('height', $('#home_products .left').outerHeight() + 45);
+		}
 		
 		// if($(window).width() <= 960 && $(window).width() >= 767) {
 		// 	if(document.getElementsByClassName("center_on_responsive").length == 0) {
@@ -89,7 +132,7 @@ jQuery(document).ready(function($) {
 		// 	}
 		// }
 	}).trigger('resize');
-	
+
 	/*
 	* Reduce menu size on desktop
 	*/

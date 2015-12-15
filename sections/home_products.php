@@ -1,10 +1,19 @@
 <?php
+/**
+ * The template for home section: Latest Products
+ *
+ * @package WordPress
+ * @subpackage zoommerce
+ */
+
 $prod_hide = get_theme_mod('zoommerce_shopproducts_hide');
 if($prod_hide)
 	return NULL;
 
 //Data
 $right_image = get_theme_mod('latest_products_wide_image', get_stylesheet_directory_uri() . '/assets/images/demo/products_background.jpg');
+$headline = get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'));
+$subheading = get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'));
 
 //Products count
 $prod_count = get_theme_mod('latest_products_count', 3);
@@ -19,16 +28,29 @@ $products_loop = new WP_Query( $products_args );
 
 ?>
 <section id="home_products">
-	<?php if ( $products_loop->have_posts() ): ?>
-		<div class="left" data-scrollreveal="enter left after 0s over 1s" <?php echo (!$right_image ? 'style="width: 100%;"' : ''); ?>>
+	<?php 
+
+		//Products class
+		if(!$products_loop->have_posts() && !$headline && !$subheading) {
+			$prod_class = ' zerif_hidden_if_not_customizer';
+		} else {
+			if($prod_count == '2') {
+				$prod_class = ' two';
+			} elseif($prod_count == '1') {
+				$prod_class = ' one';
+			} else {
+				$prod_class = '';
+			}
+		}
+	?>
+		<div class="left<?php echo esc_attr($prod_class); ?> <?php echo (!empty($right_image) ? '' : 'full'); ?>" data-scrollreveal="enter left after 0s over 1s">
 			<div class="home_headline">
 				<?php
-					$headline = get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'));
+					
 					if($headline) {
 						echo '<h3>'.esc_html(get_theme_mod('latest_products_headline', __('New Arrivals', 'zoommerce'))).'</h3>';
 					}
 
-					$subheading = get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'));
 					if($subheading) {
 						echo '<h4>'.esc_html(get_theme_mod('latest_products_subheading', __('Check out our latest products', 'zoommerce'))).'</h4>';
 					}
@@ -71,10 +93,12 @@ $products_loop = new WP_Query( $products_args );
 	
 	<?php
 
-	endif;//$products_loop->have_posts()
-
 	if($right_image) {
-		echo '<div class="right" style="background-image: url('.esc_url($right_image).'); '.($products_loop->have_posts() == true ? '' : 'height: 400px; width: 100%;').'"></div><!-- / .right -->';
+		if($products_loop->have_posts() or $headline or $subheading  ) {
+			echo '<div class="right" style="background-image: url('.esc_url($right_image).');"></div><!-- / .right -->';
+		} else {
+			echo '<div class="right" style="background-image: url('.esc_url($right_image).'); height: 400px; width: 100%;"></div><!-- / .right -->';
+		}
 	}
 	?>
 	
