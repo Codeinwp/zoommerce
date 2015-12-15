@@ -85,53 +85,58 @@ if($cart_cond or $account_cond) {
 		<header id="home" class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
 			<div id="main-nav" class="navbar navbar-inverse bs-docs-nav">
 				<div class="container">
-					<div class="navbar-header responsive-logo <?php echo ($header_icons == true ? ' ' : 'responsive_width'); ?>" >
-						<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-							<span class="sr-only"><?php _e('Toggle navigation', 'zoommerce'); ?></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
 
-						<?php
-							$zoommerce_logo = get_theme_mod('zerif_logo', get_stylesheet_directory_uri().'/assets/images/logo.png');
-							if( !empty($zoommerce_logo) ):
-								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
-									echo '<img src="'.esc_url($zoommerce_logo).'" alt="'.esc_attr(get_bloginfo('title')).'">';
-								echo '</a>';
-							else:
-								if( isset( $wp_customize ) ):
+					<div class="navbar-header responsive-logo">
+
+						<div class="logo-header-wrap">
+							<?php
+								$zoommerce_logo = get_theme_mod('zerif_logo', get_stylesheet_directory_uri().'/assets/images/logo.png');
+								if( !empty($zoommerce_logo) ):
 									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
-										echo '<img src="" alt="'.esc_attr(get_bloginfo('title')).'" class="zerif_hidden_if_not_customizer">';
+										echo '<img src="'.esc_url($zoommerce_logo).'" alt="'.esc_attr(get_bloginfo('title')).'">';
 									echo '</a>';
+								else:
+									if( isset( $wp_customize ) ):
+										echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
+											echo '<img src="" alt="'.esc_attr(get_bloginfo('title')).'" class="zerif_hidden_if_not_customizer">';
+										echo '</a>';
+									endif;
+									echo '<div class="header_title zerif_header_title">';	
+										echo '<h1 class="site-title" itemprop="headline"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.esc_html(get_bloginfo( 'name' )).'</a></h1>';
+										echo '<h2 class="site-description" itemprop="description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.esc_html(get_bloginfo( 'description' )).'</a></h2>';
+									echo '</div>';
 								endif;
-								echo '<div class="header_title zerif_header_title">';	
-									echo '<h1 class="site-title" itemprop="headline"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.esc_html(get_bloginfo( 'name' )).'</a></h1>';
-									echo '<h2 class="site-description" itemprop="description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.esc_html(get_bloginfo( 'description' )).'</a></h2>';
-								echo '</div>';
-							endif;
-						?>
+							?>
+						</div>
 					</div>
+
+					<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+						<span class="sr-only"><?php _e('Toggle navigation', 'zoommerce'); ?></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
                     
                     <?php 	
 						
 					//Check if links are active and display the box
-					if(zoommerce_is_woocommerce_activated()): ?>
-	                    <div class="menu-icons" <?php echo ($header_icons == true ? '' : 'style="display: none;"'); ?>>
+					if(zoommerce_is_woocommerce_activated() && $header_icons == true ): ?>
+	                    <div class="menu-icons">
 	                        <ul id="icons-menu">
-                            	
-                            	<li class="menu-item myaccount" <?php if(empty($zoommerce_myaccount) or empty($zoommerce_myaccount_link)) {echo 'style="display: none;"'; } ?>> 
-	                                <a href="<?php echo esc_url($zoommerce_myaccount_link); ?>">
-	                                    <img src="<?php echo esc_url($zoommerce_myaccount); ?>">
-	                                </a> 
-                                </li>
-                            	
-                            	<li class="menu-item cart" <?php if(empty($zoommerce_cart) or empty($zoommerce_cart_link))  {echo 'style="display: none;"'; } ?>> 
-	                                <a href="<?php echo esc_url($zoommerce_cart_link); ?>">
-	                                    <img src="<?php echo esc_url($zoommerce_cart); ?>">
-	                                </a> 
-                                </li>
-	                            
+                            	<?php if( !empty($zoommerce_myaccount) && !empty($zoommerce_myaccount_link)): ?>
+	                            	<li class="menu-item myaccount" > 
+		                                <a href="<?php echo esc_url($zoommerce_myaccount_link); ?>">
+		                                    <img src="<?php echo esc_url($zoommerce_myaccount); ?>">
+		                                </a> 
+	                                </li>
+                            	<?php endif; ?>
+                            	<?php if( !empty($zoommerce_cart) && !empty($zoommerce_cart_link)): ?>
+	                            	<li class="menu-item cart"> 
+		                                <a href="<?php echo esc_url($zoommerce_cart_link); ?>">
+		                                    <img src="<?php echo esc_url($zoommerce_cart); ?>">
+		                                </a> 
+	                                </li>
+		                        <?php endif; ?>
 	                        </ul>
 	                    </div>
 						<?php endif; ?>

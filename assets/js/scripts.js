@@ -1,5 +1,43 @@
 jQuery(document).ready(function($) {
 
+	/*** centered menu */
+	var callback_menu_align = function () {
+
+	    "use strict"
+
+	    var headerWrap      = jQuery('.header');
+	    var navWrap         = jQuery('#site-navigation');
+	    var logoWrap        = jQuery('.logo-header-wrap');
+	    var containerWrap   = jQuery('.container');
+	    var cartHeaderWrap  = jQuery( '.menu-icons' );
+
+	    var classToAdd      = 'menu-align-center';
+
+	    if( cartHeaderWrap.length > 0 && jQuery( '.menu-align-center-cart' ).length < 1 ) {
+	        headerWrap.addClass( 'menu-align-center-cart' );
+	    }
+
+	    if ( headerWrap.hasClass(classToAdd) ) {
+	        headerWrap.removeClass(classToAdd);
+	    }
+	    var logoWidth       = logoWrap.outerWidth();
+	    var menuWidth       = navWrap.outerWidth();
+	    var containerWidth  = containerWrap.width();
+	    var cartHeaderWidth = cartHeaderWrap.outerWidth();
+
+	    if ( menuWidth + logoWidth + cartHeaderWidth > containerWidth-30 ) {
+	        headerWrap.addClass(classToAdd);
+	    }
+	    else {
+	        if ( headerWrap.hasClass(classToAdd) ) {
+	            headerWrap.removeClass(classToAdd);
+	        }
+	    }
+	}
+	jQuery(window).load(callback_menu_align);
+	jQuery(window).resize(callback_menu_align);
+
+
 	/*
 	* Center vertically the big banner content 
 	*/
@@ -94,7 +132,7 @@ jQuery(document).ready(function($) {
 		// 	}
 		// }
 	}).trigger('resize');
-	
+
 	/*
 	* Reduce menu size on desktop
 	*/
