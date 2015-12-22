@@ -1902,25 +1902,29 @@ article.post {
 #breadcrumb {
     width: 100%;
     background: url(../images/shop_cats_pattern.jpg);
-    height: 55px;
-    line-height: 55px;
-    text-align: center
+    min-height: 55px;
+    text-align: center;
+    padding: 12px 0;
 }
 
-#breadcrumb a {
+#breadcrumb li {
     display: inline-block;
+    padding: 0 13px;
+    position: relative;
+}
+
+#breadcrumb li a {
     font-size: 16px;
     color: #363636;
-    padding: 0 13px;
-    position: relative
+    line-height: 30px;
 }
 
-#breadcrumb a:hover {
+#breadcrumb li a:hover {
 	color: #E52424;
 	text-decoration: none;
 }
 
-#breadcrumb a:before {
+#breadcrumb li:before {
     content: "";
     position: absolute;
     left: -6px;
@@ -1932,7 +1936,7 @@ article.post {
     margin: auto
 }
 
-#breadcrumb a:first-of-type:before {
+#breadcrumb li:first-of-type:before {
     display: none
 }
 

@@ -814,6 +814,7 @@ if ( ! function_exists( 'zoommerce_is_woocommerce_activated' ) ) {
 /**
  * Get page object by page template
  */
+/*
 if(!function_exists('zoommerce_get_pages_by_template')) {
 	function zoommerce_get_pages_by_template($template, $count = 1) {
 
@@ -834,4 +835,32 @@ if(!function_exists('zoommerce_get_pages_by_template')) {
 			return $return;
 		}
 	}
+}
+*/
+
+add_action ('zerif_after_header', 'zoommerce_breadcrumb_function' );
+function zoommerce_breadcrumb_function() {
+
+	if( !is_home() || !is_front_page() ) :
+		echo '<div id="breadcrumb">';	
+		if( function_exists('woocommerce_breadcrumb') ) {
+			woocommerce_breadcrumb();
+		}
+
+		echo '</div><!-- /#breadcrumb  -->';
+	endif;
+
+}
+
+
+add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
+function jk_woocommerce_breadcrumbs() {
+	return array(
+		'delimiter'   => '',
+		'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb">',
+		'wrap_after'  => '</nav>',
+		'before'      => '<li>',
+		'after'       => '</li>',
+		'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+	);
 }
