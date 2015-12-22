@@ -60,6 +60,10 @@
     font-style: normal
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 .cubanoregular {
     font-family: 'cubanoregular', sans-serif
 }
@@ -593,6 +597,10 @@ header.header .sub-menu>li:hover>a {
     text-align: center;
 }
 
+.menu-align-center-cart .responsive-logo {
+	width: auto;
+}
+
 .menu-align-center .logo-header-wrap {
 	width: auto;
     float: none;
@@ -683,7 +691,8 @@ ul.nav > li.current_page_item > a:before {
 
 #big-banner {
     width: 100%;
-    position: relative
+    position: relative;
+    background-position: top center;
 }
 
 #big-banner .sub-text {
@@ -760,7 +769,7 @@ ul.nav > li.current_page_item > a:before {
     position: absolute;
     bottom: 20px;
     width: 100%;
-    z-index: 9999
+    z-index: 9;
 }
 
 #footer {
@@ -787,6 +796,12 @@ ul.nav > li.current_page_item > a:before {
 #footer .footer-widgets .footer-box-wrap {
     padding-top: 25px;
     padding-bottom: 25px
+}
+
+.footer-widget {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .company-details {
@@ -878,19 +893,20 @@ ul.nav > li.current_page_item > a:before {
 
 #shop_cats .tower h3,
 #shop_cats .box h3 {
-    position: absolute;
-    z-index: 99;
-    display: inline-block;
-    font-family: 'aller_lightregular', sans-serif;
-    font-size: 18px;
-    text-transform: uppercase;
-    color: #000;
-    background: #fff;
-    padding: 0 25px;
-    height: 46px;
-    line-height: 46px;
-    left: 0;
-    letter-spacing: -0.07em
+	position: absolute;
+	z-index: 99;
+	display: inline-block;
+	font-family: 'aller_lightregular', sans-serif;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #000;
+	background: #fff;
+	padding: 10px 25px;
+	line-height: 25px;
+	left: 0;
+	letter-spacing: -0.07em;
+	text-align: left;
+	max-width: 90%;
 }
 
 #shop_cats .tower {
@@ -904,7 +920,7 @@ ul.nav > li.current_page_item > a:before {
 }
 
 #shop_cats .tower.thirds {
-    width: 476px
+    width: 50%;
 }
 
 #shop_cats .tower.alignright {
@@ -933,7 +949,7 @@ ul.nav > li.current_page_item > a:before {
 }
 
 #shop_cats .box.thirds {
-    width: 474px
+    width: 50%;
 }
 
 .clearfix {
@@ -942,8 +958,10 @@ ul.nav > li.current_page_item > a:before {
 
 .home_headline {
     width: 100%;
-    margin-top: 45px;
-    text-align: center
+/**
+    margin-top: 55px; 
+    **/
+    text-align: center;
 }
 
 .home_headline h3 {
@@ -961,14 +979,16 @@ ul.nav > li.current_page_item > a:before {
 }
 
 #home_products ul.products {
-    padding-top: 30px
+    padding-top: 0;
 }
 
+/*
 #home_products ul.products li.product {
     margin-bottom: 0 !important;
     margin-top: 0 !important;
     padding-bottom: 20px !important
 }
+*/
 
 .entry-title:after {
     display: none
@@ -982,13 +1002,16 @@ ul.nav > li.current_page_item > a:before {
     padding-bottom: 40px;
     box-sizing: content-box;
     background: #fff;
+/**
     margin-bottom: 70px
+*//
 }
 
 .woocommerce ul.products li.product a,
 #home_products ul.products li.product a {
     position: relative;
-    display: block
+    display: block;
+    float: left;
 }
 
 .woocommerce ul.products li.product a:hover,
@@ -1047,13 +1070,14 @@ ul.nav > li.current_page_item > a:before {
 .woocommerce ul.products li.product .price del,
 #home_products ul.products li.product .price del {
     color: #ddd;
-    display: inline
+    width: 100%;
+    display: block;
 }
 
 .woocommerce ul.products li.product .price del .amount,
 #home_products ul.products li.product .price del .amount {
     font-size: 12px;
-    color: #ddd
+    color: #999;
 }
 
 .woocommerce ul.products li.product .price ins,
@@ -1104,7 +1128,10 @@ ul.nav > li.current_page_item > a:before {
 #home_products {
     width: 100%;
     background: #fff;
-    overflow: hidden
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex; 
 }
 
 #home_products .product {
@@ -1154,11 +1181,13 @@ ul.nav > li.current_page_item > a:before {
 #home_products .left,
 #home_products .right {
     width: 50%;
-    float: left
+/**
+    float: left;
+    **/
 }
 
 #home_products .left {
-    padding: 0 4% 45px 4%
+    padding: 55px 4% 55px 4%
 }
 
 #home_products .left.full {
@@ -1182,7 +1211,9 @@ ul.nav > li.current_page_item > a:before {
 }
 
 #home_products .right {
+/**
     height: 100%;
+**/
     background-position: center center
 }
 
@@ -1270,7 +1301,8 @@ ul.nav > li.current_page_item > a:before {
 #testimonials {
     background: #333;
     overflow: hidden;
-    padding-bottom: 45px
+	padding-bottom: 45px;
+	padding-top: 15px;
 }
 
 #testimonials .quote {
@@ -1764,6 +1796,10 @@ article.post {
     line-height: 46px
 }
 
+.widget a:hover {
+	text-decoration: none;
+}
+
 .sidebar-wrap {
     border-left: 1px solid #e9e9e9
 }
@@ -1778,6 +1814,10 @@ article.post {
 
 .sidebar-wrap .widget .widget-title:before {
     display: none
+}
+
+.widget .widget-title:before {
+	display: none;
 }
 
 .sidebar-wrap .widget input[type=text],
@@ -1802,7 +1842,7 @@ article.post {
     padding-right: 0;
     border-bottom: 1px dashed #d0d0d0;
     margin: 0;
-    padding: 15px
+    padding: 15px 0 15px 15px;
 }
 
 .sidebar-wrap .widget ul ul li {
@@ -1810,6 +1850,7 @@ article.post {
 }
 
 .sidebar-wrap .widget ul ul li:last-of-type {
+	padding-bottom: 0;
 	padding-bottom: 0;
 }
 
@@ -1824,7 +1865,7 @@ article.post {
     width: 6px;
     height: 6px;
     left: 0;
-    top: 13px;
+    top: 11px;
     bottom: 0
 }
 
@@ -1874,6 +1915,11 @@ article.post {
     position: relative
 }
 
+#breadcrumb a:hover {
+	color: #E52424;
+	text-decoration: none;
+}
+
 #breadcrumb a:before {
     content: "";
     position: absolute;
@@ -1896,6 +1942,14 @@ article.post {
 
 .sidebar-wrap.content-left-wrap {
     margin-top: 45px
+}
+
+.tagcloud a {
+	color: #808080;	
+}
+
+.tagcloud a:hover {
+	color: #000;
 }
 
 .site-main .post-navigation {
@@ -1923,9 +1977,19 @@ article.post {
 
 .single-post .post .featured {
     width: 100%;
-    height: 320px;
+    height: 320px; 
     background-position: center center;
     margin-top: 20px
+}
+
+.paging-navigation .nav-previous {
+	text-align: left;
+	max-width: 50%;
+}
+
+.post-navigation .nav-previous {
+	text-align: right;
+	max-width: 50%;
 }
 
 #comments .comments-title,
@@ -2020,12 +2084,33 @@ article.post {
     font-size: 13px;
     color: #595959;
     background: url(../images/comment_icon.jpg) no-repeat 13px 13px;
-    padding: 13px
+    padding: 13px;
+    padding-left: 40px;
 }
 
 #comments input:focus,
 #comments textarea:focus {
     border-color: #999
+}
+
+#comments li {
+	list-style: initial;
+    float: initial;
+    width: initial;
+}
+
+#comments .comment-list li.comment {
+	list-style: none;
+    float: left;
+    width: 100%;
+}
+
+.comment-metadata {
+	line-height: 25px;
+}
+
+.content-area .comments-area {
+	float: left;
 }
 
 .page-header {
@@ -2051,7 +2136,31 @@ article.post {
 
 .client-list .widget {
     display: inline-block;
-    margin: 0 10px
+    margin: 0 10px;
+}
+
+.post-img-wrap a:hover img {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5 ease-out;
+	opacity: 0.8;
+}
+
+.post-img-wrap a {
+	background: #E52424;
+	display: block;
+}
+
+.listpost-content-wrap .entry-content p {
+	min-height: 5px;
+	margin-bottom: 10px;
 }
 
 .woocommerce #respond input#submit.loading:after,
@@ -2626,6 +2735,11 @@ article.post {
     height: 120% !important
 }
 
+.navbar-header.responsive-logo {
+	margin-left: 0;
+}
+
+
 /**
 @media (min-width: 960px) {
     .container,
@@ -2638,7 +2752,9 @@ article.post {
 @media (min-width: 768px) and (max-width: 960px) {
     .responsive-logo {
         float: none;
-        width: 100%
+/**
+        width: 100% 
+*/
     }
     .responsive-logo a.navbar-brand {
         margin: 13px auto;
@@ -2912,6 +3028,21 @@ article.post {
         padding-top: 0;
         padding-bottom: 45px
     }
+    #home_products ul.products li.product {
+    	width: 100%;
+    	max-width: 300px;
+    	margin: 0 auto 50px;
+    	float: none;
+    	height: auto !important;
+    }
+    #home_products ul.products {
+    	padding-bottom: 0;
+    }
+    #home_products .viewallproducts {
+    	margin-top: 0;
+    }
+
+
 }
 
 @media (max-width: 620px) {
@@ -2962,10 +3093,15 @@ article.post {
 	.responsive-logo,
 	.menu-align-center .responsive-logo {
 		width: auto;
+		float: left;
 	}
 	.navbar-collapse {
 		padding-right: 0;
 	}
+	.menu-align-center .logo-header-wrap {
+	    margin-top: 0;
+	}
+
 }
 
 

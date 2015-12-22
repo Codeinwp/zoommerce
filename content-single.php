@@ -14,15 +14,11 @@
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 	<?php	
-
-	if ( is_singular( 'portofolio' ) ) {
-		$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
-		echo '<img style="margin-top: 20px;" src="'.esc_url($url).'" />';
-	} else {
-		$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
-		echo '<div class="featured" style="background-image: url('.esc_url($url).');"></div><!-- / .featured -->';
-	}
-
+		if ( has_post_thumbnail() ) {
+			echo '<div class="featured">';
+			the_post_thumbnail( 'post_featured_image' );
+			echo '</div>';
+		}
 	?>
 	<div class="entry-content" itemprop="text">
 		<?php 
