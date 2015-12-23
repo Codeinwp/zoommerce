@@ -812,26 +812,66 @@ if ( ! function_exists( 'zoommerce_is_woocommerce_activated' ) ) {
 }
 
 /**
- * Get page object by page template
+ * Breadcrumb & blog image in header
  */
-if(!function_exists('zoommerce_get_pages_by_template')) {
-	function zoommerce_get_pages_by_template($template, $count = 1) {
+add_action ('zerif_after_header', 'zoommerce_after_header_function' );
+function zoommerce_after_header_function() {
 
-		$pages = get_pages(array(
-			'meta_key' => '_wp_page_template',
-			'meta_value' => $template,
-			'number'	=> $count
-		));
-
-		$return = array();
-		foreach($pages as $page){
-			array_push($return, $page);
-		}
-
-		if($count = 1) {
-			return $return[0];
-		} else {
-			return $return;
-		}
+	/* top image on blog page */
+	if ( is_page_template( 'template-blog.php' ) || is_page_template( 'template-blog-large.php' ) ) {
+		zoommerce_blog_top_image();
 	}
+
+	/* add breadcrumb */
+	if( !is_home() || !is_front_page() ) :
+		echo '<div id="breadcrumb">';	
+		if( function_exists('woocommerce_breadcrumb') ) {
+			woocommerce_breadcrumb();
+		}
+
+		echo '</div><!-- /#breadcrumb  -->';
+	endif;
+
+}
+
+/**
+ * Woocommerce breadcrumb
+ */
+add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
+function jk_woocommerce_breadcrumbs() {
+	return array(
+		'delimiter'   => '',
+		'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb">',
+		'wrap_after'  => '</nav>',
+		'before'      => '<li>',
+		'after'       => '</li>',
+		'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+	);
+}
+
+
+function zoommerce_blog_top_image() {
+
+	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+	if($image) {
+		$image_bg = 'style="background-image: url('.esc_url($image[0]).');"';
+	} else {
+		$image_bg = 'style="background-color: rgba(0, 0, 0, 0.7);"';
+	}
+
+	echo '<div id="wide_header" ' . $image_bg . '>';
+		echo '<div class="container">';
+
+				$heading = get_theme_mod('blog_heading', __('MY BLOG', 'zoommerce'));
+				if($heading)
+					echo '<div class="title">'.esc_html($heading).'</div>';
+
+				$heading_sub = get_theme_mod('blog_heading_sub');
+				if($heading_sub)
+					echo '<p>'.esc_html($heading_sub).'</p>';
+
+			echo '</div><!-- / .container -->';
+		echo '<div class="overlay"></div><!-- / .overlay -->';
+	echo '</div><!-- /#wide_header  -->';
+
 }

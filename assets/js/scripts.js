@@ -61,19 +61,16 @@ jQuery(document).ready(function($) {
 		$(target).css('height', $(window).height() - $('header#home').height());
 	}
 
+	var index = 0;
 	function zoommerce_height_match(target) {
-		$(target).css('height', 'inherit');
-
+		$(target).css('height', 'auto');
 		var allHeights = [],
 		    maxHeight = '';
-		    
 		    $(target).each(function() {
-		        var heights = $(this).outerHeight(true);
-
+		        var heights = $(this).height();
 		        allHeights.push(heights);
 		        maxHeight = Math.max.apply(null, allHeights);
 		    });
-		    
 		    $(target).css("height", maxHeight);
 	}
 
@@ -114,18 +111,25 @@ jQuery(document).ready(function($) {
 		$(window).load(function() {
 			//Home products height match
 			zoommerce_height_match('#home_products .product');
-
+			//Home blog posts height match
+			zoommerce_height_match('#home_blog .post');
+		})
+		$(window).resize(function() {	
+			//Home products height match
+			zoommerce_height_match('#home_products .product');
 			//Home blog posts height match
 			zoommerce_height_match('#home_blog .post');
 		});
+
 		
 		/*
 		* Home - Add height on products right image
 		*/
+/**
 		if(!$('#home_products .left').hasClass('zerif_hidden_if_not_customizer')) {
 			$('#home_products .right').css('height', $('#home_products .left').outerHeight() + 45);
 		}
-		
+**/		
 		// if($(window).width() <= 960 && $(window).width() >= 767) {
 		// 	if(document.getElementsByClassName("center_on_responsive").length == 0) {
 		// 		zoommerce_reduce_menu_width('nav#site-navigation ul:first > li', 460);

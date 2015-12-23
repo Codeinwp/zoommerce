@@ -82,9 +82,9 @@ $products_loop = new WP_Query( $products_args );
 			if($customizer_link) {
 				echo '<a href="'.esc_url($customizer_link).'" class="viewallproducts">'.__('view all products', 'zoommerce').'</a>';
 			} else {
-				if($shop_page_id) {
+				if($shop_page_id>0) {
 					echo '<a href="'.esc_url(get_permalink( $shop_page_id )).'" class="viewallproducts">'.__('view all products', 'zoommerce').'</a>';
-				}
+				} 
 			}
 			
 			?>

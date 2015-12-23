@@ -1,5 +1,10 @@
 <?php
 
+function zoommerce_add_image_size() {
+	add_image_size ( 'post_featured_image', 825, 320, true );
+	add_image_size ( 'category_featured_image', 1170, 1170, true );
+}
+add_action( 'after_setup_theme', 'zoommerce_add_image_size', 11 );
 
 /**
  * Remove hooks from parent theme

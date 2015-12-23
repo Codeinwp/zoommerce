@@ -41,10 +41,11 @@
 			if($zoommerce_display_latest_cats) {
 				foreach($categories as $category) {
 		        	//Get data
-		        	$thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
-					$thumbnail_url = wp_get_attachment_url( $thumbnail_id );
-					$term_link = get_term_link( $category );
-					$cat_class = '';
+		        	$thumbnail_id 			= get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
+					$thumbnail_url_array 	= wp_get_attachment_image_src( $thumbnail_id, 'category_featured_image' );
+					$thumbnail_url 			= $thumbnail_url_array[0];
+					$term_link 				= get_term_link( $category );
+					$cat_class 				= '';
 
 					//Algorithm & conditions
 					if($cat_count == 1) {
@@ -107,10 +108,11 @@
 							$category = get_term($parallax_one_social_icon->icon_value, 'product_cat');
 
 							//Get data
-				        	$thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
-							$thumbnail_url = wp_get_attachment_url( $thumbnail_id );
-							$term_link = get_term_link( $category );
-							$cat_class = '';
+				        	$thumbnail_id 			= get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
+							$thumbnail_url_array	= wp_get_attachment_image_src( $thumbnail_id, 'category_featured_image' );
+							$thumbnail_url 			= $thumbnail_url_array[0];
+							$term_link 				= get_term_link( $category );
+							$cat_class 				= '';
 
 							//Algorithm & conditions
 							if($cat_count == 1) {
