@@ -1,5 +1,15 @@
 
 
+### 1.0.0.3 - 23/12/2015
+
+ Changes: 
+
+
+ * css issue for header and homepage
+ * Breadcrumb issue
+ * shop css issue
+
+
 ### 1.0.0.3 - 15/12/2015
 
  Changes: 
