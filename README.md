@@ -13,7 +13,7 @@ Licenses
         All pexels.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
 
     Images from screenshot
-    Source:
+    Source: https://unsplash.com/photos/hHcHf4mOFgk
 
     Image: /assets/images/demo/home_background.jpg
     Source: https://www.pexels.com/photo/man-woman-couple-portrait-24948/
